@@ -6,7 +6,7 @@ Every network has a leading agent dimension: agent i's weights are W[i], and all
 Each network is split into shared layers, which federated learning will average across homes, and a final local
 layer that stays in the home.
 
-Run: .venv/bin/python src/agents/sac.py [local|central] [training days]
+Run: .venv/bin/python src/agents/sac.py [local|central] [training days] [seed]
 """
 import copy
 import sys
@@ -184,8 +184,9 @@ def policy(agent, env, mode):
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "local"
     days = int(sys.argv[2]) if len(sys.argv) > 2 else 60
+    seed = int(sys.argv[3]) if len(sys.argv) > 3 else 0  # training randomness only, the street stays the same
     env = BatteryStreet()
     start = time.time()
-    agent = train(env, mode, days)
-    print(f"{mode} SAC: trained on {days} days in {time.time() - start:.0f} s")
+    agent = train(env, mode, days, seed=seed)
+    print(f"{mode} SAC, seed {seed}: trained on {days} days in {time.time() - start:.0f} s")
     print(pd.Series(evaluate(env, policy(agent, env, mode), *TEST)).round(2).to_string())
