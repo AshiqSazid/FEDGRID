@@ -1,0 +1,9 @@
+fedprox SAC: trained on 500 days in 1438 s, 500 rounds, 54400 shared values per home per round (212 KB)
+bill $/home/yr                              932.55
+curtailed kWh/home/yr                       160.46
+battery cycles/yr                           270.79
+half hours over 253 V %                       0.00
+max V                                       248.89
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    11502.46
+midday export limit kW (median)               5.92

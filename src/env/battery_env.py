@@ -88,13 +88,14 @@ class BatteryStreet:
         limits = np.clip(limits, self.min_export_kw, self.max_export_kw)
         return np.where(self.msl[self.t:self.end, None], self.msl_export_kw, limits)
 
-    def reset(self, day):
-        """Start an episode at midnight on day. Returns the observation, one row per home."""
+    def reset(self, day, soc=None):
+        """Start an episode at midnight on day, with the batteries holding soc kWh (half full if None).
+        Evaluation passes the previous day's soc on, so no day gets free stored energy."""
         s = self.street
         self.t = self.start = s.time.get_loc(pd.Timestamp(day, tz="Australia/Brisbane"))
         self.end = self.t + 48
         self.limits = self._day_limits()
-        self.soc = 0.5 * self.capacity  # ponytail: each day starts half full. Carry charge over if episodes get longer.
+        self.soc = 0.5 * self.capacity if soc is None else soc.copy()
         self.volts = s.solve(s.load_kw[self.t], s.pv_kw[self.t])
         return self.observe()
 
@@ -102,13 +103,13 @@ class BatteryStreet:
         return self.limits[self.t - self.start]
 
     def observe(self):
-        """Per home: charge level, load kW, solar kW, price, price period (day, peak, night), time of day,
-        export limit kW, last voltage V."""
+        """Per home, scaled to about -1 to 1 for learning: charge level, load and solar (per 5 kW), price ($/kWh),
+        price period (day, peak, night), time of day (sin, cos), export limit (per 10 kW), voltage ((V - 240) / 10)."""
         s, t, h = self.street, self.t, self.hours[self.t]
         period = [11 <= h < 16, 16 <= h < 21, h >= 21 or h < 11]
         shared = [self.buy[t], *period, np.sin(2 * np.pi * h / 24), np.cos(2 * np.pi * h / 24)]
-        return np.column_stack([self.soc / self.capacity, s.load_kw[t], s.pv_kw[t],
-                                np.tile(shared, (self.n, 1)), self.limit(), self.volts])
+        return np.column_stack([self.soc / self.capacity, s.load_kw[t] / 5, s.pv_kw[t] / 5,
+                                np.tile(shared, (self.n, 1)), self.limit() / 10, (self.volts - 240) / 10])
 
     def step(self, action):
         s, t = self.street, self.t
@@ -155,8 +156,9 @@ def evaluate(env, policy, start, end):
     days = pd.date_range(start, end, freq="D", inclusive="left")
     cost = curtail = throughput = msl_absorbed = 0.0
     over, vmax, msl_export, limits = [], 0.0, 0.0, []
+    soc = None  # first day starts half full, then charge carries over from day to day
     for day in days:
-        env.reset(day)
+        env.reset(day, soc)
         limits.append(env.limits)
         done = False
         while not done:
@@ -169,6 +171,7 @@ def evaluate(env, policy, start, end):
             if i["msl"]:
                 msl_export += np.maximum(-i["net_kw"], 0).sum() * DT
                 msl_absorbed += np.maximum(i["battery_kw"], 0).sum() * DT
+        soc = env.soc
     supply = TARIFF_12D["2025-26"]["supply_per_day"] * len(days)
     midday = np.stack(limits)[:, 20:28]  # 10am to 2pm
     return {"bill $/home/yr": cost / env.n + supply, "curtailed kWh/home/yr": curtail / env.n,
