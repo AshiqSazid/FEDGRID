@@ -8,11 +8,17 @@ shared layers back to every home. Each home's local layer, replay buffer and met
   FedProx  same, plus a penalty in local training that keeps the shared layers near the global model
   median, trimmed mean, Krum   standard robust aggregation rules, for the attack study
 
-Attacks: a fixed set of bad homes train honestly but send a corrupted change. They know only their own change.
+Attacks: a fixed set of bad homes train honestly but send a corrupted change instead of their own.
+  flip        minus their own change
+  scale       their own change times the number of homes, so one home outweighs the whole street
+  noise       random values, variance 1000 each (the random noise attack of Fang et al., 2025)
+  normalized  the Normalized attack of Fang et al. (2025), which turns the aggregate's direction away from the honest
+              one. It knows every home's change and the aggregation rule, the paper's default (full knowledge).
 
-Run: .venv/bin/python src/agents/federated.py [fedavg|fedprox|median|trimmed|krum] [training days] [seed]
-                                              [none|flip|scale|noise] [share of bad homes]
+Run: .venv/bin/python src/agents/federated.py fedavg|fedprox|median|trimmed|krum [training days] [seed]
+         [--attack none|flip|scale|noise|normalized] [--share 0.3] [--last]
 """
+import argparse
 import sys
 import time
 from pathlib import Path
@@ -27,7 +33,7 @@ from env.battery_env import TEST, BatteryStreet, evaluate
 
 
 # Aggregation rules. changes: (homes, parameters). Each returns the change to apply to the global model.
-# ponytail: the robust rules assume up to 20% bad homes, the share used in the attack study.
+# The robust rules are told the share of bad homes to expect, as the server knows an upper bound in Fang et al. (2025).
 def fedavg(changes):
     return changes.mean(0)
 
@@ -37,34 +43,66 @@ def median(changes):
 
 
 def trimmed_mean(changes, trim=0.2):
-    k = int(trim * len(changes))
+    k = round(trim * len(changes))
     return changes.sort(0).values[k:len(changes) - k].mean(0)
 
 
 def krum(changes, assumed_bad=0.2):
     """The one change closest to its n - f - 2 nearest neighbours (Blanchard et al., 2017)."""
     n = len(changes)
-    f = int(assumed_bad * n)
+    f = round(assumed_bad * n)
     distance = torch.cdist(changes, changes) ** 2
     return changes[distance.sort(1).values[:, 1:n - f - 1].sum(1).argmin()]  # column 0 is the distance to itself
 
 
-# Attacks. own: the bad homes' honest changes, one row per bad home.
-# ponytail: factor 10 is a starting value. Sweep it, and add the crafted attack of Fang et al. (2025) next.
-def sign_flip(own):
-    return -own
+def aggregator(method, share):
+    return {"fedavg": fedavg, "fedprox": fedavg, "median": median,
+            "trimmed": lambda c: trimmed_mean(c, share), "krum": lambda c: krum(c, share)}[method]
 
 
-def scaling(own, factor=10.0):
-    return factor * own
+# Attacks. Each gets every home's honest change, the bad homes and the aggregation rule, and returns the bad rows.
+def sign_flip(changes, bad, aggregate):
+    return -changes[bad]
 
 
-def noise(own, factor=10.0):
-    return factor * own.std() * torch.randn_like(own)
+def scaling(changes, bad, aggregate):
+    return len(changes) * changes[bad]
 
 
-AGGREGATE = {"fedavg": fedavg, "fedprox": fedavg, "median": median, "trimmed": trimmed_mean, "krum": krum}
-ATTACK = {"none": None, "flip": sign_flip, "scale": scaling, "noise": noise}
+def noise(changes, bad, aggregate):
+    return 1000 ** 0.5 * torch.randn(len(bad), changes.shape[1])
+
+
+# ponytail: the paper adjusts lambda and zeta with a step rule from starting values it doesn't give. This searches the
+# same two quantities on fixed grids instead. Finer grids if the attack looks weak.
+LAMBDAS = (0.1, 0.3, 1.0, 3.0, 10.0, 30.0)  # weight of the push direction, relative to the honest direction
+ZETAS = (0.5, 1.0, 2.0, 5.0, 10.0, 100.0)  # size of the bad change, relative to the median honest change
+
+
+def normalized(changes, bad, aggregate):
+    """Fang et al. (2025), Section 4: maximise || AR(honest)/|AR(honest)| - AR(attacked)/|AR(attacked)| ||.
+    Stage 1 picks the direction honest/|honest| + lambda * delta with delta = -sign(mean change), stage 2 its size.
+    Every bad home sends the same change."""
+    before = aggregate(changes)
+    if not before.any():  # nothing to turn yet (warmup days, before any learning)
+        return changes[bad]
+    before = before / before.norm()
+    delta = -torch.sign(changes.mean(0))
+    delta = delta / delta.norm()
+
+    def deviation(row):
+        attacked = changes.clone()
+        attacked[bad] = row
+        after = aggregate(attacked)
+        return (before - after / (after.norm() + 1e-12)).norm()
+
+    row = max((before + lam * delta for lam in LAMBDAS), key=deviation)
+    size = changes.norm(dim=1).median()
+    row = max((row / row.norm() * size * zeta for zeta in ZETAS), key=deviation)
+    return row.expand(len(bad), -1)
+
+
+ATTACKS = {"none": None, "flip": sign_flip, "scale": scaling, "noise": noise, "normalized": normalized}
 
 
 class Server:
@@ -104,39 +142,52 @@ class Server:
             return
         changes = self.flat(agent) - self.global_model
         if self.attack:
-            changes[self.bad] = self.attack(changes[self.bad])
+            changes[self.bad] = self.attack(changes, self.bad, self.aggregate)
         self.global_model = self.global_model + self.aggregate(changes)
         self.send(agent)
         self.rounds += 1
 
 
-def check_aggregators():
-    """One made up round: 29 honest homes near +1, 7 bad homes sending -10."""
+def check():
+    """Made up rounds: 29 honest homes near +1, 7 bad homes."""
     torch.manual_seed(0)
     changes = 1 + 0.1 * torch.randn(36, 100)
-    changes[:7] = -10
-    assert fedavg(changes).mean() < 0  # the mean is pulled the wrong way
+    attacked = changes.clone()
+    attacked[:7] = -10
+    assert fedavg(attacked).mean() < 0  # the mean is pulled the wrong way
     for rule in (median, trimmed_mean, krum):
-        assert (rule(changes) - 1).abs().mean() < 0.15, rule.__name__
+        assert (rule(attacked) - 1).abs().mean() < 0.15, rule.__name__
+    # The Normalized attack turns the mean around with only 7 of 36 homes.
+    bad = torch.arange(7)
+    attacked[bad] = normalized(changes, bad, fedavg)
+    assert torch.cosine_similarity(fedavg(attacked), fedavg(changes), 0) < 0
 
 
 if __name__ == "__main__":
-    check_aggregators()
-    method = sys.argv[1] if len(sys.argv) > 1 else "fedavg"
-    days = int(sys.argv[2]) if len(sys.argv) > 2 else 60
-    seed = int(sys.argv[3]) if len(sys.argv) > 3 else 0  # training randomness and bad homes; the street stays the same
-    attack = sys.argv[4] if len(sys.argv) > 4 else "none"
-    share = float(sys.argv[5]) if len(sys.argv) > 5 else 0.2
+    check()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("method", choices=["fedavg", "fedprox", "median", "trimmed", "krum"])
+    ap.add_argument("days", type=int, nargs="?", default=60)
+    ap.add_argument("seed", type=int, nargs="?", default=0, help="training randomness and bad homes, not the street")
+    ap.add_argument("--attack", choices=ATTACKS, default="none")
+    ap.add_argument("--share", type=float, default=0.3, help="share of bad homes, and the share robust rules expect")
+    ap.add_argument("--last", action="store_true", help="keep the last policy, not the best on the held out weeks")
+    args = ap.parse_args()
+
     env = BatteryStreet()
-    bad = np.sort(np.random.default_rng(seed).choice(env.n, round(share * env.n), replace=False)) if ATTACK[attack] else np.array([], int)
+    attack = ATTACKS[args.attack]
+    bad = np.array([], int)
+    if attack:
+        bad = np.sort(np.random.default_rng(args.seed).choice(env.n, round(args.share * env.n), replace=False))
     # ponytail: mu = 0.01 is a common FedProx starting value. Tune it with a small sweep.
-    server = Server(AGGREGATE[method], mu=0.01 if method == "fedprox" else 0.0, attack=ATTACK[attack], bad=bad)
+    server = Server(aggregator(args.method, args.share), mu=0.01 if args.method == "fedprox" else 0.0,
+                    attack=attack, bad=bad)
     start = time.time()
-    agent = train(env, "local", days, seed=seed, server=server)
+    agent = train(env, "local", args.days, seed=args.seed, server=server, keep_best=not args.last)
     size = server.global_model.numel()
-    print(f"{method} SAC, seed {seed}, attack {attack} from homes {bad.tolist()}: trained on {days} days in "
-          f"{time.time() - start:.0f} s, {server.rounds} rounds, {size} shared values per home per round "
-          f"({size * 4 / 1024:.0f} KB)")
+    print(f"{args.method} SAC, seed {args.seed}, attack {args.attack} from homes {bad.tolist()}"
+          f"{', last policy' if args.last else ''}: trained on {args.days} days in {time.time() - start:.0f} s, "
+          f"{server.rounds} rounds, {size} shared values per home per round ({size * 4 / 1024:.0f} KB)")
 
     # Check: every home holds the same shared layers (the kept policy may be from an earlier round than the critics).
     assert (server.flat(agent) == server.flat(agent)[0]).all()

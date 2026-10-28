@@ -162,10 +162,12 @@ def validate(env, agent, mode):
     return score
 
 
-def train(env, mode="local", days=60, warmup_days=5, reward_scale=10.0, seed=0, server=None, valid_every=25):
+def train(env, mode="local", days=60, warmup_days=5, reward_scale=10.0, seed=0, server=None, valid_every=25,
+          keep_best=True):
     """Train on random 7 day blocks of the training years, carrying battery charge across midnight.
     A federated server (src/agents/federated.py) gets the agents at the start and at the end of every day.
-    Every valid_every days the policy is scored on the held out weeks, and the best policy is kept."""
+    Every valid_every days the policy is scored on the held out weeks, and the best policy is kept (the last one if
+    keep_best is False, as in the attack study, where keeping the best would hide damage done late in training)."""
     rng = np.random.default_rng(seed)
     torch.manual_seed(seed)
     n, per = layout(env, mode)
@@ -203,7 +205,7 @@ def train(env, mode="local", days=60, warmup_days=5, reward_scale=10.0, seed=0, 
                 best = (score, d + 1, copy.deepcopy(agent.actor.state_dict()))
             print(f"day {d + 1}: validation {score:.2f} $/home, alpha {agent.log_alpha.exp().mean():.3f}", flush=True)
             obs = env.reset(day, soc)  # back to where training was
-    if best[2]:
+    if keep_best and best[2]:
         agent.actor.load_state_dict(best[2])
         print(f"kept the policy from day {best[1]}", flush=True)
     return agent
