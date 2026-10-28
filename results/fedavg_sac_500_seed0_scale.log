@@ -1,0 +1,9 @@
+fedavg SAC, seed 0, attack scale from homes [1, 2, 8, 10, 16, 19, 25]: trained on 500 days in 4695 s, 500 rounds, 54400 shared values per home per round (212 KB)
+bill $/home/yr                              948.21
+curtailed kWh/home/yr                       123.48
+battery cycles/yr                           243.86
+half hours over 253 V %                       0.00
+max V                                       250.50
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    13304.08
+midday export limit kW (median)               5.92

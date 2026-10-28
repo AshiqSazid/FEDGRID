@@ -1,0 +1,9 @@
+krum SAC, seed 0, attack scale from homes [1, 2, 8, 10, 16, 19, 25]: trained on 500 days in 4384 s, 500 rounds, 54400 shared values per home per round (212 KB)
+bill $/home/yr                             1055.02
+curtailed kWh/home/yr                       190.32
+battery cycles/yr                           172.06
+half hours over 253 V %                       0.00
+max V                                       250.70
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    10558.26
+midday export limit kW (median)               5.92

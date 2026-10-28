@@ -1,0 +1,9 @@
+local SAC, seed 2: trained on 500 days in 5238 s
+bill $/home/yr                             1102.84
+curtailed kWh/home/yr                       184.01
+battery cycles/yr                           182.66
+half hours over 253 V %                       0.00
+max V                                       251.76
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    11639.47
+midday export limit kW (median)               5.92

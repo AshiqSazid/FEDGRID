@@ -1,0 +1,9 @@
+trimmed SAC, seed 0, attack none from homes []: trained on 500 days in 4584 s, 500 rounds, 54400 shared values per home per round (212 KB)
+bill $/home/yr                              934.54
+curtailed kWh/home/yr                       130.58
+battery cycles/yr                           275.23
+half hours over 253 V %                       0.00
+max V                                       251.96
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    12826.48
+midday export limit kW (median)               5.92
