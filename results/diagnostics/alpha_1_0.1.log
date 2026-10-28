@@ -1,0 +1,22 @@
+day 25: validation 367.55 $/home, alpha 0.104
+day 50: validation 367.51 $/home, alpha 0.083
+day 75: validation 367.77 $/home, alpha 0.064
+day 100: validation 368.06 $/home, alpha 0.049
+day 125: validation 367.88 $/home, alpha 0.045
+day 150: validation 367.66 $/home, alpha 0.040
+day 175: validation 367.92 $/home, alpha 0.039
+day 200: validation 367.60 $/home, alpha 0.042
+day 225: validation 367.95 $/home, alpha 0.045
+day 250: validation 367.92 $/home, alpha 0.042
+day 275: validation 367.88 $/home, alpha 0.043
+day 300: validation 367.73 $/home, alpha 0.044
+day 325: validation 367.99 $/home, alpha 0.043
+day 350: validation 368.11 $/home, alpha 0.042
+day 375: validation 367.78 $/home, alpha 0.043
+day 400: validation 368.03 $/home, alpha 0.044
+day 425: validation 368.13 $/home, alpha 0.045
+day 450: validation 367.95 $/home, alpha 0.044
+day 475: validation 368.18 $/home, alpha 0.045
+day 500: validation 368.12 $/home, alpha 0.044
+kept the policy from day 50
+seed 1 alpha start 0.1: test bill 1454.45, curtailed 537.7, cycles 1.5

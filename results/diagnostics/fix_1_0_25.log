@@ -1,0 +1,22 @@
+day 25: validation 419.01 $/home
+day 50: validation 367.41 $/home
+day 75: validation 367.58 $/home
+day 100: validation 367.16 $/home
+day 125: validation 367.35 $/home
+day 150: validation 363.25 $/home
+day 175: validation 355.05 $/home
+day 200: validation 356.11 $/home
+day 225: validation 361.37 $/home
+day 250: validation 330.98 $/home
+day 275: validation 312.00 $/home
+day 300: validation 319.87 $/home
+day 325: validation 294.83 $/home
+day 350: validation 277.70 $/home
+day 375: validation 281.73 $/home
+day 400: validation 271.00 $/home
+day 425: validation 272.29 $/home
+day 450: validation 266.31 $/home
+day 475: validation 267.40 $/home
+day 500: validation 252.94 $/home
+kept the policy from day 500
+seed 1 shaping False warmup 25: test bill 1061.84, curtailed 115.7, cycles 252.3

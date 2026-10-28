@@ -1,0 +1,30 @@
+day 25: validation 353.79 $/home, alpha 0.767
+day 50: validation 352.83 $/home, alpha 0.532
+day 75: validation 339.53 $/home, alpha 0.374
+day 100: validation 278.76 $/home, alpha 0.268
+day 125: validation 270.73 $/home, alpha 0.194
+day 150: validation 253.12 $/home, alpha 0.141
+day 175: validation 244.88 $/home, alpha 0.103
+day 200: validation 254.84 $/home, alpha 0.077
+day 225: validation 241.95 $/home, alpha 0.060
+day 250: validation 244.11 $/home, alpha 0.048
+day 275: validation 235.59 $/home, alpha 0.040
+day 300: validation 232.16 $/home, alpha 0.035
+day 325: validation 223.30 $/home, alpha 0.033
+day 350: validation 224.47 $/home, alpha 0.034
+day 375: validation 231.53 $/home, alpha 0.031
+day 400: validation 229.21 $/home, alpha 0.033
+day 425: validation 219.19 $/home, alpha 0.034
+day 450: validation 225.89 $/home, alpha 0.034
+day 475: validation 228.30 $/home, alpha 0.034
+day 500: validation 224.51 $/home, alpha 0.037
+kept the policy from day 425
+central SAC, seed 1: trained on 500 days in 301 s
+bill $/home/yr                              918.88
+curtailed kWh/home/yr                       102.71
+battery cycles/yr                           289.78
+half hours over 253 V %                       0.00
+max V                                       250.75
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    14585.05
+midday export limit kW (median)               5.92
