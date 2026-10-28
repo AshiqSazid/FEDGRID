@@ -1,0 +1,30 @@
+day 1: validation 247.30 $/home, alpha 1.000
+day 25: validation 349.89 $/home, alpha 0.780
+day 50: validation 346.58 $/home, alpha 0.543
+day 75: validation 313.00 $/home, alpha 0.381
+day 100: validation 279.71 $/home, alpha 0.272
+day 125: validation 271.31 $/home, alpha 0.197
+day 150: validation 272.28 $/home, alpha 0.146
+day 175: validation 265.56 $/home, alpha 0.109
+day 200: validation 261.56 $/home, alpha 0.085
+day 225: validation 254.01 $/home, alpha 0.069
+day 250: validation 251.74 $/home, alpha 0.060
+day 275: validation 243.22 $/home, alpha 0.056
+day 300: validation 247.79 $/home, alpha 0.055
+day 325: validation 249.77 $/home, alpha 0.054
+day 350: validation 247.31 $/home, alpha 0.053
+day 375: validation 245.83 $/home, alpha 0.053
+day 400: validation 241.19 $/home, alpha 0.052
+day 425: validation 242.88 $/home, alpha 0.053
+day 450: validation 245.34 $/home, alpha 0.053
+day 475: validation 244.37 $/home, alpha 0.055
+day 500: validation 242.53 $/home, alpha 0.055
+krum SAC, seed 0, attack flip from homes [0, 1, 2, 5, 7, 9, 14, 17, 22, 23, 28], last policy: trained on 500 days in 4909 s, 500 rounds, 54400 shared values per home per round (212 KB)
+bill $/home/yr                             1012.05
+curtailed kWh/home/yr                       125.32
+battery cycles/yr                           251.31
+half hours over 253 V %                       0.00
+max V                                       248.97
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    13023.59
+midday export limit kW (median)               5.92

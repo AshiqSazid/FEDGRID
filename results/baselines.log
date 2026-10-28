@@ -1,0 +1,12 @@
+/home/moodifai/Downloads/fedgrid/src/baselines/mpc.py:47: UserWarning: The problem includes expressions that don't support CPP backend. Defaulting to the SCIPY backend for canonicalization.
+  constraints).solve(solver=cp.HIGHS)
+environment reproduces the MPC plan
+                                           idle  self consumption  MPC (best case)
+bill $/home/yr                          1457.78            952.96           590.95
+curtailed kWh/home/yr                    537.74            473.18            62.87
+battery cycles/yr                          0.00             77.45           213.36
+half hours over 253 V %                    0.00              0.00             0.00
+max V                                    252.92            252.92           252.93
+export in MSL half hours kWh               0.00              0.00             0.00
+battery charging in MSL half hours kWh     0.00           1971.09         14942.07
+midday export limit kW (median)            5.92              5.92             5.92
