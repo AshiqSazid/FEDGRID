@@ -20,7 +20,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from env.battery_env import TEST, TRAIN, BatteryStreet, evaluate
+from env.battery_env import TEST, TRAIN, BatteryStreet, evaluate, self_consumption
 
 
 class Linear(nn.Module):
@@ -50,6 +50,8 @@ class SAC:
     # ponytail: hidden=128 and batch=128 keep 36 agents trainable on a laptop CPU. Try 256 on a bigger machine.
     def __init__(self, n, obs_dim, hidden=128, lr=3e-4, gamma=0.99, tau=0.005, batch=128):
         self.actor = Net(n, obs_dim, 2, hidden)  # mean and log std of one action
+        nn.init.zeros_(self.actor.local.w)  # starts at mean 0, which is the self consumption rule
+        nn.init.zeros_(self.actor.local.b)
         self.q = nn.ModuleList([Net(n, obs_dim + 1, 1, hidden) for _ in range(2)])
         self.q_target = copy.deepcopy(self.q)
         self.log_alpha = torch.zeros(n, 1, 1, requires_grad=True)
@@ -132,36 +134,60 @@ class Buffer:
         return self.o[:, idx], self.a[:, idx], self.r[:, idx], self.o2[:, idx], self.d[:, idx]
 
 
+# The training years in 7 day blocks. Every 8th block (13 weeks across all seasons) is held out to pick the best policy,
+# so the test year is never used for any choice.
+WEEKS = pd.date_range(TRAIN[0], pd.Timestamp(TRAIN[1]) - pd.Timedelta(days=7), freq="7D")
+VALID_WEEKS = WEEKS[4::8]
+TRAIN_WEEKS = WEEKS.drop(VALID_WEEKS)
+
+
+def battery_action(env, a):
+    """The agent learns a correction to the self consumption rule (residual policy learning, Silver et al. 2018).
+    Zero means follow the rule. With idle as the zero action, some seeds never learned to charge."""
+    return np.clip(self_consumption(env) + a, -1, 1)
+
+
 def layout(env, mode):
     """(agents, homes per agent): local has one agent per home, central has one agent for all homes."""
     return (env.n, 1) if mode == "local" else (1, env.n)
 
 
-def train(env, mode="local", days=60, warmup_days=5, block_days=7, reward_scale=10.0, seed=0, server=None):
+def validate(env, agent, mode):
+    """Bill plus the curtailment penalty per home over the held out weeks, each starting half full. Lower is better.
+    In a real federation each home would score its own held out weeks and send back one number."""
+    act, score = policy(agent, env, mode), 0.0
+    for week in VALID_WEEKS:
+        r = evaluate(env, act, week, week + pd.Timedelta(days=7))
+        score += r["bill $/home/yr"] + env.w_curtail * r["curtailed kWh/home/yr"]
+    return score
+
+
+def train(env, mode="local", days=60, warmup_days=5, reward_scale=10.0, seed=0, server=None, valid_every=25):
     """Train on random 7 day blocks of the training years, carrying battery charge across midnight.
-    A federated server (src/agents/federated.py) gets the agents at the start and at the end of every day."""
+    A federated server (src/agents/federated.py) gets the agents at the start and at the end of every day.
+    Every valid_every days the policy is scored on the held out weeks, and the best policy is kept."""
     rng = np.random.default_rng(seed)
     torch.manual_seed(seed)
     n, per = layout(env, mode)
     shape = lambda x: torch.as_tensor(np.asarray(x), dtype=torch.float32).reshape(n, per, -1)
-    train_days = pd.date_range(*TRAIN, freq="D", inclusive="left")
-    day = train_days[rng.integers(len(train_days) - block_days)]
+    day = TRAIN_WEEKS[rng.integers(len(TRAIN_WEEKS))]
     obs = env.reset(day)
     agent, buf = SAC(n, obs.shape[1]), Buffer(n, days * 48 * per, obs.shape[1])
     if server:
         server.start(agent)
+    best = (np.inf, 0, None)
     for d in range(days):
         for _ in range(48):
             o = shape(obs)
             a = torch.rand(n, per, 1) * 2 - 1 if d < warmup_days else agent.act(o)
-            obs2, r, done, _ = env.step(a.reshape(-1).numpy())
+            obs2, r, done, _ = env.step(battery_action(env, a.reshape(-1).numpy()))
             jump = 0.0
-            if done and (d + 1) % block_days:  # same block: the next day follows on
+            if done and (d + 1) % 7:  # same block: the next day follows on
                 day += pd.Timedelta(days=1)
                 obs2 = env.reset(day, env.soc)
             elif done:  # new block on a random day, so don't bootstrap across the jump
                 jump = 1.0
-                day = train_days[rng.integers(len(train_days) - block_days)]
+                day = TRAIN_WEEKS[rng.integers(len(TRAIN_WEEKS))]
                 obs2 = env.reset(day)
             buf.add(o, a, shape(reward_scale * r), shape(obs2), torch.full((n, per, 1), jump))
             if d >= warmup_days:
@@ -169,6 +195,17 @@ def train(env, mode="local", days=60, warmup_days=5, block_days=7, reward_scale=
             obs = obs2
         if server:
             server.end_of_day(agent, d)
+        # Day 1 is warmup, so the first score is the rule itself and the kept policy never scores worse than the rule
+        if d == 0 or (d + 1) % valid_every == 0:
+            soc = env.soc.copy()
+            score = validate(env, agent, mode)
+            if score < best[0]:
+                best = (score, d + 1, copy.deepcopy(agent.actor.state_dict()))
+            print(f"day {d + 1}: validation {score:.2f} $/home, alpha {agent.log_alpha.exp().mean():.3f}", flush=True)
+            obs = env.reset(day, soc)  # back to where training was
+    if best[2]:
+        agent.actor.load_state_dict(best[2])
+        print(f"kept the policy from day {best[1]}", flush=True)
     return agent
 
 
@@ -177,7 +214,7 @@ def policy(agent, env, mode):
 
     def act(env):
         o = torch.as_tensor(env.observe(), dtype=torch.float32).reshape(n, per, -1)
-        return agent.act(o, deterministic=True).reshape(-1).numpy()
+        return battery_action(env, agent.act(o, deterministic=True).reshape(-1).numpy())
     return act
 
 
