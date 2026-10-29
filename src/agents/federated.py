@@ -374,6 +374,7 @@ if __name__ == "__main__":
         torch.manual_seed(args.seed + 1)
         reference = Learner(BatteryStreet(feeder=args.feeder, exclude=env.street.homes), "central", args.days,
                             args.seed + 1)
+        assert not set(reference.env.street.homes) & set(env.street.homes), "a home is in both streets"
     # ponytail: 3 solar size bands, thirds of the street, as a home might state at sign up. Try 2 or 4 bands.
     pv = env.street.pv_kwp
     bands = torch.as_tensor(np.digitize(pv, np.quantile(pv, [1 / 3, 2 / 3])))
