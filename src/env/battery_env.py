@@ -28,8 +28,8 @@ TEST = ("2012-07-01", "2013-07-01")
 class BatteryStreet:
     def __init__(self, seed=0, battery_kwh_per_kwp=3.0, battery_kw=5.0, efficiency=0.9, max_export_kw=10.0,
                  min_export_kw=1.5, doe_margin_v=1.0, msl_export_kw=0.0, msl_mw=MSL1_ONEROUS_MW, price="tariff",
-                 supply_pu=1.0, w_curtail=0.0866, w_breach=1.0, w_voltage=0.1):
-        s = self.street = Street(seed)
+                 supply_pu=1.0, w_curtail=0.0866, w_breach=1.0, w_voltage=0.1, feeder="L", exclude=()):
+        s = self.street = Street(seed, feeder=feeder, exclude=exclude)
         dss.Vsources.First()
         dss.Vsources.PU(supply_pu)
         self.n = len(s.homes)
@@ -135,7 +135,8 @@ class BatteryStreet:
         cost = DT * (np.maximum(net, 0) * self.buy[t] - np.maximum(-net, 0) * self.sell[t])
         v_out = np.maximum(self.volts - V_MAX, 0) + np.maximum(V_MIN - self.volts, 0)
         reward = -cost - self.w_curtail * DT * curtail - self.w_breach * DT * breach - self.w_voltage * v_out
-        info = dict(cost=cost, curtail_kwh=DT * curtail, battery_kw=p, net_kw=net, volts=self.volts, msl=self.msl[t])
+        info = dict(cost=cost, curtail_kwh=DT * curtail, battery_kw=p, net_kw=net, volts=self.volts, msl=self.msl[t],
+                    transformer=s.transformer_kva())
         self.t += 1
         return self.observe() if self.t < self.end else None, reward, self.t == self.end, info
 
@@ -152,10 +153,12 @@ def self_consumption(env):
     return np.clip((s.pv_kw[t] - s.load_kw[t]) / env.p_max, 0, 1)
 
 
-def evaluate(env, policy, start, end):
+def evaluate(env, policy, start, end, honest=None):
+    """honest: homes to report a separate bill for, such as the honest homes in an attack."""
     days = pd.date_range(start, end, freq="D", inclusive="left")
-    cost = curtail = throughput = msl_absorbed = 0.0
-    over, vmax, msl_export, limits = [], 0.0, 0.0, []
+    curtail = throughput = msl_absorbed = 0.0
+    cost = np.zeros(env.n)
+    over, vmax, msl_export, limits, loading = [], 0.0, 0.0, [], 0.0
     soc = None  # first day starts half full, then charge carries over from day to day
     for day in days:
         env.reset(day, soc)
@@ -163,21 +166,25 @@ def evaluate(env, policy, start, end):
         done = False
         while not done:
             _, _, done, i = env.step(policy(env))
-            cost += i["cost"].sum()
+            cost += i["cost"]
             curtail += i["curtail_kwh"].sum()
             throughput += np.abs(i["battery_kw"]).sum() * DT
             over.append((i["volts"] > V_MAX).any())
             vmax = max(vmax, i["volts"].max())
+            loading = max(loading, i["transformer"][0] / i["transformer"][1])
             if i["msl"]:
                 msl_export += np.maximum(-i["net_kw"], 0).sum() * DT
                 msl_absorbed += np.maximum(i["battery_kw"], 0).sum() * DT
         soc = env.soc
     supply = TARIFF_12D["2025-26"]["supply_per_day"] * len(days)
     midday = np.stack(limits)[:, 20:28]  # 10am to 2pm
-    return {"bill $/home/yr": cost / env.n + supply, "curtailed kWh/home/yr": curtail / env.n,
+    honest = np.ones(env.n, bool) if honest is None else honest
+    return {"bill $/home/yr": cost.mean() + supply, "bill honest homes $/home/yr": cost[honest].mean() + supply,
+            "curtailed kWh/home/yr": curtail / env.n,
             "battery cycles/yr": throughput / 2 / env.capacity.sum(), "half hours over 253 V %": 100 * np.mean(over),
             "max V": vmax, "export in MSL half hours kWh": msl_export,
-            "battery charging in MSL half hours kWh": msl_absorbed, "midday export limit kW (median)": np.median(midday)}
+            "battery charging in MSL half hours kWh": msl_absorbed, "midday export limit kW (median)": np.median(midday),
+            "transformer peak loading %": 100 * loading}
 
 
 if __name__ == "__main__":

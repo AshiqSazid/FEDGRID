@@ -22,7 +22,7 @@ import torch.nn.functional as F
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from env.battery_env import TEST, TRAIN, BatteryStreet, evaluate, self_consumption
 
-# Networks and replay buffers go on a GPU when there is one (Colab). The street simulation always runs on the CPU.
+# Networks and replay buffers go on a GPU when there is one. The street simulation always runs on the CPU.
 if torch.cuda.is_available():
     torch.set_default_device("cuda")
 
@@ -166,39 +166,72 @@ def validate(env, agent, mode):
     return score
 
 
+class Learner:
+    """SAC learning on random 7 day blocks of the training years, one day at a time, carrying battery charge across
+    midnight. A federated server also runs one on its own reference street (src/agents/federated.py).
+
+    poison = (homes, "meter" or "reward") for the data poisoning attacks, local mode only: those homes' meters report
+    load and solar swapped, or their rewards have the wrong sign. Only what their agents see changes, not the street."""
+
+    def __init__(self, env, mode, days, seed, warmup_days=5, reward_scale=10.0, poison=None):
+        assert poison is None or mode == "local"
+        self.env, self.warmup_days, self.reward_scale = env, warmup_days, reward_scale
+        self.rng = np.random.default_rng(seed)
+        self.n, self.per = layout(env, mode)
+        self.day = TRAIN_WEEKS[self.rng.integers(len(TRAIN_WEEKS))]
+        self.obs = env.reset(self.day)
+        self.agent = SAC(self.n, self.obs.shape[1])
+        self.buf = Buffer(self.n, days * 48 * self.per, self.obs.shape[1])
+        self.bad, self.poison = (torch.as_tensor(poison[0]), poison[1]) if poison else (None, None)
+        self.d = 0
+
+    def shape(self, x):
+        return torch.as_tensor(np.asarray(x), dtype=torch.float32).reshape(self.n, self.per, -1)
+
+    def seen(self, obs):
+        o = self.shape(obs)
+        if self.poison == "meter":
+            o[self.bad, :, 1:3] = o[self.bad, :, 1:3].flip(-1)  # load and solar readings swapped
+        return o
+
+    def train_day(self):
+        env, agent, n, per, d = self.env, self.agent, self.n, self.per, self.d
+        for _ in range(48):
+            o = self.seen(self.obs)
+            a = torch.rand(n, per, 1) * 2 - 1 if d < self.warmup_days else agent.act(o)
+            obs2, r, done, _ = env.step(battery_action(env, a.reshape(-1).cpu().numpy()))
+            jump = 0.0
+            if done and (d + 1) % 7:  # same block: the next day follows on
+                self.day += pd.Timedelta(days=1)
+                obs2 = env.reset(self.day, env.soc)
+            elif done:  # new block on a random day, so don't bootstrap across the jump
+                jump = 1.0
+                self.day = TRAIN_WEEKS[self.rng.integers(len(TRAIN_WEEKS))]
+                obs2 = env.reset(self.day)
+            r = self.shape(self.reward_scale * r)
+            if self.poison == "reward":
+                r[self.bad] = -r[self.bad]
+            self.buf.add(o, a, r, self.seen(obs2), torch.full((n, per, 1), jump))
+            if d >= self.warmup_days:
+                agent.update(*self.buf.sample(agent.batch))
+            self.obs = obs2
+        self.d += 1
+
+
 def train(env, mode="local", days=60, warmup_days=5, reward_scale=10.0, seed=0, server=None, valid_every=25,
-          keep_best=True):
-    """Train on random 7 day blocks of the training years, carrying battery charge across midnight.
+          keep_best=True, poison=None):
+    """Train on random 7 day blocks of the training years (see Learner).
     A federated server (src/agents/federated.py) gets the agents at the start and at the end of every day.
     Every valid_every days the policy is scored on the held out weeks, and the best policy is kept (the last one if
     keep_best is False, as in the attack study, where keeping the best would hide damage done late in training)."""
-    rng = np.random.default_rng(seed)
     torch.manual_seed(seed)
-    n, per = layout(env, mode)
-    shape = lambda x: torch.as_tensor(np.asarray(x), dtype=torch.float32).reshape(n, per, -1)
-    day = TRAIN_WEEKS[rng.integers(len(TRAIN_WEEKS))]
-    obs = env.reset(day)
-    agent, buf = SAC(n, obs.shape[1]), Buffer(n, days * 48 * per, obs.shape[1])
+    learner = Learner(env, mode, days, seed, warmup_days, reward_scale, poison)
+    agent = learner.agent
     if server:
         server.start(agent)
     best = (np.inf, 0, None)
     for d in range(days):
-        for _ in range(48):
-            o = shape(obs)
-            a = torch.rand(n, per, 1) * 2 - 1 if d < warmup_days else agent.act(o)
-            obs2, r, done, _ = env.step(battery_action(env, a.reshape(-1).cpu().numpy()))
-            jump = 0.0
-            if done and (d + 1) % 7:  # same block: the next day follows on
-                day += pd.Timedelta(days=1)
-                obs2 = env.reset(day, env.soc)
-            elif done:  # new block on a random day, so don't bootstrap across the jump
-                jump = 1.0
-                day = TRAIN_WEEKS[rng.integers(len(TRAIN_WEEKS))]
-                obs2 = env.reset(day)
-            buf.add(o, a, shape(reward_scale * r), shape(obs2), torch.full((n, per, 1), jump))
-            if d >= warmup_days:
-                agent.update(*buf.sample(agent.batch))
-            obs = obs2
+        learner.train_day()
         if server:
             server.end_of_day(agent, d)
         # Day 1 is warmup, so the first score is the rule itself and the kept policy never scores worse than the rule
@@ -208,7 +241,7 @@ def train(env, mode="local", days=60, warmup_days=5, reward_scale=10.0, seed=0, 
             if score < best[0]:
                 best = (score, d + 1, copy.deepcopy(agent.actor.state_dict()))
             print(f"day {d + 1}: validation {score:.2f} $/home, alpha {agent.log_alpha.exp().mean():.3f}", flush=True)
-            obs = env.reset(day, soc)  # back to where training was
+            learner.obs = env.reset(learner.day, soc)  # back to where training was
     if keep_best and best[2]:
         agent.actor.load_state_dict(best[2])
         print(f"kept the policy from day {best[1]}", flush=True)

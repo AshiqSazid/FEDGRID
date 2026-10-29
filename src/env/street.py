@@ -1,4 +1,4 @@
-"""Feeder L street: one Ausgrid home on each of its 36 single phase loads, one OpenDSS power flow per half hour.
+"""A CSIRO feeder street (L by default): one Ausgrid home on each load, one OpenDSS power flow per half hour.
 
 No batteries yet. Each home's net power (load minus solar) is set on its load, so a negative value exports.
 Running this file simulates the 2012-13 test year and reports how often the street goes over voltage.
@@ -10,18 +10,21 @@ import opendssdirect as dss
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-FEEDER = ROOT / "data/raw/csiro/RepresentativeLVNetworks-master/data/L/Master.dss"
+FEEDERS = ROOT / "data/raw/csiro/RepresentativeLVNetworks-master/data"
 PROC = ROOT / "data/processed"
 V_MIN, V_MAX = 216.2, 253.0  # AS 61000.3.100 limits for 230 V (-6% / +10%)
 KVAR_PER_KW = 0.203  # household load at power factor 0.98, as in the feeder's own load data. Solar runs at unity.
 
 
 class Street:
-    def __init__(self, seed=0, pv_median_kwp=6.6, pv_max_kwp=10.0):
-        dss.Text.Command(f'Redirect "{FEEDER}"')
+    def __init__(self, seed=0, pv_median_kwp=6.6, pv_max_kwp=10.0, feeder="L", exclude=()):
+        """exclude: Ausgrid homes not to use, so a reference street can be kept apart from the federation's street."""
+        dss.Text.Command(f'Redirect "{FEEDERS / feeder / "Master.dss"}"')
         self.loads = dss.Loads.AllNames()
         customers = pd.read_csv(PROC / "ausgrid_customers.csv", index_col=0)
         clean = customers.index[customers["clean"]]
+        if len(exclude):
+            clean = clean[~clean.isin(exclude)]
         self.homes = np.random.default_rng(seed).choice(clean, len(self.loads), replace=False)
 
         # ponytail: modern size = 2010 era size scaled so the median is pv_median_kwp, capped at pv_max_kwp.
@@ -51,6 +54,13 @@ class Street:
             dss.Circuit.SetActiveElement(f"Load.{name}")
             volts.append(dss.CktElement.VoltagesMagAng()[0])
         return np.array(volts)
+
+    def transformer_kva(self):
+        """Apparent power through the street's transformer at the last power flow, and its rating, in kVA."""
+        if not dss.Transformers.First():
+            return np.nan, np.nan
+        pq = np.array(dss.CktElement.Powers())[:2 * dss.CktElement.NumConductors()]  # first terminal, P and Q
+        return np.hypot(pq[0::2].sum(), pq[1::2].sum()), dss.Transformers.kVA()
 
     def run(self, start, end):
         steps = np.flatnonzero((self.time >= start) & (self.time < end))
