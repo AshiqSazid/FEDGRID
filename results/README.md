@@ -8,6 +8,7 @@ All results are on the 2012-13 test year. Feeder L has 36 homes and every run tr
 Each log ends with the full set of test metrics. To rerun:
 - the training runs: `./run_experiments.sh seeds` and `./run_experiments.sh attacks` (runs whose log already exists are skipped);
 - idle, the rule and MPC: `.venv/bin/python src/baselines/mpc.py`, which writes `baselines.log`.
+- the tables with 95% confidence intervals: `.venv/bin/python src/summarize.py > results/tables.md`.
 
 `before_residual/` holds the old runs from before residual learning and held-out week selection were added. They are kept only for the record. Don't use them.
 
