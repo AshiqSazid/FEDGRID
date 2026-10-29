@@ -3,3 +3,4 @@ opendssdirect.py
 cvxpy
 # CPU build is much smaller: pip install torch --index-url https://download.pytorch.org/whl/cpu
 torch
+scikit-learn
