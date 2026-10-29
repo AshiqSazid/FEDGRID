@@ -22,6 +22,10 @@ import torch.nn.functional as F
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from env.battery_env import TEST, TRAIN, BatteryStreet, evaluate, self_consumption
 
+# Networks and replay buffers go on a GPU when there is one (Colab). The street simulation always runs on the CPU.
+if torch.cuda.is_available():
+    torch.set_default_device("cuda")
+
 
 class Linear(nn.Module):
     """n independent linear layers in one batched matrix multiply. Input shape (n, batch, i)."""
@@ -182,7 +186,7 @@ def train(env, mode="local", days=60, warmup_days=5, reward_scale=10.0, seed=0, 
         for _ in range(48):
             o = shape(obs)
             a = torch.rand(n, per, 1) * 2 - 1 if d < warmup_days else agent.act(o)
-            obs2, r, done, _ = env.step(battery_action(env, a.reshape(-1).numpy()))
+            obs2, r, done, _ = env.step(battery_action(env, a.reshape(-1).cpu().numpy()))
             jump = 0.0
             if done and (d + 1) % 7:  # same block: the next day follows on
                 day += pd.Timedelta(days=1)
@@ -216,7 +220,7 @@ def policy(agent, env, mode):
 
     def act(env):
         o = torch.as_tensor(env.observe(), dtype=torch.float32).reshape(n, per, -1)
-        return battery_action(env, agent.act(o, deterministic=True).reshape(-1).numpy())
+        return battery_action(env, agent.act(o, deterministic=True).reshape(-1).cpu().numpy())
     return act
 
 

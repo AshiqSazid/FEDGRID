@@ -81,7 +81,7 @@ def flame(changes, global_model):
     length over all homes, averaged, and Gaussian noise with sd lambda * that median is added."""
     n = len(changes)
     unit = F.normalize((global_model + changes).double(), dim=1)  # float64: models differ only slightly in angle
-    distance = (1 - unit @ unit.T).clamp_min(0).numpy()
+    distance = (1 - unit @ unit.T).clamp_min(0).cpu().numpy()
     labels = HDBSCAN(min_cluster_size=n // 2 + 1, min_samples=1, metric="precomputed",
                      allow_single_cluster=True, copy=False).fit_predict(distance)
     admitted = torch.as_tensor(labels >= 0)

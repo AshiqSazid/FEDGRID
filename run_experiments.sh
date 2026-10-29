@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Every training run behind the results, 4 at a time with one CPU thread each (about 80 minutes per 36 home run on a
 # 4 core laptop). A run whose log already exists in results/ is skipped, so rerun this after an interruption.
-# Usage: ./run_experiments.sh [seeds|attacks]   (both when left out)
+# Usage: [JOBS=4] [PYTHON=.venv/bin/python] ./run_experiments.sh [seeds|attacks]   (both when left out)
+# JOBS is how many runs go at once. On Colab: JOBS=2 PYTHON=python
 # Log name: <method>_sac_<days>_seed<seed>[_<attack>_share<percent bad>]. The seed changes training randomness (and
 # which homes are bad), never the street.
 set -u
@@ -37,5 +38,5 @@ attack_run() {  # method, attack, percent of homes bad, seed (0 if left out)
   echo "${1}_sac_500_seed${4:-0}_${2}_share$3 src/agents/federated.py $1 500 ${4:-0} --attack $2 --share 0.$3 --last"
 }
 
-{ [ "${1:-all}" = attacks ] || seeds; [ "${1:-all}" = seeds ] || attacks; } | xargs -P 4 -L 1 sh -c 'log=results/$0.log; [ -s "$log" ] ||
-  { .venv/bin/python "$@" > "$log.tmp" 2>&1 && mv "$log.tmp" "$log" && echo "done $0" || echo "FAILED $0, see $log.tmp"; }'; exit  # exit before bash reads on, so editing this file mid run is safe
+{ [ "${1:-all}" = attacks ] || seeds; [ "${1:-all}" = seeds ] || attacks; } | xargs -P "${JOBS:-4}" -L 1 sh -c 'log=results/$0.log; [ -s "$log" ] ||
+  { "${PYTHON:-.venv/bin/python}" "$@" > "$log.tmp" 2>&1 && mv "$log.tmp" "$log" && echo "done $0" || echo "FAILED $0, see $log.tmp"; }'; exit  # exit before bash reads on, so editing this file mid run is safe
