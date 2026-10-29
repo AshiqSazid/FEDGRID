@@ -2,7 +2,9 @@
 .venv/
 __pycache__/
 
-# Private: chat exports and dated personal notes
+# Private: chat exports, dated notes, daily plans and the dossier
 fedgridrl-Claude-*.pdf
 20[0-9][0-9]-[0-9][0-9]-[0-9][0-9].md
 *.log.tmp
+plan20[0-9][0-9]-[0-9][0-9]-[0-9][0-9].md
+DOSSIER.md
