@@ -1,0 +1,34 @@
+day 1: validation 247.30 $/home, alpha 1.000
+day 25: validation 351.58 $/home, alpha 0.784
+day 50: validation 356.70 $/home, alpha 0.543
+day 75: validation 354.35 $/home, alpha 0.385
+day 100: validation 344.28 $/home, alpha 0.276
+day 125: validation 334.66 $/home, alpha 0.202
+day 150: validation 322.07 $/home, alpha 0.149
+day 175: validation 321.36 $/home, alpha 0.112
+day 200: validation 309.40 $/home, alpha 0.087
+day 225: validation 310.12 $/home, alpha 0.068
+day 250: validation 308.69 $/home, alpha 0.056
+day 275: validation 288.70 $/home, alpha 0.051
+day 300: validation 300.32 $/home, alpha 0.046
+day 325: validation 296.98 $/home, alpha 0.045
+day 350: validation 296.38 $/home, alpha 0.043
+day 375: validation 289.70 $/home, alpha 0.043
+day 400: validation 278.40 $/home, alpha 0.045
+day 425: validation 276.40 $/home, alpha 0.048
+day 450: validation 263.28 $/home, alpha 0.049
+day 475: validation 262.99 $/home, alpha 0.050
+day 500: validation 259.73 $/home, alpha 0.053
+krum SAC, seed 1, attack flip from homes [1, 4, 8, 10, 12, 13, 21, 26, 27, 31, 35], last policy: trained on 500 days in 4704 s, 500 rounds, 54400 shared values per home per round (212 KB)
+rejected: honest homes 96.0% of their changes (most rejected home 100.0%), bad homes 100.0%, delayed honest changes 0.0% of 0
+rejected share by home (solar kWp): 1.00 (4.5), 1.00 (6.6), 1.00 (6.7), 1.00 (6.2), 1.00 (4.6), 1.00 (6.5), 1.00 (9.0), 1.00 (4.5), 1.00 (6.7), 0.03 (6.0), 1.00 (8.8), 0.98 (6.6), 1.00 (4.4), 1.00 (10.0), 1.00 (4.5), 1.00 (10.0), 1.00 (7.3), 1.00 (4.5), 1.00 (4.8), 1.00 (4.5), 0.99 (10.0), 1.00 (7.9), 1.00 (6.6), 1.00 (6.9), 1.00 (4.4), 1.00 (6.6), 1.00 (4.5), 1.00 (6.7), 1.00 (4.5), 0.99 (6.6), 1.00 (4.8), 1.00 (4.4), 1.00 (9.0), 1.00 (6.6), 1.00 (4.8), 1.00 (4.8)
+bill $/home/yr                            1061.43
+bill honest homes $/home/yr               1044.82
+curtailed kWh/home/yr                      373.26
+battery cycles/yr                          161.33
+half hours over 253 V %                      0.00
+max V                                      250.49
+export in MSL half hours kWh                 0.00
+battery charging in MSL half hours kWh    3819.32
+midday export limit kW (median)              5.92
+transformer peak loading %                  58.51

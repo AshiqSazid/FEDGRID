@@ -364,9 +364,10 @@ if __name__ == "__main__":
     args = ap.parse_args()
 
     env = BatteryStreet(feeder=args.feeder)
-    bad = np.array([], int)
-    if args.attack != "none":
-        bad = np.sort(np.random.default_rng(args.seed).choice(env.n, round(args.share * env.n), replace=False))
+    # The homes an attack at this seed and share would take. With no attack they stay honest, but the bill below still
+    # leaves them out, so damage can compare the same homes.
+    picked = np.sort(np.random.default_rng(args.seed).choice(env.n, round(args.share * env.n), replace=False))
+    bad = picked if args.attack != "none" else np.array([], int)
     reference = None
     if args.method == "fltrust" or (args.method == "fedgrid" and args.without != "trust"):
         # The server's own data: a street of other Ausgrid homes on the same feeder, outside the federation (the
@@ -402,5 +403,5 @@ if __name__ == "__main__":
 
     # Check: every home holds the same shared layers (the kept policy may be from an earlier round than the critics).
     assert (server.flat(agent) == server.flat(agent)[0]).all()
-    honest = np.setdiff1d(np.arange(env.n), bad)
+    honest = np.setdiff1d(np.arange(env.n), picked)
     print(pd.Series(evaluate(env, policy(agent, env, "local"), *TEST, honest=honest)).round(2).to_string())

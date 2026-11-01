@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Every training run behind the results, JOBS at a time with one CPU thread each. A run whose log already exists in
 # results/ is skipped, so rerun this after an interruption. Groups run in the order given, most important first.
-# Usage: [JOBS=4] ./run_experiments.sh [seeds] [attacks] [ablation] [faults] [longer] [scaling]
-#   (all six when left out). PYTHON picks another interpreter (default .venv/bin/python).
+# Usage: [JOBS=4] ./run_experiments.sh [seeds] [attacks] [reference] [ablation] [faults] [longer] [scaling]
+#   (all seven when left out). PYTHON picks another interpreter (default .venv/bin/python).
 # Log name: <method>_sac_<days>_seed<seed>[_<attack>_share<percent bad>][_<variant>]. The seed changes training
 # randomness (and which homes are bad), never the street.
 set -u
@@ -29,6 +29,12 @@ attacks() {  # the last policy is kept, so damage late in training shows
   for share in 10 20 40; do
     for m in $METHODS; do attack_run $m normalized $share; done
     for m in trimmed krum; do attack_run $m none $share; done
+  done
+}
+
+reference() {  # no attack again, as the first no-attack logs report no bill for the 25 homes the data attacks leave honest
+  for seed in 0 1 2; do
+    for m in $METHODS; do attack_run $m none 30 $seed _honest; done
   done
 }
 
@@ -67,5 +73,5 @@ attack_run() {  # method, attack, percent of homes bad, seed (0 if left out), th
   echo "${m}_sac_500_seed${seed}_${attack}_share$share$suffix src/agents/federated.py $m 500 $seed --attack $attack --share 0.$share --last${*:+ $*}"
 }
 
-for group in ${*:-seeds attacks ablation faults longer scaling}; do $group; done | xargs -P "${JOBS:-4}" -L 1 sh -c 'log=results/$0.log; [ -s "$log" ] ||
+for group in ${*:-seeds attacks reference ablation faults longer scaling}; do $group; done | xargs -P "${JOBS:-4}" -L 1 sh -c 'log=results/$0.log; [ -s "$log" ] ||
   { "${PYTHON:-.venv/bin/python}" "$@" > "$log.tmp" 2>&1 && mv "$log.tmp" "$log" && echo "done $0" || echo "FAILED $0, see $log.tmp"; }'; exit  # exit before bash reads on, so editing this file mid run is safe

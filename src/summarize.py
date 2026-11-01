@@ -1,7 +1,7 @@
 """The paper's tables, from the logs in results/. Values are mean ± 95% confidence interval half width [seeds].
 
   1. clean runs against idle, the rule and MPC (500 and 1000 days, FedProx's mu)
-  2. bill of honest homes under each attack, 30% bad homes, and the damage against no attack, paired by seed
+  2. bill under each attack, 30% bad homes, and the damage against no attack, paired by seed, on the same homes
   3. damage by share of bad homes (Normalized attack)
   4. FedGrid ablation, message faults, feeder O
   5. rejection: honest and bad homes rejected, and honest homes with unusual solar sizes against the rest
@@ -21,7 +21,8 @@ NAME = re.compile(r"(?P<method>[a-z]+)_sac_(?P<days>\d+)_seed(?P<seed>\d+)"
                   r"(?:_(?P<attack>[a-z]+)_share(?P<share>\d+))?(?:_(?P<variant>.+))?$")
 METRIC = re.compile(r"^(\S.*?)\s{2,}(-?[\d.]+|nan)$", re.M)
 DEFENCES = ["fedavg", "median", "trimmed", "krum", "fltrust", "flame", "tafdrl", "fedgrid"]
-ATTACKS = ["none", "flip", "scale", "noise", "normalized", "meter", "reward"]
+DATA_ATTACKS = ["meter", "reward"]
+ATTACKS = ["none", "flip", "scale", "noise", "normalized", "none, honest homes", *DATA_ATTACKS]
 
 
 def read(path):
@@ -58,13 +59,23 @@ def ci(values):
     return f"{v.mean():,.0f} ± {half:,.0f} [{len(v)}]"
 
 
-def damage(runs, by):
-    """Bill under attack minus the same rule's bill with no attack, paired by seed (same seed, same bad homes).
-    The no-attack run at the same share if there is one (trimmed mean and Krum use the share), else at 30%."""
-    none = runs[runs.attack == "none"].set_index(["method", "seed", "share"])["honest bill"].to_dict()
+def compared_bill(runs):
+    """The bill that shows an attack's damage. Update attacks change only what bad homes send, so all homes count. Data
+    attacks also distort the bad homes' own bills (false rewards add about $800 to the average), so honest homes count."""
+    return runs["bill $/home/yr"].where(~runs.attack.isin(DATA_ATTACKS), runs["honest bill"])
+
+
+def damage(runs, by, honest=None):
+    """Bill under attack minus the same rule's bill with no attack, paired by seed, on the same homes on both sides.
+    honest: the no-attack runs reporting the honest homes' bill, for the data attacks. Without them those cells stay
+    empty. The no-attack run at the same share if there is one (trimmed mean and Krum use the share), else at 30%."""
+    key = ["method", "seed", "share"]
+    everyone = runs[runs.attack == "none"].set_index(key)["bill $/home/yr"].to_dict()
+    same_homes = {} if honest is None else honest.set_index(key)["honest bill"].to_dict()
     hit = runs[runs.attack != "none"].copy()
-    reference = [none.get((m, s, sh), none.get((m, s, "30"), np.nan)) for m, s, sh in zip(hit.method, hit.seed, hit.share)]
-    hit["damage"] = hit["honest bill"] - np.array(reference)
+    reference = [same_homes.get((m, s, sh), np.nan) if a in DATA_ATTACKS else everyone.get((m, s, sh), everyone.get((m, s, "30"), np.nan))
+                 for m, s, sh, a in zip(hit.method, hit.seed, hit.share, hit.attack)]
+    hit["damage"] = compared_bill(hit) - np.array(reference)
     return table(hit, by, "damage", signed=True)
 
 
@@ -98,6 +109,8 @@ if __name__ == "__main__":
     runs["seed"] = runs.seed.astype(int)
     runs[["attack", "share", "variant"]] = runs[["attack", "share", "variant"]].fillna("")
     print(f"# Tables from {len(runs)} runs\n\nmean ± 95% CI half width [seeds]. Bills in $/home/yr on the 2012-13 test year.")
+    honest = runs[runs.variant == "honest"]
+    runs = runs[runs.variant != "honest"]
 
     clean = runs[runs.attack == ""].copy()
     clean["run"] = clean.method + " " + clean.days + " days" + clean.variant.map(lambda v: f", {v}" if v else "")
@@ -109,9 +122,13 @@ if __name__ == "__main__":
                     clean.groupby("run")[metrics].agg(ci)]))
 
     main = runs[(runs.share == "30") & (runs.variant == "")]
-    show("2a. Bill of honest homes, 30% bad homes (last policy)", table(main, "attack", "honest bill"))
-    show("2b. Damage against no attack, 30% bad homes", damage(main, "attack"),
-         "Honest homes' bill under the attack minus with no attack, paired by seed.")
+    show("2a. Bill, 30% bad homes (last policy)",
+         table(pd.concat([main.assign(bill=compared_bill(main)),
+                          honest.assign(attack="none, honest homes", bill=honest["honest bill"])]), "attack", "bill"),
+         "All 36 homes for no attack and the update attacks. The 25 honest homes for the last three columns.")
+    show("2b. Damage against no attack, 30% bad homes", damage(main, "attack", honest),
+         "Bill under the attack minus with no attack, paired by seed, on the same homes: all 36 for the update attacks, "
+         "the 25 honest homes for meter and reward.")
 
     norm = runs[runs.variant == ""]
     shares = damage(norm[norm.attack.isin(["none", "normalized"])], "share")
