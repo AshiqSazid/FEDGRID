@@ -8,3 +8,7 @@ fedgridrl-Claude-*.pdf
 *.log.tmp
 plan20[0-9][0-9]-[0-9][0-9]-[0-9][0-9].md
 DOSSIER.md
+
+# Private: the notes folder, and the TAFDRL paper (publisher PDF), kept off GitHub
+/plans/
+research/1-s2.0-*.pdf
