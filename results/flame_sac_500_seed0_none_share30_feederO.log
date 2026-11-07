@@ -1,0 +1,34 @@
+day 1: validation 250.30 $/home, alpha 1.000
+day 25: validation 355.79 $/home, alpha 0.778
+day 50: validation 351.28 $/home, alpha 0.543
+day 75: validation 317.67 $/home, alpha 0.380
+day 100: validation 284.11 $/home, alpha 0.270
+day 125: validation 277.66 $/home, alpha 0.195
+day 150: validation 267.94 $/home, alpha 0.142
+day 175: validation 259.50 $/home, alpha 0.104
+day 200: validation 252.35 $/home, alpha 0.078
+day 225: validation 243.50 $/home, alpha 0.060
+day 250: validation 236.78 $/home, alpha 0.048
+day 275: validation 233.72 $/home, alpha 0.041
+day 300: validation 235.81 $/home, alpha 0.036
+day 325: validation 235.14 $/home, alpha 0.034
+day 350: validation 232.86 $/home, alpha 0.034
+day 375: validation 236.17 $/home, alpha 0.034
+day 400: validation 231.14 $/home, alpha 0.034
+day 425: validation 229.91 $/home, alpha 0.034
+day 450: validation 230.51 $/home, alpha 0.036
+day 475: validation 224.24 $/home, alpha 0.037
+day 500: validation 224.82 $/home, alpha 0.038
+flame SAC, seed 0, attack none from homes [], feeder O, last policy: trained on 500 days in 14853 s, 500 rounds, 54400 shared values per home per round (212 KB)
+rejected: honest homes 49.2% of their changes (most rejected home 99.8%), bad homes nan%, delayed honest changes 0.0% of 0
+rejected share by home (solar kWp): 0.03 (7.7), 0.07 (4.4), 0.65 (4.6), 0.01 (7.5), 0.33 (4.7), 0.86 (4.8), 0.08 (4.5), 0.25 (4.5), 0.14 (7.9), 0.00 (4.6), 0.93 (4.5), 0.13 (9.0), 0.82 (10.0), 0.00 (4.5), 0.02 (4.5), 0.48 (5.3), 0.11 (4.4), 0.10 (6.6), 0.86 (4.5), 0.97 (6.6), 0.80 (6.5), 0.99 (4.5), 0.90 (10.0), 0.35 (10.0), 0.68 (4.4), 0.32 (6.6), 0.53 (6.7), 0.99 (4.4), 0.99 (4.6), 0.63 (10.0), 0.07 (4.8), 0.99 (4.5), 0.98 (8.1), 0.99 (6.6), 1.00 (8.8), 0.97 (4.4), 0.06 (7.7), 0.26 (9.5), 0.24 (4.5), 0.05 (4.6), 0.02 (4.4), 0.06 (4.4), 0.62 (6.7), 0.56 (9.2), 0.90 (6.6), 0.33 (6.6), 0.63 (10.0), 0.40 (6.9), 0.20 (7.0), 0.08 (4.8), 0.00 (4.6), 0.01 (6.6), 0.66 (10.0), 0.87 (4.4), 0.16 (4.6), 0.95 (4.4), 0.08 (9.2), 0.75 (6.7), 0.06 (9.2), 0.05 (10.0), 0.97 (4.5), 0.34 (4.5), 0.47 (4.8), 0.14 (7.0), 0.99 (6.6), 0.00 (4.4), 0.80 (4.5), 0.08 (9.0), 0.95 (4.6), 0.99 (4.4), 0.63 (6.6), 0.64 (4.4), 0.03 (6.6), 0.89 (4.8), 0.92 (6.6), 0.99 (10.0), 0.63 (10.0), 0.10 (7.0), 0.73 (9.5), 1.00 (6.5), 0.48 (9.0), 0.06 (4.4), 0.99 (6.5)
+bill $/home/yr                              924.12
+bill honest homes $/home/yr                 875.02
+curtailed kWh/home/yr                       132.90
+battery cycles/yr                           281.92
+half hours over 253 V %                       0.00
+max V                                       248.66
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    35335.07
+midday export limit kW (median)               6.58
+transformer peak loading %                  109.32

@@ -1,0 +1,32 @@
+day 1: validation 247.30 $/home, alpha 1.000
+day 25: validation 247.87 $/home, alpha 0.750
+day 50: validation 279.75 $/home, alpha 0.523
+day 75: validation 326.86 $/home, alpha 0.366
+day 100: validation 323.45 $/home, alpha 0.255
+day 125: validation 298.34 $/home, alpha 0.178
+day 150: validation 297.77 $/home, alpha 0.125
+day 175: validation 307.42 $/home, alpha 0.087
+day 200: validation 302.64 $/home, alpha 0.062
+day 225: validation 318.10 $/home, alpha 0.043
+day 250: validation 323.58 $/home, alpha 0.031
+day 275: validation 303.58 $/home, alpha 0.022
+day 300: validation 298.38 $/home, alpha 0.015
+day 325: validation 293.96 $/home, alpha 0.010
+day 350: validation 294.73 $/home, alpha 0.007
+day 375: validation 297.78 $/home, alpha 0.005
+day 400: validation 285.63 $/home, alpha 0.004
+day 425: validation 288.87 $/home, alpha 0.002
+day 450: validation 288.09 $/home, alpha 0.002
+day 475: validation 302.71 $/home, alpha 0.001
+day 500: validation 316.39 $/home, alpha 0.001
+fedavg SAC, seed 0, attack normalized from homes [9, 17, 21, 28], last policy: trained on 500 days in 4952 s, 500 rounds, 54400 shared values per home per round (212 KB)
+bill $/home/yr                            1241.36
+bill honest homes $/home/yr               1258.57
+curtailed kWh/home/yr                      342.20
+battery cycles/yr                          117.96
+half hours over 253 V %                      0.00
+max V                                      250.74
+export in MSL half hours kWh                 0.00
+battery charging in MSL half hours kWh    5572.84
+midday export limit kW (median)              5.92
+transformer peak loading %                  59.03

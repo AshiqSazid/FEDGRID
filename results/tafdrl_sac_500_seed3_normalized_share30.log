@@ -1,0 +1,44 @@
+day 1: validation 247.30 $/home, alpha 1.000
+day 25: validation 343.38 $/home, alpha 0.778
+day 50: validation 345.07 $/home, alpha 0.542
+day 75: validation 322.97 $/home, alpha 0.381
+day 100: validation 282.80 $/home, alpha 0.271
+day 125: validation 266.14 $/home, alpha 0.196
+day 150: validation 261.14 $/home, alpha 0.144
+day 175: validation 256.67 $/home, alpha 0.106
+day 200: validation 249.14 $/home, alpha 0.079
+day 225: validation 240.18 $/home, alpha 0.062
+day 250: validation 239.94 $/home, alpha 0.051
+day 275: validation 231.91 $/home, alpha 0.046
+day 300: validation 232.88 $/home, alpha 0.044
+day 325: validation 238.51 $/home, alpha 0.043
+day 350: validation 234.74 $/home, alpha 0.043
+day 375: validation 235.86 $/home, alpha 0.041
+day 400: validation 240.04 $/home, alpha 0.040
+day 425: validation 238.69 $/home, alpha 0.041
+day 450: validation 235.46 $/home, alpha 0.041
+day 475: validation 234.54 $/home, alpha 0.043
+day 500: validation 235.78 $/home, alpha 0.044
+tafdrl SAC, seed 3, attack normalized from homes [1, 2, 3, 5, 6, 11, 19, 21, 24, 27, 29], last policy: trained on 500 days in 4351 s, 500 rounds, 54400 shared values per home per round (212 KB)
+rejected: honest homes 28.6% of their changes (most rejected home 93.7%), bad homes 22.6%, delayed honest changes 0.0% of 0
+rejected share by home (solar kWp): 0.06 (4.5), 0.23 (6.6), 0.23 (6.7), 0.23 (6.2), 0.03 (4.6), 0.23 (6.5), 0.23 (9.0), 0.54 (4.5), 0.06 (6.7), 0.04 (6.0), 0.46 (8.8), 0.23 (6.6), 0.68 (4.4), 0.36 (10.0), 0.94 (4.5), 0.72 (10.0), 0.20 (7.3), 0.31 (4.5), 0.02 (4.8), 0.23 (4.5), 0.26 (10.0), 0.23 (7.9), 0.07 (6.6), 0.34 (6.9), 0.23 (4.4), 0.17 (6.6), 0.27 (4.5), 0.23 (6.7), 0.11 (4.5), 0.23 (6.6), 0.31 (4.8), 0.47 (4.4), 0.42 (9.0), 0.22 (6.6), 0.04 (4.8), 0.05 (4.8)
+bill $/home/yr                              978.22
+bill honest homes $/home/yr                1053.37
+curtailed kWh/home/yr                       106.01
+battery cycles/yr                           260.18
+half hours over 253 V %                       0.00
+max V                                       250.76
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    14784.06
+midday export limit kW (median)               5.92
+transformer peak loading %                   60.45
+ACT transfer bill $/home/yr                             1309.64
+ACT transfer bill honest homes $/home/yr                1311.66
+ACT transfer curtailed kWh/home/yr                        40.18
+ACT transfer battery cycles/yr                           224.78
+ACT transfer half hours over 253 V %                       0.00
+ACT transfer max V                                       250.38
+ACT transfer export in MSL half hours kWh                  0.00
+ACT transfer battery charging in MSL half hours kWh    12307.97
+ACT transfer midday export limit kW (median)               6.28
+ACT transfer transformer peak loading %                   67.54

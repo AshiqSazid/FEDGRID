@@ -30,7 +30,12 @@ Message faults, for honest homes: --lost drops a change, --delayed sends last ro
 
 Run: .venv/bin/python src/agents/federated.py fedavg|fedprox|median|trimmed|krum|fltrust|flame|tafdrl|fedgrid
          [training days] [seed] [--attack none|flip|scale|noise|normalized|meter|reward] [--share 0.3] [--last]
-         [--mu 0.01] [--without clip|groups|trust] [--lost 0.1] [--delayed 0.1] [--feeder L]
+         [--mu 0.01] [--without clip|groups|trust] [--lost 0.1] [--delayed 0.1] [--feeder L] [--supply 1.0]
+         FedGrid versions: [--filter-first] [--clip-factor 1] [--guard] [--home-trust] [--bands 3] [--z 2.5]
+         TAFDRL steps: [--lam 0] [--tau 0] [--level 0.99]
+         [--no-test] stops before the test year, so a run read for tuning holds no test-year bill
+         [--dataset ausgrid|nextgen] households on the street: Ausgrid (2010-13) or ACT NextGen (2018, split by weeks)
+         [--transfer] also scores the trained policy on 36 ACT NextGen homes' test weeks, with no retraining
 """
 import argparse
 import sys
@@ -46,7 +51,7 @@ from sklearn.cluster import HDBSCAN
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from agents.sac import Learner, policy, train
-from env.battery_env import TEST, BatteryStreet, evaluate
+from env.battery_env import BatteryStreet, test
 
 
 # Aggregation rules. changes: (homes, parameters). Each returns the change to apply to the global model, and which
@@ -110,15 +115,23 @@ def flame(changes, global_model):
 
 
 class TrustFilter:
-    """TAFDRL-style trust filter (Sepehrzad et al., Applied Energy 2026), rebuilt from the paper's abstract since the
-    full text was not available, so the embedding and threshold are our choices. Each round's changes are embedded in
-    their first principal components. A change whose robust Mahalanobis distance from the median is beyond the
-    chi-square 99% point is flagged. Each home keeps a Bayesian trust, the mean of a Beta posterior over its history
-    of flags, and the unflagged changes are averaged with trust weights."""
+    """TAFDRL-style trust filter (Sepehrzad et al., Applied Energy 2026). Each round's changes are embedded in their
+    first principal components. A change is accepted if its robust Mahalanobis distance from the median is within
+    tmax - lam * (1 - trust) (eq. 28), so low trust means a stricter limit, and its home's trust is at least tau (eq. 4).
+    Each home's trust is the mean of a Beta posterior over its history of passing that limit, and accepted changes are
+    averaged with trust weights (eq. 5). lam = tau = 0 is the first version in the paper's early results: a fixed limit
+    and no minimum trust.
 
-    def __init__(self, n, dims=3, level=0.99):
+    Simplified from the paper, as its text gives no encoder details or code, and the street has no DR market:
+      principal components within the round for its neural encoder and distance to earlier trusted policies (eq. 27),
+      Beta trust from the limit test for its behaviour scores with a Kalman filter (eq. 15-18).
+    Left out: entropy quarantine (eq. 21-22). Entropy of trust shares peaks when trust is steady, as the paper's Appendix
+    B proves, so its best limit, 0.85-0.95 x log(k+1), would quarantine every steady home and pass a home whose trust
+    collapsed (H / log(k+1): steady 1.00, collapse from 0.9 to 0.05 at mid window 0.77)."""
+
+    def __init__(self, n, dims=3, level=0.99, lam=0.0, tau=0.0):
         self.passed, self.flagged = torch.ones(n), torch.ones(n)  # Beta(1, 1) prior
-        self.dims, self.limit = dims, chi2.ppf(level, dims)
+        self.dims, self.tmax, self.lam, self.tau = dims, chi2.ppf(level, dims) ** 0.5, lam, tau
 
     def __call__(self, changes, homes, g0=None):
         if not changes.any():  # warmup days, before any learning
@@ -128,15 +141,18 @@ class TrustFilter:
         z = z - z.median(0).values
         # Principal components are close to uncorrelated, so a diagonal robust covariance (median absolute deviation)
         spread = 1.4826 * z.abs().median(0).values
-        kept = ((z / spread.clamp_min(1e-12)) ** 2).sum(1) <= self.limit
-        w = kept * self.passed[homes] / (self.passed[homes] + self.flagged[homes])
+        trust = self.passed[homes] / (self.passed[homes] + self.flagged[homes])
+        self.inside = ((z / spread.clamp_min(1e-12)) ** 2).sum(1).sqrt() <= self.tmax - self.lam * (1 - trust)
+        kept = self.inside & (trust >= self.tau)
+        w = kept * trust
         return (w[:, None] * changes).sum(0) / w.sum().clamp_min(1e-12), kept
 
     def commit(self, kept, homes):
-        """Called after the real aggregation only, so an attacker's trial runs of the rule change no trust."""
+        """Called after the real aggregation only, so an attacker's trial runs of the rule change no trust. Trust follows
+        the limit test, not the minimum trust, so a home kept out can earn its way back."""
         if kept is not None:
-            self.passed[homes] += kept
-            self.flagged[homes] += ~kept
+            self.passed[homes] += self.inside
+            self.flagged[homes] += ~self.inside
 
 
 def merge_small(groups, min_group):
@@ -152,16 +168,26 @@ def merge_small(groups, min_group):
 
 
 # ponytail: min_group and z_max are starting values, not tuned.
-def fedgrid(changes, bands, g0=None, without=None, min_group=5, z_max=2.5):
+def fedgrid(changes, bands, g0=None, without=None, min_group=5, z_max=2.5, filter_first=False, clip_factor=1.0,
+            guard=False, home_trust=False):
     """This project's rule, the three steps of the research plan.
     1. Clip every change to the median change length, so no single home can dominate.
     2. Group homes by solar size band (given at sign up). Within each group, drop changes far from the group's
        median: robust z score of the distance above z_max. Small groups merge into the nearest band.
     3. Weight each group by its size times ReLU(cosine of its mean change to the server's own change g0).
-    without switches one step off for the ablation: clip, groups (filter across all homes at once) or trust."""
-    if without != "clip":
-        norms = changes.norm(dim=1, keepdim=True)
-        changes = changes * (norms.median() / norms.clamp_min(1e-12)).clamp(max=1)
+    without switches one step off for the ablation: clip, groups (filter across all homes at once) or trust.
+
+    Candidate versions, chosen on validation weeks only. All off is the original rule:
+      filter_first  filter on the real lengths, then clip the changes kept (the filter caught 1% of bad changes after
+                    clipping and 19% with no clipping)
+      clip_factor   clip to this many times the median length
+      guard         a band's kept changes disagree with g0 and the dropped ones agree: bad homes hold the band's median,
+                    so keep the dropped side instead
+      home_trust    ReLU(cosine to g0) per home instead of per group. A home at zero counts as rejected, as in FLTrust."""
+    norms = changes.norm(dim=1, keepdim=True)
+    scale = (clip_factor * norms.median() / norms.clamp_min(1e-12)).clamp(max=1)
+    if without != "clip" and not filter_first:
+        changes = changes * scale
     groups = torch.zeros_like(bands) if without == "groups" else merge_small(bands, min_group)
     kept = torch.ones(len(changes), dtype=torch.bool)
     total, weight = torch.zeros_like(changes[0]), torch.zeros(())
@@ -170,22 +196,32 @@ def fedgrid(changes, bands, g0=None, without=None, min_group=5, z_max=2.5):
         x = changes[members]
         d = (x - x.median(0).values).norm(dim=1)
         out = d - d.median() > z_max * 1.4826 * (d - d.median()).abs().median().clamp_min(1e-12)
+        if guard and out.any() and (torch.cosine_similarity(x[~out].mean(0), g0, 0) <= 0
+                                    < torch.cosine_similarity(x[out].mean(0), g0, 0)):
+            out = ~out
+        if without != "clip" and filter_first:
+            x = x * scale[members]
         kept[members[out]] = False
+        if home_trust:
+            t = torch.relu(torch.cosine_similarity(x[~out], g0[None], dim=1))
+            kept[members[~out][t == 0]] = False
+            total, weight = total + (t[:, None] * x[~out]).sum(0), weight + t.sum()
+            continue
         mean = x[~out].mean(0)
         w = (~out).sum() * (torch.relu(torch.cosine_similarity(mean, g0, 0)) if without != "trust" else 1.0)
         total, weight = total + w * mean, weight + w
     return total / weight.clamp_min(1e-12), kept
 
 
-def aggregator(method, share, server, bands=None, without=None):
+def aggregator(method, share, server, bands=None, without=None, fedgrid_options={}, tafdrl_options={}):
     """The rule as the server calls it: rule(changes, homes the changes came from, the server's own change)."""
     if method == "tafdrl":
-        return TrustFilter(server.n)
+        return TrustFilter(server.n, **tafdrl_options)
     return {"fedavg": lambda c, h, g0: fedavg(c), "fedprox": lambda c, h, g0: fedavg(c),
             "median": lambda c, h, g0: median(c), "trimmed": lambda c, h, g0: trimmed_mean(c, share),
             "krum": lambda c, h, g0: krum(c, share), "fltrust": lambda c, h, g0: fltrust(c, g0),
             "flame": lambda c, h, g0: flame(c, server.global_model),
-            "fedgrid": lambda c, h, g0: fedgrid(c, bands[h], g0, without)}[method]
+            "fedgrid": lambda c, h, g0: fedgrid(c, bands[h], g0, without, **fedgrid_options)}[method]
 
 
 # Update attacks. Each gets every home's honest change, the bad homes and the aggregation rule, and returns the bad rows.
@@ -324,8 +360,12 @@ def check():
     assert fedavg(attacked)[0].mean() < 0  # the mean is pulled the wrong way
     rules = {"median": median, "trimmed": trimmed_mean, "krum": krum, "fltrust": lambda c: fltrust(c, g0),
              "flame": lambda c: flame(c, torch.ones(100)), "tafdrl": lambda c: TrustFilter(n)(c, homes),
+             "tafdrl steps": lambda c: TrustFilter(n, lam=1.0, tau=0.35)(c, homes),
              **{f"fedgrid without {w}": lambda c, w=w: fedgrid(c, bands, g0, w) for w in (None, "clip", "groups",
-                                                                                         "trust")}}
+                                                                                         "trust")},
+             **{f"fedgrid {o}": lambda c, o=o: fedgrid(c, bands, g0, **o)
+                for o in ({"filter_first": True}, {"filter_first": True, "clip_factor": 2.0},
+                          {"filter_first": True, "guard": True}, {"filter_first": True, "home_trust": True})}}
     for name, rule in rules.items():
         change, kept = rule(attacked)
         assert (change - 1).abs().mean() < 0.15, name
@@ -339,6 +379,35 @@ def check():
         assert rule(warmup)[0].isfinite().all(), name
     # Small groups merge into the nearest band
     assert merge_small(torch.tensor([0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 2]), 5).tolist() == [0] * 6 + [2] * 5
+    # A band with a bad majority: the median sits on the bad change, so the honest homes look like outliers. The guard
+    # keeps the side that agrees with the server's own change.
+    band = 1 + 0.1 * torch.randn(12, 100)
+    band[:7] = -1
+    one = torch.zeros(12, dtype=torch.long)
+    assert fedgrid(band, one, g0)[1].tolist() == [True] * 7 + [False] * 5
+    assert fedgrid(band, one, g0, guard=True)[1].tolist() == [False] * 7 + [True] * 5
+    assert (fedgrid(band, one, g0, guard=True)[0] - 1).abs().mean() < 0.15
+    # Filter first: the same changes are kept as with clipping off, and none is longer than the median after.
+    long = changes.clone()
+    long[:7] = 10 * long[:7]
+    kept_first = fedgrid(long, bands, g0, filter_first=True)[1]
+    assert kept_first.tolist() == fedgrid(long, bands, g0, "clip")[1].tolist() and not kept_first[:7].any()
+    assert fedgrid(long, bands, g0, filter_first=True)[0].norm() <= long.norm(dim=1).median()
+    # Low trust means a stricter limit, a home below the minimum trust is left out, and it can earn its way back.
+    def filtered(rule):
+        torch.manual_seed(1)  # pca_lowrank is randomised
+        return rule(changes, homes)[1]
+
+    gentle, strict, low = TrustFilter(n), TrustFilter(n, lam=2.0), TrustFilter(n, tau=0.35)
+    filtered(gentle)
+    filtered(strict)
+    assert strict.inside.sum() < gentle.inside.sum()
+    home = gentle.inside.nonzero()[0]
+    low.flagged[home] = 10.0
+    was_kept = filtered(low)
+    assert not was_kept[home] and low.inside[home]
+    low.commit(was_kept, homes)
+    assert low.passed[home] == 2 and low.flagged[home] == 10
     # The Normalized attack turns the mean around with only 7 of 36 homes.
     bad = torch.arange(7)
     attacked[bad] = normalized(changes, bad, lambda c: fedavg(c)[0])
@@ -361,9 +430,23 @@ if __name__ == "__main__":
     ap.add_argument("--lost", type=float, default=0.0, help="chance an honest home's change is lost in a round")
     ap.add_argument("--delayed", type=float, default=0.0, help="chance it arrives a round late instead")
     ap.add_argument("--feeder", default="L", help="CSIRO feeder, L (36 homes) or O (83 homes)")
+    ap.add_argument("--supply", type=float, default=1.0, help="supply voltage in pu, 1.02 for the stress test")
+    ap.add_argument("--filter-first", action="store_true", help="FedGrid: filter before clipping")
+    ap.add_argument("--clip-factor", type=float, default=1.0, help="FedGrid: clip to this many median lengths")
+    ap.add_argument("--guard", action="store_true", help="FedGrid: guard against a band with a bad majority")
+    ap.add_argument("--home-trust", action="store_true", help="FedGrid: trust per home instead of per group")
+    ap.add_argument("--bands", type=int, default=3, help="FedGrid: number of solar size bands")
+    ap.add_argument("--z", type=float, default=2.5, help="FedGrid: robust z limit of the filter")
+    ap.add_argument("--lam", type=float, default=0.0, help="TAFDRL: how much stricter the limit is for low trust")
+    ap.add_argument("--tau", type=float, default=0.0, help="TAFDRL: minimum trust to take part")
+    ap.add_argument("--level", type=float, default=0.99, help="TAFDRL: chi-square level that sets the widest limit")
+    ap.add_argument("--no-test", action="store_true", help="stop before the test year, for runs read for tuning")
+    ap.add_argument("--dataset", choices=["ausgrid", "nextgen"], default="ausgrid", help="households on the street")
+    ap.add_argument("--transfer", action="store_true", help="also score the policy on ACT NextGen homes, no retraining")
     args = ap.parse_args()
+    assert not args.transfer or (args.dataset == "ausgrid" and args.feeder == "L"), "transfer: Ausgrid, feeder L"
 
-    env = BatteryStreet(feeder=args.feeder)
+    env = BatteryStreet(feeder=args.feeder, supply_pu=args.supply, dataset=args.dataset)
     # The homes an attack at this seed and share would take. With no attack they stay honest, but the bill below still
     # leaves them out, so damage can compare the same homes.
     picked = np.sort(np.random.default_rng(args.seed).choice(env.n, round(args.share * env.n), replace=False))
@@ -373,22 +456,33 @@ if __name__ == "__main__":
         # The server's own data: a street of other Ausgrid homes on the same feeder, outside the federation (the
         # research plan's public reference buildings). One central agent learns on it, from the global model each round.
         torch.manual_seed(args.seed + 1)
-        reference = Learner(BatteryStreet(feeder=args.feeder, exclude=env.street.homes), "central", args.days,
+        reference = Learner(BatteryStreet(feeder=args.feeder, exclude=env.street.homes, supply_pu=args.supply,
+                                          dataset=args.dataset),
+                            "central", args.days,
                             args.seed + 1)
         assert not set(reference.env.street.homes) & set(env.street.homes), "a home is in both streets"
     # ponytail: 3 solar size bands, thirds of the street, as a home might state at sign up. Try 2 or 4 bands.
     pv = env.street.pv_kwp
-    bands = torch.as_tensor(np.digitize(pv, np.quantile(pv, [1 / 3, 2 / 3])))
+    bands = torch.as_tensor(np.digitize(pv, np.quantile(pv, [i / args.bands for i in range(1, args.bands)])))
     server = Server(env.n, mu=args.mu if args.method == "fedprox" else 0.0, attack=ATTACKS.get(args.attack), bad=bad,
                     reference=reference, lost=args.lost, delayed=args.delayed, seed=args.seed)
-    server.aggregate = aggregator(args.method, args.share, server, bands, args.without)
+    server.aggregate = aggregator(args.method, args.share, server, bands, args.without,
+                                  {"filter_first": args.filter_first, "clip_factor": args.clip_factor,
+                                   "guard": args.guard, "home_trust": args.home_trust, "z_max": args.z},
+                                  {"lam": args.lam, "tau": args.tau, "level": args.level})
     poison = (bad, args.attack) if args.attack in DATA_ATTACKS else None
     start = time.time()
     agent = train(env, "local", args.days, seed=args.seed, server=server, keep_best=not args.last, poison=poison)
     size = server.global_model.numel()
     extras = [f"mu {args.mu}" if args.method == "fedprox" else "", f"without {args.without}" if args.without else "",
               f"lost {args.lost:.0%} delayed {args.delayed:.0%}" if args.lost or args.delayed else "",
-              f"feeder {args.feeder}" if args.feeder != "L" else "", "last policy" if args.last else ""]
+              f"feeder {args.feeder}" if args.feeder != "L" else "", "last policy" if args.last else "",
+              f"supply {args.supply} pu" if args.supply != 1.0 else "", "filter first" if args.filter_first else "",
+              f"clip {args.clip_factor}x" if args.clip_factor != 1.0 else "", "guard" if args.guard else "",
+              "home trust" if args.home_trust else "", f"{args.bands} bands" if args.bands != 3 else "",
+              f"z {args.z}" if args.z != 2.5 else "",
+              f"lam {args.lam} tau {args.tau} level {args.level}" if args.lam or args.tau or args.level != 0.99 else "",
+              f"dataset {args.dataset}" if args.dataset != "ausgrid" else ""]
     print(f"{args.method} SAC, seed {args.seed}, attack {args.attack} from homes {bad.tolist()}"
           f"{''.join(', ' + e for e in extras if e)}: trained on {args.days} days in {time.time() - start:.0f} s, "
           f"{server.rounds} rounds, {size} shared values per home per round ({size * 4 / 1024:.0f} KB)")
@@ -404,4 +498,12 @@ if __name__ == "__main__":
     # Check: every home holds the same shared layers (the kept policy may be from an earlier round than the critics).
     assert (server.flat(agent) == server.flat(agent)[0]).all()
     honest = np.setdiff1d(np.arange(env.n), picked)
-    print(pd.Series(evaluate(env, policy(agent, env, "local"), *TEST, honest=honest)).round(2).to_string())
+    if not args.no_test:
+        print(pd.Series(test(env, policy(agent, env, "local"), honest=honest)).round(2).to_string())
+    if args.transfer and not args.no_test:
+        # Each home's agent runs the ACT home on the same load: same street, prices and limit rules, other households.
+        # The same positions are honest, so damage compares the same homes. Prefixed, so no Ausgrid figure is replaced.
+        act = BatteryStreet(feeder=args.feeder, supply_pu=args.supply, dataset="nextgen")
+        assert act.n == env.n
+        result = test(act, policy(agent, act, "local"), honest=honest)
+        print(pd.Series({f"ACT transfer {k}": v for k, v in result.items()}).round(2).to_string())

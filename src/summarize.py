@@ -5,6 +5,10 @@
   3. damage by share of bad homes (Normalized attack)
   4. FedGrid ablation, message faults, feeder O
   5. rejection: honest and bad homes rejected, and honest homes with unusual solar sizes against the rest
+  6. seeds 3 and 4, which no choice used, and all five seeds together
+  7. ACT NextGen: the same street with ACT homes, retrained on 2018 weeks and scored on its 13 test weeks
+  8. transfer: Ausgrid-trained policies run on those ACT homes and weeks with no retraining
+Sections 1-5 use seeds 0-2 on the Ausgrid street. The final FedGrid and TAFDRL (logs ending _final) get rows of their own.
 
 Run: .venv/bin/python src/summarize.py [results folder] > results/tables.md
 """
@@ -20,13 +24,19 @@ RESULTS = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().p
 NAME = re.compile(r"(?P<method>[a-z]+)_sac_(?P<days>\d+)_seed(?P<seed>\d+)"
                   r"(?:_(?P<attack>[a-z]+)_share(?P<share>\d+))?(?:_(?P<variant>.+))?$")
 METRIC = re.compile(r"^(\S.*?)\s{2,}(-?[\d.]+|nan)$", re.M)
-DEFENCES = ["fedavg", "median", "trimmed", "krum", "fltrust", "flame", "tafdrl", "fedgrid"]
+DEFENCES = ["fedavg", "median", "trimmed", "krum", "fltrust", "flame", "tafdrl", "tafdrl final", "fedgrid",
+            "fedgrid final"]
 DATA_ATTACKS = ["meter", "reward"]
 ATTACKS = ["none", "flip", "scale", "noise", "normalized", "none, honest homes", *DATA_ATTACKS]
+TRANSFER = "ACT transfer "  # prefix of the metrics a --transfer run adds
 
 
 def read(path):
     run = NAME.match(path.stem).groupdict()
+    variant = run["variant"] or ""
+    if variant == "final" or variant.endswith("_final"):  # the final FedGrid and TAFDRL get rows of their own
+        run["method"] += " final"
+        run["variant"] = variant[:-len("final")].rstrip("_") or None
     text = path.read_text()
     tail = text[text.index(" SAC,"):]  # the validation lines come before the header
     run.update({k: float(v) for k, v in METRIC.findall(tail)})
@@ -59,23 +69,42 @@ def ci(values):
     return f"{v.mean():,.0f} ± {half:,.0f} [{len(v)}]"
 
 
-def compared_bill(runs):
+def compared_bill(runs, prefix=""):
     """The bill that shows an attack's damage. Update attacks change only what bad homes send, so all homes count. Data
-    attacks also distort the bad homes' own bills (false rewards add about $800 to the average), so honest homes count."""
-    return runs["bill $/home/yr"].where(~runs.attack.isin(DATA_ATTACKS), runs["honest bill"])
+    attacks also distort the bad homes' own bills (false rewards add about $800 to the average), so honest homes count.
+    prefix: TRANSFER for the same bills on the ACT homes."""
+    honest = runs[prefix + "bill honest homes $/home/yr"] if prefix else runs["honest bill"]
+    return runs[prefix + "bill $/home/yr"].where(~runs.attack.isin(DATA_ATTACKS), honest)
 
 
-def damage(runs, by, honest=None):
+def honest_rows(runs, honest):
+    """No-attack runs reporting the bill of the 25 homes the data attacks leave honest, at 30% bad homes: the honest
+    reruns (reference group), and for a method and seed without one, the no-attack run's own honest homes' bill."""
+    column = "bill honest homes $/home/yr"
+    if column not in runs:
+        return honest
+    none = runs[(runs.attack == "none") & (runs.share == "30") & runs[column].notna()]
+    have = set(zip(honest.method, honest.seed))
+    extra = none[[(m, s) not in have for m, s in zip(none.method, none.seed)]]
+    return pd.concat([honest, extra.assign(**{"honest bill": extra[column]})])
+
+
+def damage(runs, by, honest=None, prefix=""):
     """Bill under attack minus the same rule's bill with no attack, paired by seed, on the same homes on both sides.
-    honest: the no-attack runs reporting the honest homes' bill, for the data attacks. Without them those cells stay
-    empty. The no-attack run at the same share if there is one (trimmed mean and Krum use the share), else at 30%."""
+    honest: the honest reruns, for the data attacks; where there is none, the no-attack run's own honest homes' bill
+    stands in, and without either those cells stay empty. The no-attack run at the same share if there is one (trimmed
+    mean and Krum use the share), else at 30%."""
     key = ["method", "seed", "share"]
-    everyone = runs[runs.attack == "none"].set_index(key)["bill $/home/yr"].to_dict()
-    same_homes = {} if honest is None else honest.set_index(key)["honest bill"].to_dict()
+    none = runs[runs.attack == "none"]
+    everyone = none.set_index(key)[prefix + "bill $/home/yr"].to_dict()
+    column = prefix + "bill honest homes $/home/yr"
+    same_homes = none[none[column].notna()].set_index(key)[column].to_dict() if column in none else {}
+    if honest is not None and not prefix:
+        same_homes.update(honest.set_index(key)["honest bill"].to_dict())
     hit = runs[runs.attack != "none"].copy()
     reference = [same_homes.get((m, s, sh), np.nan) if a in DATA_ATTACKS else everyone.get((m, s, sh), everyone.get((m, s, "30"), np.nan))
                  for m, s, sh, a in zip(hit.method, hit.seed, hit.share, hit.attack)]
-    hit["damage"] = compared_bill(hit) - np.array(reference)
+    hit["damage"] = compared_bill(hit, prefix) - np.array(reference)
     return table(hit, by, "damage", signed=True)
 
 
@@ -97,8 +126,8 @@ def show(title, frame, note=""):
         print(f"\n## {title}\n\n{note + chr(10) * 2 if note else ''}{markdown(frame)}")
 
 
-def baselines():
-    rows = re.findall(r"^(\S.*?)\s{2,}([\d.]+)\s+([\d.]+)\s+([\d.]+)$", (RESULTS / "baselines.log").read_text(), re.M)
+def baselines(log="baselines.log"):
+    rows = re.findall(r"^(\S.*?)\s{2,}([\d.]+)\s+([\d.]+)\s+([\d.]+)$", (RESULTS / log).read_text(), re.M)
     b = pd.DataFrame({k: list(map(float, v)) for k, *v in rows}, index=["idle", "rule", "MPC"])
     b["bill + lost solar"] = b["bill $/home/yr"] + 0.0866 * b["curtailed kWh/home/yr"]
     return b
@@ -109,6 +138,8 @@ if __name__ == "__main__":
     runs["seed"] = runs.seed.astype(int)
     runs[["attack", "share", "variant"]] = runs[["attack", "share", "variant"]].fillna("")
     print(f"# Tables from {len(runs)} runs\n\nmean ± 95% CI half width [seeds]. Bills in $/home/yr on the 2012-13 test year.")
+    everything = runs
+    runs = runs[(runs.seed <= 2) & (runs.variant != "act")]  # sections 1-5: seeds 0-2 on the Ausgrid street
     honest = runs[runs.variant == "honest"]
     runs = runs[runs.variant != "honest"]
 
@@ -122,9 +153,10 @@ if __name__ == "__main__":
                     clean.groupby("run")[metrics].agg(ci)]))
 
     main = runs[(runs.share == "30") & (runs.variant == "")]
+    reference = honest_rows(main, honest)
     show("2a. Bill, 30% bad homes (last policy)",
          table(pd.concat([main.assign(bill=compared_bill(main)),
-                          honest.assign(attack="none, honest homes", bill=honest["honest bill"])]), "attack", "bill"),
+                          reference.assign(attack="none, honest homes", bill=reference["honest bill"])]), "attack", "bill"),
          "All 36 homes for no attack and the update attacks. The 25 honest homes for the last three columns.")
     show("2b. Damage against no attack, 30% bad homes", damage(main, "attack", honest),
          "Bill under the attack minus with no attack, paired by seed, on the same homes: all 36 for the update attacks, "
@@ -136,10 +168,10 @@ if __name__ == "__main__":
          "FedAvg, median, FLTrust, FLAME, TAFDRL and FedGrid don't use the share, so their 30% no-attack run is the "
          "reference at every share. Trimmed mean and Krum have their own.")
 
-    variants = runs[runs.variant.str.startswith(("without", "lost", "feeder"))].copy()
+    variants = runs[runs.variant.str.startswith(("without", "lost", "feeder", "pu"))].copy()
     if len(variants):
         variants["run"] = variants.method + ", " + variants.variant
-        show("4. FedGrid ablation, message faults and feeder O (honest homes' bill)",
+        show("4. FedGrid ablation, message faults, feeder O and the 1.02 pu stress test (honest homes' bill)",
              table(variants, "attack", "honest bill", rows="run", order=[]))
 
     rejecting = runs[runs["honest rejected %"].notna()] if "honest rejected %" in runs else runs.iloc[:0]
@@ -149,3 +181,30 @@ if __name__ == "__main__":
             part = rejecting[rejecting[value].notna() & (rejecting.share == "30")].copy()
             part["run"] = part.method + part.variant.map(lambda v: f", {v}" if v else "")
             show(f"5{letter}. {value.capitalize()} of changes", table(part, "attack", value, rows="run"))
+
+    unseen = everything[(everything.seed >= 3) & (everything.variant == "")]
+    if len(unseen):
+        show("6a. Bill, seeds 3 and 4, 30% bad homes (last policy)",
+             table(unseen.assign(bill=compared_bill(unseen)), "attack", "bill"),
+             "Seeds no choice used, on the 2012-13 test year as before. Same homes as 2a.")
+        show("6b. Damage against no attack, seeds 3 and 4", damage(unseen, "attack"))
+        five = everything[(everything.variant == "") & (everything.share == "30")]
+        show("6c. Damage against no attack, seeds 0-4", damage(five, "attack", honest),
+             "Seeds 0-2 from 2b with seeds 3 and 4. The bracket gives the seeds behind each cell.")
+
+    act = everything[everything.variant == "act"]
+    if len(act):
+        if (RESULTS / "baselines_act.log").exists():
+            show("7. ACT NextGen: idle, rule and MPC", baselines("baselines_act.log").reindex(columns=metrics).round(1))
+        show("7a. ACT NextGen: bill, 30% bad homes (last policy)", table(act.assign(bill=compared_bill(act)), "attack", "bill"),
+             "36 ACT NextGen homes on the same street, trained on 32 weeks of 2018, scored on its 13 test weeks and given "
+             "per year. Same homes as 2a.")
+        show("7b. ACT NextGen: damage against no attack", damage(act, "attack"))
+
+    if TRANSFER + "bill $/home/yr" in everything:
+        moved = everything[everything[TRANSFER + "bill $/home/yr"].notna() & (everything.share == "30")]
+        show("8a. Transfer to ACT NextGen: bill, 30% bad homes",
+             table(moved.assign(bill=compared_bill(moved, TRANSFER)), "attack", "bill"),
+             "Policies trained on the Ausgrid street, run with no retraining on the ACT homes and test weeks of 7a. "
+             "Seeds 3 and 4, and seeds 0-4 for the final versions.")
+        show("8b. Transfer to ACT NextGen: damage against no attack", damage(moved, "attack", prefix=TRANSFER))

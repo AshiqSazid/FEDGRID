@@ -25,11 +25,26 @@ TRAIN = ("2010-07-01", "2012-07-01")
 TEST = ("2012-07-01", "2013-07-01")
 
 
+def split(dataset):
+    """Training weeks, held out weeks (to pick or tune a policy) and test weeks (None: the whole TEST year).
+    Ausgrid: the two training years in 7 day blocks, every 8th block held out (13 weeks across all seasons), and the
+    2012-13 year for test. ACT NextGen has only 2018 (52 weeks from Monday 1 January), so it is split by weeks: every
+    4th week for test (13 weeks), every 8th from week 1 held out (7 weeks), the other 32 for training."""
+    if dataset == "ausgrid":
+        weeks = pd.date_range(TRAIN[0], pd.Timestamp(TRAIN[1]) - pd.Timedelta(days=7), freq="7D")
+        return weeks.drop(weeks[4::8]), weeks[4::8], None
+    weeks = pd.date_range("2018-01-01", periods=52, freq="7D")
+    test, held_out = weeks[3::4], weeks[1::8]
+    return weeks.drop(test.union(held_out)), held_out, test
+
+
 class BatteryStreet:
     def __init__(self, seed=0, battery_kwh_per_kwp=3.0, battery_kw=5.0, efficiency=0.9, max_export_kw=10.0,
                  min_export_kw=1.5, doe_margin_v=1.0, msl_export_kw=0.0, msl_mw=MSL1_ONEROUS_MW, price="tariff",
-                 supply_pu=1.0, w_curtail=0.0866, w_breach=1.0, w_voltage=0.1, feeder="L", exclude=()):
-        s = self.street = Street(seed, feeder=feeder, exclude=exclude)
+                 supply_pu=1.0, w_curtail=0.0866, w_breach=1.0, w_voltage=0.1, feeder="L", exclude=(), dataset="ausgrid"):
+        s = self.street = Street(seed, feeder=feeder, exclude=exclude, dataset=dataset)
+        self.dataset = dataset
+        self.train_weeks, self.valid_weeks, self.test_weeks = split(dataset)
         dss.Vsources.First()
         dss.Vsources.PU(supply_pu)
         self.n = len(s.homes)
@@ -153,15 +168,21 @@ def self_consumption(env):
     return np.clip((s.pv_kw[t] - s.load_kw[t]) / env.p_max, 0, 1)
 
 
-def evaluate(env, policy, start, end, honest=None):
-    """honest: homes to report a separate bill for, such as the honest homes in an attack."""
-    days = pd.date_range(start, end, freq="D", inclusive="left")
+def evaluate(env, policy, start=None, end=None, honest=None, weeks=None):
+    """From start to end, or over separate weeks (each starting half full), scaled to a year.
+    honest: homes to report a separate bill for, such as the honest homes in an attack."""
+    if weeks is None:
+        days = pd.date_range(start, end, freq="D", inclusive="left")
+        starts, per_year = {days[0]}, 1.0
+    else:
+        days = pd.DatetimeIndex(np.concatenate([pd.date_range(w, periods=7, freq="D") for w in weeks]))
+        starts, per_year = set(weeks), 365 / len(days)
     curtail = throughput = msl_absorbed = 0.0
     cost = np.zeros(env.n)
     over, vmax, msl_export, limits, loading = [], 0.0, 0.0, [], 0.0
     soc = None  # first day starts half full, then charge carries over from day to day
     for day in days:
-        env.reset(day, soc)
+        env.reset(day, None if day in starts else soc)
         limits.append(env.limits)
         done = False
         while not done:
@@ -176,7 +197,10 @@ def evaluate(env, policy, start, end, honest=None):
                 msl_export += np.maximum(-i["net_kw"], 0).sum() * DT
                 msl_absorbed += np.maximum(i["battery_kw"], 0).sum() * DT
         soc = env.soc
-    supply = TARIFF_12D["2025-26"]["supply_per_day"] * len(days)
+    if weeks is not None:  # sums to a year. Left as they were for a whole year, so those figures don't change
+        cost, curtail, throughput = cost * per_year, curtail * per_year, throughput * per_year
+        msl_export, msl_absorbed = msl_export * per_year, msl_absorbed * per_year
+    supply = TARIFF_12D["2025-26"]["supply_per_day"] * (len(days) if weeks is None else 365)
     midday = np.stack(limits)[:, 20:28]  # 10am to 2pm
     honest = np.ones(env.n, bool) if honest is None else honest
     return {"bill $/home/yr": cost.mean() + supply, "bill honest homes $/home/yr": cost[honest].mean() + supply,
@@ -187,11 +211,18 @@ def evaluate(env, policy, start, end, honest=None):
             "transformer peak loading %": 100 * loading}
 
 
+def test(env, policy, honest=None):
+    """The test period: the 2012-13 year for Ausgrid, the 13 test weeks of 2018 for ACT NextGen."""
+    if env.test_weeks is None:
+        return evaluate(env, policy, *TEST, honest=honest)
+    return evaluate(env, policy, honest=honest, weeks=env.test_weeks)
+
+
 if __name__ == "__main__":
     env = BatteryStreet()
     print(f"{env.n} homes, batteries {env.capacity.min():.0f} to {env.capacity.max():.0f} kWh, "
           f"homes per phase {np.bincount(env.phase)[1:].tolist()}, "
           f"voltage sensitivity {env.sensitivity.min():.2f} to {env.sensitivity.max():.2f} V per kW (own phase), "
           f"MSL half hours in data {env.msl.sum()}")
-    results = {name: evaluate(env, pol, *TEST) for name, pol in [("idle", idle), ("self consumption", self_consumption)]}
+    results = {name: test(env, pol) for name, pol in [("idle", idle), ("self consumption", self_consumption)]}
     print(pd.DataFrame(results).round(2).to_string())

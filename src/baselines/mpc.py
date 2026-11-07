@@ -5,7 +5,9 @@ prices and export limits exactly, then plays that schedule in the environment. E
 plus curtailed solar, within its battery and export limits. Voltage is left to the export limits, as for every
 other method.
 
-Running this file compares idle, the self consumption rule and this MPC over the 2012-13 test year.
+Running this file compares idle, the self consumption rule and this MPC over the test period: the 2012-13 year, or the
+13 test weeks of 2018 for ACT NextGen.
+Run: .venv/bin/python src/baselines/mpc.py [supply pu, 1.0] [ausgrid|nextgen]
 """
 import sys
 from pathlib import Path
@@ -15,7 +17,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from env.battery_env import DT, TEST, BatteryStreet, evaluate, idle, self_consumption
+from env.battery_env import DT, TEST, BatteryStreet, idle, self_consumption, test
 
 
 class PerfectForesightMPC:
@@ -49,11 +51,13 @@ class PerfectForesightMPC:
 
 
 if __name__ == "__main__":
-    env = BatteryStreet()
+    env = BatteryStreet(supply_pu=float(sys.argv[1]) if len(sys.argv) > 1 else 1.0,  # 1.02 for the stress test
+                        dataset=sys.argv[2] if len(sys.argv) > 2 else "ausgrid")
     mpc = PerfectForesightMPC()
 
     # Check: playing the plan in the environment gives the bill the optimiser expected, so both use the same model.
-    for day in pd.date_range(TEST[0], periods=5, freq="D"):
+    first = TEST[0] if env.test_weeks is None else env.test_weeks[0]
+    for day in pd.date_range(first, periods=5, freq="D"):
         env.reset(day)
         done, cost = False, 0.0
         while not done:
@@ -62,6 +66,6 @@ if __name__ == "__main__":
         assert abs(cost - mpc.planned_cost) < 1e-3 * max(1, abs(cost)), (day, cost, mpc.planned_cost)
     print("environment reproduces the MPC plan")
 
-    results = {name: evaluate(env, pol, *TEST)
+    results = {name: test(env, pol)
                for name, pol in [("idle", idle), ("self consumption", self_consumption), ("MPC (best case)", mpc)]}
     print(pd.DataFrame(results).round(2).to_string())

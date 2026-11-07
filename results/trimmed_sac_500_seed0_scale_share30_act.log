@@ -1,0 +1,32 @@
+day 1: validation 148.96 $/home, alpha 1.000
+day 25: validation 219.57 $/home, alpha 0.776
+day 50: validation 216.72 $/home, alpha 0.540
+day 75: validation 185.98 $/home, alpha 0.380
+day 100: validation 171.88 $/home, alpha 0.270
+day 125: validation 166.59 $/home, alpha 0.193
+day 150: validation 166.71 $/home, alpha 0.139
+day 175: validation 159.36 $/home, alpha 0.103
+day 200: validation 154.39 $/home, alpha 0.077
+day 225: validation 151.28 $/home, alpha 0.060
+day 250: validation 147.79 $/home, alpha 0.049
+day 275: validation 145.71 $/home, alpha 0.042
+day 300: validation 142.24 $/home, alpha 0.038
+day 325: validation 140.92 $/home, alpha 0.037
+day 350: validation 139.31 $/home, alpha 0.036
+day 375: validation 136.33 $/home, alpha 0.036
+day 400: validation 135.75 $/home, alpha 0.037
+day 425: validation 132.71 $/home, alpha 0.038
+day 450: validation 131.14 $/home, alpha 0.039
+day 475: validation 129.44 $/home, alpha 0.040
+day 500: validation 127.00 $/home, alpha 0.041
+trimmed SAC, seed 0, attack scale from homes [0, 1, 2, 5, 7, 9, 14, 17, 22, 23, 28], last policy, dataset nextgen: trained on 500 days in 3265 s, 500 rounds, 54400 shared values per home per round (212 KB)
+bill $/home/yr                             1053.24
+bill honest homes $/home/yr                1029.99
+curtailed kWh/home/yr                        42.81
+battery cycles/yr                           244.63
+half hours over 253 V %                       0.00
+max V                                       250.40
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    11992.70
+midday export limit kW (median)               6.28
+transformer peak loading %                   67.96

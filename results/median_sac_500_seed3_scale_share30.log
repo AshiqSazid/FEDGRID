@@ -1,0 +1,42 @@
+day 1: validation 247.30 $/home, alpha 1.000
+day 25: validation 336.04 $/home, alpha 0.772
+day 50: validation 337.93 $/home, alpha 0.537
+day 75: validation 307.90 $/home, alpha 0.376
+day 100: validation 278.23 $/home, alpha 0.266
+day 125: validation 264.22 $/home, alpha 0.190
+day 150: validation 258.48 $/home, alpha 0.137
+day 175: validation 254.27 $/home, alpha 0.101
+day 200: validation 248.06 $/home, alpha 0.075
+day 225: validation 238.86 $/home, alpha 0.057
+day 250: validation 236.87 $/home, alpha 0.045
+day 275: validation 231.70 $/home, alpha 0.037
+day 300: validation 228.82 $/home, alpha 0.034
+day 325: validation 230.95 $/home, alpha 0.032
+day 350: validation 231.48 $/home, alpha 0.032
+day 375: validation 230.72 $/home, alpha 0.033
+day 400: validation 227.65 $/home, alpha 0.034
+day 425: validation 224.98 $/home, alpha 0.033
+day 450: validation 221.90 $/home, alpha 0.033
+day 475: validation 221.02 $/home, alpha 0.033
+day 500: validation 221.76 $/home, alpha 0.034
+median SAC, seed 3, attack scale from homes [1, 2, 3, 5, 6, 11, 19, 21, 24, 27, 29], last policy: trained on 500 days in 3683 s, 500 rounds, 54400 shared values per home per round (212 KB)
+bill $/home/yr                              929.66
+bill honest homes $/home/yr                1010.80
+curtailed kWh/home/yr                       104.79
+battery cycles/yr                           275.52
+half hours over 253 V %                       0.00
+max V                                       250.52
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    15311.18
+midday export limit kW (median)               5.92
+transformer peak loading %                   58.96
+ACT transfer bill $/home/yr                             1222.81
+ACT transfer bill honest homes $/home/yr                1232.93
+ACT transfer curtailed kWh/home/yr                        34.82
+ACT transfer battery cycles/yr                           248.00
+ACT transfer half hours over 253 V %                       0.00
+ACT transfer max V                                       249.48
+ACT transfer export in MSL half hours kWh                  0.00
+ACT transfer battery charging in MSL half hours kWh    12722.03
+ACT transfer midday export limit kW (median)               6.28
+ACT transfer transformer peak loading %                   53.42

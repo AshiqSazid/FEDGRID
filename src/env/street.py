@@ -1,6 +1,7 @@
-"""A CSIRO feeder street (L by default): one Ausgrid home on each load, one OpenDSS power flow per half hour.
+"""A CSIRO feeder street (L by default): one household on each load, one OpenDSS power flow per half hour.
 
-No batteries yet. Each home's net power (load minus solar) is set on its load, so a negative value exports.
+Households come from the Ausgrid data (2010-13, solar rescaled to Toowoomba) or the ACT NextGen trial (2018, Canberra's
+own solar). No batteries yet. Each home's net power (load minus solar) is set on its load, so a negative value exports.
 Running this file simulates the 2012-13 test year and reports how often the street goes over voltage.
 """
 from pathlib import Path
@@ -14,27 +15,32 @@ FEEDERS = ROOT / "data/raw/csiro/RepresentativeLVNetworks-master/data"
 PROC = ROOT / "data/processed"
 V_MIN, V_MAX = 216.2, 253.0  # AS 61000.3.100 limits for 230 V (-6% / +10%)
 KVAR_PER_KW = 0.203  # household load at power factor 0.98, as in the feeder's own load data. Solar runs at unity.
+# Per dataset: homes and quality checks, load (kWh per half hour), solar (kWh per kWp per half hour), all from src/prep
+DATASETS = {"ausgrid": ("ausgrid_customers.csv", "ausgrid_load_kwh.csv.gz", "pv_toowoomba_kwh_per_kwp.csv.gz"),
+            "nextgen": ("nextgen_customers.csv", "nextgen_load_kwh.csv.gz", "nextgen_pv_kwh_per_kwp.csv.gz")}
 
 
 class Street:
-    def __init__(self, seed=0, pv_median_kwp=6.6, pv_max_kwp=10.0, feeder="L", exclude=()):
-        """exclude: Ausgrid homes not to use, so a reference street can be kept apart from the federation's street."""
+    def __init__(self, seed=0, pv_median_kwp=6.6, pv_max_kwp=10.0, feeder="L", exclude=(), dataset="ausgrid"):
+        """exclude: homes not to use, so a reference street can be kept apart from the federation's street."""
         dss.Text.Command(f'Redirect "{FEEDERS / feeder / "Master.dss"}"')
         self.loads = dss.Loads.AllNames()
-        customers = pd.read_csv(PROC / "ausgrid_customers.csv", index_col=0)
+        customers_csv, load_csv, pv_csv = DATASETS[dataset]
+        customers = pd.read_csv(PROC / customers_csv, index_col=0)
         clean = customers.index[customers["clean"]]
         if len(exclude):
             clean = clean[~clean.isin(exclude)]
         self.homes = np.random.default_rng(seed).choice(clean, len(self.loads), replace=False)
 
-        # ponytail: modern size = 2010 era size scaled so the median is pv_median_kwp, capped at pv_max_kwp.
-        # It keeps each home's relative size. Swap in a real Queensland size distribution if one is found.
+        # ponytail: modern size = recorded size scaled so the median is pv_median_kwp, capped at pv_max_kwp, for both
+        # datasets (2010 era Ausgrid, 2018 ACT). It keeps each home's relative size. Swap in a real Queensland size
+        # distribution if one is found.
         cap = customers["capacity_kwp"]
         self.pv_kwp = np.minimum(cap[self.homes] * pv_median_kwp / cap[clean].median(), pv_max_kwp).to_numpy()
 
         cols = [str(h) for h in self.homes]
-        load = pd.read_csv(PROC / "ausgrid_load_kwh.csv.gz", index_col=0, usecols=["time_aest", *cols])
-        pv = pd.read_csv(PROC / "pv_toowoomba_kwh_per_kwp.csv.gz", index_col=0, usecols=["time_aest", *cols])
+        load = pd.read_csv(PROC / load_csv, index_col=0, usecols=["time_aest", *cols])
+        pv = pd.read_csv(PROC / pv_csv, index_col=0, usecols=["time_aest", *cols])
         self.time = pd.DatetimeIndex(pd.to_datetime(load.index, utc=True).tz_convert("Australia/Brisbane"))
         self.load_kw = 2 * load[cols].to_numpy()  # kWh per half hour -> average kW
         self.pv_kw = 2 * pv[cols].to_numpy() * self.pv_kwp

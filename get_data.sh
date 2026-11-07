@@ -51,6 +51,12 @@ get https://www.aemo.com.au/-/media/files/major-publications/qed/2025/qed-q3-202
 
 # ponytail: item 6 (CityLearn datasets) downloads itself on `pip install citylearn==3.0.2` first use.
 
+# 8. ACT NextGen energy storage trial: 100 Canberra homes, 2018, one file per home (second household dataset, CC BY 4.0)
+NEXTGEN=https://zenodo.org/api/records/14885589
+for f in $(curl -fsSL -A "$UA" "$NEXTGEN" | grep -oE '[0-9]+-id_[0-9]+\.csv' | sort -u); do
+  get "$NEXTGEN/files/$f/content" $R/nextgen/$f
+done
+
 for z in $R/csiro/*.zip $R/ausgrid/*.zip; do
   [ -s "$z" ] && unzip -n -q "$z" -d "$(dirname "$z")"
 done

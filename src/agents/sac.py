@@ -20,7 +20,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from env.battery_env import TEST, TRAIN, BatteryStreet, evaluate, self_consumption
+from env.battery_env import BatteryStreet, evaluate, self_consumption, test
 
 # Networks and replay buffers go on a GPU when there is one. The street simulation always runs on the CPU.
 if torch.cuda.is_available():
@@ -138,11 +138,9 @@ class Buffer:
         return self.o[:, idx], self.a[:, idx], self.r[:, idx], self.o2[:, idx], self.d[:, idx]
 
 
-# The training years in 7 day blocks. Every 8th block (13 weeks across all seasons) is held out to pick the best policy,
-# so the test year is never used for any choice.
-WEEKS = pd.date_range(TRAIN[0], pd.Timestamp(TRAIN[1]) - pd.Timedelta(days=7), freq="7D")
-VALID_WEEKS = WEEKS[4::8]
-TRAIN_WEEKS = WEEKS.drop(VALID_WEEKS)
+# Training and held out weeks come from the street (src/env/battery_env.py, split): for Ausgrid, every 8th 7 day block
+# of the training years (13 weeks across all seasons) is held out to pick the best policy, so the test year is never
+# used for any choice.
 
 
 def battery_action(env, a):
@@ -160,7 +158,7 @@ def validate(env, agent, mode):
     """Bill plus the curtailment penalty per home over the held out weeks, each starting half full. Lower is better.
     In a real federation each home would score its own held out weeks and send back one number."""
     act, score = policy(agent, env, mode), 0.0
-    for week in VALID_WEEKS:
+    for week in env.valid_weeks:
         r = evaluate(env, act, week, week + pd.Timedelta(days=7))
         score += r["bill $/home/yr"] + env.w_curtail * r["curtailed kWh/home/yr"]
     return score
@@ -178,7 +176,7 @@ class Learner:
         self.env, self.warmup_days, self.reward_scale = env, warmup_days, reward_scale
         self.rng = np.random.default_rng(seed)
         self.n, self.per = layout(env, mode)
-        self.day = TRAIN_WEEKS[self.rng.integers(len(TRAIN_WEEKS))]
+        self.day = env.train_weeks[self.rng.integers(len(env.train_weeks))]
         self.obs = env.reset(self.day)
         self.agent = SAC(self.n, self.obs.shape[1])
         self.buf = Buffer(self.n, days * 48 * self.per, self.obs.shape[1])
@@ -206,7 +204,7 @@ class Learner:
                 obs2 = env.reset(self.day, env.soc)
             elif done:  # new block on a random day, so don't bootstrap across the jump
                 jump = 1.0
-                self.day = TRAIN_WEEKS[self.rng.integers(len(TRAIN_WEEKS))]
+                self.day = self.env.train_weeks[self.rng.integers(len(self.env.train_weeks))]
                 obs2 = env.reset(self.day)
             r = self.shape(self.reward_scale * r)
             if self.poison == "reward":
@@ -265,4 +263,4 @@ if __name__ == "__main__":
     start = time.time()
     agent = train(env, mode, days, seed=seed)
     print(f"{mode} SAC, seed {seed}: trained on {days} days in {time.time() - start:.0f} s")
-    print(pd.Series(evaluate(env, policy(agent, env, mode), *TEST)).round(2).to_string())
+    print(pd.Series(test(env, policy(agent, env, mode))).round(2).to_string())

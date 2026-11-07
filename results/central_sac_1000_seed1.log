@@ -1,0 +1,53 @@
+day 1: validation 247.30 $/home, alpha 1.000
+day 25: validation 351.92 $/home, alpha 0.767
+day 50: validation 355.04 $/home, alpha 0.531
+day 75: validation 338.49 $/home, alpha 0.374
+day 100: validation 274.20 $/home, alpha 0.268
+day 125: validation 268.76 $/home, alpha 0.194
+day 150: validation 252.91 $/home, alpha 0.141
+day 175: validation 249.82 $/home, alpha 0.103
+day 200: validation 251.37 $/home, alpha 0.076
+day 225: validation 241.64 $/home, alpha 0.059
+day 250: validation 244.30 $/home, alpha 0.047
+day 275: validation 239.33 $/home, alpha 0.040
+day 300: validation 230.33 $/home, alpha 0.035
+day 325: validation 221.76 $/home, alpha 0.034
+day 350: validation 228.42 $/home, alpha 0.035
+day 375: validation 229.23 $/home, alpha 0.033
+day 400: validation 225.22 $/home, alpha 0.034
+day 425: validation 221.25 $/home, alpha 0.033
+day 450: validation 224.97 $/home, alpha 0.037
+day 475: validation 225.78 $/home, alpha 0.036
+day 500: validation 222.52 $/home, alpha 0.035
+day 525: validation 226.82 $/home, alpha 0.034
+day 550: validation 220.65 $/home, alpha 0.035
+day 575: validation 215.37 $/home, alpha 0.036
+day 600: validation 211.72 $/home, alpha 0.039
+day 625: validation 223.44 $/home, alpha 0.039
+day 650: validation 221.15 $/home, alpha 0.039
+day 675: validation 222.54 $/home, alpha 0.038
+day 700: validation 220.48 $/home, alpha 0.035
+day 725: validation 222.46 $/home, alpha 0.036
+day 750: validation 215.54 $/home, alpha 0.037
+day 775: validation 214.08 $/home, alpha 0.036
+day 800: validation 209.11 $/home, alpha 0.038
+day 825: validation 210.08 $/home, alpha 0.041
+day 850: validation 216.05 $/home, alpha 0.044
+day 875: validation 212.37 $/home, alpha 0.042
+day 900: validation 213.67 $/home, alpha 0.041
+day 925: validation 212.84 $/home, alpha 0.038
+day 950: validation 212.30 $/home, alpha 0.039
+day 975: validation 210.84 $/home, alpha 0.040
+day 1000: validation 209.68 $/home, alpha 0.042
+kept the policy from day 800
+central SAC, seed 1: trained on 1000 days in 803 s
+bill $/home/yr                              876.48
+bill honest homes $/home/yr                 876.48
+curtailed kWh/home/yr                       107.45
+battery cycles/yr                           294.64
+half hours over 253 V %                       0.00
+max V                                       248.93
+export in MSL half hours kWh                  0.00
+battery charging in MSL half hours kWh    13884.55
+midday export limit kW (median)               5.92
+transformer peak loading %                   57.33

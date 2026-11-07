@@ -1,0 +1,7 @@
+               flip  noise  normalized  scale  worst  attacks  seeds  honest rejected %  worst honest home %  bad rejected %  40% damage  40% honest rejected %  40% worst honest home %
+version                                                                                                                                                                                 
+lam2_level99   10.5    NaN         0.3    NaN   10.5        2      3               28.6                 98.7            44.1         NaN                    NaN                      NaN
+lam2_level999  17.8    NaN        15.4    NaN   17.8        2      3               14.7                 54.1            28.6         NaN                    NaN                      NaN
+lam1_level99   19.2    NaN        16.5    NaN   19.2        2      3               19.4                 72.0            32.6         NaN                    NaN                      NaN
+original       21.2   -4.3        10.7    1.7   21.2        4      3                6.9                 29.1            61.6        32.9                   53.6                     88.7
+lam1_level999  22.0    NaN        14.9    NaN   22.0        2      3               10.4                 45.3            22.3         NaN                    NaN                      NaN

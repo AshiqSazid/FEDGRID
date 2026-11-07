@@ -1,0 +1,24 @@
+day 1: validation 247.30 $/home, alpha 1.000
+day 25: validation 350.04 $/home, alpha 0.781
+day 50: validation 346.82 $/home, alpha 0.545
+day 75: validation 312.84 $/home, alpha 0.381
+day 100: validation 267.08 $/home, alpha 0.270
+day 125: validation 261.32 $/home, alpha 0.194
+day 150: validation 253.63 $/home, alpha 0.141
+day 175: validation 241.77 $/home, alpha 0.105
+day 200: validation 236.85 $/home, alpha 0.080
+day 225: validation 231.32 $/home, alpha 0.063
+day 250: validation 222.73 $/home, alpha 0.051
+day 275: validation 219.16 $/home, alpha 0.044
+day 300: validation 214.11 $/home, alpha 0.042
+day 325: validation 213.43 $/home, alpha 0.043
+day 350: validation 211.55 $/home, alpha 0.044
+day 375: validation 211.31 $/home, alpha 0.044
+day 400: validation 210.41 $/home, alpha 0.044
+day 425: validation 211.08 $/home, alpha 0.044
+day 450: validation 211.83 $/home, alpha 0.043
+day 475: validation 210.22 $/home, alpha 0.044
+day 500: validation 209.57 $/home, alpha 0.044
+fedgrid SAC, seed 2, attack normalized from homes [3, 7, 8, 11, 12, 14, 21, 25, 29, 32, 34], last policy, filter first, guard: trained on 500 days in 5722 s, 500 rounds, 54400 shared values per home per round (212 KB)
+rejected: honest homes 9.7% of their changes (most rejected home 27.3%), bad homes 8.6%, delayed honest changes 0.0% of 0
+rejected share by home (solar kWp): 0.06 (4.5), 0.02 (6.6), 0.04 (6.7), 0.03 (6.2), 0.05 (4.6), 0.06 (6.5), 0.04 (9.0), 0.12 (4.5), 0.14 (6.7), 0.01 (6.0), 0.08 (8.8), 0.03 (6.6), 0.12 (4.4), 0.07 (10.0), 0.12 (4.5), 0.26 (10.0), 0.06 (7.3), 0.14 (4.5), 0.05 (4.8), 0.19 (4.5), 0.05 (10.0), 0.14 (7.9), 0.05 (6.6), 0.19 (6.9), 0.14 (4.4), 0.03 (6.6), 0.21 (4.5), 0.05 (6.7), 0.05 (4.5), 0.03 (6.6), 0.20 (4.8), 0.27 (4.4), 0.14 (9.0), 0.05 (6.6), 0.03 (4.8), 0.04 (4.8)
