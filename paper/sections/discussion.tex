@@ -1,0 +1,21 @@
+\section{Discussion}
+\label{sec:discussion}
+\subsection{What the revision establishes}
+The largest observed improvement of final FedGrid concerns the Normalized attack. Matched estimates have the same direction on Ausgrid and ACT, while transfer remains imprecise. The ablations suggest that clipping before filtering can obscure magnitude differences relevant to outlier detection. However, the final configuration changes both filter order and clipping bound. The existing comparisons therefore characterise the combined revision without isolating either change as its cause.
+
+The same distinction applies to grouping and trust. Capacity bands are intended to accommodate legitimate household differences, but their presence does not demonstrate fair treatment, and the ablations do not establish that grouping independently produces low rejection. Reference trust can suppress an adverse direction while assigning zero weight to an entire admitted group. The mechanism analysis thus supports a precise account of the aggregation rule without proving that each component independently benefits participation or robustness.
+
+\subsection{Participation as a measurable operational outcome}
+Participation has at least three observable stages: reception of an update, passage through the outlier filter and assignment of positive aggregation weight. Reliable communication does not ensure admission, and admission does not ensure positive weight. Even a positive coefficient may have little effect on the resulting policy because contributions interact and can cancel.
+
+Historical logs capture only part of this process. They identify recorded filter decisions and aggregate bills, but not a household-level financial effect of exclusion. A corresponding economic analysis would compare the same household and seed under an averaging reference and each defence, alongside contribution rates and solar-capacity strata. These measurements would connect the aggregation decisions to household outcomes; the current rejection summaries do not establish that connection.
+
+\subsection{Energy value and physical protection}
+The clean experiments show lower curtailment and greater charging during the designated MSL periods more clearly than reduced bills. This pattern is consistent with the training objective, which penalises curtailment in addition to direct cost. It also involves higher battery throughput without an explicit replacement or degradation charge. Consequently, improved solar absorption cannot be interpreted as a complete economic benefit from the electricity bill alone.
+
+Physical protection also depends on the surrounding control system. Export compliance is enforced by simulator action correction, while transformer loading is measured and the envelope schedule approximates voltage constraints. The ACT perfect-foresight MPC reference reaches approximately 110\% peak transformer loading, and the higher-voltage baseline exhibits voltage violations. Cost, export compliance and network loading therefore require separate reporting; satisfying the implemented envelope does not imply that every electrical limit is satisfied.
+
+\subsection{Implications for an implementable controller}
+The archived single-core laptop benchmark measures decision times of 0.04--0.06\,ms for one household and approximately 353--356\,MiB peak process memory. The memory unit reflects the Linux benchmark's conversion of resident-set size. These observations establish the measured software's performance on that machine, rather than Raspberry Pi or inverter-controller feasibility. They also exclude the reference learner, server aggregation, communications, recovery and secure transport.
+
+Forecast-based receding-horizon control, reference-household mismatch and explicit contribution logging remain important comparisons. The current perfect-foresight reference and ideal-information envelopes leave their effects unresolved. Evaluating those conditions would determine how much of the observed protection and energy performance persists under implementable information and computing constraints.

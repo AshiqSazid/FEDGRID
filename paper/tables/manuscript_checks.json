@@ -1,0 +1,12 @@
+{
+  "figures": 13,
+  "tables": 19,
+  "bibliography_entries": 19,
+  "main_figures": 6,
+  "main_tables": 6,
+  "exact_comparisons": 24,
+  "cross_partition_training_cells": 2004,
+  "test_donors_to_training": 1540,
+  "source_checks": "passed",
+  "quality_verdict": "Scientific blockers remain; checks do not certify journal acceptance."
+}

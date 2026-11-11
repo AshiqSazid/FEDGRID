@@ -1,0 +1,20 @@
+\section{Related work}
+\label{sec:related}
+\subsection{Federated optimisation and residential energy management}
+Federated model averaging enables collaborative training from decentralised records~\cite{fedavg}. FedProx extends this approach to statistical and system heterogeneity through a local proximal objective~\cite{fedprox}. These concerns arise naturally in residential control, where households differ in consumption schedules, photovoltaic capacity and storage constraints. Resilience to malicious contributions introduces a separate requirement beyond learning from heterogeneous data.
+
+Sievers et al.~\cite{sievers} investigate federated reinforcement learning for building battery scheduling, including electricity cost, emissions and transfer to unseen buildings. Their evaluation includes rule-based control and an optimisation reference. Building on that application, the present study examines corrupted updates and training data while retaining feeder power-flow outcomes. It also distinguishes a contribution's passage through an aggregation filter from the weight it receives in the shared update.
+
+\subsection{Robust aggregation}
+Krum selects an update according to its distances to neighbouring updates and provides resilience results under assumptions on workers and gradients~\cite{krum}. Coordinate median and trimmed mean use robust coordinate statistics with analyses in distributed optimisation~\cite{yin}. These methods supply different notions of update consistency. Their application to heterogeneous actor and critic changes is evaluated empirically here; the original guarantees do not directly establish convergence or control performance in this setting.
+
+FLTrust establishes a reference direction from trusted server data and combines nonnegative cosine trust with norm normalisation~\cite{fltrust}. FedGrid also uses a trusted reference learner, but weights the means of filtered solar-capacity groups. This changes the relationship between admission and weighting: zero trust is recorded as rejection by the implemented FLTrust, whereas a FedGrid group can pass filtering and then receive zero weight.
+
+FLAME combines clustering, clipping and noise injection for backdoor defence~\cite{flame}. We adapt its aggregation mechanism to bill-damaging poisoning in battery control. Together, the comparators cover coordinate statistics, neighbour selection, reference trust and majority clustering. Their differing admission decisions are therefore treated as method-specific diagnostics rather than a uniform exclusion criterion.
+
+\subsection{Poisoning and trust-aware federated reinforcement learning}
+Fang et al.~\cite{fang} introduce the Normalized attack, which targets the angle of the aggregate, and propose an ensemble defence for federated reinforcement learning. A directional objective can remain damaging even when individual update magnitudes are controlled, motivating its inclusion alongside sign, scale and noise perturbations. Our implementation queries the aggregation rule and searches fixed grids for direction and magnitude. The results apply to that search procedure; the complete source attack and ensemble defence are outside the present comparison.
+
+Sepehrzad et al.~\cite{tafdrl} develop trust-aware federated deep reinforcement learning for flexible microgrid energy markets. Our TAFDRL-style comparator reconstructs selected mechanisms using principal-component analysis (PCA) for distance scoring and Beta trust. Its representation, trust processing and physical task differ from the published framework. We consequently report it as an implemented trust filter rather than a full reproduction of that framework.
+
+This study brings these approaches into a household battery setting to examine economic damage, electrical outcomes and admission behaviour jointly. Its specific contribution lies in that coupled evaluation and the analysis of realised contribution weights, rather than in introducing federated battery scheduling or transferring existing robustness guarantees to a new control problem.

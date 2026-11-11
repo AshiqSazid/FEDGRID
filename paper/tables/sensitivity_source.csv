@@ -1,0 +1,20 @@
+method,seed,variant,damage
+fedavg,0,feederO,515.5400000000001
+fedavg,0,lost10_delayed10,529.1800000000001
+fedavg,0,pu102,614.59
+fedgrid,0,feederO,137.85000000000014
+fedgrid final,0,feederO,36.710000000000036
+fedgrid,0,lost10_delayed10,59.90999999999997
+fedgrid final,0,lost10_delayed10,-18.25999999999999
+fedgrid final,0,pu102,-11.600000000000023
+flame,0,feederO,88.40999999999997
+flame,0,lost10_delayed10,2.2899999999999636
+flame,0,pu102,25.0
+fltrust,0,feederO,12.259999999999991
+fltrust,0,lost10_delayed10,-37.010000000000105
+fltrust,0,pu102,32.35000000000002
+krum,0,lost10_delayed10,-29.350000000000023
+median,0,lost10_delayed10,261.93000000000006
+tafdrl,0,lost10_delayed10,10.519999999999982
+tafdrl final,0,lost10_delayed10,38.680000000000064
+trimmed,0,lost10_delayed10,1223.99

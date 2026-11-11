@@ -1,0 +1,5 @@
+Solar-capacity groups guide filtering of federated battery-control updates.
+Filtering before clipping reduces observed Normalized-attack bill damage.
+Six poisoning attacks expose protection limits, including reward corruption.
+Logged admission differs from positive contribution to the shared model.
+Paired audits disclose small-sample and cross-partition preprocessing limits.

@@ -1,0 +1,47 @@
+\section{Evaluation design and reporting}
+\label{sec:evaluation}
+\subsection{Partitions, policy retention and experimental coverage}
+Figure~\ref{fig:splits} shows the time partitions, and Table~\ref{tab:coverage} gives the replication for each experimental group. The main attack comparison uses five Ausgrid learning seeds and three ACT retraining seeds. Transfer comparisons involving the original methods use two common seeds, whereas final FedGrid and tuned TAFDRL-style have five available transfer seeds. The archive contains 706 top-level learning logs across groups; these are not independent replicates of a single comparison.
+
+Clean 500-day experiments retain the actor with the lowest validation score. Attack experiments retain the last actor, allowing damage late in training to remain visible rather than selecting an earlier policy. Each attack comparison uses a no-attack last-policy reference from the same aggregation rule. Results from these retention protocols are reported separately.
+
+\input{tables/coverage}
+
+\subsection{Economic damage and household alignment}
+Let $B_{m,a,s}(H)$ denote annual household-average bill for method $m$, attack $a$, seed $s$ and evaluated positions $H$. Damage is
+\begin{equation}
+D_{m,a,s}=B_{m,a,s}(H_a)-B_{m,\varnothing,s}(H_a).
+\end{equation}
+Update attacks use all households in $H_a$, since they corrupt transmitted changes without directly corrupting the physical evaluation. Meter and reward attacks use only the fixed honest positions. Their no-attack references use the same positions, drawing on archived honest-reference runs where necessary. Negative damage is retained and denotes a lower observed bill than the matched reference; it does not imply that an attack improves performance generally.
+
+Ausgrid evaluation covers the full annual period, carrying stored energy between days after an initial half-charge state. ACT evaluation uses 13 separated seven-day blocks, each starting half charged, and annualises energy and cost sums by $365/91$. These are annualised block estimates rather than outcomes from a continuous year. Voltage-exceedance frequencies and peak loading describe the evaluated intervals and are not annualised as sums.
+
+The reported cycle statistic divides total battery energy throughput by twice the sum of battery capacities. It is a fleet-equivalent cycle measure, or a capacity-weighted average of household equivalent cycles, rather than the arithmetic mean of household cycle counts. Bills and curtailed solar are averaged per household; MSL charging is summed across the street.
+
+For the damage--rejection scatter, the vertical coordinate is
+\begin{equation}
+W_m=\max_{a\in\mathcal T}\left(\frac{1}{S}\sum_sD_{m,a,s}\right),
+\end{equation}
+where $\mathcal T$ contains all six attacks. This maximum of attack-wise means differs from the mean of seed-wise maxima. Because the largest mean and its associated attack can change with the seed sample, no confidence interval for the selected maximum is inferred from an individual attack's interval.
+
+\subsection{Recorded rejection and effective contribution}
+\label{sec:participation}
+The scatter's horizontal coordinate is mean logged honest rejection across the same six attacks and seed scope. For each household, the logged rate is rejected received changes divided by received changes after warmup. Missing legacy entries remain missing, with observation counts retained in the CSV. No-attack rejection is reported separately in the table and heatmap.
+
+Admission decisions have different meanings across methods. FedGrid records within-band outlier rejection; subsequent zero group weight leaves its admitted members recorded as kept. FLTrust records zero-trust updates as rejected. Krum selects one received vector, so most vectors are unselected by design. Median and trimmed mean do not provide a whole-vector admission mask and therefore have no comparable logged rate.
+
+A synthetic diagnostic illustrates the distinction: twelve identical changes opposite to the reference direction pass FedGrid's distance filter, yet produce a zero aggregate. This establishes a property of the statistic, not its prevalence in the energy experiments. Rounded historical rejection logs cannot recover the frequency of zero-weight groups. We therefore distinguish \emph{recorded rejection} from positive aggregation weight and from household fairness.
+
+\subsection{Uncertainty and paired revision analysis}
+For a scalar outcome across $S$ seeds, tables report the mean and Student-$t$ 95\% confidence interval half-width,
+\begin{equation}
+\bar x\ \pm\ t_{0.975,S-1}\,\frac{s_x}{\sqrt S}.
+\end{equation}
+A single-seed observation is marked $[1]$ without an estimated interval. These small-sample intervals depend on distributional assumptions and are conditional on the fixed household assignment; they do not describe uncertainty across arbitrary networks or household populations.
+
+The revision effect is $D_{\mathrm{final},a,s}-D_{\mathrm{original},a,s}$ on matched seeds, with negative values favouring the final configuration. Transfer pairs use only seeds 3--4 despite the five final-configuration runs. Intervals for these effects are exploratory and unadjusted for multiple comparisons. Overlap of marginal intervals is not interpreted as equivalence.
+
+An exploratory audit applies two-sided exact Wilcoxon signed-rank tests to the five-seed Ausgrid differences, with Holm adjustment within an 18-test robust-comparator family and a six-test original-versus-final family~\cite{scipywilcoxon,holm}. No comparison reaches 0.05 before or after adjustment. The appendix reports the exact p-values and their five-pair resolution limit. These retrospective tests do not complete the larger planned replication study.
+
+\subsection{Artifact construction and verification}
+Python scripts derive damage, paired effects and figures from archived logs, exporting the underlying observations and input hashes. Matplotlib renders the figures from those values; no dispatch traces are inferred from aggregate logs. OpenAI Codex assisted with drafting and reproducible analysis and figure scripts; its exact deployed model identifier was unavailable. Assistance with the schematic and partition figures is disclosed in their captions. Source scripts, per-seed values and log hashes support independent verification of the reported calculations.

@@ -1,0 +1,351 @@
+method,seed,attack,honest rejected %,bad rejected %
+fedavg,0,flip,,
+fedavg,0,meter,,
+fedavg,0,noise,,
+fedavg,0,none,,
+fedavg,0,normalized,,
+fedavg,0,reward,,
+fedavg,0,scale,,
+fedavg,1,flip,,
+fedavg,1,meter,,
+fedavg,1,noise,,
+fedavg,1,none,,
+fedavg,1,normalized,,
+fedavg,1,reward,,
+fedavg,1,scale,,
+fedavg,2,flip,,
+fedavg,2,meter,,
+fedavg,2,noise,,
+fedavg,2,none,,
+fedavg,2,normalized,,
+fedavg,2,reward,,
+fedavg,2,scale,,
+fedavg,3,flip,,
+fedavg,3,meter,,
+fedavg,3,noise,,
+fedavg,3,none,,
+fedavg,3,normalized,,
+fedavg,3,reward,,
+fedavg,3,scale,,
+fedavg,4,flip,,
+fedavg,4,meter,,
+fedavg,4,noise,,
+fedavg,4,none,,
+fedavg,4,normalized,,
+fedavg,4,reward,,
+fedavg,4,scale,,
+fedgrid,0,flip,0.3,10.1
+fedgrid final,0,flip,2.8,12.7
+fedgrid,0,meter,0.7,4.0
+fedgrid final,0,meter,3.9,11.9
+fedgrid,0,noise,0.1,3.7
+fedgrid final,0,noise,0.8,100.0
+fedgrid,0,none,3.3,
+fedgrid final,0,none,6.8,
+fedgrid,0,normalized,5.6,1.4
+fedgrid final,0,normalized,7.8,16.6
+fedgrid,0,reward,0.8,2.9
+fedgrid final,0,reward,5.2,12.8
+fedgrid,0,scale,1.1,4.0
+fedgrid final,0,scale,0.8,100.0
+fedgrid,1,flip,1.1,10.8
+fedgrid final,1,flip,2.3,15.5
+fedgrid,1,meter,0.9,1.4
+fedgrid final,1,meter,2.9,9.2
+fedgrid,1,noise,0.3,2.9
+fedgrid final,1,noise,0.9,100.0
+fedgrid,1,none,2.9,
+fedgrid final,1,none,5.7,
+fedgrid,1,normalized,5.5,0.3
+fedgrid final,1,normalized,7.2,18.3
+fedgrid,1,reward,2.5,2.0
+fedgrid final,1,reward,4.7,9.1
+fedgrid,1,scale,2.9,1.3
+fedgrid final,1,scale,1.4,100.0
+fedgrid,2,flip,0.4,6.4
+fedgrid final,2,flip,2.3,29.3
+fedgrid,2,meter,1.8,2.4
+fedgrid final,2,meter,3.9,9.5
+fedgrid,2,noise,0.7,3.9
+fedgrid final,2,noise,0.5,100.0
+fedgrid,2,none,3.8,
+fedgrid final,2,none,7.1,
+fedgrid,2,normalized,3.5,0.1
+fedgrid final,2,normalized,3.9,27.9
+fedgrid,2,reward,1.8,3.6
+fedgrid final,2,reward,5.1,10.9
+fedgrid,2,scale,2.6,2.3
+fedgrid final,2,scale,0.8,100.0
+fedgrid,3,flip,0.1,6.3
+fedgrid final,3,flip,1.4,16.3
+fedgrid,3,meter,1.0,2.5
+fedgrid final,3,meter,3.8,8.5
+fedgrid,3,noise,0.0,2.1
+fedgrid final,3,noise,0.5,100.0
+fedgrid,3,none,3.6,
+fedgrid final,3,none,6.8,
+fedgrid,3,normalized,2.6,0.5
+fedgrid final,3,normalized,3.0,21.9
+fedgrid,3,reward,3.8,2.2
+fedgrid final,3,reward,5.1,9.8
+fedgrid,3,scale,2.1,2.8
+fedgrid final,3,scale,0.7,100.0
+fedgrid,4,flip,0.2,5.3
+fedgrid final,4,flip,1.5,17.9
+fedgrid,4,meter,1.0,2.1
+fedgrid final,4,meter,2.5,10.5
+fedgrid,4,noise,0.1,2.9
+fedgrid final,4,noise,0.2,100.0
+fedgrid,4,none,2.3,
+fedgrid final,4,none,4.6,
+fedgrid,4,normalized,5.9,0.6
+fedgrid final,4,normalized,10.5,18.5
+fedgrid,4,reward,3.5,1.0
+fedgrid final,4,reward,2.6,12.1
+fedgrid,4,scale,2.9,1.5
+fedgrid final,4,scale,0.1,100.0
+flame,0,flip,36.9,63.6
+flame,0,meter,24.4,99.0
+flame,0,noise,23.9,100.0
+flame,0,none,47.1,
+flame,0,normalized,43.7,44.2
+flame,0,reward,24.5,98.7
+flame,0,scale,24.0,100.0
+flame,1,flip,37.7,65.5
+flame,1,meter,24.2,99.5
+flame,1,noise,23.9,100.0
+flame,1,none,46.9,
+flame,1,normalized,46.2,38.8
+flame,1,reward,24.2,99.1
+flame,1,scale,23.9,100.0
+flame,2,flip,33.0,77.4
+flame,2,meter,23.9,99.5
+flame,2,noise,23.8,100.0
+flame,2,none,47.1,
+flame,2,normalized,48.4,37.4
+flame,2,reward,24.2,98.4
+flame,2,scale,23.8,100.0
+flame,3,flip,32.3,78.8
+flame,3,meter,24.1,99.6
+flame,3,noise,23.9,100.0
+flame,3,none,46.8,
+flame,3,normalized,46.4,41.6
+flame,3,reward,24.4,98.9
+flame,3,scale,24.0,100.0
+flame,4,flip,34.5,72.0
+flame,4,meter,24.2,99.6
+flame,4,noise,24.0,100.0
+flame,4,none,47.0,
+flame,4,normalized,46.8,39.2
+flame,4,reward,24.3,99.1
+flame,4,scale,24.0,100.0
+fltrust,0,flip,29.1,79.4
+fltrust,0,meter,30.0,62.2
+fltrust,0,noise,31.3,51.3
+fltrust,0,none,33.7,
+fltrust,0,normalized,15.8,0.0
+fltrust,0,reward,30.8,63.6
+fltrust,0,scale,33.3,29.2
+fltrust,1,flip,27.3,72.9
+fltrust,1,meter,26.1,55.6
+fltrust,1,noise,25.5,49.3
+fltrust,1,none,31.9,
+fltrust,1,normalized,14.4,0.0
+fltrust,1,reward,26.0,54.6
+fltrust,1,scale,28.5,36.6
+fltrust,2,flip,26.3,79.7
+fltrust,2,meter,26.6,62.6
+fltrust,2,noise,27.2,49.1
+fltrust,2,none,27.1,
+fltrust,2,normalized,13.4,0.0
+fltrust,2,reward,23.0,53.6
+fltrust,2,scale,26.4,29.5
+fltrust,3,flip,33.8,83.9
+fltrust,3,meter,33.7,57.6
+fltrust,3,noise,29.7,49.6
+fltrust,3,none,36.8,
+fltrust,3,normalized,21.7,0.0
+fltrust,3,reward,34.0,66.4
+fltrust,3,scale,42.7,28.7
+fltrust,4,flip,25.3,82.1
+fltrust,4,meter,28.7,64.0
+fltrust,4,noise,28.0,49.5
+fltrust,4,none,28.6,
+fltrust,4,normalized,15.5,0.0
+fltrust,4,reward,25.8,51.8
+fltrust,4,scale,27.8,26.0
+krum,0,flip,,
+krum,0,meter,96.0,100.0
+krum,0,noise,,
+krum,0,none,,
+krum,0,normalized,,
+krum,0,reward,96.1,99.8
+krum,0,scale,,
+krum,1,flip,96.0,100.0
+krum,1,meter,96.0,99.9
+krum,1,noise,96.0,100.0
+krum,1,none,97.2,
+krum,1,normalized,96.4,99.0
+krum,1,reward,96.0,100.0
+krum,1,scale,96.0,100.0
+krum,2,flip,96.0,100.0
+krum,2,meter,96.0,100.0
+krum,2,noise,96.0,100.0
+krum,2,none,97.2,
+krum,2,normalized,96.3,99.3
+krum,2,reward,96.0,99.9
+krum,2,scale,96.0,100.0
+krum,3,flip,96.0,100.0
+krum,3,meter,96.0,100.0
+krum,3,noise,96.0,100.0
+krum,3,none,97.2,
+krum,3,normalized,96.4,99.0
+krum,3,reward,96.0,99.9
+krum,3,scale,96.0,100.0
+krum,4,flip,96.0,100.0
+krum,4,meter,96.0,100.0
+krum,4,noise,96.0,100.0
+krum,4,none,97.2,
+krum,4,normalized,96.3,99.2
+krum,4,reward,96.0,99.9
+krum,4,scale,96.0,100.0
+median,0,flip,,
+median,0,meter,,
+median,0,noise,,
+median,0,none,,
+median,0,normalized,,
+median,0,reward,,
+median,0,scale,,
+median,1,flip,,
+median,1,meter,,
+median,1,noise,,
+median,1,none,,
+median,1,normalized,,
+median,1,reward,,
+median,1,scale,,
+median,2,flip,,
+median,2,meter,,
+median,2,noise,,
+median,2,none,,
+median,2,normalized,,
+median,2,reward,,
+median,2,scale,,
+median,3,flip,,
+median,3,meter,,
+median,3,noise,,
+median,3,none,,
+median,3,normalized,,
+median,3,reward,,
+median,3,scale,,
+median,4,flip,,
+median,4,meter,,
+median,4,noise,,
+median,4,none,,
+median,4,normalized,,
+median,4,reward,,
+median,4,scale,,
+tafdrl,0,flip,3.3,23.0
+tafdrl final,0,flip,10.6,57.6
+tafdrl,0,meter,1.6,97.6
+tafdrl final,0,meter,3.3,98.3
+tafdrl,0,noise,0.1,100.0
+tafdrl final,0,noise,0.1,100.0
+tafdrl,0,none,8.9,
+tafdrl final,0,none,18.5,
+tafdrl,0,normalized,33.3,28.1
+tafdrl final,0,normalized,54.2,24.0
+tafdrl,0,reward,3.4,98.6
+tafdrl final,0,reward,9.4,98.7
+tafdrl,0,scale,0.1,100.0
+tafdrl final,0,scale,0.1,100.0
+tafdrl,1,flip,2.2,20.7
+tafdrl final,1,flip,13.7,67.6
+tafdrl,1,meter,0.9,98.7
+tafdrl final,1,meter,2.4,98.9
+tafdrl,1,noise,0.1,100.0
+tafdrl final,1,noise,0.1,100.0
+tafdrl,1,none,8.8,
+tafdrl final,1,none,22.6,
+tafdrl,1,normalized,27.9,13.5
+tafdrl final,1,normalized,50.0,20.8
+tafdrl,1,reward,2.4,98.7
+tafdrl final,1,reward,5.9,98.9
+tafdrl,1,scale,0.0,100.0
+tafdrl final,1,scale,0.0,100.0
+tafdrl,2,flip,4.7,36.7
+tafdrl final,2,flip,11.3,71.6
+tafdrl,2,meter,1.7,98.7
+tafdrl final,2,meter,3.9,98.9
+tafdrl,2,noise,0.1,100.0
+tafdrl final,2,noise,0.1,100.0
+tafdrl,2,none,7.4,
+tafdrl final,2,none,21.8,
+tafdrl,2,normalized,34.8,17.8
+tafdrl final,2,normalized,55.0,23.0
+tafdrl,2,reward,2.9,94.4
+tafdrl final,2,reward,7.6,99.1
+tafdrl,2,scale,0.3,100.0
+tafdrl final,2,scale,0.4,100.0
+tafdrl,3,flip,3.0,26.9
+tafdrl final,3,flip,11.3,66.3
+tafdrl,3,meter,2.0,97.7
+tafdrl final,3,meter,4.1,98.0
+tafdrl,3,noise,0.1,100.0
+tafdrl final,3,noise,0.1,100.0
+tafdrl,3,none,8.9,
+tafdrl final,3,none,20.1,
+tafdrl,3,normalized,28.6,22.6
+tafdrl final,3,normalized,44.4,15.8
+tafdrl,3,reward,4.0,98.2
+tafdrl final,3,reward,9.2,98.5
+tafdrl,3,scale,0.1,100.0
+tafdrl final,3,scale,0.1,100.0
+tafdrl,4,flip,2.4,25.2
+tafdrl final,4,flip,9.8,69.8
+tafdrl,4,meter,1.1,98.5
+tafdrl final,4,meter,1.7,99.0
+tafdrl,4,noise,0.1,100.0
+tafdrl final,4,noise,0.1,100.0
+tafdrl,4,none,8.4,
+tafdrl final,4,none,18.8,
+tafdrl,4,normalized,31.0,32.1
+tafdrl final,4,normalized,61.2,18.8
+tafdrl,4,reward,1.6,98.8
+tafdrl final,4,reward,3.2,99.0
+tafdrl,4,scale,0.2,100.0
+tafdrl final,4,scale,0.3,100.0
+trimmed,0,flip,,
+trimmed,0,meter,,
+trimmed,0,noise,,
+trimmed,0,none,,
+trimmed,0,normalized,,
+trimmed,0,reward,,
+trimmed,0,scale,,
+trimmed,1,flip,,
+trimmed,1,meter,,
+trimmed,1,noise,,
+trimmed,1,none,,
+trimmed,1,normalized,,
+trimmed,1,reward,,
+trimmed,1,scale,,
+trimmed,2,flip,,
+trimmed,2,meter,,
+trimmed,2,noise,,
+trimmed,2,none,,
+trimmed,2,normalized,,
+trimmed,2,reward,,
+trimmed,2,scale,,
+trimmed,3,flip,,
+trimmed,3,meter,,
+trimmed,3,noise,,
+trimmed,3,none,,
+trimmed,3,normalized,,
+trimmed,3,reward,,
+trimmed,3,scale,,
+trimmed,4,flip,,
+trimmed,4,meter,,
+trimmed,4,noise,,
+trimmed,4,none,,
+trimmed,4,normalized,,
+trimmed,4,reward,,
+trimmed,4,scale,,

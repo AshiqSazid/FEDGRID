@@ -1,0 +1,25 @@
+family,comparator,attack,n,mean_difference,median_difference,wilcoxon_statistic,p_exact,p_holm,reject_holm_005
+robust_comparators,fltrust,flip,5,68.08,76.87,0.0,0.0625,1.0,False
+robust_comparators,fltrust,scale,5,-12.940000000000001,-6.56,0.0,0.0625,1.0,False
+robust_comparators,fltrust,noise,5,32.988,23.9,1.0,0.125,1.0,False
+robust_comparators,fltrust,normalized,5,-11.836,-13.25,6.0,0.8125,1.0,False
+robust_comparators,fltrust,meter,5,5.852000000000001,-3.47,7.0,1.0,1.0,False
+robust_comparators,fltrust,reward,5,42.834,45.27,0.0,0.0625,1.0,False
+robust_comparators,flame,flip,5,13.974,13.99,2.0,0.1875,1.0,False
+robust_comparators,flame,scale,5,-19.520000000000003,-38.86,3.0,0.3125,1.0,False
+robust_comparators,flame,noise,5,17.285999999999998,28.37,3.0,0.3125,1.0,False
+robust_comparators,flame,normalized,5,-31.796,-3.23,3.0,0.3125,1.0,False
+robust_comparators,flame,meter,5,15.292000000000002,30.76,4.0,0.4375,1.0,False
+robust_comparators,flame,reward,5,64.678,79.93,0.0,0.0625,1.0,False
+robust_comparators,tafdrl final,flip,5,29.677999999999997,24.33,3.0,0.3125,1.0,False
+robust_comparators,tafdrl final,scale,5,-29.641999999999996,-22.97,1.0,0.125,1.0,False
+robust_comparators,tafdrl final,noise,5,22.626,22.12,0.0,0.0625,1.0,False
+robust_comparators,tafdrl final,normalized,5,-27.652000000000005,-7.78,5.0,0.625,1.0,False
+robust_comparators,tafdrl final,meter,5,18.882,1.78,5.0,0.625,1.0,False
+robust_comparators,tafdrl final,reward,5,42.40400000000001,41.08,1.0,0.125,1.0,False
+revision,fedgrid,flip,5,-10.4,-13.75,3.0,0.3125,1.0,False
+revision,fedgrid,scale,5,-5.35,-4.18,5.0,0.625,1.0,False
+revision,fedgrid,noise,5,-28.396000000000004,-33.83,0.0,0.0625,0.375,False
+revision,fedgrid,normalized,5,-76.83000000000001,-55.2,0.0,0.0625,0.375,False
+revision,fedgrid,meter,5,13.578,13.72,4.0,0.4375,1.0,False
+revision,fedgrid,reward,5,14.642000000000001,7.03,4.0,0.4375,1.0,False

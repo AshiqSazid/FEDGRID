@@ -1,0 +1,43 @@
+\documentclass[preprint,12pt,a4paper]{elsarticle}
+\usepackage[T1]{fontenc}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,array,microtype}
+\usepackage[section]{placeins}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\journal{Energy and AI}
+% Working draft: do not imply that a submission has already occurred.
+\makeatletter
+\let\ps@pprintTitle\ps@plain
+\makeatother
+\begin{document}
+\begin{frontmatter}
+\title{FedGrid-RL: Attack Resilience and Honest Update Rejection in Federated Household Battery Control}
+\author{Author names and affiliations to be confirmed}
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+\begin{keyword}
+federated reinforcement learning \sep household batteries \sep robust aggregation \sep dynamic export limits \sep poisoning attacks \sep update rejection
+\end{keyword}
+\end{frontmatter}
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/methods}
+\input{sections/evaluation}
+\input{sections/selection}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/limitations}
+\input{sections/conclusion}
+\input{sections/declarations}
+\clearpage
+\input{references}
+\clearpage
+\input{sections/appendix}
+\end{document}

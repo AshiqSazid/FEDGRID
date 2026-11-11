@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Normalized-attack annual bill damage by nominal compromised share, seed 0 only. Trimmed mean and Krum use share-matched references; other methods use their 30\% no-attack reference.}
+\label{tab:attack_share}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+Method & 10\% & 20\% & 30\% & 40\% \\
+\midrule
+FedAvg & 297.7 [1] & 446.5 [1] & 516.1 [1] & 516.2 [1] \\
+Median & 50.4 [1] & 94.0 [1] & 267.9 [1] & 301.3 [1] \\
+Trimmed mean & 48.7 [1] & 147.2 [1] & 192.5 [1] & 394.9 [1] \\
+Krum & 75.6 [1] & 76.9 [1] & -37.5 [1] & 110.9 [1] \\
+FLTrust & -42.8 [1] & -41.4 [1] & -32.9 [1] & -7.9 [1] \\
+FLAME & -21.3 [1] & 31.7 [1] & -25.5 [1] & 39.1 [1] \\
+TAFDRL-style & 25.1 [1] & 37.8 [1] & 12.6 [1] & 121.8 [1] \\
+TAFDRL-style tuned & -6.4 [1] & -9.9 [1] & -35.0 [1] & 13.5 [1] \\
+FedGrid original & 23.9 [1] & 79.8 [1] & 94.8 [1] & 105.9 [1] \\
+FedGrid final & 16.6 [1] & 18.7 [1] & -19.4 [1] & 17.9 [1] \\
+\bottomrule
+\end{tabular}}
+\end{table}

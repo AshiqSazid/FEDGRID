@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Logged honest update rejection on Ausgrid, nominal 30\% compromise, seeds 0--4 where available. Entries are mean $\pm$ 95\% interval half-width [observed seeds]. Admission semantics differ across defences.}
+\label{tab:rejection}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llllllll}
+\toprule
+Method & None & Flip & Scale & Noise & Normalized & Meter & Reward \\
+\midrule
+Krum & 97.2 $\pm$ 0.0 [4] & 96.0 $\pm$ 0.0 [4] & 96.0 $\pm$ 0.0 [4] & 96.0 $\pm$ 0.0 [4] & 96.4 $\pm$ 0.1 [4] & 96.0 $\pm$ 0.0 [5] & 96.0 $\pm$ 0.1 [5] \\
+FLTrust & 31.6 $\pm$ 4.8 [5] & 28.4 $\pm$ 4.2 [5] & 31.7 $\pm$ 8.3 [5] & 28.3 $\pm$ 2.8 [5] & 16.2 $\pm$ 4.0 [5] & 29.0 $\pm$ 3.8 [5] & 27.9 $\pm$ 5.5 [5] \\
+FLAME & 47.0 $\pm$ 0.2 [5] & 34.9 $\pm$ 2.9 [5] & 23.9 $\pm$ 0.1 [5] & 23.9 $\pm$ 0.1 [5] & 46.3 $\pm$ 2.1 [5] & 24.2 $\pm$ 0.2 [5] & 24.3 $\pm$ 0.2 [5] \\
+TAFDRL-style & 8.5 $\pm$ 0.8 [5] & 3.1 $\pm$ 1.2 [5] & 0.1 $\pm$ 0.1 [5] & 0.1 $\pm$ 0.0 [5] & 31.1 $\pm$ 3.7 [5] & 1.5 $\pm$ 0.6 [5] & 2.9 $\pm$ 1.1 [5] \\
+TAFDRL-style tuned & 20.4 $\pm$ 2.2 [5] & 11.3 $\pm$ 1.8 [5] & 0.2 $\pm$ 0.2 [5] & 0.1 $\pm$ 0.0 [5] & 53.0 $\pm$ 7.7 [5] & 3.1 $\pm$ 1.3 [5] & 7.1 $\pm$ 3.2 [5] \\
+FedGrid original & 3.2 $\pm$ 0.7 [5] & 0.4 $\pm$ 0.5 [5] & 2.3 $\pm$ 0.9 [5] & 0.2 $\pm$ 0.3 [5] & 4.6 $\pm$ 1.8 [5] & 1.1 $\pm$ 0.5 [5] & 2.5 $\pm$ 1.5 [5] \\
+FedGrid final & 6.2 $\pm$ 1.3 [5] & 2.1 $\pm$ 0.7 [5] & 0.8 $\pm$ 0.6 [5] & 0.6 $\pm$ 0.3 [5] & 6.5 $\pm$ 3.8 [5] & 3.4 $\pm$ 0.8 [5] & 4.5 $\pm$ 1.4 [5] \\
+\bottomrule
+\end{tabular}}
+\end{table}

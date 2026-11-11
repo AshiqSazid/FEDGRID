@@ -1,0 +1,1135 @@
+method,seed,attack,day,score
+fedavg,0,none,1,247.3
+fedavg,0,none,25,345.92
+fedavg,0,none,50,343.59
+fedavg,0,none,75,308.89
+fedavg,0,none,100,278.9
+fedavg,0,none,125,272.65
+fedavg,0,none,150,273.12
+fedavg,0,none,175,262.41
+fedavg,0,none,200,256.19
+fedavg,0,none,225,249.96
+fedavg,0,none,250,242.78
+fedavg,0,none,275,239.13
+fedavg,0,none,300,237.36
+fedavg,0,none,325,234.58
+fedavg,0,none,350,232.11
+fedavg,0,none,375,227.35
+fedavg,0,none,400,226.34
+fedavg,0,none,425,225.23
+fedavg,0,none,450,226.21
+fedavg,0,none,475,221.21
+fedavg,0,none,500,224.21
+fedavg,0,normalized,1,247.3
+fedavg,0,normalized,25,409.08
+fedavg,0,normalized,50,409.08
+fedavg,0,normalized,75,409.08
+fedavg,0,normalized,100,409.08
+fedavg,0,normalized,125,409.08
+fedavg,0,normalized,150,409.08
+fedavg,0,normalized,175,409.08
+fedavg,0,normalized,200,409.08
+fedavg,0,normalized,225,409.08
+fedavg,0,normalized,250,409.08
+fedavg,0,normalized,275,409.08
+fedavg,0,normalized,300,409.08
+fedavg,0,normalized,325,409.08
+fedavg,0,normalized,350,409.08
+fedavg,0,normalized,375,409.08
+fedavg,0,normalized,400,409.08
+fedavg,0,normalized,425,409.08
+fedavg,0,normalized,450,409.08
+fedavg,0,normalized,475,409.08
+fedavg,0,normalized,500,409.08
+fedavg,0,reward,1,247.3
+fedavg,0,reward,25,366.81
+fedavg,0,reward,50,368.99
+fedavg,0,reward,75,359.19
+fedavg,0,reward,100,380.3
+fedavg,0,reward,125,413.27
+fedavg,0,reward,150,434.72
+fedavg,0,reward,175,427.21
+fedavg,0,reward,200,414.11
+fedavg,0,reward,225,418.38
+fedavg,0,reward,250,425.58
+fedavg,0,reward,275,431.13
+fedavg,0,reward,300,438.31
+fedavg,0,reward,325,448.62
+fedavg,0,reward,350,458.68
+fedavg,0,reward,375,460.45
+fedavg,0,reward,400,465.73
+fedavg,0,reward,425,465.44
+fedavg,0,reward,450,467.5
+fedavg,0,reward,475,467.41
+fedavg,0,reward,500,465.85
+fedavg,1,none,1,247.3
+fedavg,1,none,25,351.31
+fedavg,1,none,50,355.75
+fedavg,1,none,75,337.2
+fedavg,1,none,100,323.34
+fedavg,1,none,125,294.52
+fedavg,1,none,150,287.63
+fedavg,1,none,175,284.79
+fedavg,1,none,200,273.82
+fedavg,1,none,225,262.55
+fedavg,1,none,250,259.68
+fedavg,1,none,275,254.21
+fedavg,1,none,300,247.84
+fedavg,1,none,325,247.2
+fedavg,1,none,350,242.53
+fedavg,1,none,375,242.36
+fedavg,1,none,400,238.66
+fedavg,1,none,425,236.69
+fedavg,1,none,450,238.35
+fedavg,1,none,475,236.15
+fedavg,1,none,500,239.24
+fedavg,1,normalized,1,247.3
+fedavg,1,normalized,25,406.98
+fedavg,1,normalized,50,415.79
+fedavg,1,normalized,75,415.79
+fedavg,1,normalized,100,415.79
+fedavg,1,normalized,125,415.79
+fedavg,1,normalized,150,415.79
+fedavg,1,normalized,175,415.79
+fedavg,1,normalized,200,415.79
+fedavg,1,normalized,225,415.79
+fedavg,1,normalized,250,415.79
+fedavg,1,normalized,275,415.79
+fedavg,1,normalized,300,415.79
+fedavg,1,normalized,325,415.79
+fedavg,1,normalized,350,415.79
+fedavg,1,normalized,375,415.79
+fedavg,1,normalized,400,415.79
+fedavg,1,normalized,425,415.79
+fedavg,1,normalized,450,415.79
+fedavg,1,normalized,475,415.79
+fedavg,1,normalized,500,415.79
+fedavg,1,reward,1,247.3
+fedavg,1,reward,25,373.0
+fedavg,1,reward,50,380.43
+fedavg,1,reward,75,420.76
+fedavg,1,reward,100,458.83
+fedavg,1,reward,125,453.41
+fedavg,1,reward,150,456.17
+fedavg,1,reward,175,462.06
+fedavg,1,reward,200,458.78
+fedavg,1,reward,225,458.94
+fedavg,1,reward,250,471.03
+fedavg,1,reward,275,479.25
+fedavg,1,reward,300,483.44
+fedavg,1,reward,325,486.27
+fedavg,1,reward,350,482.64
+fedavg,1,reward,375,480.64
+fedavg,1,reward,400,481.57
+fedavg,1,reward,425,484.63
+fedavg,1,reward,450,488.56
+fedavg,1,reward,475,491.99
+fedavg,1,reward,500,496.34
+fedavg,2,none,1,247.3
+fedavg,2,none,25,346.05
+fedavg,2,none,50,344.54
+fedavg,2,none,75,316.48
+fedavg,2,none,100,279.0
+fedavg,2,none,125,274.63
+fedavg,2,none,150,271.02
+fedavg,2,none,175,262.56
+fedavg,2,none,200,259.07
+fedavg,2,none,225,251.33
+fedavg,2,none,250,245.87
+fedavg,2,none,275,241.73
+fedavg,2,none,300,235.07
+fedavg,2,none,325,235.63
+fedavg,2,none,350,230.86
+fedavg,2,none,375,230.86
+fedavg,2,none,400,229.41
+fedavg,2,none,425,228.35
+fedavg,2,none,450,225.57
+fedavg,2,none,475,223.92
+fedavg,2,none,500,225.09
+fedavg,2,normalized,1,247.3
+fedavg,2,normalized,25,413.66
+fedavg,2,normalized,50,413.66
+fedavg,2,normalized,75,413.66
+fedavg,2,normalized,100,413.66
+fedavg,2,normalized,125,413.66
+fedavg,2,normalized,150,413.66
+fedavg,2,normalized,175,413.66
+fedavg,2,normalized,200,413.66
+fedavg,2,normalized,225,413.66
+fedavg,2,normalized,250,413.66
+fedavg,2,normalized,275,411.55
+fedavg,2,normalized,300,411.55
+fedavg,2,normalized,325,411.55
+fedavg,2,normalized,350,411.55
+fedavg,2,normalized,375,411.55
+fedavg,2,normalized,400,411.55
+fedavg,2,normalized,425,411.55
+fedavg,2,normalized,450,411.55
+fedavg,2,normalized,475,411.55
+fedavg,2,normalized,500,411.55
+fedavg,2,reward,1,247.3
+fedavg,2,reward,25,369.21
+fedavg,2,reward,50,369.66
+fedavg,2,reward,75,371.33
+fedavg,2,reward,100,405.63
+fedavg,2,reward,125,437.79
+fedavg,2,reward,150,449.47
+fedavg,2,reward,175,449.48
+fedavg,2,reward,200,454.38
+fedavg,2,reward,225,462.36
+fedavg,2,reward,250,468.65
+fedavg,2,reward,275,464.2
+fedavg,2,reward,300,471.91
+fedavg,2,reward,325,485.09
+fedavg,2,reward,350,493.68
+fedavg,2,reward,375,501.83
+fedavg,2,reward,400,500.44
+fedavg,2,reward,425,499.52
+fedavg,2,reward,450,497.86
+fedavg,2,reward,475,499.32
+fedavg,2,reward,500,501.64
+fedgrid,0,none,1,247.3
+fedgrid,0,none,25,345.59
+fedgrid,0,none,50,342.99
+fedgrid,0,none,75,310.68
+fedgrid,0,none,100,279.67
+fedgrid,0,none,125,275.11
+fedgrid,0,none,150,274.53
+fedgrid,0,none,175,265.12
+fedgrid,0,none,200,256.76
+fedgrid,0,none,225,251.6
+fedgrid,0,none,250,248.11
+fedgrid,0,none,275,246.17
+fedgrid,0,none,300,241.62
+fedgrid,0,none,325,239.32
+fedgrid,0,none,350,239.89
+fedgrid,0,none,375,241.29
+fedgrid,0,none,400,236.4
+fedgrid,0,none,425,232.42
+fedgrid,0,none,450,231.43
+fedgrid,0,none,475,226.96
+fedgrid,0,none,500,226.35
+fedgrid,0,normalized,1,247.3
+fedgrid,0,normalized,25,343.04
+fedgrid,0,normalized,50,340.09
+fedgrid,0,normalized,75,322.44
+fedgrid,0,normalized,100,285.8
+fedgrid,0,normalized,125,272.13
+fedgrid,0,normalized,150,283.42
+fedgrid,0,normalized,175,286.72
+fedgrid,0,normalized,200,279.98
+fedgrid,0,normalized,225,279.96
+fedgrid,0,normalized,250,269.9
+fedgrid,0,normalized,275,262.41
+fedgrid,0,normalized,300,257.35
+fedgrid,0,normalized,325,251.62
+fedgrid,0,normalized,350,247.97
+fedgrid,0,normalized,375,252.05
+fedgrid,0,normalized,400,249.34
+fedgrid,0,normalized,425,257.37
+fedgrid,0,normalized,450,256.11
+fedgrid,0,normalized,475,252.87
+fedgrid,0,normalized,500,249.71
+fedgrid,0,reward,1,247.3
+fedgrid,0,reward,25,364.82
+fedgrid,0,reward,50,365.87
+fedgrid,0,reward,75,358.79
+fedgrid,0,reward,100,370.96
+fedgrid,0,reward,125,393.63
+fedgrid,0,reward,150,409.72
+fedgrid,0,reward,175,418.2
+fedgrid,0,reward,200,436.1
+fedgrid,0,reward,225,439.53
+fedgrid,0,reward,250,441.33
+fedgrid,0,reward,275,441.87
+fedgrid,0,reward,300,442.16
+fedgrid,0,reward,325,442.88
+fedgrid,0,reward,350,449.35
+fedgrid,0,reward,375,453.0
+fedgrid,0,reward,400,455.26
+fedgrid,0,reward,425,457.64
+fedgrid,0,reward,450,460.45
+fedgrid,0,reward,475,462.64
+fedgrid,0,reward,500,462.5
+fedgrid,1,none,1,247.3
+fedgrid,1,none,25,350.86
+fedgrid,1,none,50,356.17
+fedgrid,1,none,75,338.82
+fedgrid,1,none,100,318.43
+fedgrid,1,none,125,288.09
+fedgrid,1,none,150,275.66
+fedgrid,1,none,175,262.89
+fedgrid,1,none,200,252.62
+fedgrid,1,none,225,252.32
+fedgrid,1,none,250,247.97
+fedgrid,1,none,275,241.47
+fedgrid,1,none,300,235.16
+fedgrid,1,none,325,229.16
+fedgrid,1,none,350,232.86
+fedgrid,1,none,375,230.21
+fedgrid,1,none,400,228.74
+fedgrid,1,none,425,228.72
+fedgrid,1,none,450,226.68
+fedgrid,1,none,475,228.41
+fedgrid,1,none,500,225.44
+fedgrid,1,normalized,1,247.3
+fedgrid,1,normalized,25,353.64
+fedgrid,1,normalized,50,355.76
+fedgrid,1,normalized,75,330.23
+fedgrid,1,normalized,100,298.99
+fedgrid,1,normalized,125,281.06
+fedgrid,1,normalized,150,270.46
+fedgrid,1,normalized,175,272.67
+fedgrid,1,normalized,200,271.93
+fedgrid,1,normalized,225,277.63
+fedgrid,1,normalized,250,268.77
+fedgrid,1,normalized,275,262.47
+fedgrid,1,normalized,300,254.02
+fedgrid,1,normalized,325,246.97
+fedgrid,1,normalized,350,245.38
+fedgrid,1,normalized,375,246.5
+fedgrid,1,normalized,400,246.7
+fedgrid,1,normalized,425,253.14
+fedgrid,1,normalized,450,252.0
+fedgrid,1,normalized,475,254.13
+fedgrid,1,normalized,500,246.83
+fedgrid,1,reward,1,247.3
+fedgrid,1,reward,25,373.16
+fedgrid,1,reward,50,377.06
+fedgrid,1,reward,75,415.87
+fedgrid,1,reward,100,453.94
+fedgrid,1,reward,125,469.4
+fedgrid,1,reward,150,494.78
+fedgrid,1,reward,175,480.9
+fedgrid,1,reward,200,466.59
+fedgrid,1,reward,225,466.98
+fedgrid,1,reward,250,471.33
+fedgrid,1,reward,275,473.49
+fedgrid,1,reward,300,478.18
+fedgrid,1,reward,325,478.07
+fedgrid,1,reward,350,479.09
+fedgrid,1,reward,375,479.52
+fedgrid,1,reward,400,485.6
+fedgrid,1,reward,425,489.21
+fedgrid,1,reward,450,490.99
+fedgrid,1,reward,475,490.83
+fedgrid,1,reward,500,492.68
+fedgrid,2,none,1,247.3
+fedgrid,2,none,25,346.32
+fedgrid,2,none,50,345.79
+fedgrid,2,none,75,316.31
+fedgrid,2,none,100,277.87
+fedgrid,2,none,125,271.46
+fedgrid,2,none,150,266.21
+fedgrid,2,none,175,258.41
+fedgrid,2,none,200,253.04
+fedgrid,2,none,225,250.9
+fedgrid,2,none,250,241.44
+fedgrid,2,none,275,238.11
+fedgrid,2,none,300,234.44
+fedgrid,2,none,325,232.09
+fedgrid,2,none,350,230.63
+fedgrid,2,none,375,227.67
+fedgrid,2,none,400,225.24
+fedgrid,2,none,425,227.64
+fedgrid,2,none,450,226.9
+fedgrid,2,none,475,223.7
+fedgrid,2,none,500,223.53
+fedgrid,2,normalized,1,247.3
+fedgrid,2,normalized,25,349.62
+fedgrid,2,normalized,50,348.62
+fedgrid,2,normalized,75,321.89
+fedgrid,2,normalized,100,295.97
+fedgrid,2,normalized,125,285.59
+fedgrid,2,normalized,150,278.32
+fedgrid,2,normalized,175,259.17
+fedgrid,2,normalized,200,257.0
+fedgrid,2,normalized,225,256.73
+fedgrid,2,normalized,250,259.57
+fedgrid,2,normalized,275,259.0
+fedgrid,2,normalized,300,257.66
+fedgrid,2,normalized,325,259.6
+fedgrid,2,normalized,350,259.02
+fedgrid,2,normalized,375,263.35
+fedgrid,2,normalized,400,259.97
+fedgrid,2,normalized,425,260.57
+fedgrid,2,normalized,450,256.95
+fedgrid,2,normalized,475,250.96
+fedgrid,2,normalized,500,249.56
+fedgrid,2,reward,1,247.3
+fedgrid,2,reward,25,367.76
+fedgrid,2,reward,50,370.2
+fedgrid,2,reward,75,358.23
+fedgrid,2,reward,100,366.07
+fedgrid,2,reward,125,404.05
+fedgrid,2,reward,150,428.76
+fedgrid,2,reward,175,431.4
+fedgrid,2,reward,200,431.5
+fedgrid,2,reward,225,438.23
+fedgrid,2,reward,250,441.83
+fedgrid,2,reward,275,445.2
+fedgrid,2,reward,300,454.68
+fedgrid,2,reward,325,461.77
+fedgrid,2,reward,350,465.32
+fedgrid,2,reward,375,472.07
+fedgrid,2,reward,400,473.57
+fedgrid,2,reward,425,481.45
+fedgrid,2,reward,450,482.48
+fedgrid,2,reward,475,481.38
+fedgrid,2,reward,500,487.75
+fedgrid final,0,none,1,247.3
+fedgrid final,0,none,25,344.98
+fedgrid final,0,none,50,342.99
+fedgrid final,0,none,75,310.27
+fedgrid final,0,none,100,280.97
+fedgrid final,0,none,125,275.99
+fedgrid final,0,none,150,277.62
+fedgrid final,0,none,175,267.33
+fedgrid final,0,none,200,259.66
+fedgrid final,0,none,225,254.44
+fedgrid final,0,none,250,249.83
+fedgrid final,0,none,275,246.96
+fedgrid final,0,none,300,242.42
+fedgrid final,0,none,325,239.02
+fedgrid final,0,none,350,240.36
+fedgrid final,0,none,375,239.67
+fedgrid final,0,none,400,234.85
+fedgrid final,0,none,425,229.92
+fedgrid final,0,none,450,227.97
+fedgrid final,0,none,475,223.39
+fedgrid final,0,none,500,222.93
+fedgrid final,0,normalized,1,247.3
+fedgrid final,0,normalized,25,347.84
+fedgrid final,0,normalized,50,348.04
+fedgrid final,0,normalized,75,306.79
+fedgrid final,0,normalized,100,270.26
+fedgrid final,0,normalized,125,264.49
+fedgrid final,0,normalized,150,259.37
+fedgrid final,0,normalized,175,249.61
+fedgrid final,0,normalized,200,244.31
+fedgrid final,0,normalized,225,236.9
+fedgrid final,0,normalized,250,231.08
+fedgrid final,0,normalized,275,225.02
+fedgrid final,0,normalized,300,220.21
+fedgrid final,0,normalized,325,221.61
+fedgrid final,0,normalized,350,222.98
+fedgrid final,0,normalized,375,222.07
+fedgrid final,0,normalized,400,221.77
+fedgrid final,0,normalized,425,219.74
+fedgrid final,0,normalized,450,218.16
+fedgrid final,0,normalized,475,215.53
+fedgrid final,0,normalized,500,214.93
+fedgrid final,0,reward,1,247.3
+fedgrid final,0,reward,25,364.4
+fedgrid final,0,reward,50,365.4
+fedgrid final,0,reward,75,358.14
+fedgrid final,0,reward,100,364.73
+fedgrid final,0,reward,125,378.01
+fedgrid final,0,reward,150,387.12
+fedgrid final,0,reward,175,407.69
+fedgrid final,0,reward,200,428.73
+fedgrid final,0,reward,225,430.72
+fedgrid final,0,reward,250,433.11
+fedgrid final,0,reward,275,433.5
+fedgrid final,0,reward,300,433.71
+fedgrid final,0,reward,325,434.69
+fedgrid final,0,reward,350,446.55
+fedgrid final,0,reward,375,459.26
+fedgrid final,0,reward,400,460.16
+fedgrid final,0,reward,425,465.7
+fedgrid final,0,reward,450,470.63
+fedgrid final,0,reward,475,474.0
+fedgrid final,0,reward,500,473.18
+fedgrid final,1,none,1,247.3
+fedgrid final,1,none,25,351.41
+fedgrid final,1,none,50,355.84
+fedgrid final,1,none,75,338.81
+fedgrid final,1,none,100,317.1
+fedgrid final,1,none,125,288.27
+fedgrid final,1,none,150,273.6
+fedgrid final,1,none,175,264.01
+fedgrid final,1,none,200,252.68
+fedgrid final,1,none,225,249.54
+fedgrid final,1,none,250,245.4
+fedgrid final,1,none,275,240.6
+fedgrid final,1,none,300,237.07
+fedgrid final,1,none,325,232.19
+fedgrid final,1,none,350,235.8
+fedgrid final,1,none,375,230.83
+fedgrid final,1,none,400,229.12
+fedgrid final,1,none,425,228.66
+fedgrid final,1,none,450,224.14
+fedgrid final,1,none,475,226.18
+fedgrid final,1,none,500,224.99
+fedgrid final,1,normalized,1,247.3
+fedgrid final,1,normalized,25,354.55
+fedgrid final,1,normalized,50,357.54
+fedgrid final,1,normalized,75,333.63
+fedgrid final,1,normalized,100,297.25
+fedgrid final,1,normalized,125,277.31
+fedgrid final,1,normalized,150,271.82
+fedgrid final,1,normalized,175,269.69
+fedgrid final,1,normalized,200,258.53
+fedgrid final,1,normalized,225,259.41
+fedgrid final,1,normalized,250,253.3
+fedgrid final,1,normalized,275,247.74
+fedgrid final,1,normalized,300,245.84
+fedgrid final,1,normalized,325,237.3
+fedgrid final,1,normalized,350,240.69
+fedgrid final,1,normalized,375,238.35
+fedgrid final,1,normalized,400,236.71
+fedgrid final,1,normalized,425,241.46
+fedgrid final,1,normalized,450,236.27
+fedgrid final,1,normalized,475,238.16
+fedgrid final,1,normalized,500,234.23
+fedgrid final,1,reward,1,247.3
+fedgrid final,1,reward,25,372.38
+fedgrid final,1,reward,50,377.11
+fedgrid final,1,reward,75,421.59
+fedgrid final,1,reward,100,455.97
+fedgrid final,1,reward,125,475.31
+fedgrid final,1,reward,150,486.86
+fedgrid final,1,reward,175,474.18
+fedgrid final,1,reward,200,464.22
+fedgrid final,1,reward,225,466.95
+fedgrid final,1,reward,250,464.72
+fedgrid final,1,reward,275,468.74
+fedgrid final,1,reward,300,474.6
+fedgrid final,1,reward,325,473.32
+fedgrid final,1,reward,350,475.6
+fedgrid final,1,reward,375,477.92
+fedgrid final,1,reward,400,481.74
+fedgrid final,1,reward,425,486.78
+fedgrid final,1,reward,450,490.24
+fedgrid final,1,reward,475,490.03
+fedgrid final,1,reward,500,492.59
+fedgrid final,2,none,1,247.3
+fedgrid final,2,none,25,346.39
+fedgrid final,2,none,50,346.23
+fedgrid final,2,none,75,318.06
+fedgrid final,2,none,100,279.63
+fedgrid final,2,none,125,273.04
+fedgrid final,2,none,150,266.05
+fedgrid final,2,none,175,257.91
+fedgrid final,2,none,200,250.45
+fedgrid final,2,none,225,249.47
+fedgrid final,2,none,250,239.09
+fedgrid final,2,none,275,235.14
+fedgrid final,2,none,300,230.65
+fedgrid final,2,none,325,228.22
+fedgrid final,2,none,350,227.44
+fedgrid final,2,none,375,227.56
+fedgrid final,2,none,400,226.42
+fedgrid final,2,none,425,228.68
+fedgrid final,2,none,450,226.67
+fedgrid final,2,none,475,224.03
+fedgrid final,2,none,500,222.68
+fedgrid final,2,normalized,1,247.3
+fedgrid final,2,normalized,25,349.88
+fedgrid final,2,normalized,50,349.07
+fedgrid final,2,normalized,75,314.15
+fedgrid final,2,normalized,100,270.06
+fedgrid final,2,normalized,125,264.73
+fedgrid final,2,normalized,150,253.63
+fedgrid final,2,normalized,175,240.52
+fedgrid final,2,normalized,200,234.45
+fedgrid final,2,normalized,225,225.65
+fedgrid final,2,normalized,250,215.33
+fedgrid final,2,normalized,275,212.1
+fedgrid final,2,normalized,300,209.63
+fedgrid final,2,normalized,325,208.3
+fedgrid final,2,normalized,350,208.42
+fedgrid final,2,normalized,375,208.17
+fedgrid final,2,normalized,400,209.05
+fedgrid final,2,normalized,425,210.79
+fedgrid final,2,normalized,450,211.62
+fedgrid final,2,normalized,475,209.0
+fedgrid final,2,normalized,500,210.06
+fedgrid final,2,reward,1,247.3
+fedgrid final,2,reward,25,367.31
+fedgrid final,2,reward,50,370.03
+fedgrid final,2,reward,75,360.59
+fedgrid final,2,reward,100,370.99
+fedgrid final,2,reward,125,406.04
+fedgrid final,2,reward,150,411.8
+fedgrid final,2,reward,175,428.94
+fedgrid final,2,reward,200,450.91
+fedgrid final,2,reward,225,457.38
+fedgrid final,2,reward,250,462.55
+fedgrid final,2,reward,275,459.01
+fedgrid final,2,reward,300,468.7
+fedgrid final,2,reward,325,480.93
+fedgrid final,2,reward,350,495.05
+fedgrid final,2,reward,375,500.62
+fedgrid final,2,reward,400,504.02
+fedgrid final,2,reward,425,507.61
+fedgrid final,2,reward,450,507.78
+fedgrid final,2,reward,475,506.6
+fedgrid final,2,reward,500,510.65
+fltrust,0,none,1,247.3
+fltrust,0,none,25,344.89
+fltrust,0,none,50,342.33
+fltrust,0,none,75,311.96
+fltrust,0,none,100,282.21
+fltrust,0,none,125,271.92
+fltrust,0,none,150,271.41
+fltrust,0,none,175,264.0
+fltrust,0,none,200,256.04
+fltrust,0,none,225,247.24
+fltrust,0,none,250,244.69
+fltrust,0,none,275,241.07
+fltrust,0,none,300,237.1
+fltrust,0,none,325,236.27
+fltrust,0,none,350,236.19
+fltrust,0,none,375,234.7
+fltrust,0,none,400,232.4
+fltrust,0,none,425,232.69
+fltrust,0,none,450,230.86
+fltrust,0,none,475,229.52
+fltrust,0,none,500,230.88
+fltrust,0,normalized,1,247.3
+fltrust,0,normalized,25,345.75
+fltrust,0,normalized,50,340.8
+fltrust,0,normalized,75,311.6
+fltrust,0,normalized,100,269.72
+fltrust,0,normalized,125,258.52
+fltrust,0,normalized,150,258.64
+fltrust,0,normalized,175,253.41
+fltrust,0,normalized,200,247.55
+fltrust,0,normalized,225,240.63
+fltrust,0,normalized,250,236.52
+fltrust,0,normalized,275,234.42
+fltrust,0,normalized,300,234.74
+fltrust,0,normalized,325,234.88
+fltrust,0,normalized,350,231.31
+fltrust,0,normalized,375,230.39
+fltrust,0,normalized,400,229.3
+fltrust,0,normalized,425,229.36
+fltrust,0,normalized,450,224.99
+fltrust,0,normalized,475,224.63
+fltrust,0,normalized,500,220.11
+fltrust,0,reward,1,247.3
+fltrust,0,reward,25,364.98
+fltrust,0,reward,50,362.26
+fltrust,0,reward,75,348.87
+fltrust,0,reward,100,363.57
+fltrust,0,reward,125,381.09
+fltrust,0,reward,150,400.93
+fltrust,0,reward,175,428.54
+fltrust,0,reward,200,438.82
+fltrust,0,reward,225,431.48
+fltrust,0,reward,250,430.63
+fltrust,0,reward,275,433.28
+fltrust,0,reward,300,434.2
+fltrust,0,reward,325,437.22
+fltrust,0,reward,350,438.62
+fltrust,0,reward,375,439.05
+fltrust,0,reward,400,437.91
+fltrust,0,reward,425,437.32
+fltrust,0,reward,450,437.0
+fltrust,0,reward,475,437.58
+fltrust,0,reward,500,439.42
+fltrust,1,none,1,247.3
+fltrust,1,none,25,351.2
+fltrust,1,none,50,356.5
+fltrust,1,none,75,337.69
+fltrust,1,none,100,324.22
+fltrust,1,none,125,303.48
+fltrust,1,none,150,286.88
+fltrust,1,none,175,276.86
+fltrust,1,none,200,261.91
+fltrust,1,none,225,261.94
+fltrust,1,none,250,261.32
+fltrust,1,none,275,254.75
+fltrust,1,none,300,252.84
+fltrust,1,none,325,244.46
+fltrust,1,none,350,246.75
+fltrust,1,none,375,240.51
+fltrust,1,none,400,237.76
+fltrust,1,none,425,234.72
+fltrust,1,none,450,232.99
+fltrust,1,none,475,235.78
+fltrust,1,none,500,233.84
+fltrust,1,normalized,1,247.3
+fltrust,1,normalized,25,351.26
+fltrust,1,normalized,50,354.23
+fltrust,1,normalized,75,329.61
+fltrust,1,normalized,100,294.51
+fltrust,1,normalized,125,268.23
+fltrust,1,normalized,150,252.95
+fltrust,1,normalized,175,245.31
+fltrust,1,normalized,200,247.77
+fltrust,1,normalized,225,251.69
+fltrust,1,normalized,250,252.06
+fltrust,1,normalized,275,249.53
+fltrust,1,normalized,300,252.5
+fltrust,1,normalized,325,243.26
+fltrust,1,normalized,350,242.91
+fltrust,1,normalized,375,240.74
+fltrust,1,normalized,400,238.99
+fltrust,1,normalized,425,241.6
+fltrust,1,normalized,450,241.87
+fltrust,1,normalized,475,247.79
+fltrust,1,normalized,500,236.61
+fltrust,1,reward,1,247.3
+fltrust,1,reward,25,373.64
+fltrust,1,reward,50,376.06
+fltrust,1,reward,75,367.44
+fltrust,1,reward,100,418.95
+fltrust,1,reward,125,444.25
+fltrust,1,reward,150,442.76
+fltrust,1,reward,175,448.96
+fltrust,1,reward,200,475.9
+fltrust,1,reward,225,484.32
+fltrust,1,reward,250,481.15
+fltrust,1,reward,275,472.89
+fltrust,1,reward,300,470.05
+fltrust,1,reward,325,462.06
+fltrust,1,reward,350,464.7
+fltrust,1,reward,375,460.95
+fltrust,1,reward,400,457.85
+fltrust,1,reward,425,459.39
+fltrust,1,reward,450,455.97
+fltrust,1,reward,475,457.07
+fltrust,1,reward,500,457.7
+fltrust,2,none,1,247.3
+fltrust,2,none,25,345.9
+fltrust,2,none,50,345.73
+fltrust,2,none,75,316.06
+fltrust,2,none,100,283.31
+fltrust,2,none,125,274.05
+fltrust,2,none,150,271.51
+fltrust,2,none,175,263.72
+fltrust,2,none,200,261.06
+fltrust,2,none,225,259.7
+fltrust,2,none,250,252.82
+fltrust,2,none,275,251.82
+fltrust,2,none,300,245.87
+fltrust,2,none,325,239.98
+fltrust,2,none,350,237.75
+fltrust,2,none,375,236.88
+fltrust,2,none,400,233.58
+fltrust,2,none,425,233.86
+fltrust,2,none,450,234.22
+fltrust,2,none,475,228.85
+fltrust,2,none,500,229.85
+fltrust,2,normalized,1,247.3
+fltrust,2,normalized,25,348.28
+fltrust,2,normalized,50,346.59
+fltrust,2,normalized,75,306.23
+fltrust,2,normalized,100,269.2
+fltrust,2,normalized,125,256.82
+fltrust,2,normalized,150,257.24
+fltrust,2,normalized,175,248.06
+fltrust,2,normalized,200,247.51
+fltrust,2,normalized,225,244.61
+fltrust,2,normalized,250,244.57
+fltrust,2,normalized,275,242.69
+fltrust,2,normalized,300,237.39
+fltrust,2,normalized,325,233.18
+fltrust,2,normalized,350,233.42
+fltrust,2,normalized,375,234.64
+fltrust,2,normalized,400,235.04
+fltrust,2,normalized,425,233.76
+fltrust,2,normalized,450,233.44
+fltrust,2,normalized,475,231.32
+fltrust,2,normalized,500,229.78
+fltrust,2,reward,1,247.3
+fltrust,2,reward,25,367.74
+fltrust,2,reward,50,368.0
+fltrust,2,reward,75,346.53
+fltrust,2,reward,100,335.7
+fltrust,2,reward,125,358.5
+fltrust,2,reward,150,378.47
+fltrust,2,reward,175,390.4
+fltrust,2,reward,200,417.57
+fltrust,2,reward,225,448.51
+fltrust,2,reward,250,469.66
+fltrust,2,reward,275,481.24
+fltrust,2,reward,300,482.63
+fltrust,2,reward,325,469.77
+fltrust,2,reward,350,457.0
+fltrust,2,reward,375,449.7
+fltrust,2,reward,400,442.76
+fltrust,2,reward,425,440.61
+fltrust,2,reward,450,441.26
+fltrust,2,reward,475,442.27
+fltrust,2,reward,500,446.64
+flame,0,none,1,247.3
+flame,0,none,25,343.64
+flame,0,none,50,338.16
+flame,0,none,75,311.65
+flame,0,none,100,274.69
+flame,0,none,125,274.13
+flame,0,none,150,271.0
+flame,0,none,175,258.73
+flame,0,none,200,254.59
+flame,0,none,225,246.71
+flame,0,none,250,243.62
+flame,0,none,275,239.83
+flame,0,none,300,236.0
+flame,0,none,325,232.57
+flame,0,none,350,231.95
+flame,0,none,375,232.47
+flame,0,none,400,232.67
+flame,0,none,425,229.69
+flame,0,none,450,228.64
+flame,0,none,475,227.39
+flame,0,none,500,226.78
+flame,0,normalized,1,247.3
+flame,0,normalized,25,351.35
+flame,0,normalized,50,336.96
+flame,0,normalized,75,320.56
+flame,0,normalized,100,281.73
+flame,0,normalized,125,267.62
+flame,0,normalized,150,258.85
+flame,0,normalized,175,257.5
+flame,0,normalized,200,254.72
+flame,0,normalized,225,245.95
+flame,0,normalized,250,238.83
+flame,0,normalized,275,232.76
+flame,0,normalized,300,232.19
+flame,0,normalized,325,232.64
+flame,0,normalized,350,235.36
+flame,0,normalized,375,231.44
+flame,0,normalized,400,232.64
+flame,0,normalized,425,226.79
+flame,0,normalized,450,230.28
+flame,0,normalized,475,223.6
+flame,0,normalized,500,223.97
+flame,0,reward,1,247.3
+flame,0,reward,25,364.85
+flame,0,reward,50,361.98
+flame,0,reward,75,341.08
+flame,0,reward,100,372.96
+flame,0,reward,125,377.41
+flame,0,reward,150,398.33
+flame,0,reward,175,403.81
+flame,0,reward,200,409.5
+flame,0,reward,225,411.66
+flame,0,reward,250,410.94
+flame,0,reward,275,407.43
+flame,0,reward,300,403.2
+flame,0,reward,325,406.82
+flame,0,reward,350,407.33
+flame,0,reward,375,409.84
+flame,0,reward,400,413.02
+flame,0,reward,425,413.93
+flame,0,reward,450,419.55
+flame,0,reward,475,419.59
+flame,0,reward,500,421.17
+flame,1,none,1,247.3
+flame,1,none,25,352.66
+flame,1,none,50,357.36
+flame,1,none,75,351.73
+flame,1,none,100,317.74
+flame,1,none,125,287.46
+flame,1,none,150,272.24
+flame,1,none,175,258.77
+flame,1,none,200,250.23
+flame,1,none,225,248.37
+flame,1,none,250,241.24
+flame,1,none,275,234.94
+flame,1,none,300,235.27
+flame,1,none,325,233.21
+flame,1,none,350,235.15
+flame,1,none,375,234.45
+flame,1,none,400,232.47
+flame,1,none,425,227.24
+flame,1,none,450,226.62
+flame,1,none,475,224.22
+flame,1,none,500,220.17
+flame,1,normalized,1,247.3
+flame,1,normalized,25,353.41
+flame,1,normalized,50,356.54
+flame,1,normalized,75,351.68
+flame,1,normalized,100,335.59
+flame,1,normalized,125,322.99
+flame,1,normalized,150,306.99
+flame,1,normalized,175,286.29
+flame,1,normalized,200,274.98
+flame,1,normalized,225,276.96
+flame,1,normalized,250,270.33
+flame,1,normalized,275,268.71
+flame,1,normalized,300,272.77
+flame,1,normalized,325,269.32
+flame,1,normalized,350,262.61
+flame,1,normalized,375,255.77
+flame,1,normalized,400,252.04
+flame,1,normalized,425,249.02
+flame,1,normalized,450,241.63
+flame,1,normalized,475,245.72
+flame,1,normalized,500,242.87
+flame,1,reward,1,247.3
+flame,1,reward,25,374.03
+flame,1,reward,50,377.43
+flame,1,reward,75,370.21
+flame,1,reward,100,369.23
+flame,1,reward,125,398.12
+flame,1,reward,150,414.22
+flame,1,reward,175,420.5
+flame,1,reward,200,430.65
+flame,1,reward,225,445.95
+flame,1,reward,250,453.14
+flame,1,reward,275,449.23
+flame,1,reward,300,453.05
+flame,1,reward,325,451.86
+flame,1,reward,350,443.05
+flame,1,reward,375,431.76
+flame,1,reward,400,420.73
+flame,1,reward,425,420.54
+flame,1,reward,450,416.8
+flame,1,reward,475,413.43
+flame,1,reward,500,412.73
+flame,2,none,1,247.3
+flame,2,none,25,348.74
+flame,2,none,50,346.23
+flame,2,none,75,320.65
+flame,2,none,100,286.79
+flame,2,none,125,275.62
+flame,2,none,150,270.3
+flame,2,none,175,258.24
+flame,2,none,200,249.73
+flame,2,none,225,240.91
+flame,2,none,250,238.93
+flame,2,none,275,233.87
+flame,2,none,300,231.16
+flame,2,none,325,229.52
+flame,2,none,350,225.33
+flame,2,none,375,227.53
+flame,2,none,400,225.5
+flame,2,none,425,224.41
+flame,2,none,450,224.77
+flame,2,none,475,220.29
+flame,2,none,500,220.82
+flame,2,normalized,1,247.3
+flame,2,normalized,25,353.44
+flame,2,normalized,50,338.06
+flame,2,normalized,75,312.27
+flame,2,normalized,100,282.29
+flame,2,normalized,125,269.34
+flame,2,normalized,150,261.9
+flame,2,normalized,175,251.37
+flame,2,normalized,200,243.8
+flame,2,normalized,225,248.29
+flame,2,normalized,250,246.44
+flame,2,normalized,275,248.95
+flame,2,normalized,300,243.23
+flame,2,normalized,325,240.46
+flame,2,normalized,350,242.38
+flame,2,normalized,375,241.17
+flame,2,normalized,400,241.57
+flame,2,normalized,425,265.1
+flame,2,normalized,450,229.58
+flame,2,normalized,475,231.45
+flame,2,normalized,500,236.67
+flame,2,reward,1,247.3
+flame,2,reward,25,368.23
+flame,2,reward,50,367.85
+flame,2,reward,75,346.49
+flame,2,reward,100,342.54
+flame,2,reward,125,346.27
+flame,2,reward,150,364.92
+flame,2,reward,175,379.78
+flame,2,reward,200,404.15
+flame,2,reward,225,409.19
+flame,2,reward,250,412.26
+flame,2,reward,275,418.74
+flame,2,reward,300,417.95
+flame,2,reward,325,416.24
+flame,2,reward,350,416.23
+flame,2,reward,375,413.2
+flame,2,reward,400,408.85
+flame,2,reward,425,406.57
+flame,2,reward,450,407.02
+flame,2,reward,475,401.79
+flame,2,reward,500,406.48
+tafdrl final,0,none,1,247.3
+tafdrl final,0,none,25,345.61
+tafdrl final,0,none,50,341.5
+tafdrl final,0,none,75,302.81
+tafdrl final,0,none,100,273.77
+tafdrl final,0,none,125,270.5
+tafdrl final,0,none,150,268.02
+tafdrl final,0,none,175,262.25
+tafdrl final,0,none,200,257.1
+tafdrl final,0,none,225,248.53
+tafdrl final,0,none,250,243.74
+tafdrl final,0,none,275,239.94
+tafdrl final,0,none,300,240.14
+tafdrl final,0,none,325,236.4
+tafdrl final,0,none,350,237.19
+tafdrl final,0,none,375,235.92
+tafdrl final,0,none,400,234.05
+tafdrl final,0,none,425,230.8
+tafdrl final,0,none,450,229.27
+tafdrl final,0,none,475,225.07
+tafdrl final,0,none,500,224.6
+tafdrl final,0,normalized,1,247.3
+tafdrl final,0,normalized,25,344.55
+tafdrl final,0,normalized,50,330.98
+tafdrl final,0,normalized,75,298.64
+tafdrl final,0,normalized,100,261.91
+tafdrl final,0,normalized,125,256.33
+tafdrl final,0,normalized,150,256.79
+tafdrl final,0,normalized,175,255.32
+tafdrl final,0,normalized,200,246.3
+tafdrl final,0,normalized,225,246.15
+tafdrl final,0,normalized,250,239.96
+tafdrl final,0,normalized,275,230.54
+tafdrl final,0,normalized,300,224.8
+tafdrl final,0,normalized,325,222.41
+tafdrl final,0,normalized,350,226.18
+tafdrl final,0,normalized,375,228.99
+tafdrl final,0,normalized,400,225.75
+tafdrl final,0,normalized,425,219.9
+tafdrl final,0,normalized,450,217.06
+tafdrl final,0,normalized,475,221.1
+tafdrl final,0,normalized,500,216.45
+tafdrl final,0,reward,1,247.3
+tafdrl final,0,reward,25,364.15
+tafdrl final,0,reward,50,361.3
+tafdrl final,0,reward,75,333.55
+tafdrl final,0,reward,100,351.39
+tafdrl final,0,reward,125,373.19
+tafdrl final,0,reward,150,381.46
+tafdrl final,0,reward,175,392.23
+tafdrl final,0,reward,200,415.44
+tafdrl final,0,reward,225,424.76
+tafdrl final,0,reward,250,427.98
+tafdrl final,0,reward,275,428.82
+tafdrl final,0,reward,300,426.57
+tafdrl final,0,reward,325,420.34
+tafdrl final,0,reward,350,418.78
+tafdrl final,0,reward,375,420.95
+tafdrl final,0,reward,400,425.35
+tafdrl final,0,reward,425,424.86
+tafdrl final,0,reward,450,428.48
+tafdrl final,0,reward,475,431.72
+tafdrl final,0,reward,500,437.18
+tafdrl final,1,none,1,247.3
+tafdrl final,1,none,25,350.86
+tafdrl final,1,none,50,356.48
+tafdrl final,1,none,75,339.62
+tafdrl final,1,none,100,308.27
+tafdrl final,1,none,125,282.25
+tafdrl final,1,none,150,268.23
+tafdrl final,1,none,175,262.23
+tafdrl final,1,none,200,255.15
+tafdrl final,1,none,225,253.48
+tafdrl final,1,none,250,245.73
+tafdrl final,1,none,275,237.35
+tafdrl final,1,none,300,235.59
+tafdrl final,1,none,325,231.19
+tafdrl final,1,none,350,229.54
+tafdrl final,1,none,375,230.33
+tafdrl final,1,none,400,230.23
+tafdrl final,1,none,425,228.38
+tafdrl final,1,none,450,227.01
+tafdrl final,1,none,475,224.29
+tafdrl final,1,none,500,225.42
+tafdrl final,1,normalized,1,247.3
+tafdrl final,1,normalized,25,351.99
+tafdrl final,1,normalized,50,358.05
+tafdrl final,1,normalized,75,352.87
+tafdrl final,1,normalized,100,327.96
+tafdrl final,1,normalized,125,292.57
+tafdrl final,1,normalized,150,278.98
+tafdrl final,1,normalized,175,264.13
+tafdrl final,1,normalized,200,260.14
+tafdrl final,1,normalized,225,261.01
+tafdrl final,1,normalized,250,263.3
+tafdrl final,1,normalized,275,272.22
+tafdrl final,1,normalized,300,262.2
+tafdrl final,1,normalized,325,254.67
+tafdrl final,1,normalized,350,254.73
+tafdrl final,1,normalized,375,239.13
+tafdrl final,1,normalized,400,237.17
+tafdrl final,1,normalized,425,234.64
+tafdrl final,1,normalized,450,226.18
+tafdrl final,1,normalized,475,235.53
+tafdrl final,1,normalized,500,231.46
+tafdrl final,1,reward,1,247.3
+tafdrl final,1,reward,25,373.87
+tafdrl final,1,reward,50,377.34
+tafdrl final,1,reward,75,372.5
+tafdrl final,1,reward,100,366.25
+tafdrl final,1,reward,125,376.76
+tafdrl final,1,reward,150,405.73
+tafdrl final,1,reward,175,422.31
+tafdrl final,1,reward,200,414.75
+tafdrl final,1,reward,225,422.16
+tafdrl final,1,reward,250,423.85
+tafdrl final,1,reward,275,418.33
+tafdrl final,1,reward,300,416.98
+tafdrl final,1,reward,325,417.66
+tafdrl final,1,reward,350,415.89
+tafdrl final,1,reward,375,414.78
+tafdrl final,1,reward,400,412.34
+tafdrl final,1,reward,425,407.72
+tafdrl final,1,reward,450,406.21
+tafdrl final,1,reward,475,404.11
+tafdrl final,1,reward,500,405.08
+tafdrl final,2,none,1,247.3
+tafdrl final,2,none,25,346.31
+tafdrl final,2,none,50,342.02
+tafdrl final,2,none,75,311.84
+tafdrl final,2,none,100,276.7
+tafdrl final,2,none,125,269.14
+tafdrl final,2,none,150,262.55
+tafdrl final,2,none,175,254.86
+tafdrl final,2,none,200,248.16
+tafdrl final,2,none,225,241.16
+tafdrl final,2,none,250,237.48
+tafdrl final,2,none,275,231.59
+tafdrl final,2,none,300,225.23
+tafdrl final,2,none,325,225.07
+tafdrl final,2,none,350,222.44
+tafdrl final,2,none,375,220.97
+tafdrl final,2,none,400,219.92
+tafdrl final,2,none,425,219.85
+tafdrl final,2,none,450,220.06
+tafdrl final,2,none,475,218.91
+tafdrl final,2,none,500,217.81
+tafdrl final,2,normalized,1,247.3
+tafdrl final,2,normalized,25,348.08
+tafdrl final,2,normalized,50,343.66
+tafdrl final,2,normalized,75,315.02
+tafdrl final,2,normalized,100,295.25
+tafdrl final,2,normalized,125,262.85
+tafdrl final,2,normalized,150,247.59
+tafdrl final,2,normalized,175,264.93
+tafdrl final,2,normalized,200,256.04
+tafdrl final,2,normalized,225,248.79
+tafdrl final,2,normalized,250,244.81
+tafdrl final,2,normalized,275,240.62
+tafdrl final,2,normalized,300,238.17
+tafdrl final,2,normalized,325,238.1
+tafdrl final,2,normalized,350,236.89
+tafdrl final,2,normalized,375,233.92
+tafdrl final,2,normalized,400,230.79
+tafdrl final,2,normalized,425,229.09
+tafdrl final,2,normalized,450,224.47
+tafdrl final,2,normalized,475,221.08
+tafdrl final,2,normalized,500,218.3
+tafdrl final,2,reward,1,247.3
+tafdrl final,2,reward,25,366.88
+tafdrl final,2,reward,50,364.53
+tafdrl final,2,reward,75,341.07
+tafdrl final,2,reward,100,328.51
+tafdrl final,2,reward,125,331.83
+tafdrl final,2,reward,150,348.31
+tafdrl final,2,reward,175,379.52
+tafdrl final,2,reward,200,396.61
+tafdrl final,2,reward,225,396.06
+tafdrl final,2,reward,250,400.79
+tafdrl final,2,reward,275,399.18
+tafdrl final,2,reward,300,396.89
+tafdrl final,2,reward,325,394.05
+tafdrl final,2,reward,350,392.41
+tafdrl final,2,reward,375,392.78
+tafdrl final,2,reward,400,390.6
+tafdrl final,2,reward,425,394.73
+tafdrl final,2,reward,450,398.44
+tafdrl final,2,reward,475,401.08
+tafdrl final,2,reward,500,399.22

@@ -1,0 +1,39 @@
+{
+  "figures": [
+    "damage_rejection",
+    "attack_damage",
+    "rejection_heatmap",
+    "paired_revision",
+    "clean_energy",
+    "attack_share",
+    "ablation",
+    "sensitivity",
+    "selection_candidates",
+    "training_curves",
+    "architecture",
+    "data_splits",
+    "electrical"
+  ],
+  "tables": [
+    "main_damage",
+    "algorithm (static in methods)",
+    "act_damage",
+    "transfer_damage",
+    "coverage",
+    "rejection",
+    "paired_revision",
+    "clean_energy",
+    "attack_share",
+    "ablation",
+    "sensitivity",
+    "selection_candidates",
+    "configuration",
+    "threats",
+    "comparators",
+    "device",
+    "electrical",
+    "imputation_audit",
+    "exact_statistics"
+  ],
+  "notes": "13 figures and 19 tables. Exact tests and ACT donor audit are retrospective. Scientific blockers remain."
+}

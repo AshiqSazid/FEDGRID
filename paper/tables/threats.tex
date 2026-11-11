@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Implemented perturbations. Compromised households are fixed within a run; message faults affect honest households.}
+\label{tab:threats}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lll}
+\toprule
+Threat & Perturbation & Knowledge or scope \\
+\midrule
+Flip & Negate model changes & Own update \\
+Scale & Multiply changes by household count & Own update; system size \\
+Noise & Gaussian update variance 1000 & Parameter dimension \\
+Normalized & Direction and magnitude grid search & All updates; aggregation queries \\
+Meter & Swap observed load and solar channels & Local training observations \\
+Reward & Reverse local reward sign & Local training rewards \\
+Message faults & 10\% drop and 10\% one-round delay & Honest changes; separate scenario \\
+\bottomrule
+\end{tabular}}
+\end{table}

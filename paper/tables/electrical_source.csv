@@ -1,0 +1,81 @@
+setting,method,seed,half hours over 253 V %,max V,transformer peak loading %
+Ausgrid,fedavg,0,0.0,250.55,
+Ausgrid,fedavg,1,0.0,249.96,60.17
+Ausgrid,fedavg,2,0.0,250.71,64.73
+Ausgrid,fedavg,3,0.0,251.27,65.36
+Ausgrid,fedavg,4,0.02,253.36,73.76
+Ausgrid,fedgrid,0,0.0,252.39,70.34
+Ausgrid,fedgrid final,0,0.0,252.63,71.17
+Ausgrid,fedgrid,1,0.0,250.26,56.46
+Ausgrid,fedgrid final,1,0.0,250.51,59.32
+Ausgrid,fedgrid,2,0.0,251.0,64.97
+Ausgrid,fedgrid final,2,0.0,251.31,65.75
+Ausgrid,fedgrid,3,0.0,252.29,68.16
+Ausgrid,fedgrid final,3,0.0,252.44,67.95
+Ausgrid,fedgrid,4,0.01,253.45,70.59
+Ausgrid,fedgrid final,4,0.05,253.6,69.69
+Ausgrid,flame,0,0.0,250.72,66.04
+Ausgrid,flame,1,0.0,251.09,61.48
+Ausgrid,flame,2,0.0,250.95,63.75
+Ausgrid,flame,3,0.0,251.56,65.51
+Ausgrid,flame,4,0.0,252.24,66.45
+Ausgrid,fltrust,0,0.0,251.75,67.0
+Ausgrid,fltrust,1,0.0,250.32,60.25
+Ausgrid,fltrust,2,0.0,250.59,59.53
+Ausgrid,fltrust,3,0.0,250.42,63.37
+Ausgrid,fltrust,4,0.0,252.29,69.04
+Ausgrid,krum,0,0.0,251.45,
+Ausgrid,krum,1,0.0,250.95,53.62
+Ausgrid,krum,2,0.0,250.56,59.65
+Ausgrid,krum,3,0.0,250.68,60.08
+Ausgrid,krum,4,0.0,250.27,54.42
+Ausgrid,median,0,0.0,250.5,
+Ausgrid,median,1,0.0,251.45,58.01
+Ausgrid,median,2,0.0,250.61,61.68
+Ausgrid,median,3,0.0,250.53,61.12
+Ausgrid,median,4,0.0,252.87,65.06
+Ausgrid,tafdrl,0,0.0,252.75,75.37
+Ausgrid,tafdrl final,0,0.0,250.81,67.72
+Ausgrid,tafdrl,1,0.0,250.01,69.23
+Ausgrid,tafdrl final,1,0.0,250.62,59.82
+Ausgrid,tafdrl,2,0.0,250.64,62.95
+Ausgrid,tafdrl final,2,0.0,250.97,64.52
+Ausgrid,tafdrl,3,0.0,252.29,67.83
+Ausgrid,tafdrl final,3,0.0,251.48,67.38
+Ausgrid,tafdrl,4,0.03,253.38,72.1
+Ausgrid,tafdrl final,4,0.02,253.1,72.65
+Ausgrid,trimmed,0,0.0,251.09,
+Ausgrid,trimmed,1,0.0,250.54,55.55
+Ausgrid,trimmed,2,0.0,251.38,64.01
+Ausgrid,trimmed,3,0.0,251.8,66.37
+Ausgrid,trimmed,4,0.0,252.56,66.82
+ACT,fedavg,0,0.0,250.76,74.67
+ACT,fedavg,1,0.0,249.67,61.75
+ACT,fedavg,2,0.0,250.15,73.89
+ACT,fedgrid,0,0.0,251.37,71.32
+ACT,fedgrid final,0,0.0,250.55,68.84
+ACT,fedgrid,1,0.0,250.07,57.16
+ACT,fedgrid final,1,0.0,249.85,56.22
+ACT,fedgrid,2,0.0,250.48,73.74
+ACT,fedgrid final,2,0.0,249.93,73.79
+ACT,flame,0,0.0,250.25,66.32
+ACT,flame,1,0.0,249.68,54.88
+ACT,flame,2,0.0,250.13,69.04
+ACT,fltrust,0,0.0,250.92,65.85
+ACT,fltrust,1,0.0,249.79,51.23
+ACT,fltrust,2,0.0,249.87,73.81
+ACT,krum,0,0.0,251.7,70.08
+ACT,krum,1,0.0,251.31,67.86
+ACT,krum,2,0.0,250.15,62.35
+ACT,median,0,0.0,250.47,68.84
+ACT,median,1,0.0,250.07,53.91
+ACT,median,2,0.0,249.54,68.33
+ACT,tafdrl,0,0.0,251.48,74.25
+ACT,tafdrl final,0,0.0,252.29,75.77
+ACT,tafdrl,1,0.0,251.08,57.58
+ACT,tafdrl final,1,0.0,249.16,52.91
+ACT,tafdrl,2,0.0,250.72,75.98
+ACT,tafdrl final,2,0.0,249.76,73.26
+ACT,trimmed,0,0.0,250.16,70.06
+ACT,trimmed,1,0.0,251.37,58.99
+ACT,trimmed,2,0.0,249.89,73.81

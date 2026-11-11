@@ -1,0 +1,121 @@
+comparator,attack,seed,difference
+fltrust,flip,0,18.36
+fltrust,flip,1,76.87
+fltrust,flip,2,91.95
+fltrust,flip,3,34.72
+fltrust,flip,4,118.5
+fltrust,scale,0,-3.63
+fltrust,scale,1,-13.41
+fltrust,scale,2,-37.57
+fltrust,scale,3,-6.56
+fltrust,scale,4,-3.53
+fltrust,noise,0,18.95
+fltrust,noise,1,-0.01
+fltrust,noise,2,23.9
+fltrust,noise,3,34.39
+fltrust,noise,4,87.71
+fltrust,normalized,0,13.54
+fltrust,normalized,1,35.45
+fltrust,normalized,2,-33.15
+fltrust,normalized,3,-61.77
+fltrust,normalized,4,-13.25
+fltrust,meter,0,14.51
+fltrust,meter,1,-18.45
+fltrust,meter,2,45.33
+fltrust,meter,3,-8.66
+fltrust,meter,4,-3.47
+fltrust,reward,0,45.27
+fltrust,reward,1,60.13
+fltrust,reward,2,14.69
+fltrust,reward,3,23.82
+fltrust,reward,4,70.26
+flame,flip,0,42.73
+flame,flip,1,-4.85
+flame,flip,2,0.89
+flame,flip,3,13.99
+flame,flip,4,17.11
+flame,scale,0,21.19
+flame,scale,1,-38.86
+flame,scale,2,-39.42
+flame,scale,3,11.05
+flame,scale,4,-51.56
+flame,noise,0,29.53
+flame,noise,1,-14.33
+flame,noise,2,28.37
+flame,noise,3,-27.02
+flame,noise,4,69.88
+flame,normalized,0,6.07
+flame,normalized,1,-42.76
+flame,normalized,2,-117.07
+flame,normalized,3,-1.99
+flame,normalized,4,-3.23
+flame,meter,0,45.84
+flame,meter,1,-35.87
+flame,meter,2,62.72
+flame,meter,3,30.76
+flame,meter,4,-26.99
+flame,reward,0,79.93
+flame,reward,1,40.13
+flame,reward,2,6.15
+flame,reward,3,106.57
+flame,reward,4,90.61
+tafdrl final,flip,0,-0.99
+tafdrl final,flip,1,31.82
+tafdrl final,flip,2,24.33
+tafdrl final,flip,3,-4.61
+tafdrl final,flip,4,97.84
+tafdrl final,scale,0,8.61
+tafdrl final,scale,1,-44.62
+tafdrl final,scale,2,-71.65
+tafdrl final,scale,3,-22.97
+tafdrl final,scale,4,-17.58
+tafdrl final,noise,0,31.95
+tafdrl final,noise,1,38.33
+tafdrl final,noise,2,7.37
+tafdrl final,noise,3,13.36
+tafdrl final,noise,4,22.12
+tafdrl final,normalized,0,15.6
+tafdrl final,normalized,1,32.23
+tafdrl final,normalized,2,-51.13
+tafdrl final,normalized,3,-7.78
+tafdrl final,normalized,4,-127.18
+tafdrl final,meter,0,50.28
+tafdrl final,meter,1,-10.13
+tafdrl final,meter,2,66.68
+tafdrl final,meter,3,1.78
+tafdrl final,meter,4,-14.2
+tafdrl final,reward,0,39.23
+tafdrl final,reward,1,41.08
+tafdrl final,reward,2,-37.41
+tafdrl final,reward,3,106.76
+tafdrl final,reward,4,62.36
+fedgrid,flip,0,-33.3
+fedgrid,flip,1,17.64
+fedgrid,flip,2,-13.75
+fedgrid,flip,3,-4.0
+fedgrid,flip,4,-18.59
+fedgrid,scale,0,-4.18
+fedgrid,scale,1,10.7
+fedgrid,scale,2,-23.81
+fedgrid,scale,3,0.8
+fedgrid,scale,4,-10.26
+fedgrid,noise,0,-19.02
+fedgrid,noise,1,-45.74
+fedgrid,noise,2,-33.83
+fedgrid,noise,3,-38.15
+fedgrid,noise,4,-5.24
+fedgrid,normalized,0,-114.2
+fedgrid,normalized,1,-30.53
+fedgrid,normalized,2,-152.71
+fedgrid,normalized,3,-55.2
+fedgrid,normalized,4,-31.51
+fedgrid,meter,0,52.55
+fedgrid,meter,1,11.69
+fedgrid,meter,2,23.06
+fedgrid,meter,3,-33.13
+fedgrid,meter,4,13.72
+fedgrid,reward,0,41.59
+fedgrid,reward,1,-0.65
+fedgrid,reward,2,-16.16
+fedgrid,reward,3,41.4
+fedgrid,reward,4,7.03

@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Experimental coverage. The principal Ausgrid, ACT retraining and transfer comparisons contain six attacks and a no-attack reference per method and seed; sensitivity and clean-learning groups have separate designs.}
+\label{tab:coverage}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+Setting & Methods & Seeds per method & Households & Policy \\
+\midrule
+Ausgrid main & 10 & 0--4 (5) & 36 & Last \\
+ACT retraining & 10 & 0--2 (3) & 36 & Last \\
+ACT transfer, final variants & 2 & 0--4 (5) & 36 & Last \\
+ACT transfer, other methods & 8 & 3--4 (2) & 36 & Last \\
+Share, fault, scaling, stress & Varies & Mostly 0 (1) & 36 or 83 & Last \\
+Clean learning & 4 learned baselines & 0--2 (3) & 36 & Validation-selected \\
+\bottomrule
+\end{tabular}}
+\end{table}

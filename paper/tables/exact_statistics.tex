@@ -1,0 +1,35 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Exploratory two-sided exact paired Wilcoxon tests on five Ausgrid seeds. Differences are final FedGrid minus the comparator. Holm adjustment uses 18 tests for robust comparators and six for the original-method revision; no adjusted test rejects at 0.05.}
+\label{tab:exact_statistics}
+\begin{tabular}{llrrr}
+\toprule
+Comparator & Attack & Mean difference (\$/yr) & Exact $p$ & Holm $p$ \\
+\midrule
+FLTrust & Flip & 68.1 & 0.0625 & 1.000 \\
+FLTrust & Scale & -12.9 & 0.0625 & 1.000 \\
+FLTrust & Noise & 33.0 & 0.1250 & 1.000 \\
+FLTrust & Normalized & -11.8 & 0.8125 & 1.000 \\
+FLTrust & Meter & 5.9 & 1.0000 & 1.000 \\
+FLTrust & Reward & 42.8 & 0.0625 & 1.000 \\
+FLAME & Flip & 14.0 & 0.1875 & 1.000 \\
+FLAME & Scale & -19.5 & 0.3125 & 1.000 \\
+FLAME & Noise & 17.3 & 0.3125 & 1.000 \\
+FLAME & Normalized & -31.8 & 0.3125 & 1.000 \\
+FLAME & Meter & 15.3 & 0.4375 & 1.000 \\
+FLAME & Reward & 64.7 & 0.0625 & 1.000 \\
+TAFDRL-style tuned & Flip & 29.7 & 0.3125 & 1.000 \\
+TAFDRL-style tuned & Scale & -29.6 & 0.1250 & 1.000 \\
+TAFDRL-style tuned & Noise & 22.6 & 0.0625 & 1.000 \\
+TAFDRL-style tuned & Normalized & -27.7 & 0.6250 & 1.000 \\
+TAFDRL-style tuned & Meter & 18.9 & 0.6250 & 1.000 \\
+TAFDRL-style tuned & Reward & 42.4 & 0.1250 & 1.000 \\
+FedGrid original & Flip & -10.4 & 0.3125 & 1.000 \\
+FedGrid original & Scale & -5.3 & 0.6250 & 1.000 \\
+FedGrid original & Noise & -28.4 & 0.0625 & 0.375 \\
+FedGrid original & Normalized & -76.8 & 0.0625 & 0.375 \\
+FedGrid original & Meter & 13.6 & 0.4375 & 1.000 \\
+FedGrid original & Reward & 14.6 & 0.4375 & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

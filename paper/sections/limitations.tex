@@ -1,0 +1,19 @@
+\section{Limitations}
+\label{sec:limitations}
+\paragraph{Development and selection.}
+The Ausgrid evaluation year was inspected before the revision, and the numerical rejection bound was added after candidate results and an earlier household-trust sweep were available. Selection from validation scores therefore occurred within an evaluation-exposed development process. Further seeds on the same profiles do not supply a new chronological holdout; no prospective registration is claimed.
+
+\paragraph{Effective participation.}
+Rejection statistics have method-specific definitions, are rounded and are missing from some legacy logs. They omit admitted FedGrid groups with zero weight. These records cannot reconstruct a common false-positive rate or equitable household influence, and individual costs associated with exclusion have not been measured.
+
+\paragraph{Data processing and generalisation.}
+Monthly irradiance ratios rescale historical Ausgrid solar without a full location-specific physical model. ACT retains Canberra profiles under the same simulated feeder and Queensland tariff, and imputation can use future days and cross weekly partitions. It is consequently not a strictly isolated external holdout. Reinitialising separated evaluation weeks at half charge also affects energy accounting. The experiments do not sample a broad population of independent feeders.
+
+\paragraph{Information and physical assumptions.}
+Export schedules use actual daily profiles, reference data are assumed trustworthy and available, and MPC uses perfect daily foresight. Approximate voltage sensitivity and measured rather than constrained transformer loading leave some physical requirements unenforced. The MPC linear program also permits simultaneous charge and discharge, whereas replay executes their net power; the five-day consistency check does not validate that relaxation across the full horizon. Monetary ageing, uncertain inverter response, communication security and field calibration are omitted. Retaining raw records locally does not provide differential privacy or protection from inference through model updates.
+
+\paragraph{Comparator fidelity and threat coverage.}
+TAFDRL-style is a reconstruction, FLAME is adapted from a backdoor setting, and the Normalized attacker uses a finite search differing from the source procedure. Methods also have unequal auxiliary information and tuning attack sets. Results therefore concern the implemented configurations, without a general resilience theorem for their learning-control dynamics.
+
+\paragraph{Statistical scope.}
+Principal comparisons use three or five seeds, and many sensitivities use one. Intervals are conditional on fixed household assignment and preprocessing, and paired revision intervals are exploratory and unadjusted. A maximum selected across attacks needs its own uncertainty analysis. Exact five-seed tests do not reject after family-wise adjustment; this does not establish equivalence. The expanded replication, forecast-based MPC and individual bill analyses remain uncompleted.

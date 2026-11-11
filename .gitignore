@@ -12,3 +12,14 @@ DOSSIER.md
 # Private: the notes folder, and the TAFDRL paper (publisher PDF), kept off GitHub
 /plans/
 research/1-s2.0-*.pdf
+
+# Local tooling, temporary builds and backup copies
+/.git/
+/.agents/
+/.aws/
+/.codex/
+/next/
+/paper_backups/
+/paper/build/
+.DS_Store
+

@@ -1,0 +1,157 @@
+method,seed,attack,damage,source
+fedavg,3,flip,118.62999999999988,results/fedavg_sac_500_seed3_flip_share30.log
+fedavg,3,meter,30.809999999999945,results/fedavg_sac_500_seed3_meter_share30.log
+fedavg,3,noise,683.8999999999999,results/fedavg_sac_500_seed3_noise_share30.log
+fedavg,3,normalized,753.49,results/fedavg_sac_500_seed3_normalized_share30.log
+fedavg,3,reward,62.13000000000011,results/fedavg_sac_500_seed3_reward_share30.log
+fedavg,3,scale,4.089999999999918,results/fedavg_sac_500_seed3_scale_share30.log
+fedavg,4,flip,168.6099999999999,results/fedavg_sac_500_seed4_flip_share30.log
+fedavg,4,meter,-12.789999999999964,results/fedavg_sac_500_seed4_meter_share30.log
+fedavg,4,noise,828.76,results/fedavg_sac_500_seed4_noise_share30.log
+fedavg,4,normalized,930.46,results/fedavg_sac_500_seed4_normalized_share30.log
+fedavg,4,reward,151.36000000000013,results/fedavg_sac_500_seed4_reward_share30.log
+fedavg,4,scale,170.95000000000005,results/fedavg_sac_500_seed4_scale_share30.log
+fedgrid final,0,flip,17.480000000000018,results/fedgrid_sac_500_seed0_flip_share30_final.log
+fedgrid final,0,meter,28.700000000000045,results/fedgrid_sac_500_seed0_meter_share30_final.log
+fedgrid final,0,noise,-9.439999999999827,results/fedgrid_sac_500_seed0_noise_share30_final.log
+fedgrid final,0,normalized,-54.74000000000001,results/fedgrid_sac_500_seed0_normalized_share30_final.log
+fedgrid final,0,reward,88.0,results/fedgrid_sac_500_seed0_reward_share30_final.log
+fedgrid final,0,scale,-27.559999999999945,results/fedgrid_sac_500_seed0_scale_share30_final.log
+fedgrid final,1,flip,110.31999999999994,results/fedgrid_sac_500_seed1_flip_share30_final.log
+fedgrid final,1,meter,33.180000000000064,results/fedgrid_sac_500_seed1_meter_share30_final.log
+fedgrid final,1,noise,29.38000000000011,results/fedgrid_sac_500_seed1_noise_share30_final.log
+fedgrid final,1,normalized,13.220000000000027,results/fedgrid_sac_500_seed1_normalized_share30_final.log
+fedgrid final,1,reward,130.75,results/fedgrid_sac_500_seed1_reward_share30_final.log
+fedgrid final,1,scale,-0.33999999999991815,results/fedgrid_sac_500_seed1_scale_share30_final.log
+fedgrid final,2,flip,68.95000000000005,results/fedgrid_sac_500_seed2_flip_share30_final.log
+fedgrid final,2,meter,53.690000000000055,results/fedgrid_sac_500_seed2_meter_share30_final.log
+fedgrid final,2,noise,5.980000000000018,results/fedgrid_sac_500_seed2_noise_share30_final.log
+fedgrid final,2,normalized,-53.91000000000008,results/fedgrid_sac_500_seed2_normalized_share30_final.log
+fedgrid final,2,reward,57.50999999999999,results/fedgrid_sac_500_seed2_reward_share30_final.log
+fedgrid final,2,scale,-29.299999999999955,results/fedgrid_sac_500_seed2_scale_share30_final.log
+fedgrid,3,flip,97.20000000000005,results/fedgrid_sac_500_seed3_flip_share30.log
+fedgrid final,3,flip,92.46000000000004,results/fedgrid_sac_500_seed3_flip_share30_final.log
+fedgrid,3,meter,51.09999999999991,results/fedgrid_sac_500_seed3_meter_share30.log
+fedgrid final,3,meter,1.009999999999991,results/fedgrid_sac_500_seed3_meter_share30_final.log
+fedgrid,3,noise,75.37999999999988,results/fedgrid_sac_500_seed3_noise_share30.log
+fedgrid final,3,noise,30.339999999999918,results/fedgrid_sac_500_seed3_noise_share30_final.log
+fedgrid,3,normalized,116.80999999999995,results/fedgrid_sac_500_seed3_normalized_share30.log
+fedgrid final,3,normalized,28.839999999999918,results/fedgrid_sac_500_seed3_normalized_share30_final.log
+fedgrid,3,reward,63.75,results/fedgrid_sac_500_seed3_reward_share30.log
+fedgrid final,3,reward,109.3900000000001,results/fedgrid_sac_500_seed3_reward_share30_final.log
+fedgrid,3,scale,-4.519999999999982,results/fedgrid_sac_500_seed3_scale_share30.log
+fedgrid final,3,scale,4.529999999999973,results/fedgrid_sac_500_seed3_scale_share30_final.log
+fedgrid,4,flip,146.07999999999993,results/fedgrid_sac_500_seed4_flip_share30.log
+fedgrid final,4,flip,105.17000000000007,results/fedgrid_sac_500_seed4_flip_share30_final.log
+fedgrid,4,meter,7.039999999999964,results/fedgrid_sac_500_seed4_meter_share30.log
+fedgrid final,4,meter,24.690000000000055,results/fedgrid_sac_500_seed4_meter_share30_final.log
+fedgrid,4,noise,75.08999999999992,results/fedgrid_sac_500_seed4_noise_share30.log
+fedgrid final,4,noise,50.82999999999993,results/fedgrid_sac_500_seed4_noise_share30_final.log
+fedgrid,4,normalized,110.16000000000008,results/fedgrid_sac_500_seed4_normalized_share30.log
+fedgrid final,4,normalized,49.87000000000012,results/fedgrid_sac_500_seed4_normalized_share30_final.log
+fedgrid,4,reward,156.3699999999999,results/fedgrid_sac_500_seed4_reward_share30.log
+fedgrid final,4,reward,134.06999999999994,results/fedgrid_sac_500_seed4_reward_share30_final.log
+fedgrid,4,scale,5.1099999999999,results/fedgrid_sac_500_seed4_scale_share30.log
+fedgrid final,4,scale,-7.2000000000000455,results/fedgrid_sac_500_seed4_scale_share30_final.log
+flame,3,flip,45.15000000000009,results/flame_sac_500_seed3_flip_share30.log
+flame,3,meter,-17.569999999999936,results/flame_sac_500_seed3_meter_share30.log
+flame,3,noise,37.23000000000002,results/flame_sac_500_seed3_noise_share30.log
+flame,3,normalized,22.800000000000182,results/flame_sac_500_seed3_normalized_share30.log
+flame,3,reward,-12.36999999999989,results/flame_sac_500_seed3_reward_share30.log
+flame,3,scale,-5.990000000000009,results/flame_sac_500_seed3_scale_share30.log
+flame,4,flip,87.15000000000009,results/flame_sac_500_seed4_flip_share30.log
+flame,4,meter,42.13999999999987,results/flame_sac_500_seed4_meter_share30.log
+flame,4,noise,-21.279999999999973,results/flame_sac_500_seed4_noise_share30.log
+flame,4,normalized,30.329999999999927,results/flame_sac_500_seed4_normalized_share30.log
+flame,4,reward,-4.150000000000091,results/flame_sac_500_seed4_reward_share30.log
+flame,4,scale,15.240000000000009,results/flame_sac_500_seed4_scale_share30.log
+fltrust,3,flip,-10.660000000000082,results/fltrust_sac_500_seed3_flip_share30.log
+fltrust,3,meter,31.24000000000001,results/fltrust_sac_500_seed3_meter_share30.log
+fltrust,3,noise,-38.02999999999997,results/fltrust_sac_500_seed3_noise_share30.log
+fltrust,3,normalized,119.45000000000005,results/fltrust_sac_500_seed3_normalized_share30.log
+fltrust,3,reward,54.56000000000017,results/fltrust_sac_500_seed3_reward_share30.log
+fltrust,3,scale,-1.2699999999999818,results/fltrust_sac_500_seed3_scale_share30.log
+fltrust,4,flip,2.1699999999998454,results/fltrust_sac_500_seed4_flip_share30.log
+fltrust,4,meter,28.809999999999945,results/fltrust_sac_500_seed4_meter_share30.log
+fltrust,4,noise,-32.850000000000136,results/fltrust_sac_500_seed4_noise_share30.log
+fltrust,4,normalized,47.62999999999988,results/fltrust_sac_500_seed4_normalized_share30.log
+fltrust,4,reward,67.94000000000005,results/fltrust_sac_500_seed4_reward_share30.log
+fltrust,4,scale,9.809999999999945,results/fltrust_sac_500_seed4_scale_share30.log
+krum,3,flip,-109.69000000000005,results/krum_sac_500_seed3_flip_share30.log
+krum,3,meter,56.68999999999983,results/krum_sac_500_seed3_meter_share30.log
+krum,3,noise,47.549999999999955,results/krum_sac_500_seed3_noise_share30.log
+krum,3,normalized,102.71000000000004,results/krum_sac_500_seed3_normalized_share30.log
+krum,3,reward,-60.190000000000055,results/krum_sac_500_seed3_reward_share30.log
+krum,3,scale,-70.64999999999986,results/krum_sac_500_seed3_scale_share30.log
+krum,4,flip,64.05000000000018,results/krum_sac_500_seed4_flip_share30.log
+krum,4,meter,-71.78999999999996,results/krum_sac_500_seed4_meter_share30.log
+krum,4,noise,50.92000000000007,results/krum_sac_500_seed4_noise_share30.log
+krum,4,normalized,20.070000000000164,results/krum_sac_500_seed4_normalized_share30.log
+krum,4,reward,101.50999999999999,results/krum_sac_500_seed4_reward_share30.log
+krum,4,scale,59.6400000000001,results/krum_sac_500_seed4_scale_share30.log
+median,3,flip,55.559999999999945,results/median_sac_500_seed3_flip_share30.log
+median,3,meter,-17.529999999999973,results/median_sac_500_seed3_meter_share30.log
+median,3,noise,-23.550000000000182,results/median_sac_500_seed3_noise_share30.log
+median,3,normalized,118.65999999999985,results/median_sac_500_seed3_normalized_share30.log
+median,3,reward,114.76999999999998,results/median_sac_500_seed3_reward_share30.log
+median,3,scale,-43.830000000000155,results/median_sac_500_seed3_scale_share30.log
+median,4,flip,164.6300000000001,results/median_sac_500_seed4_flip_share30.log
+median,4,meter,-5.789999999999964,results/median_sac_500_seed4_meter_share30.log
+median,4,noise,16.610000000000127,results/median_sac_500_seed4_noise_share30.log
+median,4,normalized,262.6300000000001,results/median_sac_500_seed4_normalized_share30.log
+median,4,reward,148.97000000000003,results/median_sac_500_seed4_reward_share30.log
+median,4,scale,15.63000000000011,results/median_sac_500_seed4_scale_share30.log
+tafdrl final,0,flip,62.13000000000011,results/tafdrl_sac_500_seed0_flip_share30_final.log
+tafdrl final,0,meter,-9.789999999999964,results/tafdrl_sac_500_seed0_meter_share30_final.log
+tafdrl final,0,noise,-7.889999999999873,results/tafdrl_sac_500_seed0_noise_share30_final.log
+tafdrl final,0,normalized,-37.94999999999982,results/tafdrl_sac_500_seed0_normalized_share30_final.log
+tafdrl final,0,reward,4.189999999999827,results/tafdrl_sac_500_seed0_reward_share30_final.log
+tafdrl final,0,scale,-9.329999999999927,results/tafdrl_sac_500_seed0_scale_share30_final.log
+tafdrl final,1,flip,60.54000000000019,results/tafdrl_sac_500_seed1_flip_share30_final.log
+tafdrl final,1,meter,27.589999999999918,results/tafdrl_sac_500_seed1_meter_share30_final.log
+tafdrl final,1,noise,11.410000000000082,results/tafdrl_sac_500_seed1_noise_share30_final.log
+tafdrl final,1,normalized,11.820000000000164,results/tafdrl_sac_500_seed1_normalized_share30_final.log
+tafdrl final,1,reward,83.11999999999989,results/tafdrl_sac_500_seed1_reward_share30_final.log
+tafdrl final,1,scale,60.51000000000022,results/tafdrl_sac_500_seed1_scale_share30_final.log
+tafdrl final,2,flip,30.00999999999999,results/tafdrl_sac_500_seed2_flip_share30_final.log
+tafdrl final,2,meter,16.649999999999864,results/tafdrl_sac_500_seed2_meter_share30_final.log
+tafdrl final,2,noise,0.32999999999992724,results/tafdrl_sac_500_seed2_noise_share30_final.log
+tafdrl final,2,normalized,-1.5900000000001455,results/tafdrl_sac_500_seed2_normalized_share30_final.log
+tafdrl final,2,reward,30.559999999999945,results/tafdrl_sac_500_seed2_reward_share30_final.log
+tafdrl final,2,scale,38.930000000000064,results/tafdrl_sac_500_seed2_scale_share30_final.log
+tafdrl,3,flip,107.35000000000014,results/tafdrl_sac_500_seed3_flip_share30.log
+tafdrl final,3,flip,76.85000000000014,results/tafdrl_sac_500_seed3_flip_share30_final.log
+tafdrl,3,meter,19.100000000000136,results/tafdrl_sac_500_seed3_meter_share30.log
+tafdrl final,3,meter,16.079999999999927,results/tafdrl_sac_500_seed3_meter_share30_final.log
+tafdrl,3,noise,-28.0,results/tafdrl_sac_500_seed3_noise_share30.log
+tafdrl final,3,noise,-6.0499999999999545,results/tafdrl_sac_500_seed3_noise_share30_final.log
+tafdrl,3,normalized,66.54000000000019,results/tafdrl_sac_500_seed3_normalized_share30.log
+tafdrl final,3,normalized,38.11000000000013,results/tafdrl_sac_500_seed3_normalized_share30_final.log
+tafdrl,3,reward,-11.720000000000027,results/tafdrl_sac_500_seed3_reward_share30.log
+tafdrl final,3,reward,-11.039999999999964,results/tafdrl_sac_500_seed3_reward_share30_final.log
+tafdrl,3,scale,22.100000000000136,results/tafdrl_sac_500_seed3_scale_share30.log
+tafdrl final,3,scale,37.38000000000011,results/tafdrl_sac_500_seed3_scale_share30_final.log
+tafdrl,4,flip,110.12000000000012,results/tafdrl_sac_500_seed4_flip_share30.log
+tafdrl final,4,flip,20.149999999999864,results/tafdrl_sac_500_seed4_flip_share30_final.log
+tafdrl,4,meter,13.529999999999973,results/tafdrl_sac_500_seed4_meter_share30.log
+tafdrl final,4,meter,35.680000000000064,results/tafdrl_sac_500_seed4_meter_share30_final.log
+tafdrl,4,noise,18.25,results/tafdrl_sac_500_seed4_noise_share30.log
+tafdrl final,4,noise,22.1099999999999,results/tafdrl_sac_500_seed4_noise_share30_final.log
+tafdrl,4,normalized,145.23000000000002,results/tafdrl_sac_500_seed4_normalized_share30.log
+tafdrl final,4,normalized,168.8499999999999,results/tafdrl_sac_500_seed4_normalized_share30_final.log
+tafdrl,4,reward,25.779999999999973,results/tafdrl_sac_500_seed4_reward_share30.log
+tafdrl final,4,reward,14.960000000000036,results/tafdrl_sac_500_seed4_reward_share30_final.log
+tafdrl,4,scale,-10.559999999999945,results/tafdrl_sac_500_seed4_scale_share30.log
+tafdrl final,4,scale,16.419999999999845,results/tafdrl_sac_500_seed4_scale_share30_final.log
+trimmed,3,flip,90.07000000000016,results/trimmed_sac_500_seed3_flip_share30.log
+trimmed,3,meter,21.029999999999973,results/trimmed_sac_500_seed3_meter_share30.log
+trimmed,3,noise,-19.269999999999982,results/trimmed_sac_500_seed3_noise_share30.log
+trimmed,3,normalized,379.94000000000005,results/trimmed_sac_500_seed3_normalized_share30.log
+trimmed,3,reward,125.0,results/trimmed_sac_500_seed3_reward_share30.log
+trimmed,3,scale,-41.789999999999964,results/trimmed_sac_500_seed3_scale_share30.log
+trimmed,4,flip,82.67000000000007,results/trimmed_sac_500_seed4_flip_share30.log
+trimmed,4,meter,12.240000000000009,results/trimmed_sac_500_seed4_meter_share30.log
+trimmed,4,noise,18.940000000000055,results/trimmed_sac_500_seed4_noise_share30.log
+trimmed,4,normalized,358.4100000000001,results/trimmed_sac_500_seed4_normalized_share30.log
+trimmed,4,reward,158.72000000000003,results/trimmed_sac_500_seed4_reward_share30.log
+trimmed,4,scale,0.6300000000001091,results/trimmed_sac_500_seed4_scale_share30.log

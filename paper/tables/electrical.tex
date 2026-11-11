@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Electrical outcomes for no-attack last-policy runs. Means and 95\% interval half-widths [observed seeds] of evaluation-run metrics. A run-level voltage maximum or transformer peak is computed before averaging; these are not pooled worst-case bounds.}
+\label{tab:electrical}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+Setting & Method & Over 253 V (\%) & Run maximum (V) & Transformer peak (\%) \\
+\midrule
+Ausgrid & FedAvg & 0.0 $\pm$ 0.0 [5] & 251.2 $\pm$ 1.6 [5] & 66.0 $\pm$ 9.0 [4] \\
+Ausgrid & FLTrust & 0.0 $\pm$ 0.0 [5] & 251.1 $\pm$ 1.1 [5] & 63.8 $\pm$ 5.1 [5] \\
+Ausgrid & FLAME & 0.0 $\pm$ 0.0 [5] & 251.3 $\pm$ 0.7 [5] & 64.6 $\pm$ 2.5 [5] \\
+Ausgrid & TAFDRL-style tuned & 0.0 $\pm$ 0.0 [5] & 251.4 $\pm$ 1.2 [5] & 66.4 $\pm$ 5.8 [5] \\
+Ausgrid & FedGrid original & 0.0 $\pm$ 0.0 [5] & 251.9 $\pm$ 1.6 [5] & 66.1 $\pm$ 7.3 [5] \\
+Ausgrid & FedGrid final & 0.0 $\pm$ 0.0 [5] & 252.1 $\pm$ 1.5 [5] & 66.8 $\pm$ 5.8 [5] \\
+ACT & FedAvg & 0.0 $\pm$ 0.0 [3] & 250.2 $\pm$ 1.4 [3] & 70.1 $\pm$ 18.0 [3] \\
+ACT & FLTrust & 0.0 $\pm$ 0.0 [3] & 250.2 $\pm$ 1.6 [3] & 63.6 $\pm$ 28.4 [3] \\
+ACT & FLAME & 0.0 $\pm$ 0.0 [3] & 250.0 $\pm$ 0.7 [3] & 63.4 $\pm$ 18.7 [3] \\
+ACT & TAFDRL-style tuned & 0.0 $\pm$ 0.0 [3] & 250.4 $\pm$ 4.1 [3] & 67.3 $\pm$ 31.1 [3] \\
+ACT & FedGrid original & 0.0 $\pm$ 0.0 [3] & 250.6 $\pm$ 1.7 [3] & 67.4 $\pm$ 22.2 [3] \\
+ACT & FedGrid final & 0.0 $\pm$ 0.0 [3] & 250.1 $\pm$ 1.0 [3] & 66.3 $\pm$ 22.5 [3] \\
+\bottomrule
+\end{tabular}}
+\end{table}

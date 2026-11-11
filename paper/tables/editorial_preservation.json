@@ -1,0 +1,23 @@
+{
+  "headings_preserved": true,
+  "labels_preserved": true,
+  "citations_preserved": true,
+  "references_preserved": true,
+  "figures_preserved": true,
+  "display_equations_preserved": true,
+  "bibliography_unchanged": true,
+  "all_table_numerical_rows_preserved": true,
+  "edited_table_captions_or_units": [
+    "paper/tables/clean_energy.tex",
+    "paper/tables/configuration.tex",
+    "paper/tables/coverage.tex",
+    "paper/tables/device.tex",
+    "paper/tables/sensitivity.tex"
+  ],
+  "explicit_corrections": [
+    "Filter MAD-floor placement aligned with frozen code; no experiment changed.",
+    "Fleet-equivalent cycle definition clarified; all values unchanged.",
+    "Linux memory unit corrected from MB to MiB; values unchanged.",
+    "Five-day MPC replay scope and learner-only meter poisoning clarified."
+  ]
+}

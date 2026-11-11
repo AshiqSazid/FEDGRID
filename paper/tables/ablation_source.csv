@@ -1,0 +1,16 @@
+method,seed,variant,attack,damage,honest rejected %
+fedgrid,0,without_clip,normalized,-23.210000000000036,7.7
+fedgrid,0,without_groups,normalized,86.54999999999995,4.5
+fedgrid,0,without_trust,normalized,201.2499999999999,11.0
+fedgrid,1,without_clip,normalized,47.440000000000055,7.2
+fedgrid,1,without_groups,normalized,129.39,2.0
+fedgrid,1,without_trust,normalized,3.730000000000018,11.3
+fedgrid,2,without_clip,normalized,-25.230000000000018,5.4
+fedgrid,2,without_groups,normalized,158.9699999999999,3.0
+fedgrid,2,without_trust,normalized,128.0300000000001,5.3
+fedgrid,0,original,normalized,94.81000000000006,5.6
+fedgrid,1,original,normalized,77.97000000000003,5.5
+fedgrid,2,original,normalized,96.81999999999994,3.5
+fedgrid final,0,final,normalized,-19.389999999999986,7.8
+fedgrid final,1,final,normalized,47.440000000000055,7.2
+fedgrid final,2,final,normalized,-55.889999999999986,3.9

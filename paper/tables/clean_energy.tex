@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Clean 500-day learning with validation-selected policies, Ausgrid. Mean $\pm$ 95\% interval half-width [seeds]; deterministic baselines have one observation. MSL charging is a street-wide total; bills and curtailment are household averages. Cycles are total throughput divided by twice total fleet capacity.}
+\label{tab:clean_energy}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllll}
+\toprule
+Method & Bill (\$/yr) & Curtailment (kWh/yr) & Cycles/yr & MSL charge (kWh) \\
+\midrule
+Idle & 1457.8 [1] & 537.7 [1] & 0.0 [1] & 0.0 [1] \\
+Rule & 953.0 [1] & 473.2 [1] & 77.5 [1] & 1971.1 [1] \\
+Local SAC & 963.8 $\pm$ 61.2 [3] & 134.8 $\pm$ 49.4 [3] & 247.4 $\pm$ 39.4 [3] & 13307.6 $\pm$ 2085.6 [3] \\
+FedAvg & 954.3 $\pm$ 79.0 [3] & 144.6 $\pm$ 89.9 [3] & 255.9 $\pm$ 48.6 [3] & 12735.2 $\pm$ 4074.3 [3] \\
+FedProx & 947.3 $\pm$ 65.2 [3] & 153.5 $\pm$ 84.8 [3] & 252.7 $\pm$ 38.8 [3] & 12396.6 $\pm$ 3452.8 [3] \\
+Central SAC & 879.1 $\pm$ 117.7 [3] & 137.9 $\pm$ 160.3 [3] & 277.7 $\pm$ 34.9 [3] & 13872.7 $\pm$ 4775.5 [3] \\
+MPC oracle & 591.0 [1] & 62.9 [1] & 213.4 [1] & 14942.1 [1] \\
+\bottomrule
+\end{tabular}}
+\end{table}

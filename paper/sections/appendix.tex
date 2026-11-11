@@ -1,0 +1,98 @@
+\appendix
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\renewcommand{\theHfigure}{appendix.\arabic{figure}}
+\renewcommand{\theHtable}{appendix.\arabic{table}}
+\section{Extended evaluation and reproducibility}
+\label{sec:appendix}
+The appendix provides detailed outcomes, sensitivity cases and audits of the fixed experiment archive. Plotting scripts export the underlying observations as CSV and identify input logs by SHA-256 hashes. These calculations analyse existing runs without retraining controllers or replacing outcomes. Replication and single-seed cases are distinguished throughout.
+
+\subsection{Detailed tabulations and development displays}
+Tables and figures in this subsection give the development criteria, data partitions and numerical outcomes corresponding to the principal comparisons.
+\input{tables/selection_candidates}
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=.9\linewidth]{figures/selection_candidates.pdf}
+\caption{Candidate selection on validation data, seeds 0--2. The dashed rejection bound was introduced after inspecting candidate results. Validation damage uses a bill-plus-curtailment score over validation weeks; it is not annual evaluation bill damage.}
+\label{fig:selection}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/data_splits.pdf}
+\caption{Ausgrid and ACT partitions. The Ausgrid evaluation year is shown schematically after the 104 seven-day development blocks. ACT cells show the exact interleaved weekly assignment. New learning seeds do not create a new chronological holdout. Diagram code was assisted by OpenAI Codex (exact deployed model identifier unavailable).}
+\label{fig:splits}
+\end{figure}
+
+\input{tables/clean_energy}
+
+\input{tables/act_damage}
+
+\input{tables/paired_revision}
+
+\input{tables/rejection}
+
+\input{tables/electrical}
+
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/electrical.pdf}
+\caption{Run-level peak transformer loading in no-attack last-policy references, with seed means and 95\% interval half-widths. Ausgrid uses five seeds and ACT three, except the legacy FedAvg transformer statistic has four Ausgrid observations. The dashed line marks nameplate loading; it is not an enforced simulator constraint.}
+\label{fig:electrical}
+\end{figure}
+
+\subsection{Transfer outcomes with explicit coverage}
+Table~\ref{tab:transfer_damage} reports transfer outcomes using five seeds for the final variants and seeds 3--4 for the other configurations. Revision effects use the common-seed differences in Table~\ref{tab:paired_revision}, rather than differences between these unequal aggregate means.
+\input{tables/transfer_damage}
+
+\subsection{Compromised share}
+Normalized-attack sensitivity uses seed 0 at nominal compromised shares of 10, 20, 30 and 40\%. Trimmed mean and Krum change their assumed faulty count and use share-matched no-attack references; other methods use their seed-0 30\% reference. Final FedGrid has lower observed damage than FedAvg in these cases. Four settings from one seed do not, however, identify a resilience threshold, particularly when a capacity band may contain a compromised majority.
+\input{tables/attack_share}
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/attack_share.pdf}
+\caption{Normalized-attack damage versus nominal compromised share, seed 0 only. Separate panels improve readability; vertical scales differ. Each point is a single experimental difference with no seed uncertainty interval.}
+\label{fig:shares}
+\end{figure}
+
+\subsection{Ablation and operation order}
+Each original-method ablation removes clipping, grouping or trust separately. Without clipping, Normalized damage is lower in these three seeds; removing grouping or trust does not reproduce the final configuration's outcome. The final configuration jointly changes filter order and clipping bound. These comparisons indicate an interaction worth examining, but do not isolate the cause of the combined revision's improvement.
+\input{tables/ablation}
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/ablation.pdf}
+\caption{Original FedGrid ablations and final variant under Normalized attack, seeds 0--2. Error bars are unadjusted 95\% Student-$t$ intervals. Rejection refers to the logged admission mask. The final variant is a combined revision, not a single-factor ablation.}
+\label{fig:ablation}
+\end{figure}
+
+\subsection{Communication faults, feeder size and voltage stress}
+Table~\ref{tab:sensitivity} pairs each scenario with its same-method no-attack reference. Final FedGrid's Normalized damage is approximately $-\$18$ under the specified message faults, \$37 on feeder O and $-\$12$ at 1.02\,pu. Each is a single-seed sensitivity observation. Negative differences do not establish a benefit from faults or attacks. The large trimmed-mean damage under message faults is also consistent with a possible interaction between received-population size and share-dependent trimming, which the present cases do not isolate.
+\input{tables/sensitivity}
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/sensitivity.pdf}
+\caption{Normalized-attack damage in three sensitivity cases, seed 0. All-home annual bill differences use matched scenario references. Panels have different horizontal scales. Missing method--scenario combinations are not imputed.}
+\label{fig:sensitivity}
+\end{figure}
+
+\subsection{Validation trajectories}
+The trajectories show the mean and observed minimum--maximum range over seeds 0--2. They track validation-week cost plus the curtailment penalty, not annual evaluation bills. Reward-poisoned policies are assessed with ordinary observations after learning from reversed rewards. These are development diagnostics from the existing runs, not independent validation.
+\begin{figure}[htbp]
+\centering\includegraphics[width=\linewidth]{figures/training_curves.pdf}
+\caption{Validation trajectories under no attack, Normalized attack and reward poisoning. Lines are three-seed means and shading is the observed seed range, not a confidence interval. Each panel shows validation objective values over training days.}
+\label{fig:training}
+\end{figure}
+
+\subsection{Computational measurements}
+The benchmark instantiates one household's actor and critics, containing 54,916 network values including local output layers. Table~\ref{tab:device} gives three repeated single-core trials on one Intel i7-10610U laptop; Linux peak-memory values are expressed in MiB. Shared-layer payload figures exclude local layers, optimiser state, target networks, protocol overhead and the reference learner. Server aggregation, transfers and the target embedded device would require separate deployment measurements.
+\input{tables/device}
+
+\subsection{Computational reproducibility}
+The accompanying artifacts contain per-seed outcomes, plotted values, analysis scripts and SHA-256 manifests. Statistical exports retain seed pairing and raw and adjusted p-values. Imputation records retain recipient and donor timestamps, their partitions and the denominators used for overlap fractions. Together, these records support reproduction of the analysis of existing experiments. Public archival identifiers and access terms have not been assigned.
+
+\subsection{Audit of imputation donor overlap}
+The donor audit reads raw ACT profiles and reconstructs the first observed value selected for each missing half hour by the fixed nearest-day rule. Reconstructed values are checked against the processed load and solar files at their stored precision. The audit uses the seed-zero evaluation street and its disjoint reference households. A profile cell denotes one household's load or solar value at one half hour; its denominator is distinct from a trajectory count or a household bill.
+
+In the 36-home evaluation street, 2,004 training cells use donors from another partition, representing 0.259\% of training load-and-solar cells. Of these, 1,540 use evaluation-week donors. The reference street also contains 1,540 training cells with evaluation-week donors. The copied fraction alone does not bound its effect on policy selection or annual bills. A controlled rerun with partition-isolated preprocessing is needed to estimate that effect; this audit quantifies the overlap without correcting the reported experiments.
+\input{tables/imputation_audit}
+
+\subsection{Exact paired statistical audit}
+Two-sided exact Wilcoxon signed-rank tests compare five-seed Ausgrid damage. The robust-comparator family contains final FedGrid against FLTrust, FLAME and tuned TAFDRL-style across six attacks (18 tests). The revision family contains final against original FedGrid across the same six attacks. Holm adjustment is applied separately within each family. These are exploratory tests on already observed data, not a prospectively registered analysis.
+
+All comparisons have nonzero differences and no tied absolute ranks. For five such pairs, the smallest attainable two-sided exact p-value is $2/2^5=0.0625$; a value below 0.05 is therefore unattainable even before adjustment. The Normalized final-minus-original comparison has exact p-value 0.0625 and six-test adjusted p-value 0.375. A descriptive Student-$t$ interval may exclude zero because the interval and rank test use different assumptions and formulations. Both results are reported with their scope, and all pair differences and p-values are exported as CSV.
+\input{tables/exact_statistics}

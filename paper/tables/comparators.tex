@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Comparator scope and admission semantics. Source algorithms are adapted to shared SAC parameter changes; original guarantees are not transferred to this setting.}
+\label{tab:comparators}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lll}
+\toprule
+Method & Aggregation principle & Whole-update rejection statistic \\
+\midrule
+FedAvg / FedProx & Mean / mean with local proximal term & Not defined \\
+Median / trimmed mean & Coordinate statistics & Not defined \\
+Krum & Select one neighbour-consistent update & Unselected updates \\
+FLTrust & Positive cosine trust; norm rescaling & Zero-trust updates \\
+FLAME & Majority clustering, clipping and noise & Outside admitted cluster \\
+TAFDRL-style & PCA distance and Beta trust & Distance or minimum-trust exclusion \\
+FedGrid & Within-band filter and group trust & Filter exclusion; zero-weight groups omitted \\
+\bottomrule
+\end{tabular}}
+\end{table}

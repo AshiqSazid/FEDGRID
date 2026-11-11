@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Development-set selection of FedGrid variants. Damage is in dollars over the validation weeks and uses a bill-plus-curtailment score. The 4.0\% numerical rejection bound was imposed after candidate results were observed.}
+\label{tab:selection_candidates}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llll}
+\toprule
+Variant & Worst validation damage & Honest rejection (\%) & Worst home (\%) \\
+\midrule
+original & 26.0 & 2.0 & 18.0 \\
+filter\_first & 19.0 & 3.8 & 28.2 \\
+filter\_first\_clip2 & 14.5 & 3.4 & 27.3 \\
+filter\_first\_guard & 21.2 & 6.7 & 27.6 \\
+filter\_first\_home\_trust & 6.2 & 30.8 & 70.6 \\
+without\_clip & 15.3 & 3.5 & 29.4 \\
+\bottomrule
+\end{tabular}}
+\end{table}

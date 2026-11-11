@@ -1,0 +1,12 @@
+{
+  "compiler": "Tectonic 0.15.0",
+  "pages": 30,
+  "compilation": "passed",
+  "overfull_boxes": 0,
+  "undefined_references_or_citations": 0,
+  "underfull_bibliography_paragraphs": 2,
+  "figures": 13,
+  "tables": 19,
+  "visual_review": "Full document at thumbnail scale; Abstract, aggregation mathematics and main attack results at full-page scale.",
+  "experiments_changed": false
+}

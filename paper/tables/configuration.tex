@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Implemented configuration for the principal case. Tariffs are fixed experimental inputs; MSL denotes minimum system load.}
+\label{tab:configuration}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llll}
+\toprule
+Parameter & Value & Parameter & Value \\
+\midrule
+Main/scaling households & 36 / 83 & Time step & 0.5 h \\
+Solar scale / cap & 6.6 / 10 kWp & Battery capacity & 3 kWh per kWp \\
+Battery power & 5 kW & Round-trip efficiency & 0.90 \\
+Source voltage & 1.00 pu; stress 1.02 & Voltage bounds & 216.2--253 V \\
+Export cap / ordinary floor & 10 / 1.5 kW & MSL export cap & 0 kW \\
+Demand trigger & 3660 MW (scenario) & Voltage margin & 1 V \\
+Import: 11:00--16:00 & 0.22680 \$/kWh & Import: 16:00--21:00 & 0.45712 \$/kWh \\
+Import: other hours & 0.28035 \$/kWh & Export credit & 0.08660 \$/kWh \\
+Daily supply charge & 1.48834 \$/day & Curtailment coefficient & 0.08660 \$/kWh \\
+Hidden width / batch & 128 / 128 & Learning rate & 0.0003 \\
+Discount / target rate & 0.99 / 0.005 & Warmup & 5 days \\
+Training / aggregation & 500 days / daily & Shared payload & 54,400 float32 values \\
+Solar bands / robust threshold & 3 / 2.5 & Final clipping bound & 2 median norms \\
+\bottomrule
+\end{tabular}}
+\end{table}
