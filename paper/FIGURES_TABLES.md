@@ -1,6 +1,6 @@
 # Display guide — Energy and AI draft
 
-**Main argument: 6 figures and 6 tables. Appendix: 7 figures and 13 tables. Total: 13 figures and 19 tables.** No evidence has been dropped to favour the proposed method. Detail has moved to the appendix to keep the central argument readable.
+**Main argument: 6 figures and 6 tables. Appendix: 7 figures and 18 tables. Total: 13 figures and 24 tables.** All experimental groups in the current 706-log learning archive are represented. Legacy implementation diagnostics remain development-history evidence rather than direct comparisons with the current controller.
 
 ## Main figures
 
@@ -21,7 +21,7 @@ Configuration, algorithm procedure, comparator scope, threats, coverage and Ausg
 
 ## Appendix tables
 
-Selection candidates; clean energy; ACT damage; paired revisions; rejection; electrical outcomes; transfer damage; attack share; ablation; scenario sensitivity; device timing; imputation donor audit; exact statistical audit.
+Selection candidates; clean energy; ACT damage; paired revisions; rejection; electrical outcomes; transfer damage; attack share; ablation; scenario sensitivity; device timing; imputation donor audit; exact statistical audit; extended clean learning; deterministic baseline context; attack-time electrical maxima; household rejection strata; full later candidate settings.
 
 ## Numerical sources
 
@@ -30,6 +30,9 @@ Every numerical figure has a source CSV in `tables/`. In addition:
 - `paired_exact_observations.csv` and `paired_exact_tests.csv`: all 24 paired comparisons and two Holm families.
 - `act_imputation_donors.csv` and `act_imputation_summary.csv`: reconstructed donor events, partition assignments and denominators.
 - `*_damage_per_seed.csv`: the seed-matched economic outcomes.
+- `damage_reference_trace.csv`: the attacked log, matched no-attack log, bill column and arithmetic for all 636 principal damage observations.
+- `extended_clean_source.csv`, `all_baselines_source.csv`, `attack_electrical_source.csv`, `heterogeneity_source.csv`, `selection_settings_source.csv`: per-run inputs to the five additional tables.
+- `evidence_audit.json`: independent computation checks and reconciliation of the 706 current learning logs.
 - `*.sha256`: source hashes.
 
 Captions distinguish seed intervals, observed ranges, missing entries and one-seed observations. The schematic and split timeline disclose AI assistance with the code. All charts derive from reproducible computational workflows; no control trajectories are invented from aggregate logs.

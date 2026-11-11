@@ -1,0 +1,481 @@
+setting,method,seed,attack,source,half hours over 253 V %,max V,transformer peak loading %
+Ausgrid,fedavg,0,flip,results/fedavg_sac_500_seed0_flip_share30.log,0.0,252.29,
+ACT,fedavg,0,flip,results/fedavg_sac_500_seed0_flip_share30_act.log,0.0,250.13,54.85
+Ausgrid,fedavg,0,meter,results/fedavg_sac_500_seed0_meter_share30.log,0.0,250.28,61.1
+ACT,fedavg,0,meter,results/fedavg_sac_500_seed0_meter_share30_act.log,0.0,249.87,64.69
+Ausgrid,fedavg,0,noise,results/fedavg_sac_500_seed0_noise_share30.log,0.0,252.92,
+ACT,fedavg,0,noise,results/fedavg_sac_500_seed0_noise_share30_act.log,0.0,251.85,87.95
+Ausgrid,fedavg,0,normalized,results/fedavg_sac_500_seed0_normalized_share30.log,0.0,252.92,
+ACT,fedavg,0,normalized,results/fedavg_sac_500_seed0_normalized_share30_act.log,0.0,251.85,94.49
+Ausgrid,fedavg,0,reward,results/fedavg_sac_500_seed0_reward_share30.log,0.0,252.38,67.78
+ACT,fedavg,0,reward,results/fedavg_sac_500_seed0_reward_share30_act.log,0.0,249.94,65.17
+Ausgrid,fedavg,0,scale,results/fedavg_sac_500_seed0_scale_share30.log,0.0,251.18,
+ACT,fedavg,0,scale,results/fedavg_sac_500_seed0_scale_share30_act.log,0.0,250.57,65.8
+Ausgrid,fedavg,1,flip,results/fedavg_sac_500_seed1_flip_share30.log,0.0,252.08,61.43
+ACT,fedavg,1,flip,results/fedavg_sac_500_seed1_flip_share30_act.log,0.0,250.84,57.07
+Ausgrid,fedavg,1,meter,results/fedavg_sac_500_seed1_meter_share30.log,0.0,250.42,60.04
+ACT,fedavg,1,meter,results/fedavg_sac_500_seed1_meter_share30_act.log,0.0,251.4,62.92
+Ausgrid,fedavg,1,noise,results/fedavg_sac_500_seed1_noise_share30.log,0.0,252.92,83.48
+ACT,fedavg,1,noise,results/fedavg_sac_500_seed1_noise_share30_act.log,0.0,251.85,87.95
+Ausgrid,fedavg,1,normalized,results/fedavg_sac_500_seed1_normalized_share30.log,0.0,252.92,108.89
+ACT,fedavg,1,normalized,results/fedavg_sac_500_seed1_normalized_share30_act.log,0.0,251.96,83.74
+Ausgrid,fedavg,1,reward,results/fedavg_sac_500_seed1_reward_share30.log,0.0,251.55,67.51
+ACT,fedavg,1,reward,results/fedavg_sac_500_seed1_reward_share30_act.log,0.0,250.08,63.99
+Ausgrid,fedavg,1,scale,results/fedavg_sac_500_seed1_scale_share30.log,0.0,251.82,61.58
+ACT,fedavg,1,scale,results/fedavg_sac_500_seed1_scale_share30_act.log,0.0,251.18,60.21
+Ausgrid,fedavg,2,flip,results/fedavg_sac_500_seed2_flip_share30.log,0.0,250.61,63.2
+ACT,fedavg,2,flip,results/fedavg_sac_500_seed2_flip_share30_act.log,0.0,250.57,67.26
+Ausgrid,fedavg,2,meter,results/fedavg_sac_500_seed2_meter_share30.log,0.0,249.89,54.51
+ACT,fedavg,2,meter,results/fedavg_sac_500_seed2_meter_share30_act.log,0.0,249.68,69.18
+Ausgrid,fedavg,2,noise,results/fedavg_sac_500_seed2_noise_share30.log,0.0,252.92,83.48
+ACT,fedavg,2,noise,results/fedavg_sac_500_seed2_noise_share30_act.log,0.0,251.85,87.95
+Ausgrid,fedavg,2,normalized,results/fedavg_sac_500_seed2_normalized_share30.log,0.0,252.92,87.41
+ACT,fedavg,2,normalized,results/fedavg_sac_500_seed2_normalized_share30_act.log,0.0,251.85,87.95
+Ausgrid,fedavg,2,reward,results/fedavg_sac_500_seed2_reward_share30.log,0.0,251.95,66.08
+ACT,fedavg,2,reward,results/fedavg_sac_500_seed2_reward_share30_act.log,0.0,250.92,75.47
+Ausgrid,fedavg,2,scale,results/fedavg_sac_500_seed2_scale_share30.log,0.0,249.37,55.09
+ACT,fedavg,2,scale,results/fedavg_sac_500_seed2_scale_share30_act.log,0.0,250.11,56.56
+Ausgrid,fedavg,3,flip,results/fedavg_sac_500_seed3_flip_share30.log,0.0,250.8,62.37
+Ausgrid,fedavg,3,meter,results/fedavg_sac_500_seed3_meter_share30.log,0.0,250.54,64.75
+Ausgrid,fedavg,3,noise,results/fedavg_sac_500_seed3_noise_share30.log,0.0,252.92,83.48
+Ausgrid,fedavg,3,normalized,results/fedavg_sac_500_seed3_normalized_share30.log,0.0,252.92,94.75
+Ausgrid,fedavg,3,reward,results/fedavg_sac_500_seed3_reward_share30.log,0.0,250.69,67.73
+Ausgrid,fedavg,3,scale,results/fedavg_sac_500_seed3_scale_share30.log,0.0,251.84,67.99
+Ausgrid,fedavg,4,flip,results/fedavg_sac_500_seed4_flip_share30.log,0.0,250.76,56.51
+Ausgrid,fedavg,4,meter,results/fedavg_sac_500_seed4_meter_share30.log,0.0,251.7,59.82
+Ausgrid,fedavg,4,noise,results/fedavg_sac_500_seed4_noise_share30.log,0.12,253.14,84.12
+Ausgrid,fedavg,4,normalized,results/fedavg_sac_500_seed4_normalized_share30.log,0.0,252.92,113.84
+Ausgrid,fedavg,4,reward,results/fedavg_sac_500_seed4_reward_share30.log,0.0,252.14,70.94
+Ausgrid,fedavg,4,scale,results/fedavg_sac_500_seed4_scale_share30.log,0.0,250.0,56.81
+Ausgrid,fedgrid,0,flip,results/fedgrid_sac_500_seed0_flip_share30.log,0.0,252.41,70.87
+ACT,fedgrid,0,flip,results/fedgrid_sac_500_seed0_flip_share30_act.log,0.0,249.83,58.89
+ACT,fedgrid final,0,flip,results/fedgrid_sac_500_seed0_flip_share30_act_final.log,0.0,250.32,64.03
+Ausgrid,fedgrid final,0,flip,results/fedgrid_sac_500_seed0_flip_share30_final.log,0.01,253.07,70.39
+Ausgrid,fedgrid,0,meter,results/fedgrid_sac_500_seed0_meter_share30.log,0.0,251.49,63.12
+ACT,fedgrid,0,meter,results/fedgrid_sac_500_seed0_meter_share30_act.log,0.0,250.13,57.91
+ACT,fedgrid final,0,meter,results/fedgrid_sac_500_seed0_meter_share30_act_final.log,0.0,249.68,54.29
+Ausgrid,fedgrid final,0,meter,results/fedgrid_sac_500_seed0_meter_share30_final.log,0.0,250.4,64.54
+Ausgrid,fedgrid,0,noise,results/fedgrid_sac_500_seed0_noise_share30.log,0.0,251.49,71.38
+ACT,fedgrid,0,noise,results/fedgrid_sac_500_seed0_noise_share30_act.log,0.0,250.45,67.03
+ACT,fedgrid final,0,noise,results/fedgrid_sac_500_seed0_noise_share30_act_final.log,0.0,250.68,69.84
+Ausgrid,fedgrid final,0,noise,results/fedgrid_sac_500_seed0_noise_share30_final.log,0.0,251.42,68.62
+Ausgrid,fedgrid,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30.log,0.0,252.24,68.17
+ACT,fedgrid,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30_act.log,0.0,249.6,56.98
+ACT,fedgrid final,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30_act_final.log,0.0,250.11,57.67
+Ausgrid,fedgrid final,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30_final.log,0.0,250.67,66.37
+Ausgrid,fedgrid,0,reward,results/fedgrid_sac_500_seed0_reward_share30.log,0.0,252.46,66.62
+ACT,fedgrid,0,reward,results/fedgrid_sac_500_seed0_reward_share30_act.log,0.0,250.0,62.51
+ACT,fedgrid final,0,reward,results/fedgrid_sac_500_seed0_reward_share30_act_final.log,0.0,250.63,62.63
+Ausgrid,fedgrid final,0,reward,results/fedgrid_sac_500_seed0_reward_share30_final.log,0.0,252.48,65.7
+Ausgrid,fedgrid,0,scale,results/fedgrid_sac_500_seed0_scale_share30.log,0.0,252.52,69.45
+ACT,fedgrid,0,scale,results/fedgrid_sac_500_seed0_scale_share30_act.log,0.0,250.84,64.68
+ACT,fedgrid final,0,scale,results/fedgrid_sac_500_seed0_scale_share30_act_final.log,0.0,249.99,66.08
+Ausgrid,fedgrid final,0,scale,results/fedgrid_sac_500_seed0_scale_share30_final.log,0.01,253.0,71.69
+Ausgrid,fedgrid,1,flip,results/fedgrid_sac_500_seed1_flip_share30.log,0.0,251.3,60.34
+ACT,fedgrid,1,flip,results/fedgrid_sac_500_seed1_flip_share30_act.log,0.0,251.93,64.84
+ACT,fedgrid final,1,flip,results/fedgrid_sac_500_seed1_flip_share30_act_final.log,0.0,251.74,63.03
+Ausgrid,fedgrid final,1,flip,results/fedgrid_sac_500_seed1_flip_share30_final.log,0.0,250.44,62.96
+Ausgrid,fedgrid,1,meter,results/fedgrid_sac_500_seed1_meter_share30.log,0.0,251.26,59.43
+ACT,fedgrid,1,meter,results/fedgrid_sac_500_seed1_meter_share30_act.log,0.0,250.59,59.82
+ACT,fedgrid final,1,meter,results/fedgrid_sac_500_seed1_meter_share30_act_final.log,0.0,250.32,58.1
+Ausgrid,fedgrid final,1,meter,results/fedgrid_sac_500_seed1_meter_share30_final.log,0.0,250.47,58.16
+Ausgrid,fedgrid,1,noise,results/fedgrid_sac_500_seed1_noise_share30.log,0.0,250.48,59.38
+ACT,fedgrid,1,noise,results/fedgrid_sac_500_seed1_noise_share30_act.log,0.0,250.98,61.26
+ACT,fedgrid final,1,noise,results/fedgrid_sac_500_seed1_noise_share30_act_final.log,0.0,250.99,63.62
+Ausgrid,fedgrid final,1,noise,results/fedgrid_sac_500_seed1_noise_share30_final.log,0.0,250.24,57.55
+Ausgrid,fedgrid,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30.log,0.0,251.89,70.72
+ACT,fedgrid,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30_act.log,0.0,252.92,83.6
+ACT,fedgrid final,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30_act_final.log,0.0,249.9,57.85
+Ausgrid,fedgrid final,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30_final.log,0.0,251.81,72.16
+Ausgrid,fedgrid,1,reward,results/fedgrid_sac_500_seed1_reward_share30.log,0.0,249.47,65.03
+ACT,fedgrid,1,reward,results/fedgrid_sac_500_seed1_reward_share30_act.log,0.0,249.84,65.89
+ACT,fedgrid final,1,reward,results/fedgrid_sac_500_seed1_reward_share30_act_final.log,0.0,250.15,67.9
+Ausgrid,fedgrid final,1,reward,results/fedgrid_sac_500_seed1_reward_share30_final.log,0.0,250.61,67.79
+Ausgrid,fedgrid,1,scale,results/fedgrid_sac_500_seed1_scale_share30.log,0.0,250.04,54.45
+ACT,fedgrid,1,scale,results/fedgrid_sac_500_seed1_scale_share30_act.log,0.0,250.42,55.86
+ACT,fedgrid final,1,scale,results/fedgrid_sac_500_seed1_scale_share30_act_final.log,0.0,252.3,68.89
+Ausgrid,fedgrid final,1,scale,results/fedgrid_sac_500_seed1_scale_share30_final.log,0.0,249.99,54.05
+Ausgrid,fedgrid,2,flip,results/fedgrid_sac_500_seed2_flip_share30.log,0.0,250.46,68.98
+ACT,fedgrid,2,flip,results/fedgrid_sac_500_seed2_flip_share30_act.log,0.0,250.99,72.1
+ACT,fedgrid final,2,flip,results/fedgrid_sac_500_seed2_flip_share30_act_final.log,0.0,251.34,75.43
+Ausgrid,fedgrid final,2,flip,results/fedgrid_sac_500_seed2_flip_share30_final.log,0.0,250.74,65.54
+Ausgrid,fedgrid,2,meter,results/fedgrid_sac_500_seed2_meter_share30.log,0.0,250.64,61.86
+ACT,fedgrid,2,meter,results/fedgrid_sac_500_seed2_meter_share30_act.log,0.0,250.64,73.1
+ACT,fedgrid final,2,meter,results/fedgrid_sac_500_seed2_meter_share30_act_final.log,0.0,250.47,69.31
+Ausgrid,fedgrid final,2,meter,results/fedgrid_sac_500_seed2_meter_share30_final.log,0.0,251.13,60.29
+Ausgrid,fedgrid,2,noise,results/fedgrid_sac_500_seed2_noise_share30.log,0.0,251.37,65.68
+ACT,fedgrid,2,noise,results/fedgrid_sac_500_seed2_noise_share30_act.log,0.0,250.84,72.06
+ACT,fedgrid final,2,noise,results/fedgrid_sac_500_seed2_noise_share30_act_final.log,0.0,250.81,76.24
+Ausgrid,fedgrid final,2,noise,results/fedgrid_sac_500_seed2_noise_share30_final.log,0.0,251.71,66.58
+Ausgrid,fedgrid,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30.log,0.0,250.87,74.86
+ACT,fedgrid,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30_act.log,0.0,250.03,61.02
+ACT,fedgrid final,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30_act_final.log,0.0,250.41,69.53
+Ausgrid,fedgrid final,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30_final.log,0.0,250.36,60.11
+Ausgrid,fedgrid,2,reward,results/fedgrid_sac_500_seed2_reward_share30.log,0.0,252.88,64.54
+ACT,fedgrid,2,reward,results/fedgrid_sac_500_seed2_reward_share30_act.log,0.0,250.42,68.25
+ACT,fedgrid final,2,reward,results/fedgrid_sac_500_seed2_reward_share30_act_final.log,0.0,251.09,67.19
+Ausgrid,fedgrid final,2,reward,results/fedgrid_sac_500_seed2_reward_share30_final.log,0.0,252.73,67.03
+Ausgrid,fedgrid,2,scale,results/fedgrid_sac_500_seed2_scale_share30.log,0.0,251.0,63.65
+ACT,fedgrid,2,scale,results/fedgrid_sac_500_seed2_scale_share30_act.log,0.0,250.28,71.64
+ACT,fedgrid final,2,scale,results/fedgrid_sac_500_seed2_scale_share30_act_final.log,0.0,249.93,65.72
+Ausgrid,fedgrid final,2,scale,results/fedgrid_sac_500_seed2_scale_share30_final.log,0.0,250.5,66.15
+Ausgrid,fedgrid,3,flip,results/fedgrid_sac_500_seed3_flip_share30.log,0.0,250.36,60.96
+Ausgrid,fedgrid final,3,flip,results/fedgrid_sac_500_seed3_flip_share30_final.log,0.0,249.66,58.14
+Ausgrid,fedgrid,3,meter,results/fedgrid_sac_500_seed3_meter_share30.log,0.0,250.02,67.3
+Ausgrid,fedgrid final,3,meter,results/fedgrid_sac_500_seed3_meter_share30_final.log,0.0,249.65,62.72
+Ausgrid,fedgrid,3,noise,results/fedgrid_sac_500_seed3_noise_share30.log,0.0,252.15,68.08
+Ausgrid,fedgrid final,3,noise,results/fedgrid_sac_500_seed3_noise_share30_final.log,0.0,250.6,65.19
+Ausgrid,fedgrid,3,normalized,results/fedgrid_sac_500_seed3_normalized_share30.log,0.0,251.5,59.13
+Ausgrid,fedgrid final,3,normalized,results/fedgrid_sac_500_seed3_normalized_share30_final.log,0.0,250.58,54.52
+Ausgrid,fedgrid,3,reward,results/fedgrid_sac_500_seed3_reward_share30.log,0.0,250.77,62.62
+Ausgrid,fedgrid final,3,reward,results/fedgrid_sac_500_seed3_reward_share30_final.log,0.0,251.38,66.93
+Ausgrid,fedgrid,3,scale,results/fedgrid_sac_500_seed3_scale_share30.log,0.0,252.34,66.65
+Ausgrid,fedgrid final,3,scale,results/fedgrid_sac_500_seed3_scale_share30_final.log,0.0,250.79,66.4
+Ausgrid,fedgrid,4,flip,results/fedgrid_sac_500_seed4_flip_share30.log,0.0,250.97,61.44
+Ausgrid,fedgrid final,4,flip,results/fedgrid_sac_500_seed4_flip_share30_final.log,0.0,250.96,66.51
+Ausgrid,fedgrid,4,meter,results/fedgrid_sac_500_seed4_meter_share30.log,0.0,252.27,66.01
+Ausgrid,fedgrid final,4,meter,results/fedgrid_sac_500_seed4_meter_share30_final.log,0.0,251.06,63.74
+Ausgrid,fedgrid,4,noise,results/fedgrid_sac_500_seed4_noise_share30.log,0.0,251.19,69.21
+Ausgrid,fedgrid final,4,noise,results/fedgrid_sac_500_seed4_noise_share30_final.log,0.0,252.21,68.31
+Ausgrid,fedgrid,4,normalized,results/fedgrid_sac_500_seed4_normalized_share30.log,0.0,250.4,61.54
+Ausgrid,fedgrid final,4,normalized,results/fedgrid_sac_500_seed4_normalized_share30_final.log,0.0,251.38,62.28
+Ausgrid,fedgrid,4,reward,results/fedgrid_sac_500_seed4_reward_share30.log,0.0,251.92,64.54
+Ausgrid,fedgrid final,4,reward,results/fedgrid_sac_500_seed4_reward_share30_final.log,0.0,251.59,67.68
+Ausgrid,fedgrid,4,scale,results/fedgrid_sac_500_seed4_scale_share30.log,0.0,252.91,70.32
+Ausgrid,fedgrid final,4,scale,results/fedgrid_sac_500_seed4_scale_share30_final.log,0.01,253.19,72.29
+Ausgrid,flame,0,flip,results/flame_sac_500_seed0_flip_share30.log,0.0,250.74,63.42
+ACT,flame,0,flip,results/flame_sac_500_seed0_flip_share30_act.log,0.0,250.85,69.32
+Ausgrid,flame,0,meter,results/flame_sac_500_seed0_meter_share30.log,0.01,253.27,69.64
+ACT,flame,0,meter,results/flame_sac_500_seed0_meter_share30_act.log,0.0,250.39,61.85
+Ausgrid,flame,0,noise,results/flame_sac_500_seed0_noise_share30.log,0.0,252.58,70.91
+ACT,flame,0,noise,results/flame_sac_500_seed0_noise_share30_act.log,0.0,250.71,66.48
+Ausgrid,flame,0,normalized,results/flame_sac_500_seed0_normalized_share30.log,0.0,251.51,68.27
+ACT,flame,0,normalized,results/flame_sac_500_seed0_normalized_share30_act.log,0.0,250.35,61.82
+Ausgrid,flame,0,reward,results/flame_sac_500_seed0_reward_share30.log,0.01,253.05,72.31
+ACT,flame,0,reward,results/flame_sac_500_seed0_reward_share30_act.log,0.0,250.79,62.79
+Ausgrid,flame,0,scale,results/flame_sac_500_seed0_scale_share30.log,0.0,252.88,69.89
+ACT,flame,0,scale,results/flame_sac_500_seed0_scale_share30_act.log,0.0,250.05,66.01
+Ausgrid,flame,1,flip,results/flame_sac_500_seed1_flip_share30.log,0.0,249.16,60.84
+ACT,flame,1,flip,results/flame_sac_500_seed1_flip_share30_act.log,0.0,249.73,59.19
+Ausgrid,flame,1,meter,results/flame_sac_500_seed1_meter_share30.log,0.0,250.14,63.34
+ACT,flame,1,meter,results/flame_sac_500_seed1_meter_share30_act.log,0.0,249.64,58.65
+Ausgrid,flame,1,noise,results/flame_sac_500_seed1_noise_share30.log,0.0,249.22,54.53
+ACT,flame,1,noise,results/flame_sac_500_seed1_noise_share30_act.log,0.0,249.54,52.94
+Ausgrid,flame,1,normalized,results/flame_sac_500_seed1_normalized_share30.log,0.0,250.7,54.64
+ACT,flame,1,normalized,results/flame_sac_500_seed1_normalized_share30_act.log,0.0,252.03,72.53
+Ausgrid,flame,1,reward,results/flame_sac_500_seed1_reward_share30.log,0.0,250.5,67.26
+ACT,flame,1,reward,results/flame_sac_500_seed1_reward_share30_act.log,0.0,249.38,63.19
+Ausgrid,flame,1,scale,results/flame_sac_500_seed1_scale_share30.log,0.0,250.25,62.37
+ACT,flame,1,scale,results/flame_sac_500_seed1_scale_share30_act.log,0.0,251.63,65.55
+Ausgrid,flame,2,flip,results/flame_sac_500_seed2_flip_share30.log,0.0,250.55,63.93
+ACT,flame,2,flip,results/flame_sac_500_seed2_flip_share30_act.log,0.0,249.95,70.58
+Ausgrid,flame,2,meter,results/flame_sac_500_seed2_meter_share30.log,0.0,251.33,62.09
+ACT,flame,2,meter,results/flame_sac_500_seed2_meter_share30_act.log,0.0,250.69,68.87
+Ausgrid,flame,2,noise,results/flame_sac_500_seed2_noise_share30.log,0.0,250.61,62.69
+ACT,flame,2,noise,results/flame_sac_500_seed2_noise_share30_act.log,0.0,249.57,73.54
+Ausgrid,flame,2,normalized,results/flame_sac_500_seed2_normalized_share30.log,0.0,250.67,61.74
+ACT,flame,2,normalized,results/flame_sac_500_seed2_normalized_share30_act.log,0.0,250.36,53.82
+Ausgrid,flame,2,reward,results/flame_sac_500_seed2_reward_share30.log,0.0,252.34,67.58
+ACT,flame,2,reward,results/flame_sac_500_seed2_reward_share30_act.log,0.0,251.12,72.67
+Ausgrid,flame,2,scale,results/flame_sac_500_seed2_scale_share30.log,0.0,250.57,57.53
+ACT,flame,2,scale,results/flame_sac_500_seed2_scale_share30_act.log,0.0,249.68,70.37
+Ausgrid,flame,3,flip,results/flame_sac_500_seed3_flip_share30.log,0.0,252.1,64.36
+Ausgrid,flame,3,meter,results/flame_sac_500_seed3_meter_share30.log,0.0,250.46,62.44
+Ausgrid,flame,3,noise,results/flame_sac_500_seed3_noise_share30.log,0.0,252.76,67.18
+Ausgrid,flame,3,normalized,results/flame_sac_500_seed3_normalized_share30.log,0.0,250.94,73.19
+Ausgrid,flame,3,reward,results/flame_sac_500_seed3_reward_share30.log,0.0,250.8,70.75
+Ausgrid,flame,3,scale,results/flame_sac_500_seed3_scale_share30.log,0.0,251.29,65.59
+Ausgrid,flame,4,flip,results/flame_sac_500_seed4_flip_share30.log,0.0,251.71,65.09
+Ausgrid,flame,4,meter,results/flame_sac_500_seed4_meter_share30.log,0.0,251.76,65.39
+Ausgrid,flame,4,noise,results/flame_sac_500_seed4_noise_share30.log,0.01,253.06,69.69
+Ausgrid,flame,4,normalized,results/flame_sac_500_seed4_normalized_share30.log,0.0,250.99,60.46
+Ausgrid,flame,4,reward,results/flame_sac_500_seed4_reward_share30.log,0.0,252.32,72.54
+Ausgrid,flame,4,scale,results/flame_sac_500_seed4_scale_share30.log,0.0,252.26,68.03
+Ausgrid,fltrust,0,flip,results/fltrust_sac_500_seed0_flip_share30.log,0.0,252.73,73.49
+ACT,fltrust,0,flip,results/fltrust_sac_500_seed0_flip_share30_act.log,0.0,249.3,52.17
+Ausgrid,fltrust,0,meter,results/fltrust_sac_500_seed0_meter_share30.log,0.0,250.43,67.08
+ACT,fltrust,0,meter,results/fltrust_sac_500_seed0_meter_share30_act.log,0.0,250.1,61.48
+Ausgrid,fltrust,0,noise,results/fltrust_sac_500_seed0_noise_share30.log,0.0,252.25,71.08
+ACT,fltrust,0,noise,results/fltrust_sac_500_seed0_noise_share30_act.log,0.0,250.83,70.01
+Ausgrid,fltrust,0,normalized,results/fltrust_sac_500_seed0_normalized_share30.log,0.0,251.06,60.16
+ACT,fltrust,0,normalized,results/fltrust_sac_500_seed0_normalized_share30_act.log,0.0,251.97,66.9
+Ausgrid,fltrust,0,reward,results/fltrust_sac_500_seed0_reward_share30.log,0.0,251.14,66.88
+ACT,fltrust,0,reward,results/fltrust_sac_500_seed0_reward_share30_act.log,0.0,250.78,67.84
+Ausgrid,fltrust,0,scale,results/fltrust_sac_500_seed0_scale_share30.log,0.0,251.74,67.94
+ACT,fltrust,0,scale,results/fltrust_sac_500_seed0_scale_share30_act.log,0.0,251.36,68.38
+Ausgrid,fltrust,1,flip,results/fltrust_sac_500_seed1_flip_share30.log,0.0,250.75,60.35
+ACT,fltrust,1,flip,results/fltrust_sac_500_seed1_flip_share30_act.log,0.0,250.4,52.96
+Ausgrid,fltrust,1,meter,results/fltrust_sac_500_seed1_meter_share30.log,0.0,250.64,62.01
+ACT,fltrust,1,meter,results/fltrust_sac_500_seed1_meter_share30_act.log,0.0,250.55,56.55
+Ausgrid,fltrust,1,noise,results/fltrust_sac_500_seed1_noise_share30.log,0.0,250.47,59.91
+ACT,fltrust,1,noise,results/fltrust_sac_500_seed1_noise_share30_act.log,0.0,249.67,57.39
+Ausgrid,fltrust,1,normalized,results/fltrust_sac_500_seed1_normalized_share30.log,0.0,250.34,64.55
+ACT,fltrust,1,normalized,results/fltrust_sac_500_seed1_normalized_share30_act.log,0.0,249.62,55.41
+Ausgrid,fltrust,1,reward,results/fltrust_sac_500_seed1_reward_share30.log,0.0,251.24,65.87
+ACT,fltrust,1,reward,results/fltrust_sac_500_seed1_reward_share30_act.log,0.0,249.84,62.18
+Ausgrid,fltrust,1,scale,results/fltrust_sac_500_seed1_scale_share30.log,0.0,250.08,57.39
+ACT,fltrust,1,scale,results/fltrust_sac_500_seed1_scale_share30_act.log,0.0,250.13,52.68
+Ausgrid,fltrust,2,flip,results/fltrust_sac_500_seed2_flip_share30.log,0.0,249.4,63.59
+ACT,fltrust,2,flip,results/fltrust_sac_500_seed2_flip_share30_act.log,0.0,251.46,74.36
+Ausgrid,fltrust,2,meter,results/fltrust_sac_500_seed2_meter_share30.log,0.0,252.16,64.69
+ACT,fltrust,2,meter,results/fltrust_sac_500_seed2_meter_share30_act.log,0.0,250.18,67.72
+Ausgrid,fltrust,2,noise,results/fltrust_sac_500_seed2_noise_share30.log,0.0,249.78,64.32
+ACT,fltrust,2,noise,results/fltrust_sac_500_seed2_noise_share30_act.log,0.0,250.81,73.66
+Ausgrid,fltrust,2,normalized,results/fltrust_sac_500_seed2_normalized_share30.log,0.0,250.74,62.22
+ACT,fltrust,2,normalized,results/fltrust_sac_500_seed2_normalized_share30_act.log,0.0,250.87,64.9
+Ausgrid,fltrust,2,reward,results/fltrust_sac_500_seed2_reward_share30.log,0.0,250.24,60.98
+ACT,fltrust,2,reward,results/fltrust_sac_500_seed2_reward_share30_act.log,0.0,250.71,71.03
+Ausgrid,fltrust,2,scale,results/fltrust_sac_500_seed2_scale_share30.log,0.0,250.57,58.93
+ACT,fltrust,2,scale,results/fltrust_sac_500_seed2_scale_share30_act.log,0.0,250.34,73.28
+Ausgrid,fltrust,3,flip,results/fltrust_sac_500_seed3_flip_share30.log,0.0,250.49,61.77
+Ausgrid,fltrust,3,meter,results/fltrust_sac_500_seed3_meter_share30.log,0.0,250.08,59.57
+Ausgrid,fltrust,3,noise,results/fltrust_sac_500_seed3_noise_share30.log,0.0,251.47,68.86
+Ausgrid,fltrust,3,normalized,results/fltrust_sac_500_seed3_normalized_share30.log,0.0,249.62,63.39
+Ausgrid,fltrust,3,reward,results/fltrust_sac_500_seed3_reward_share30.log,0.0,251.11,68.58
+Ausgrid,fltrust,3,scale,results/fltrust_sac_500_seed3_scale_share30.log,0.0,250.47,64.45
+Ausgrid,fltrust,4,flip,results/fltrust_sac_500_seed4_flip_share30.log,0.0,252.55,65.22
+Ausgrid,fltrust,4,meter,results/fltrust_sac_500_seed4_meter_share30.log,0.0,250.03,65.49
+Ausgrid,fltrust,4,noise,results/fltrust_sac_500_seed4_noise_share30.log,0.0,252.7,72.79
+Ausgrid,fltrust,4,normalized,results/fltrust_sac_500_seed4_normalized_share30.log,0.0,250.99,64.12
+Ausgrid,fltrust,4,reward,results/fltrust_sac_500_seed4_reward_share30.log,0.0,252.7,67.98
+Ausgrid,fltrust,4,scale,results/fltrust_sac_500_seed4_scale_share30.log,0.0,252.81,71.01
+Ausgrid,krum,0,flip,results/krum_sac_500_seed0_flip_share30.log,0.0,248.97,
+ACT,krum,0,flip,results/krum_sac_500_seed0_flip_share30_act.log,0.0,251.45,67.78
+Ausgrid,krum,0,meter,results/krum_sac_500_seed0_meter_share30.log,0.0,250.02,62.18
+ACT,krum,0,meter,results/krum_sac_500_seed0_meter_share30_act.log,0.0,250.82,65.53
+Ausgrid,krum,0,noise,results/krum_sac_500_seed0_noise_share30.log,0.0,252.71,
+ACT,krum,0,noise,results/krum_sac_500_seed0_noise_share30_act.log,0.0,251.39,65.83
+Ausgrid,krum,0,normalized,results/krum_sac_500_seed0_normalized_share30.log,0.0,247.74,
+ACT,krum,0,normalized,results/krum_sac_500_seed0_normalized_share30_act.log,0.0,249.9,58.16
+Ausgrid,krum,0,reward,results/krum_sac_500_seed0_reward_share30.log,0.0,252.13,66.49
+ACT,krum,0,reward,results/krum_sac_500_seed0_reward_share30_act.log,0.0,250.58,64.98
+Ausgrid,krum,0,scale,results/krum_sac_500_seed0_scale_share30.log,0.0,248.88,
+ACT,krum,0,scale,results/krum_sac_500_seed0_scale_share30_act.log,0.0,250.33,52.75
+Ausgrid,krum,1,flip,results/krum_sac_500_seed1_flip_share30.log,0.0,250.49,58.51
+ACT,krum,1,flip,results/krum_sac_500_seed1_flip_share30_act.log,0.0,251.21,68.97
+Ausgrid,krum,1,meter,results/krum_sac_500_seed1_meter_share30.log,0.0,251.36,67.65
+ACT,krum,1,meter,results/krum_sac_500_seed1_meter_share30_act.log,0.0,252.16,74.11
+Ausgrid,krum,1,noise,results/krum_sac_500_seed1_noise_share30.log,0.0,250.64,60.5
+ACT,krum,1,noise,results/krum_sac_500_seed1_noise_share30_act.log,0.0,251.44,61.17
+Ausgrid,krum,1,normalized,results/krum_sac_500_seed1_normalized_share30.log,0.0,251.72,66.14
+ACT,krum,1,normalized,results/krum_sac_500_seed1_normalized_share30_act.log,0.0,252.31,79.6
+Ausgrid,krum,1,reward,results/krum_sac_500_seed1_reward_share30.log,0.0,250.83,69.82
+ACT,krum,1,reward,results/krum_sac_500_seed1_reward_share30_act.log,0.0,251.07,63.71
+Ausgrid,krum,1,scale,results/krum_sac_500_seed1_scale_share30.log,0.0,251.81,70.86
+ACT,krum,1,scale,results/krum_sac_500_seed1_scale_share30_act.log,0.0,252.28,70.28
+Ausgrid,krum,2,flip,results/krum_sac_500_seed2_flip_share30.log,0.0,250.3,62.81
+ACT,krum,2,flip,results/krum_sac_500_seed2_flip_share30_act.log,0.0,251.33,70.05
+Ausgrid,krum,2,meter,results/krum_sac_500_seed2_meter_share30.log,0.0,251.71,62.58
+ACT,krum,2,meter,results/krum_sac_500_seed2_meter_share30_act.log,0.0,251.48,58.6
+Ausgrid,krum,2,noise,results/krum_sac_500_seed2_noise_share30.log,0.0,249.54,58.07
+ACT,krum,2,noise,results/krum_sac_500_seed2_noise_share30_act.log,0.0,249.51,49.88
+Ausgrid,krum,2,normalized,results/krum_sac_500_seed2_normalized_share30.log,0.0,250.77,52.49
+ACT,krum,2,normalized,results/krum_sac_500_seed2_normalized_share30_act.log,0.0,251.22,60.64
+Ausgrid,krum,2,reward,results/krum_sac_500_seed2_reward_share30.log,0.0,251.88,58.63
+ACT,krum,2,reward,results/krum_sac_500_seed2_reward_share30_act.log,0.0,249.49,60.56
+Ausgrid,krum,2,scale,results/krum_sac_500_seed2_scale_share30.log,0.0,251.45,58.78
+ACT,krum,2,scale,results/krum_sac_500_seed2_scale_share30_act.log,0.0,252.7,84.48
+Ausgrid,krum,3,flip,results/krum_sac_500_seed3_flip_share30.log,0.0,250.59,57.69
+Ausgrid,krum,3,meter,results/krum_sac_500_seed3_meter_share30.log,0.0,252.22,56.02
+Ausgrid,krum,3,noise,results/krum_sac_500_seed3_noise_share30.log,0.0,250.63,61.8
+Ausgrid,krum,3,normalized,results/krum_sac_500_seed3_normalized_share30.log,0.0,249.77,48.94
+Ausgrid,krum,3,reward,results/krum_sac_500_seed3_reward_share30.log,0.0,250.8,60.64
+Ausgrid,krum,3,scale,results/krum_sac_500_seed3_scale_share30.log,0.0,248.89,52.01
+Ausgrid,krum,4,flip,results/krum_sac_500_seed4_flip_share30.log,0.0,251.99,61.5
+Ausgrid,krum,4,meter,results/krum_sac_500_seed4_meter_share30.log,0.0,250.44,55.93
+Ausgrid,krum,4,noise,results/krum_sac_500_seed4_noise_share30.log,0.0,251.38,59.0
+Ausgrid,krum,4,normalized,results/krum_sac_500_seed4_normalized_share30.log,0.0,251.78,62.65
+Ausgrid,krum,4,reward,results/krum_sac_500_seed4_reward_share30.log,0.0,251.35,64.5
+Ausgrid,krum,4,scale,results/krum_sac_500_seed4_scale_share30.log,0.0,250.42,54.26
+Ausgrid,median,0,flip,results/median_sac_500_seed0_flip_share30.log,0.0,250.54,
+ACT,median,0,flip,results/median_sac_500_seed0_flip_share30_act.log,0.0,251.31,57.43
+Ausgrid,median,0,meter,results/median_sac_500_seed0_meter_share30.log,0.0,250.16,60.14
+ACT,median,0,meter,results/median_sac_500_seed0_meter_share30_act.log,0.0,249.96,65.92
+Ausgrid,median,0,noise,results/median_sac_500_seed0_noise_share30.log,0.0,252.3,
+ACT,median,0,noise,results/median_sac_500_seed0_noise_share30_act.log,0.0,250.33,69.08
+Ausgrid,median,0,normalized,results/median_sac_500_seed0_normalized_share30.log,0.0,250.35,
+ACT,median,0,normalized,results/median_sac_500_seed0_normalized_share30_act.log,0.07,253.46,67.29
+Ausgrid,median,0,reward,results/median_sac_500_seed0_reward_share30.log,0.0,250.72,60.96
+ACT,median,0,reward,results/median_sac_500_seed0_reward_share30_act.log,0.0,250.55,64.37
+Ausgrid,median,0,scale,results/median_sac_500_seed0_scale_share30.log,0.0,250.86,
+ACT,median,0,scale,results/median_sac_500_seed0_scale_share30_act.log,0.0,250.95,76.71
+Ausgrid,median,1,flip,results/median_sac_500_seed1_flip_share30.log,0.0,252.05,63.95
+ACT,median,1,flip,results/median_sac_500_seed1_flip_share30_act.log,0.0,251.9,76.65
+Ausgrid,median,1,meter,results/median_sac_500_seed1_meter_share30.log,0.0,250.41,55.28
+ACT,median,1,meter,results/median_sac_500_seed1_meter_share30_act.log,0.0,251.16,66.45
+Ausgrid,median,1,noise,results/median_sac_500_seed1_noise_share30.log,0.0,250.08,65.57
+ACT,median,1,noise,results/median_sac_500_seed1_noise_share30_act.log,0.0,251.77,69.1
+Ausgrid,median,1,normalized,results/median_sac_500_seed1_normalized_share30.log,0.0,252.74,84.25
+ACT,median,1,normalized,results/median_sac_500_seed1_normalized_share30_act.log,0.0,252.54,74.1
+Ausgrid,median,1,reward,results/median_sac_500_seed1_reward_share30.log,0.0,248.99,56.48
+ACT,median,1,reward,results/median_sac_500_seed1_reward_share30_act.log,0.0,250.25,69.75
+Ausgrid,median,1,scale,results/median_sac_500_seed1_scale_share30.log,0.0,250.61,58.94
+ACT,median,1,scale,results/median_sac_500_seed1_scale_share30_act.log,0.0,250.24,58.65
+Ausgrid,median,2,flip,results/median_sac_500_seed2_flip_share30.log,0.0,250.46,59.45
+ACT,median,2,flip,results/median_sac_500_seed2_flip_share30_act.log,0.0,250.79,70.59
+Ausgrid,median,2,meter,results/median_sac_500_seed2_meter_share30.log,0.0,250.03,60.25
+ACT,median,2,meter,results/median_sac_500_seed2_meter_share30_act.log,0.0,250.37,67.04
+Ausgrid,median,2,noise,results/median_sac_500_seed2_noise_share30.log,0.0,251.73,63.25
+ACT,median,2,noise,results/median_sac_500_seed2_noise_share30_act.log,0.0,252.04,76.67
+Ausgrid,median,2,normalized,results/median_sac_500_seed2_normalized_share30.log,0.0,250.29,68.44
+ACT,median,2,normalized,results/median_sac_500_seed2_normalized_share30_act.log,0.0,251.04,67.86
+Ausgrid,median,2,reward,results/median_sac_500_seed2_reward_share30.log,0.0,252.77,63.96
+ACT,median,2,reward,results/median_sac_500_seed2_reward_share30_act.log,0.0,250.57,68.98
+Ausgrid,median,2,scale,results/median_sac_500_seed2_scale_share30.log,0.0,252.6,62.99
+ACT,median,2,scale,results/median_sac_500_seed2_scale_share30_act.log,0.0,250.49,71.96
+Ausgrid,median,3,flip,results/median_sac_500_seed3_flip_share30.log,0.0,251.98,61.14
+Ausgrid,median,3,meter,results/median_sac_500_seed3_meter_share30.log,0.0,251.7,61.9
+Ausgrid,median,3,noise,results/median_sac_500_seed3_noise_share30.log,0.0,250.58,58.02
+Ausgrid,median,3,normalized,results/median_sac_500_seed3_normalized_share30.log,0.0,250.47,51.2
+Ausgrid,median,3,reward,results/median_sac_500_seed3_reward_share30.log,0.0,250.57,63.23
+Ausgrid,median,3,scale,results/median_sac_500_seed3_scale_share30.log,0.0,250.52,58.96
+Ausgrid,median,4,flip,results/median_sac_500_seed4_flip_share30.log,0.0,250.82,60.38
+Ausgrid,median,4,meter,results/median_sac_500_seed4_meter_share30.log,0.0,252.83,69.63
+Ausgrid,median,4,noise,results/median_sac_500_seed4_noise_share30.log,0.0,252.41,67.32
+Ausgrid,median,4,normalized,results/median_sac_500_seed4_normalized_share30.log,0.0,251.03,66.89
+Ausgrid,median,4,reward,results/median_sac_500_seed4_reward_share30.log,0.0,251.72,69.58
+Ausgrid,median,4,scale,results/median_sac_500_seed4_scale_share30.log,0.0,252.58,63.41
+Ausgrid,tafdrl,0,flip,results/tafdrl_sac_500_seed0_flip_share30.log,0.0,250.39,61.32
+ACT,tafdrl,0,flip,results/tafdrl_sac_500_seed0_flip_share30_act.log,0.0,250.14,57.09
+ACT,tafdrl final,0,flip,results/tafdrl_sac_500_seed0_flip_share30_act_final.log,0.0,250.41,67.43
+Ausgrid,tafdrl final,0,flip,results/tafdrl_sac_500_seed0_flip_share30_final.log,0.0,250.66,63.9
+Ausgrid,tafdrl,0,meter,results/tafdrl_sac_500_seed0_meter_share30.log,0.0,251.97,64.55
+ACT,tafdrl,0,meter,results/tafdrl_sac_500_seed0_meter_share30_act.log,0.0,250.14,64.94
+ACT,tafdrl final,0,meter,results/tafdrl_sac_500_seed0_meter_share30_act_final.log,0.0,250.72,61.27
+Ausgrid,tafdrl final,0,meter,results/tafdrl_sac_500_seed0_meter_share30_final.log,0.0,252.34,71.53
+Ausgrid,tafdrl,0,noise,results/tafdrl_sac_500_seed0_noise_share30.log,0.0,250.77,62.05
+ACT,tafdrl,0,noise,results/tafdrl_sac_500_seed0_noise_share30_act.log,0.0,250.28,68.12
+ACT,tafdrl final,0,noise,results/tafdrl_sac_500_seed0_noise_share30_act_final.log,0.0,250.24,67.4
+Ausgrid,tafdrl final,0,noise,results/tafdrl_sac_500_seed0_noise_share30_final.log,0.0,250.74,62.54
+Ausgrid,tafdrl,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30.log,0.0,250.52,65.88
+ACT,tafdrl,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30_act.log,0.0,250.7,58.4
+ACT,tafdrl final,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30_act_final.log,0.0,251.15,62.63
+Ausgrid,tafdrl final,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30_final.log,0.0,250.64,57.48
+Ausgrid,tafdrl,0,reward,results/tafdrl_sac_500_seed0_reward_share30.log,0.0,252.67,74.28
+ACT,tafdrl,0,reward,results/tafdrl_sac_500_seed0_reward_share30_act.log,0.0,251.18,76.05
+ACT,tafdrl final,0,reward,results/tafdrl_sac_500_seed0_reward_share30_act_final.log,0.0,251.96,76.43
+Ausgrid,tafdrl final,0,reward,results/tafdrl_sac_500_seed0_reward_share30_final.log,0.0,252.58,71.55
+Ausgrid,tafdrl,0,scale,results/tafdrl_sac_500_seed0_scale_share30.log,0.0,250.83,67.7
+ACT,tafdrl,0,scale,results/tafdrl_sac_500_seed0_scale_share30_act.log,0.0,251.6,73.33
+ACT,tafdrl final,0,scale,results/tafdrl_sac_500_seed0_scale_share30_act_final.log,0.0,251.84,72.2
+Ausgrid,tafdrl final,0,scale,results/tafdrl_sac_500_seed0_scale_share30_final.log,0.0,250.82,67.73
+Ausgrid,tafdrl,1,flip,results/tafdrl_sac_500_seed1_flip_share30.log,0.0,250.23,54.36
+ACT,tafdrl,1,flip,results/tafdrl_sac_500_seed1_flip_share30_act.log,0.0,251.28,58.42
+ACT,tafdrl final,1,flip,results/tafdrl_sac_500_seed1_flip_share30_act_final.log,0.0,250.62,60.04
+Ausgrid,tafdrl final,1,flip,results/tafdrl_sac_500_seed1_flip_share30_final.log,0.0,250.33,57.34
+Ausgrid,tafdrl,1,meter,results/tafdrl_sac_500_seed1_meter_share30.log,0.0,249.53,62.05
+ACT,tafdrl,1,meter,results/tafdrl_sac_500_seed1_meter_share30_act.log,0.0,250.65,60.26
+ACT,tafdrl final,1,meter,results/tafdrl_sac_500_seed1_meter_share30_act_final.log,0.0,251.37,60.36
+Ausgrid,tafdrl final,1,meter,results/tafdrl_sac_500_seed1_meter_share30_final.log,0.0,250.13,60.41
+Ausgrid,tafdrl,1,noise,results/tafdrl_sac_500_seed1_noise_share30.log,0.0,250.21,58.52
+ACT,tafdrl,1,noise,results/tafdrl_sac_500_seed1_noise_share30_act.log,0.0,250.66,65.31
+ACT,tafdrl final,1,noise,results/tafdrl_sac_500_seed1_noise_share30_act_final.log,0.0,250.72,65.01
+Ausgrid,tafdrl final,1,noise,results/tafdrl_sac_500_seed1_noise_share30_final.log,0.0,249.81,58.29
+Ausgrid,tafdrl,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30.log,0.0,250.14,62.41
+ACT,tafdrl,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30_act.log,0.0,251.39,63.54
+ACT,tafdrl final,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30_act_final.log,0.0,252.34,74.74
+Ausgrid,tafdrl final,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30_final.log,0.0,250.33,69.75
+Ausgrid,tafdrl,1,reward,results/tafdrl_sac_500_seed1_reward_share30.log,0.0,250.18,66.12
+ACT,tafdrl,1,reward,results/tafdrl_sac_500_seed1_reward_share30_act.log,0.0,250.79,60.77
+ACT,tafdrl final,1,reward,results/tafdrl_sac_500_seed1_reward_share30_act_final.log,0.0,250.77,59.99
+Ausgrid,tafdrl final,1,reward,results/tafdrl_sac_500_seed1_reward_share30_final.log,0.0,250.56,67.53
+Ausgrid,tafdrl,1,scale,results/tafdrl_sac_500_seed1_scale_share30.log,0.0,249.94,68.44
+ACT,tafdrl,1,scale,results/tafdrl_sac_500_seed1_scale_share30_act.log,0.0,251.91,67.16
+ACT,tafdrl final,1,scale,results/tafdrl_sac_500_seed1_scale_share30_act_final.log,0.0,251.73,63.46
+Ausgrid,tafdrl final,1,scale,results/tafdrl_sac_500_seed1_scale_share30_final.log,0.0,249.94,68.44
+Ausgrid,tafdrl,2,flip,results/tafdrl_sac_500_seed2_flip_share30.log,0.0,250.39,66.87
+ACT,tafdrl,2,flip,results/tafdrl_sac_500_seed2_flip_share30_act.log,0.0,251.25,78.9
+ACT,tafdrl final,2,flip,results/tafdrl_sac_500_seed2_flip_share30_act_final.log,0.0,251.17,74.51
+Ausgrid,tafdrl final,2,flip,results/tafdrl_sac_500_seed2_flip_share30_final.log,0.0,250.35,66.26
+Ausgrid,tafdrl,2,meter,results/tafdrl_sac_500_seed2_meter_share30.log,0.0,251.75,67.6
+ACT,tafdrl,2,meter,results/tafdrl_sac_500_seed2_meter_share30_act.log,0.0,250.51,61.62
+ACT,tafdrl final,2,meter,results/tafdrl_sac_500_seed2_meter_share30_act_final.log,0.0,250.25,73.2
+Ausgrid,tafdrl final,2,meter,results/tafdrl_sac_500_seed2_meter_share30_final.log,0.0,251.25,66.03
+Ausgrid,tafdrl,2,noise,results/tafdrl_sac_500_seed2_noise_share30.log,0.0,250.95,68.47
+ACT,tafdrl,2,noise,results/tafdrl_sac_500_seed2_noise_share30_act.log,0.0,251.32,77.94
+ACT,tafdrl final,2,noise,results/tafdrl_sac_500_seed2_noise_share30_act_final.log,0.0,251.32,77.94
+Ausgrid,tafdrl final,2,noise,results/tafdrl_sac_500_seed2_noise_share30_final.log,0.0,250.97,68.61
+Ausgrid,tafdrl,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30.log,0.0,249.54,56.16
+ACT,tafdrl,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30_act.log,0.0,250.55,65.52
+ACT,tafdrl final,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30_act_final.log,0.0,250.43,57.46
+Ausgrid,tafdrl final,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30_final.log,0.0,250.46,66.36
+Ausgrid,tafdrl,2,reward,results/tafdrl_sac_500_seed2_reward_share30.log,0.0,251.29,64.37
+ACT,tafdrl,2,reward,results/tafdrl_sac_500_seed2_reward_share30_act.log,0.0,252.27,79.2
+ACT,tafdrl final,2,reward,results/tafdrl_sac_500_seed2_reward_share30_act_final.log,0.0,251.36,77.47
+Ausgrid,tafdrl final,2,reward,results/tafdrl_sac_500_seed2_reward_share30_final.log,0.0,252.06,68.28
+Ausgrid,tafdrl,2,scale,results/tafdrl_sac_500_seed2_scale_share30.log,0.0,250.59,67.49
+ACT,tafdrl,2,scale,results/tafdrl_sac_500_seed2_scale_share30_act.log,0.0,250.55,77.6
+ACT,tafdrl final,2,scale,results/tafdrl_sac_500_seed2_scale_share30_act_final.log,0.0,250.55,77.6
+Ausgrid,tafdrl final,2,scale,results/tafdrl_sac_500_seed2_scale_share30_final.log,0.0,250.85,66.09
+Ausgrid,tafdrl,3,flip,results/tafdrl_sac_500_seed3_flip_share30.log,0.0,252.31,69.04
+Ausgrid,tafdrl final,3,flip,results/tafdrl_sac_500_seed3_flip_share30_final.log,0.0,251.73,69.04
+Ausgrid,tafdrl,3,meter,results/tafdrl_sac_500_seed3_meter_share30.log,0.0,252.29,69.14
+Ausgrid,tafdrl final,3,meter,results/tafdrl_sac_500_seed3_meter_share30_final.log,0.0,252.05,66.89
+Ausgrid,tafdrl,3,noise,results/tafdrl_sac_500_seed3_noise_share30.log,0.0,252.57,68.38
+Ausgrid,tafdrl final,3,noise,results/tafdrl_sac_500_seed3_noise_share30_final.log,0.0,252.47,68.04
+Ausgrid,tafdrl,3,normalized,results/tafdrl_sac_500_seed3_normalized_share30.log,0.0,250.76,60.45
+Ausgrid,tafdrl final,3,normalized,results/tafdrl_sac_500_seed3_normalized_share30_final.log,0.0,250.27,56.96
+Ausgrid,tafdrl,3,reward,results/tafdrl_sac_500_seed3_reward_share30.log,0.0,251.1,69.14
+Ausgrid,tafdrl final,3,reward,results/tafdrl_sac_500_seed3_reward_share30_final.log,0.0,251.49,72.02
+Ausgrid,tafdrl,3,scale,results/tafdrl_sac_500_seed3_scale_share30.log,0.0,252.26,67.56
+Ausgrid,tafdrl final,3,scale,results/tafdrl_sac_500_seed3_scale_share30_final.log,0.0,252.26,67.56
+Ausgrid,tafdrl,4,flip,results/tafdrl_sac_500_seed4_flip_share30.log,0.0,252.0,68.29
+Ausgrid,tafdrl final,4,flip,results/tafdrl_sac_500_seed4_flip_share30_final.log,0.0,252.93,72.22
+Ausgrid,tafdrl,4,meter,results/tafdrl_sac_500_seed4_meter_share30.log,0.0,252.72,70.61
+Ausgrid,tafdrl final,4,meter,results/tafdrl_sac_500_seed4_meter_share30_final.log,0.0,253.0,71.85
+Ausgrid,tafdrl,4,noise,results/tafdrl_sac_500_seed4_noise_share30.log,0.0,251.04,64.53
+Ausgrid,tafdrl final,4,noise,results/tafdrl_sac_500_seed4_noise_share30_final.log,0.0,251.04,64.53
+Ausgrid,tafdrl,4,normalized,results/tafdrl_sac_500_seed4_normalized_share30.log,0.0,251.76,62.99
+Ausgrid,tafdrl final,4,normalized,results/tafdrl_sac_500_seed4_normalized_share30_final.log,0.0,251.69,77.87
+Ausgrid,tafdrl,4,reward,results/tafdrl_sac_500_seed4_reward_share30.log,0.09,253.46,76.45
+Ausgrid,tafdrl final,4,reward,results/tafdrl_sac_500_seed4_reward_share30_final.log,0.07,253.31,76.91
+Ausgrid,tafdrl,4,scale,results/tafdrl_sac_500_seed4_scale_share30.log,0.03,253.27,73.96
+Ausgrid,tafdrl final,4,scale,results/tafdrl_sac_500_seed4_scale_share30_final.log,0.03,253.5,72.88
+Ausgrid,trimmed,0,flip,results/trimmed_sac_500_seed0_flip_share30.log,0.0,250.8,
+ACT,trimmed,0,flip,results/trimmed_sac_500_seed0_flip_share30_act.log,0.0,250.31,58.83
+Ausgrid,trimmed,0,meter,results/trimmed_sac_500_seed0_meter_share30.log,0.0,251.04,66.63
+ACT,trimmed,0,meter,results/trimmed_sac_500_seed0_meter_share30_act.log,0.0,250.03,61.28
+Ausgrid,trimmed,0,noise,results/trimmed_sac_500_seed0_noise_share30.log,0.0,252.42,
+ACT,trimmed,0,noise,results/trimmed_sac_500_seed0_noise_share30_act.log,0.0,250.86,72.17
+Ausgrid,trimmed,0,normalized,results/trimmed_sac_500_seed0_normalized_share30.log,0.0,249.98,
+ACT,trimmed,0,normalized,results/trimmed_sac_500_seed0_normalized_share30_act.log,0.0,250.45,61.45
+Ausgrid,trimmed,0,reward,results/trimmed_sac_500_seed0_reward_share30.log,0.0,249.51,60.52
+ACT,trimmed,0,reward,results/trimmed_sac_500_seed0_reward_share30_act.log,0.0,250.57,64.55
+Ausgrid,trimmed,0,scale,results/trimmed_sac_500_seed0_scale_share30.log,0.0,252.48,
+ACT,trimmed,0,scale,results/trimmed_sac_500_seed0_scale_share30_act.log,0.0,250.4,67.96
+Ausgrid,trimmed,1,flip,results/trimmed_sac_500_seed1_flip_share30.log,0.0,250.42,61.23
+ACT,trimmed,1,flip,results/trimmed_sac_500_seed1_flip_share30_act.log,0.0,252.62,77.07
+Ausgrid,trimmed,1,meter,results/trimmed_sac_500_seed1_meter_share30.log,0.0,250.55,58.31
+ACT,trimmed,1,meter,results/trimmed_sac_500_seed1_meter_share30_act.log,0.0,251.59,63.45
+Ausgrid,trimmed,1,noise,results/trimmed_sac_500_seed1_noise_share30.log,0.0,249.84,58.94
+ACT,trimmed,1,noise,results/trimmed_sac_500_seed1_noise_share30_act.log,0.0,252.06,68.5
+Ausgrid,trimmed,1,normalized,results/trimmed_sac_500_seed1_normalized_share30.log,0.0,252.39,67.96
+ACT,trimmed,1,normalized,results/trimmed_sac_500_seed1_normalized_share30_act.log,0.0,251.72,78.57
+Ausgrid,trimmed,1,reward,results/trimmed_sac_500_seed1_reward_share30.log,0.0,250.94,64.28
+ACT,trimmed,1,reward,results/trimmed_sac_500_seed1_reward_share30_act.log,0.0,250.07,59.38
+Ausgrid,trimmed,1,scale,results/trimmed_sac_500_seed1_scale_share30.log,0.0,251.49,56.84
+ACT,trimmed,1,scale,results/trimmed_sac_500_seed1_scale_share30_act.log,0.0,251.37,61.6
+Ausgrid,trimmed,2,flip,results/trimmed_sac_500_seed2_flip_share30.log,0.0,250.71,64.59
+ACT,trimmed,2,flip,results/trimmed_sac_500_seed2_flip_share30_act.log,0.0,250.0,69.67
+Ausgrid,trimmed,2,meter,results/trimmed_sac_500_seed2_meter_share30.log,0.0,250.54,61.58
+ACT,trimmed,2,meter,results/trimmed_sac_500_seed2_meter_share30_act.log,0.0,250.21,67.84
+Ausgrid,trimmed,2,noise,results/trimmed_sac_500_seed2_noise_share30.log,0.0,249.74,65.88
+ACT,trimmed,2,noise,results/trimmed_sac_500_seed2_noise_share30_act.log,0.0,251.1,76.09
+Ausgrid,trimmed,2,normalized,results/trimmed_sac_500_seed2_normalized_share30.log,0.0,250.18,59.85
+ACT,trimmed,2,normalized,results/trimmed_sac_500_seed2_normalized_share30_act.log,0.0,249.98,61.29
+Ausgrid,trimmed,2,reward,results/trimmed_sac_500_seed2_reward_share30.log,0.0,252.82,65.59
+ACT,trimmed,2,reward,results/trimmed_sac_500_seed2_reward_share30_act.log,0.0,250.17,75.96
+Ausgrid,trimmed,2,scale,results/trimmed_sac_500_seed2_scale_share30.log,0.0,251.41,61.92
+ACT,trimmed,2,scale,results/trimmed_sac_500_seed2_scale_share30_act.log,0.0,250.92,75.81
+Ausgrid,trimmed,3,flip,results/trimmed_sac_500_seed3_flip_share30.log,0.0,251.93,64.45
+Ausgrid,trimmed,3,meter,results/trimmed_sac_500_seed3_meter_share30.log,0.0,250.2,65.96
+Ausgrid,trimmed,3,noise,results/trimmed_sac_500_seed3_noise_share30.log,0.0,251.8,71.25
+Ausgrid,trimmed,3,normalized,results/trimmed_sac_500_seed3_normalized_share30.log,0.0,252.05,75.67
+Ausgrid,trimmed,3,reward,results/trimmed_sac_500_seed3_reward_share30.log,0.0,252.53,70.6
+Ausgrid,trimmed,3,scale,results/trimmed_sac_500_seed3_scale_share30.log,0.0,250.65,63.97
+Ausgrid,trimmed,4,flip,results/trimmed_sac_500_seed4_flip_share30.log,0.0,251.51,59.93
+Ausgrid,trimmed,4,meter,results/trimmed_sac_500_seed4_meter_share30.log,0.0,250.55,58.88
+Ausgrid,trimmed,4,noise,results/trimmed_sac_500_seed4_noise_share30.log,0.0,252.51,69.29
+Ausgrid,trimmed,4,normalized,results/trimmed_sac_500_seed4_normalized_share30.log,0.0,251.81,72.24
+Ausgrid,trimmed,4,reward,results/trimmed_sac_500_seed4_reward_share30.log,0.0,252.11,66.59
+Ausgrid,trimmed,4,scale,results/trimmed_sac_500_seed4_scale_share30.log,0.0,252.46,65.88

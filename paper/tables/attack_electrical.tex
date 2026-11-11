@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Maximum observed run-level electrical metrics over all six attacks at 30\% nominal compromise: five Ausgrid seeds and three ACT seeds. Each cell is a maximum across available logs; different maxima may arise from different attacks or seeds. Ausgrid transformer measurements cover 26/30 runs for FedAvg, median, trimmed mean and Krum, and 30/30 otherwise; ACT covers 18/18 throughout. All voltage metrics have full coverage. Missing measurements are excluded, never set to zero; per-run inputs are retained in the CSV.}
+\label{tab:attack_electrical}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Method & Ausgrid over 253 V (\%) & Ausgrid max V & Ausgrid peak (\%) & ACT over 253 V (\%) & ACT max V & ACT peak (\%) \\
+\midrule
+FedAvg & 0.120 & 253.14 & 113.84 & 0.000 & 251.96 & 94.49 \\
+Median & 0.000 & 252.83 & 84.25 & 0.070 & 253.46 & 76.71 \\
+Trimmed mean & 0.000 & 252.82 & 75.67 & 0.000 & 252.62 & 78.57 \\
+Krum & 0.000 & 252.71 & 70.86 & 0.000 & 252.70 & 84.48 \\
+FLTrust & 0.000 & 252.81 & 73.49 & 0.000 & 251.97 & 74.36 \\
+FLAME & 0.010 & 253.27 & 73.19 & 0.000 & 252.03 & 73.54 \\
+TAFDRL-style & 0.090 & 253.46 & 76.45 & 0.000 & 252.27 & 79.20 \\
+TAFDRL-style tuned & 0.070 & 253.50 & 77.87 & 0.000 & 252.34 & 77.94 \\
+FedGrid original & 0.000 & 252.91 & 74.86 & 0.000 & 252.92 & 83.60 \\
+FedGrid final & 0.010 & 253.19 & 72.29 & 0.000 & 252.30 & 76.24 \\
+\bottomrule
+\end{tabular}}
+\end{table}

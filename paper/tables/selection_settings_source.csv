@@ -1,0 +1,15 @@
+family,method,version,worst,honest_rejected,rejection_runs,attacks,paired_runs,forty_percent_damage,forty_percent_runs
+Final FedGrid,fedgrid,filter_first_clip2,14.488333333333344,3.4066666666666663,15,4,12,-5.930833333333339,3
+Final FedGrid,fedgrid,filter_first_clip2_bands2,20.87833333333334,1.6666666666666667,15,4,12,-9.14500000000001,3
+Final FedGrid,fedgrid,filter_first_clip2_bands4,23.307500000000022,2.166666666666666,15,4,12,-5.293333333333313,3
+Final FedGrid,fedgrid,filter_first_clip2_z2,17.93499999999999,5.886666666666668,15,4,12,1.2233333333333292,3
+Final FedGrid,fedgrid,filter_first_clip2_z3,15.79333333333335,2.5733333333333333,15,4,12,-9.74333333333333,3
+Earlier home trust,fedgrid,filter_first_home_trust,6.169166666666674,30.84,15,4,12,4.9000000000000155,3
+Earlier home trust,fedgrid,filter_first_home_trust_bands2,4.921666666666671,28.866666666666667,15,4,12,8.063333333333324,3
+Earlier home trust,fedgrid,filter_first_home_trust_bands4,5.428333333333332,29.193333333333335,15,4,12,10.50916666666665,3
+Earlier home trust,fedgrid,filter_first_home_trust_z2,0.49750000000001177,32.37333333333333,15,4,12,7.8424999999999825,3
+Earlier home trust,fedgrid,filter_first_home_trust_z3,1.0808333333333071,29.900000000000002,15,4,12,-4.334166666666685,3
+TAFDRL-style,tafdrl,lam1_level99,19.176666666666666,19.42222222222222,9,2,6,,0
+TAFDRL-style,tafdrl,lam1_level999,22.0,10.38888888888889,9,2,6,,0
+TAFDRL-style,tafdrl,lam2_level99,10.481666666666683,28.633333333333333,9,2,6,,0
+TAFDRL-style,tafdrl,lam2_level999,17.75999999999999,14.666666666666666,9,2,6,,0

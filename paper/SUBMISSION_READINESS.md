@@ -27,14 +27,14 @@ Small cross-partition percentages do not bound the effect on policy training or 
 ## What this audit changed
 
 - Targeted the standard Elsevier article class to Energy and AI.
-- Reduced the main argument to **six figures and six tables**, retaining all remaining displays in the appendix: **13 figures and 19 tables in total**.
+- Reduced the main argument to **six figures and six tables**, retaining all remaining displays in the appendix. The later evidence audit brings the total to **13 figures and 24 tables**.
 - Added a deterministic aggregate-norm argument and explicit realised contribution coefficients.
 - Ran 24 exact paired Wilcoxon tests with two explicitly defined Holm families; exported every pair, p-value and adjustment.
 - Reconstructed ACT imputation donors from raw data and checked donor values against stored processed profiles, allowing for file rounding.
 - Verified the 2025–26 retailer import-price schedule against the official retailer page.
 - Added concise highlights and draft author declarations without asserting unconfirmed authorship, conflicts or human review.
 - Prepared a flat source archive for Elsevier's submission system; no submission or public release was performed.
-- Compiled the 30-page A4 PDF with temporary Tectonic 0.15.0 tooling. Final log has no undefined references, missing citations or overfull boxes; two underfull bibliography paragraphs remain without overflowing text. Selected title, results and statistical-audit pages were visually inspected.
+- Compiled the earlier 30-page A4 academic-edit checkpoint with temporary Tectonic 0.15.0 tooling. The later revision's build verification is recorded in `CODE_RESULTS_AUDIT.md`.
 
 ## Journal requirements checked and limits
 
@@ -48,3 +48,7 @@ The next work that materially raises submission readiness is closing the scienti
 ## Academic editing pass
 
 The later section-by-section edit is documented in `EDITORIAL_REVIEW.md`, with the original source backed up before editing. It preserved the numerical evidence and document structure while correcting the described MAD floor, cycle definition, Linux memory unit, MPC check scope and meter-attack scope. The MPC relaxation now has an explicit full-horizon validation qualification. These editorial and technical-description improvements do not close the scientific blockers above.
+
+## Subsequent code and results reconciliation
+
+`CODE_RESULTS_AUDIT.md` records independent agreement for all 636 principal damages and all 24 exact tests. The audit corrected the electrical table's misleading rounding of small nonzero voltage-exceedance rates, disclosed unequal selection-rejection pools and earlier evaluation exposure, and specified the implementation's median and cosine conventions. Five added tables retain the longer clean runs, coefficient sweeps, deterministic references, attack-time electrical outcomes, household rejection strata and later candidate settings. These changes improve reporting fidelity; they do not establish prospective generalisation, uniform participation or grid-safety guarantees.

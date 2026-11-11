@@ -96,3 +96,23 @@ Two-sided exact Wilcoxon signed-rank tests compare five-seed Ausgrid damage. The
 
 All comparisons have nonzero differences and no tied absolute ranks. For five such pairs, the smallest attainable two-sided exact p-value is $2/2^5=0.0625$; a value below 0.05 is therefore unattainable even before adjustment. The Normalized final-minus-original comparison has exact p-value 0.0625 and six-test adjusted p-value 0.375. A descriptive Student-$t$ interval may exclude zero because the interval and rank test use different assumptions and formulations. Both results are reported with their scope, and all pair differences and p-values are exported as CSV.
 \input{tables/exact_statistics}
+
+\subsection{Training duration and FedProx coefficient}
+Table~\ref{tab:extended_clean} reports all 30 current clean-learning runs: the 500-day and 1000-day settings for four learned baselines, plus the two additional FedProx coefficients. Each cell uses three seeds and the same validation-selected retention rule. These comparisons describe the available archive; they do not extend the attack evaluation to 1000 days or establish convergence.
+\input{tables/extended_clean}
+
+\subsection{Deterministic baseline context}
+Table~\ref{tab:all_baselines} retains the idle, rule and perfect-foresight MPC outcomes for Ausgrid, ACT and the 1.02\,pu stress scenario. In particular, low MPC bills coexist with observed transformer loading above nameplate in ACT and voltage stress. Missing legacy transformer measurements remain missing.
+\input{tables/all_baselines}
+
+\subsection{Electrical outcomes under all principal attacks}
+Table~\ref{tab:attack_electrical} takes the maximum available run-level voltage and transformer metrics over each method's six principal attacks. This extends the no-attack reference display without selecting only favourable scenarios. Different cells may reach their maxima in different runs, and missing legacy measurements are excluded rather than imputed. The accompanying CSV records method, setting, seed, attack and source for each run.
+\input{tables/attack_electrical}
+
+\subsection{Household heterogeneity in recorded rejection}
+Table~\ref{tab:heterogeneity} compares honest homes at the lowest or highest solar-capacity sextile thresholds with the remaining honest homes, under no attack and Normalized. Thresholds use the rounded capacities printed in each street's logs, with ties retained. Per-home rejection rates are also rounded, so the resulting means are retrospective filter diagnostics rather than precise measurements of influence. The maximum-household column averages the most-rejected household within each run; it is not a worst case over all runs.
+\input{tables/heterogeneity}
+
+\subsection{Full selection-setting evidence}
+Table~\ref{tab:selection_settings} includes the later clipping settings, earlier household-trust settings and four TAFDRL-style configurations. The rejection pools and tuning attack sets differ as described in Section~\ref{sec:selection}. FedGrid's 40\% Normalized validation damage is reported for completeness and did not enter the four-attack ranking. The archived historical flags and choice reports remain unchanged.
+\input{tables/selection_settings}

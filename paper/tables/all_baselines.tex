@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering\small
+\caption{All archived deterministic baselines, in Australian dollars per household per year and curtailed kWh per household per year. Electrical metrics describe observed evaluation intervals. Missing legacy transformer measurements are shown as dashes.}
+\label{tab:all_baselines}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Scenario & Controller & Bill (\$/yr) & Curtailment (kWh/yr) & Over 253 V (\%) & Max V & Peak loading (\%) \\
+\midrule
+Ausgrid 1.00 pu & Idle & 1457.78 & 537.74 & 0.000 & 252.92 & -- \\
+Ausgrid 1.00 pu & Rule & 952.96 & 473.18 & 0.000 & 252.92 & -- \\
+Ausgrid 1.00 pu & Perfect-foresight MPC & 590.95 & 62.87 & 0.000 & 252.93 & -- \\
+ACT 1.00 pu & Idle & 1864.79 & 329.74 & 0.000 & 251.85 & 87.95 \\
+ACT 1.00 pu & Rule & 1198.77 & 231.71 & 0.000 & 251.85 & 84.77 \\
+ACT 1.00 pu & Perfect-foresight MPC & 875.94 & 19.04 & 0.000 & 252.65 & 109.57 \\
+Ausgrid 1.02 pu & Idle & 1500.18 & 1027.39 & 6.880 & 254.49 & 73.76 \\
+Ausgrid 1.02 pu & Rule & 988.73 & 886.22 & 4.450 & 255.52 & 73.40 \\
+Ausgrid 1.02 pu & Perfect-foresight MPC & 590.65 & 64.72 & 3.030 & 254.38 & 111.50 \\
+\bottomrule
+\end{tabular}}
+\end{table}

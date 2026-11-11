@@ -33,9 +33,9 @@ def interval(x):
     a=np.asarray(x,float); a=a[np.isfinite(a)]; n=len(a)
     if not n:return np.nan,np.nan,0
     return a.mean(), (stats.t.ppf(.975,n-1)*a.std(ddof=1)/np.sqrt(n) if n>1 else np.nan),n
-def fmt(x):
+def fmt(x,digits=1):
     m,h,n=interval(x)
-    return '--' if n==0 else (f'{m:.1f} [{n}]' if n==1 else f'{m:.1f} $\\pm$ {h:.1f} [{n}]')
+    return '--' if n==0 else (f'{m:.{digits}f} [{n}]' if n==1 else f'{m:.{digits}f} $\\pm$ {h:.{digits}f} [{n}]')
 def table(name,caption,headers,rows):
     lines=[r'\begin{table}[htbp]',r'\centering\small',r'\caption{'+caption+'}',r'\label{tab:'+name+'}',
            r'\resizebox{\linewidth}{!}{%',r'\begin{tabular}{'+'l'*len(headers)+'}',r'\toprule',
@@ -201,8 +201,8 @@ save('sensitivity',fig,sens[['method','seed','variant','damage']])
 candidates=candidate_tables('fedgrid',ROOT/'results')
 versions=['original','filter_first','filter_first_clip2','filter_first_guard','filter_first_home_trust','without_clip']
 ct=candidates.reindex(versions)
-table('selection_candidates','Development-set selection of FedGrid variants. Damage is in dollars over the validation weeks and uses a bill-plus-curtailment score. The 4.0\\% numerical rejection bound was imposed after candidate results were observed.',
-      ['Variant','Worst validation damage','Honest rejection (\\%)','Worst home (\\%)'],[[esc(v),*[f'{ct.loc[v,k]:.1f}' for k in ['worst','honest rejected %','worst honest home %']]] for v in versions])
+table('selection_candidates','Development-set selection of FedGrid variants. Damage is in dollars over the validation weeks and uses a bill-plus-curtailment score. The post-hoc 4.0\\% bound uses the rounded original rejection rate. Rejection pools differ: 21 original runs versus 15 per complete candidate. The last column is the mean of per-run maximum honest-household rejection, not the maximum across runs.',
+      ['Variant','Worst validation damage','Honest rejection (\\%)','Mean run maximum (\\%)'],[[esc(v),*[f'{ct.loc[v,k]:.1f}' for k in ['worst','honest rejected %','worst honest home %']]] for v in versions])
 fig,ax=plt.subplots(figsize=(8,4.8),layout='constrained')
 for v,r in ct.iterrows():
     ax.scatter(r['honest rejected %'],r.worst,s=55,color='#b23b26' if v=='filter_first_clip2' else '#235789')
@@ -289,9 +289,9 @@ for setting,part in [('Ausgrid',main),('ACT',runs[runs.variant.eq('act') & runs.
     for _,row in none.iterrows():
         gridrows.append(dict(setting=setting,method=row.method,seed=row.seed,**{c:row.get(c,np.nan) for c in gridcols}))
 grid=pd.DataFrame(gridrows)
-table('electrical','Electrical outcomes for no-attack last-policy runs. Means and 95\% interval half-widths [observed seeds] of evaluation-run metrics. A run-level voltage maximum or transformer peak is computed before averaging; these are not pooled worst-case bounds.',
+table('electrical','Electrical outcomes in no-attack last-policy runs: means and 95\\% interval half-widths [observed seeds]. Voltage-exceedance percentages use three decimals to retain small nonzero means calculated from two-decimal logged input rates. Run maxima and peaks are computed before seed averaging; they are not safety bounds.',
       ['Setting','Method','Over 253 V (\%)','Run maximum (V)','Transformer peak (\%)'],
-      [[setting,LABEL[m],*[fmt(grid.loc[grid.setting.eq(setting)&grid.method.eq(m),c]) for c in gridcols]]
+      [[setting,LABEL[m],*[fmt(grid.loc[grid.setting.eq(setting)&grid.method.eq(m),c],3 if c=='half hours over 253 V %' else 1) for c in gridcols]]
        for setting in ['Ausgrid','ACT'] for m in ['fedavg','fltrust','flame','tafdrl final','fedgrid','fedgrid final']])
 fig,axs=plt.subplots(1,2,figsize=(11,4.4),layout='constrained')
 chosen=['fedavg','fltrust','flame','tafdrl final','fedgrid','fedgrid final']
@@ -306,8 +306,9 @@ save('electrical',fig,grid)
 # Source manifest includes candidate files and baseline files used by these artifacts.
 extra=[*paths,*sorted((ROOT/'results/candidates').glob('*.log')),
        ROOT/'results/baselines.log',ROOT/'results/baselines_act.log',ROOT/'results/device_single_core.log']
+extra += [ROOT/'results/baselines_pu102.log',ROOT/'results/diagnostics/README.md',*sorted((ROOT/'results/candidates').glob('choice_*.txt')),*sorted((ROOT/'results/candidates').glob('*.flags'))]
 with (OUT/'tables/expanded_sources.sha256').open('w') as f:
     for p in sorted(set(extra)):f.write(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+str(p.relative_to(ROOT))+'\n')
-(OUT/'artifact_inventory.json').write_text(json.dumps({'figures':['damage_rejection',*figs], 'tables':['main_damage','algorithm (static in methods)',*tabs,'imputation_audit','exact_statistics'],
-    'notes':'13 figures and 19 tables after the separate exact-statistics and imputation audits. Scientific blockers remain.'},indent=2)+'\n')
-print(f'Built {len(figs)+1} total figures and {len(tabs)+2} total tables.')
+(OUT/'artifact_inventory.json').write_text(json.dumps({'figures':['damage_rejection',*figs], 'tables':['main_damage','algorithm (static in methods)',*tabs,'imputation_audit','exact_statistics','extended_clean','all_baselines','attack_electrical','heterogeneity','selection_settings'],
+    'notes':'13 figures and 24 tables after the statistical, imputation and evidence audits. Scientific blockers remain.'},indent=2)+'\n')
+print(f'Rebuilt {len(figs)} figures and {len(tabs)} tables; run the audit scripts to complete the artifact inventory.')

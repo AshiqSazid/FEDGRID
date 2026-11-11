@@ -169,12 +169,12 @@ r_{i,t}=-c_{i,t}-0.0866\Delta t\,q_{i,t}
 \end{equation}
 where $h_{i,t}$ is excess export power after enforcement and $v^{\mathrm{out}}_{i,t}$ is the voltage deviation outside the prescribed interval, in volts. Successful export enforcement makes the export penalty zero. Rewards are multiplied by ten before SAC updates. Because curtailment is penalised in addition to its effect on the bill, the training objective differs from the reported electricity bill.
 
-Training samples seven-day blocks from the training partition. Stored energy carries between days within a block; a newly sampled block starts half charged, and bootstrapping terminates across that discontinuity. Five days of random-action warmup precede learning. The main experiments use 500 training days, with archived 1000-day runs providing additional clean-learning evidence. Central SAC pools household transitions into one agent, whereas local SAC maintains independent agents and replay buffers. These are comparison architectures, not formal performance bounds.
+Training samples seven-day blocks from the training partition. Stored energy carries between days within a block; a newly sampled block starts half charged, and bootstrapping terminates across that discontinuity. Five days of random-action warmup precede learning. The main experiments use 500 training days, with archived 1000-day runs providing additional clean-learning evidence in Table~\ref{tab:extended_clean}. Validation is performed on day 1 and every 25 training days. Central SAC pools household transitions into one agent, whereas local SAC maintains independent agents and replay buffers. These are comparison architectures, not formal performance bounds.
 
 \subsection{Daily federation and FedGrid}
-At the end of each training day, households share the actor and critic hidden-layer parameters while retaining their output layers and replay buffers locally. If $\theta_r$ is the server model at round $r$ and $\theta_{i,r}^{\mathrm{local}}$ the shared part after local training, the update is $u_{i,r}=\theta_{i,r}^{\mathrm{local}}-\theta_r$. The server sets $\theta_{r+1}=\theta_r+\mathcal A(\{u_{i,r}\})$ and copies the shared layers to each household. The shared vector contains 54,400 float32 values, corresponding to 212.5\,KiB per direction per household, excluding protocol overhead.
+At the end of each training day, households share the actor and critic hidden-layer parameters while retaining their output layers and replay buffers locally. If $\theta_r$ is the server model at round $r$ and $\theta_{i,r}^{\mathrm{local}}$ the shared part after local training, the update is $u_{i,r}=\theta_{i,r}^{\mathrm{local}}-\theta_r$. The server sets $\theta_{r+1}=\theta_r+\mathcal A(\{u_{i,r}\})$ and copies the shared layers to each household. Target critics, optimiser states and entropy temperatures remain local across broadcasts. The shared vector contains 54,400 float32 values, corresponding to 212.5\,KiB per direction per household, excluding protocol overhead.
 
-For FedGrid, solar capacities determine three quantile bands. Any band with fewer than five received updates is merged with a neighbouring band until sufficiently large or only one remains. In group $g$, define a coordinate median $m_g$ and update distances $d_i=\|u_i-m_g\|_2$. Write $\widetilde d_g=\operatorname{median}_{i\in g}d_i$ and
+For FedGrid, solar capacities determine three quantile bands. Medians of update coordinates, norms, distances and absolute deviations use the lower middle order statistic for even-sized samples, matching the implementation; capacity-band boundaries remain quantiles. Any band with fewer than five received updates is merged with a neighbouring band until sufficiently large or only one remains. In group $g$, define a coordinate median $m_g$ and update distances $d_i=\|u_i-m_g\|_2$. Write $\widetilde d_g=\operatorname{median}_{i\in g}d_i$ and
 \begin{equation}
 \sigma_g=1.4826\operatorname{median}_{i\in g}|d_i-\widetilde d_g|.
 \end{equation}
@@ -189,7 +189,7 @@ where the clipping bound uses all received updates, including filtered ones. If 
 w_g=|I_g|\max(0,\cos(\bar u_g,u_0)),\qquad
 \mathcal A=\frac{\sum_gw_g\bar u_g}{\max(\sum_gw_g,10^{-12})}.
 \end{equation}
-The server reference $u_0$ comes from a central learner using a disjoint set of households, starting its shared layers from the current global model each round. A zero total weight produces a zero aggregate. The original FedGrid clips before filtering at one median norm. Therefore, the final revision changes both operation order and clipping multiplier.
+Cosine agreement uses the stabilised implementation: each vector norm is floored at $10^{-8}$ before division, so a zero reference or group mean gives zero agreement. The server reference $u_0$ comes from a central learner using a disjoint set of households, starting its shared layers from the current global model each round. A zero total weight produces a zero aggregate. The original FedGrid clips before filtering at one median norm. Therefore, the final revision changes both operation order and clipping multiplier.
 
 \begin{table}[htbp]
 \centering
@@ -313,13 +313,13 @@ Clean learning & 4 learned baselines & 0--2 (3) & 36 & Validation-selected \\
 
 
 \subsection{Economic damage and household alignment}
-Let $B_{m,a,s}(H)$ denote annual household-average bill for method $m$, attack $a$, seed $s$ and evaluated positions $H$. Damage is
+All monetary quantities are in Australian dollars (AUD). Let $B_{m,a,s}(H)$ denote annual household-average bill for method $m$, attack $a$, seed $s$ and evaluated positions $H$. Damage is
 \begin{equation}
 D_{m,a,s}=B_{m,a,s}(H_a)-B_{m,\varnothing,s}(H_a).
 \end{equation}
 Update attacks use all households in $H_a$, since they corrupt transmitted changes without directly corrupting the physical evaluation. Meter and reward attacks use only the fixed honest positions. Their no-attack references use the same positions, drawing on archived honest-reference runs where necessary. Negative damage is retained and denotes a lower observed bill than the matched reference; it does not imply that an attack improves performance generally.
 
-Ausgrid evaluation covers the full annual period, carrying stored energy between days after an initial half-charge state. ACT evaluation uses 13 separated seven-day blocks, each starting half charged, and annualises energy and cost sums by $365/91$. These are annualised block estimates rather than outcomes from a continuous year. Voltage-exceedance frequencies and peak loading describe the evaluated intervals and are not annualised as sums.
+Ausgrid evaluation covers the full annual period, carrying stored energy between days after an initial half-charge state. ACT evaluation uses 13 separated seven-day blocks, each starting half charged, and annualises energy and cost sums by $365/91$. These are annualised block estimates rather than outcomes from a continuous year. Voltage-exceedance frequency is the proportion of half hours with at least one household above 253\,V; maximum voltage is taken over all evaluated homes and intervals. These frequencies and transformer peaks describe the evaluated intervals and are not annualised as sums.
 
 The reported cycle statistic divides total battery energy throughput by twice the sum of battery capacities. It is a fleet-equivalent cycle measure, or a capacity-weighted average of household equivalent cycles, rather than the arithmetic mean of household cycle counts. Bills and curtailed solar are averaged per household; MSL charging is summed across the street.
 
@@ -358,7 +358,7 @@ Python scripts derive damage, paired effects and figures from archived logs, exp
 \section{Configuration selection and development history}
 \label{sec:selection}
 \subsection{Time partitions and evaluation exposure}
-Ausgrid development uses seven-day blocks from July 2010 to June 2012. Every eighth block, starting at index four, is reserved for validation; the July 2012--June 2013 year is used for evaluation. Initial results on that evaluation year were inspected before FedGrid was revised. The later numerical selector therefore uses validation scores within a development process already exposed to evaluation outcomes. New learning seeds on the same profiles do not restore an untouched evaluation year.
+Ausgrid development uses seven-day blocks from July 2010 to June 2012. Every eighth block, starting at index four, is reserved for validation; the July 2012--June 2013 year is used for evaluation. The residual-controller architecture was also chosen after inspecting evaluation-year bills from earlier controller alternatives, as documented in the archived diagnostics. Those diagnostic runs used earlier implementations and are excluded from the current comparisons. Evaluation outcomes were subsequently inspected before FedGrid was revised. The later numerical selector therefore uses validation scores within a development process already exposed to evaluation outcomes. New learning seeds on the same profiles do not restore an untouched evaluation year.
 
 ACT NextGen uses 52 weeks beginning on 1 January 2018. Every fourth week, starting at index three, is assigned to evaluation, giving 13 weeks. Every eighth week, starting at index one, is assigned to validation, giving seven weeks. The remaining 32 weeks form the training partition. ACT experiments include retraining and transfer without retraining, while retaining the feeder, tariff and battery-control assumptions. The donor audit in the appendix additionally documents imputation across these partition boundaries.
 
@@ -368,11 +368,11 @@ For each configuration and seed, selection averages the final four validation as
 FedGrid candidates use flip, scale, noise and Normalized attacks at a nominal 30\% compromised share and seeds 0--2. The tuned TAFDRL-style comparator uses flip and Normalized only. The candidate families consequently have unequal tuning attack sets and search budgets. Their cost-plus-curtailment scores over validation weeks are distinct from the annual evaluation bill damage.
 
 \subsection{Post-hoc rejection constraint}
-The robustness-only selector initially chose a configuration applying trust separately to each household. Its worst-case mean validation damage was \$6.2 per household over the validation weeks, and its recorded honest rejection was 30.8\%, compared with 2.0\% for original FedGrid. A numerical eligibility constraint was then added: a FedGrid configuration could reject at most twice the original configuration's recorded honest share, giving a 4.0\% bound for these results. This bound was introduced after the candidate outcomes had been inspected; it was not preregistered.
+The robustness-only selector initially chose a configuration applying trust separately to each household. Its worst-case mean validation damage was \$6.2 per household over the validation weeks, and its recorded honest rejection was 30.8\%, compared with 2.0\% for original FedGrid. A numerical eligibility constraint was then added: a FedGrid configuration could reject at most twice the original configuration's recorded honest share, giving a 4.0\% bound for these results. This bound was introduced after the candidate outcomes had been inspected; it was not preregistered. The rejection statistic pools all available nominal-30\% runs for each version: 21 original FedGrid runs (no attack and six attacks across three seeds), 15 runs for a complete FedGrid candidate (no attack and four update attacks), and nine for a tuned TAFDRL-style setting (no attack, flip and Normalized). These are unequal condition pools. The selector rounds its summaries to one decimal before applying the bound and ranking; the historical 4.0\% threshold is twice the rounded original 2.0\%, not a condition-matched rejection comparison. We preserve that historical decision rather than recomputing it with a different pool.
 
 The development record shows that a settings sweep for the household-trust configuration had already finished before the change. The subsequent sweep of the newly selected clipping configuration followed the revised criterion. Thus, the eligibility rule preceded the later sweep, while the earlier settings results were already available.
 
-Under the revised criterion, filtering before clipping with a multiplier of two was selected. Its worst-case validation damage was \$14.5 and recorded honest rejection was 3.4\%. A one-setting-at-a-time sweep considered two or four solar bands and outlier thresholds of 2.0 or 3.0. The default three bands and threshold 2.5 remained selected. The tuned TAFDRL-style filter used $\lambda=2$, minimum trust 0.35 and chi-square level 0.99. Table~\ref{tab:selection_candidates} and Figure~\ref{fig:selection} report the development outcomes underlying the choice.
+Under the revised criterion, filtering before clipping with a multiplier of two was selected. Its worst-case validation damage was \$14.5 and recorded honest rejection was 3.4\%. A one-setting-at-a-time sweep considered two or four solar bands and outlier thresholds of 2.0 or 3.0. The default three bands and threshold 2.5 remained selected. The tuned TAFDRL-style filter used $\lambda=2$, minimum trust 0.35 and chi-square level 0.99. Table~\ref{tab:selection_candidates} and Figure~\ref{fig:selection} report the base candidates; Table~\ref{tab:selection_settings} includes both settings sweeps and all four tuned TAFDRL-style choices, with the recorded 40\% FedGrid validation sensitivities.
 
 \subsection{Scope of the final comparison}
 The final configurations were frozen after the available evaluation outcomes had been inspected. The present analysis uses that fixed archive, including unfavourable results, without further algorithm changes. Paired effects and exact tests are retrospective analyses of existing runs. The eligibility bound concerns recorded rejection, whose relationship to effective contribution is derived in Section~\ref{sec:methods} and qualified in Section~\ref{sec:participation}.
@@ -388,7 +388,7 @@ In the clean 500-day experiments with validation-selected policies, FedAvg curta
 
 Bill differences from the rule are smaller. The rule costs approximately \$953 per household annually; FedAvg, FedProx and local SAC average \$954, \$947 and \$964, respectively, with wide three-seed intervals. Central SAC averages \$879 and perfect-foresight MPC \$591. These references use additional information: central SAC pools household data, and MPC receives exact daily future profiles. The clean results therefore show lower curtailment more clearly than a bill advantage of federation over the rule.
 
-The reduction in curtailment is accompanied by greater battery throughput. FedAvg produces approximately 256 fleet-equivalent cycles annually, compared with 77 for the rule. Because the objective does not monetise this cycling, electricity bills alone do not establish net economic value after degradation and capital costs. These clean outcomes provide the operational context for the attack comparisons.
+The reduction in curtailment is accompanied by greater battery throughput. FedAvg produces approximately 256 fleet-equivalent cycles annually, compared with 77 for the rule. Because the objective does not monetise this cycling, electricity bills alone do not establish net economic value after degradation and capital costs. These clean outcomes provide the operational context for the attack comparisons. Table~\ref{tab:extended_clean} reports all 1000-day and FedProx-coefficient runs. Mean bills at 1000 days are approximately \$902 for FedAvg, \$890 for FedProx, \$927 for local SAC and \$810 for central SAC; these duration comparisons use validation-selected actors and do not alter the 500-day attack protocol.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\linewidth]{figures/clean_energy.pdf}
@@ -470,10 +470,14 @@ Table~\ref{tab:rejection} and Figure~\ref{fig:rejection} retain attack-specific 
 \label{fig:rejection}
 \end{figure}
 
-\subsection{Electrical outcomes in the no-attack references}
+\subsection{Electrical outcomes and observed violations}
 Table~\ref{tab:electrical} reports voltage and transformer outcomes for the no-attack last-policy references, and Figure~\ref{fig:electrical} compares transformer peaks. Each run contributes its peak over the evaluated intervals; the displayed mean and interval summarise those run-level peaks. They do not bound loading in other conditions. These electrical outcomes complement bill damage because simultaneous charging can alter feeder loading even when household costs remain low.
 
 
+
+Small voltage-exceedance rates are present in the no-attack logs and are retained at three-decimal precision in Table~\ref{tab:electrical}. Final FedGrid's five-seed mean is $0.010\pm0.028\%$, calculated from the logged rounded rates; its seed-4 run records 0.05\% exceedance and a maximum of 253.60\,V. Averaging run maxima does not make that individual violation disappear.
+
+Attack-time physical outcomes also matter. Table~\ref{tab:attack_electrical} reports maxima over every principal attack run. Under Normalized poisoning, FedAvg reaches transformer peaks of 108.89\% and 113.84\% in seeds 1 and 4. In the single-seed 1.02\,pu final FedGrid no-attack case, the recorded voltage-exceedance rate is 0.27\% and maximum voltage is 254.09\,V. These observations demonstrate why enforced export allowances must be distinguished from voltage and transformer guarantees.
 
 % END SOURCE: sections/results.tex
 
@@ -489,7 +493,7 @@ The same distinction applies to grouping and trust. Capacity bands are intended 
 \subsection{Participation as a measurable operational outcome}
 Participation has at least three observable stages: reception of an update, passage through the outlier filter and assignment of positive aggregation weight. Reliable communication does not ensure admission, and admission does not ensure positive weight. Even a positive coefficient may have little effect on the resulting policy because contributions interact and can cancel.
 
-Historical logs capture only part of this process. They identify recorded filter decisions and aggregate bills, but not a household-level financial effect of exclusion. A corresponding economic analysis would compare the same household and seed under an averaging reference and each defence, alongside contribution rates and solar-capacity strata. These measurements would connect the aggregation decisions to household outcomes; the current rejection summaries do not establish that connection.
+Historical logs capture only part of this process. They identify recorded filter decisions and aggregate bills, but not a household-level financial effect of exclusion. A corresponding economic analysis would compare the same household and seed under an averaging reference and each defence, alongside contribution rates and solar-capacity strata. These measurements would connect the aggregation decisions to household outcomes; the current rejection summaries do not establish that connection. The rounded per-home logs nevertheless permit a filter-level stratification (Table~\ref{tab:heterogeneity}): under Normalized attack, final FedGrid records approximately 9.8\% rejection for homes at the unusual solar-capacity thresholds and 4.1\% for other honest homes. These conditional logged rates do not measure effective influence.
 
 \subsection{Energy value and physical protection}
 The clean experiments show lower curtailment and greater charging during the designated MSL periods more clearly than reduced bills. This pattern is consistent with the training objective, which penalises curtailment in addition to direct cost. It also involves higher battery throughput without an explicit replacement or degradation charge. Consequently, improved solar absorption cannot be interpreted as a complete economic benefit from the electricity bill alone.
@@ -508,10 +512,10 @@ Forecast-based receding-horizon control, reference-household mismatch and explic
 \section{Limitations}
 \label{sec:limitations}
 \paragraph{Development and selection.}
-The Ausgrid evaluation year was inspected before the revision, and the numerical rejection bound was added after candidate results and an earlier household-trust sweep were available. Selection from validation scores therefore occurred within an evaluation-exposed development process. Further seeds on the same profiles do not supply a new chronological holdout; no prospective registration is claimed.
+The Ausgrid evaluation year informed earlier residual-controller choices and was inspected before the aggregation revision, and the numerical rejection bound was added after candidate results and an earlier household-trust sweep were available. Selection from validation scores therefore occurred within an evaluation-exposed development process. Further seeds on the same profiles do not supply a new chronological holdout; no prospective registration is claimed.
 
 \paragraph{Effective participation.}
-Rejection statistics have method-specific definitions, are rounded and are missing from some legacy logs. They omit admitted FedGrid groups with zero weight. These records cannot reconstruct a common false-positive rate or equitable household influence, and individual costs associated with exclusion have not been measured.
+Rejection statistics have method-specific definitions, are rounded and are missing from some legacy logs. They omit admitted FedGrid groups with zero weight. These records cannot reconstruct a common false-positive rate or equitable household influence, and individual costs associated with exclusion have not been measured. The historical eligibility rule also pools different attack conditions for the original method and candidate versions.
 
 \paragraph{Data processing and generalisation.}
 Monthly irradiance ratios rescale historical Ausgrid solar without a full location-specific physical model. ACT retains Canberra profiles under the same simulated feeder and Queensland tariff, and imputation can use future days and cross weekly partitions. It is consequently not a strictly isolated external holdout. Reinitialising separated evaluation weeks at half charge also affects energy accounting. The experiments do not sample a broad population of independent feeders.
@@ -596,12 +600,12 @@ Tables and figures in this subsection give the development criteria, data partit
 % BEGIN SOURCE: tables/selection_candidates.tex
 \begin{table}[htbp]
 \centering\small
-\caption{Development-set selection of FedGrid variants. Damage is in dollars over the validation weeks and uses a bill-plus-curtailment score. The 4.0\% numerical rejection bound was imposed after candidate results were observed.}
+\caption{Development-set selection of FedGrid variants. Damage is in dollars over the validation weeks and uses a bill-plus-curtailment score. The post-hoc 4.0\% bound uses the rounded original rejection rate. Rejection pools differ: 21 original runs versus 15 per complete candidate. The last column is the mean of per-run maximum honest-household rejection, not the maximum across runs.}
 \label{tab:selection_candidates}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{llll}
 \toprule
-Variant & Worst validation damage & Honest rejection (\%) & Worst home (\%) \\
+Variant & Worst validation damage & Honest rejection (\%) & Mean run maximum (\%) \\
 \midrule
 original & 26.0 & 2.0 & 18.0 \\
 filter\_first & 19.0 & 3.8 & 28.2 \\
@@ -734,25 +738,25 @@ FedGrid final & 6.2 $\pm$ 1.3 [5] & 2.1 $\pm$ 0.7 [5] & 0.8 $\pm$ 0.6 [5] & 0.6 
 % BEGIN SOURCE: tables/electrical.tex
 \begin{table}[htbp]
 \centering\small
-\caption{Electrical outcomes for no-attack last-policy runs. Means and 95\% interval half-widths [observed seeds] of evaluation-run metrics. A run-level voltage maximum or transformer peak is computed before averaging; these are not pooled worst-case bounds.}
+\caption{Electrical outcomes in no-attack last-policy runs: means and 95\% interval half-widths [observed seeds]. Voltage-exceedance percentages use three decimals to retain small nonzero means calculated from two-decimal logged input rates. Run maxima and peaks are computed before seed averaging; they are not safety bounds.}
 \label{tab:electrical}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lllll}
 \toprule
 Setting & Method & Over 253 V (\%) & Run maximum (V) & Transformer peak (\%) \\
 \midrule
-Ausgrid & FedAvg & 0.0 $\pm$ 0.0 [5] & 251.2 $\pm$ 1.6 [5] & 66.0 $\pm$ 9.0 [4] \\
-Ausgrid & FLTrust & 0.0 $\pm$ 0.0 [5] & 251.1 $\pm$ 1.1 [5] & 63.8 $\pm$ 5.1 [5] \\
-Ausgrid & FLAME & 0.0 $\pm$ 0.0 [5] & 251.3 $\pm$ 0.7 [5] & 64.6 $\pm$ 2.5 [5] \\
-Ausgrid & TAFDRL-style tuned & 0.0 $\pm$ 0.0 [5] & 251.4 $\pm$ 1.2 [5] & 66.4 $\pm$ 5.8 [5] \\
-Ausgrid & FedGrid original & 0.0 $\pm$ 0.0 [5] & 251.9 $\pm$ 1.6 [5] & 66.1 $\pm$ 7.3 [5] \\
-Ausgrid & FedGrid final & 0.0 $\pm$ 0.0 [5] & 252.1 $\pm$ 1.5 [5] & 66.8 $\pm$ 5.8 [5] \\
-ACT & FedAvg & 0.0 $\pm$ 0.0 [3] & 250.2 $\pm$ 1.4 [3] & 70.1 $\pm$ 18.0 [3] \\
-ACT & FLTrust & 0.0 $\pm$ 0.0 [3] & 250.2 $\pm$ 1.6 [3] & 63.6 $\pm$ 28.4 [3] \\
-ACT & FLAME & 0.0 $\pm$ 0.0 [3] & 250.0 $\pm$ 0.7 [3] & 63.4 $\pm$ 18.7 [3] \\
-ACT & TAFDRL-style tuned & 0.0 $\pm$ 0.0 [3] & 250.4 $\pm$ 4.1 [3] & 67.3 $\pm$ 31.1 [3] \\
-ACT & FedGrid original & 0.0 $\pm$ 0.0 [3] & 250.6 $\pm$ 1.7 [3] & 67.4 $\pm$ 22.2 [3] \\
-ACT & FedGrid final & 0.0 $\pm$ 0.0 [3] & 250.1 $\pm$ 1.0 [3] & 66.3 $\pm$ 22.5 [3] \\
+Ausgrid & FedAvg & 0.004 $\pm$ 0.011 [5] & 251.2 $\pm$ 1.6 [5] & 66.0 $\pm$ 9.0 [4] \\
+Ausgrid & FLTrust & 0.000 $\pm$ 0.000 [5] & 251.1 $\pm$ 1.1 [5] & 63.8 $\pm$ 5.1 [5] \\
+Ausgrid & FLAME & 0.000 $\pm$ 0.000 [5] & 251.3 $\pm$ 0.7 [5] & 64.6 $\pm$ 2.5 [5] \\
+Ausgrid & TAFDRL-style tuned & 0.004 $\pm$ 0.011 [5] & 251.4 $\pm$ 1.2 [5] & 66.4 $\pm$ 5.8 [5] \\
+Ausgrid & FedGrid original & 0.002 $\pm$ 0.006 [5] & 251.9 $\pm$ 1.6 [5] & 66.1 $\pm$ 7.3 [5] \\
+Ausgrid & FedGrid final & 0.010 $\pm$ 0.028 [5] & 252.1 $\pm$ 1.5 [5] & 66.8 $\pm$ 5.8 [5] \\
+ACT & FedAvg & 0.000 $\pm$ 0.000 [3] & 250.2 $\pm$ 1.4 [3] & 70.1 $\pm$ 18.0 [3] \\
+ACT & FLTrust & 0.000 $\pm$ 0.000 [3] & 250.2 $\pm$ 1.6 [3] & 63.6 $\pm$ 28.4 [3] \\
+ACT & FLAME & 0.000 $\pm$ 0.000 [3] & 250.0 $\pm$ 0.7 [3] & 63.4 $\pm$ 18.7 [3] \\
+ACT & TAFDRL-style tuned & 0.000 $\pm$ 0.000 [3] & 250.4 $\pm$ 4.1 [3] & 67.3 $\pm$ 31.1 [3] \\
+ACT & FedGrid original & 0.000 $\pm$ 0.000 [3] & 250.6 $\pm$ 1.7 [3] & 67.4 $\pm$ 22.2 [3] \\
+ACT & FedGrid final & 0.000 $\pm$ 0.000 [3] & 250.1 $\pm$ 1.0 [3] & 66.3 $\pm$ 22.5 [3] \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -1001,6 +1005,163 @@ FedGrid original & Reward & 14.6 & 0.4375 & 1.000 \\
 \end{table}
 
 % END SOURCE: tables/exact_statistics.tex
+
+
+\subsection{Training duration and FedProx coefficient}
+Table~\ref{tab:extended_clean} reports all 30 current clean-learning runs: the 500-day and 1000-day settings for four learned baselines, plus the two additional FedProx coefficients. Each cell uses three seeds and the same validation-selected retention rule. These comparisons describe the available archive; they do not extend the attack evaluation to 1000 days or establish convergence.
+
+% BEGIN SOURCE: tables/extended_clean.tex
+\begin{table}[htbp]
+\centering\small
+\caption{All 30 clean-learning runs: duration and FedProx-coefficient comparisons with validation-selected actors. Entries are mean $\pm$ 95\% interval half-width [seeds]. Bills and curtailment are per household annually; cycles are fleet-equivalent, and MSL charging is a street total.}
+\label{tab:extended_clean}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Method & Days & $\mu$ & Bill (\$/yr) & Curtailment (kWh/yr) & Cycles/yr & MSL charge (kWh) \\
+\midrule
+Local SAC & 500 & -- & 963.8 $\pm$ 61.2 [3] & 134.8 $\pm$ 49.4 [3] & 247.4 $\pm$ 39.4 [3] & 13307.6 $\pm$ 2085.6 [3] \\
+Local SAC & 1000 & -- & 926.9 $\pm$ 66.4 [3] & 122.6 $\pm$ 32.2 [3] & 248.6 $\pm$ 33.3 [3] & 13735.5 $\pm$ 1215.0 [3] \\
+FedAvg & 500 & -- & 954.3 $\pm$ 79.0 [3] & 144.6 $\pm$ 89.9 [3] & 255.9 $\pm$ 48.6 [3] & 12735.2 $\pm$ 4074.3 [3] \\
+FedAvg & 1000 & -- & 902.0 $\pm$ 74.0 [3] & 122.5 $\pm$ 17.0 [3] & 262.8 $\pm$ 3.3 [3] & 13503.5 $\pm$ 672.5 [3] \\
+FedProx & 500 & 0.01 & 947.3 $\pm$ 65.2 [3] & 153.5 $\pm$ 84.8 [3] & 252.7 $\pm$ 38.8 [3] & 12396.6 $\pm$ 3452.8 [3] \\
+FedProx & 1000 & 0.01 & 890.4 $\pm$ 119.1 [3] & 138.5 $\pm$ 28.8 [3] & 255.2 $\pm$ 11.0 [3] & 12617.5 $\pm$ 693.8 [3] \\
+Central SAC & 500 & -- & 879.1 $\pm$ 117.7 [3] & 137.9 $\pm$ 160.3 [3] & 277.7 $\pm$ 34.9 [3] & 13872.7 $\pm$ 4775.5 [3] \\
+Central SAC & 1000 & -- & 810.1 $\pm$ 142.8 [3] & 162.8 $\pm$ 166.1 [3] & 265.4 $\pm$ 85.3 [3] & 12674.2 $\pm$ 6357.2 [3] \\
+FedProx & 500 & 0.001 & 944.4 $\pm$ 61.8 [3] & 131.9 $\pm$ 58.5 [3] & 258.2 $\pm$ 25.1 [3] & 13271.1 $\pm$ 601.7 [3] \\
+FedProx & 500 & 0.1 & 950.6 $\pm$ 10.9 [3] & 141.0 $\pm$ 20.1 [3] & 255.6 $\pm$ 48.4 [3] & 12815.9 $\pm$ 1875.7 [3] \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+% END SOURCE: tables/extended_clean.tex
+
+
+\subsection{Deterministic baseline context}
+Table~\ref{tab:all_baselines} retains the idle, rule and perfect-foresight MPC outcomes for Ausgrid, ACT and the 1.02\,pu stress scenario. In particular, low MPC bills coexist with observed transformer loading above nameplate in ACT and voltage stress. Missing legacy transformer measurements remain missing.
+
+% BEGIN SOURCE: tables/all_baselines.tex
+\begin{table}[htbp]
+\centering\small
+\caption{All archived deterministic baselines, in Australian dollars per household per year and curtailed kWh per household per year. Electrical metrics describe observed evaluation intervals. Missing legacy transformer measurements are shown as dashes.}
+\label{tab:all_baselines}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Scenario & Controller & Bill (\$/yr) & Curtailment (kWh/yr) & Over 253 V (\%) & Max V & Peak loading (\%) \\
+\midrule
+Ausgrid 1.00 pu & Idle & 1457.78 & 537.74 & 0.000 & 252.92 & -- \\
+Ausgrid 1.00 pu & Rule & 952.96 & 473.18 & 0.000 & 252.92 & -- \\
+Ausgrid 1.00 pu & Perfect-foresight MPC & 590.95 & 62.87 & 0.000 & 252.93 & -- \\
+ACT 1.00 pu & Idle & 1864.79 & 329.74 & 0.000 & 251.85 & 87.95 \\
+ACT 1.00 pu & Rule & 1198.77 & 231.71 & 0.000 & 251.85 & 84.77 \\
+ACT 1.00 pu & Perfect-foresight MPC & 875.94 & 19.04 & 0.000 & 252.65 & 109.57 \\
+Ausgrid 1.02 pu & Idle & 1500.18 & 1027.39 & 6.880 & 254.49 & 73.76 \\
+Ausgrid 1.02 pu & Rule & 988.73 & 886.22 & 4.450 & 255.52 & 73.40 \\
+Ausgrid 1.02 pu & Perfect-foresight MPC & 590.65 & 64.72 & 3.030 & 254.38 & 111.50 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+% END SOURCE: tables/all_baselines.tex
+
+
+\subsection{Electrical outcomes under all principal attacks}
+Table~\ref{tab:attack_electrical} takes the maximum available run-level voltage and transformer metrics over each method's six principal attacks. This extends the no-attack reference display without selecting only favourable scenarios. Different cells may reach their maxima in different runs, and missing legacy measurements are excluded rather than imputed. The accompanying CSV records method, setting, seed, attack and source for each run.
+
+% BEGIN SOURCE: tables/attack_electrical.tex
+\begin{table}[htbp]
+\centering\small
+\caption{Maximum observed run-level electrical metrics over all six attacks at 30\% nominal compromise: five Ausgrid seeds and three ACT seeds. Each cell is a maximum across available logs; different maxima may arise from different attacks or seeds. Ausgrid transformer measurements cover 26/30 runs for FedAvg, median, trimmed mean and Krum, and 30/30 otherwise; ACT covers 18/18 throughout. All voltage metrics have full coverage. Missing measurements are excluded, never set to zero; per-run inputs are retained in the CSV.}
+\label{tab:attack_electrical}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Method & Ausgrid over 253 V (\%) & Ausgrid max V & Ausgrid peak (\%) & ACT over 253 V (\%) & ACT max V & ACT peak (\%) \\
+\midrule
+FedAvg & 0.120 & 253.14 & 113.84 & 0.000 & 251.96 & 94.49 \\
+Median & 0.000 & 252.83 & 84.25 & 0.070 & 253.46 & 76.71 \\
+Trimmed mean & 0.000 & 252.82 & 75.67 & 0.000 & 252.62 & 78.57 \\
+Krum & 0.000 & 252.71 & 70.86 & 0.000 & 252.70 & 84.48 \\
+FLTrust & 0.000 & 252.81 & 73.49 & 0.000 & 251.97 & 74.36 \\
+FLAME & 0.010 & 253.27 & 73.19 & 0.000 & 252.03 & 73.54 \\
+TAFDRL-style & 0.090 & 253.46 & 76.45 & 0.000 & 252.27 & 79.20 \\
+TAFDRL-style tuned & 0.070 & 253.50 & 77.87 & 0.000 & 252.34 & 77.94 \\
+FedGrid original & 0.000 & 252.91 & 74.86 & 0.000 & 252.92 & 83.60 \\
+FedGrid final & 0.010 & 253.19 & 72.29 & 0.000 & 252.30 & 76.24 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+% END SOURCE: tables/attack_electrical.tex
+
+
+\subsection{Household heterogeneity in recorded rejection}
+Table~\ref{tab:heterogeneity} compares honest homes at the lowest or highest solar-capacity sextile thresholds with the remaining honest homes, under no attack and Normalized. Thresholds use the rounded capacities printed in each street's logs, with ties retained. Per-home rejection rates are also rounded, so the resulting means are retrospective filter diagnostics rather than precise measurements of influence. The maximum-household column averages the most-rejected household within each run; it is not a worst case over all runs.
+
+% BEGIN SOURCE: tables/heterogeneity.tex
+\begin{table}[htbp]
+\centering\small
+\caption{Logged honest rejection (\%) by solar-capacity stratum, no attack and Normalized, seeds 0--4 where available. Unusual homes fall at or beyond the lowest/highest sextile thresholds of rounded street capacities; ties may enlarge the stratum. Per-home rates are rounded in the logs. Entries are mean $\pm$ 95\% interval half-width [observed seeds]. The last column averages the maximum household rejection within each run; these are filter diagnostics, not effective-influence measurements.}
+\label{tab:heterogeneity}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llllll}
+\toprule
+Method & Condition & Overall (\%) & Unusual PV (\%) & Other PV (\%) & Mean run maximum (\%) \\
+\midrule
+Krum & None & 97.2 $\pm$ 0.0 [4] & 99.7 $\pm$ 0.5 [4] & 95.3 $\pm$ 0.4 [4] & 100.0 $\pm$ 0.0 [4] \\
+Krum & Normalized & 96.4 $\pm$ 0.1 [4] & 100.0 $\pm$ 0.0 [4] & 93.3 $\pm$ 0.9 [4] & 100.0 $\pm$ 0.0 [4] \\
+FLTrust & None & 31.6 $\pm$ 4.8 [5] & 41.9 $\pm$ 6.7 [5] & 23.4 $\pm$ 3.6 [5] & 70.8 $\pm$ 9.1 [5] \\
+FLTrust & Normalized & 16.2 $\pm$ 4.0 [5] & 20.4 $\pm$ 6.2 [5] & 12.5 $\pm$ 2.2 [5] & 37.3 $\pm$ 12.6 [5] \\
+FLAME & None & 47.0 $\pm$ 0.2 [5] & 57.1 $\pm$ 2.3 [5] & 38.8 $\pm$ 1.6 [5] & 99.7 $\pm$ 0.4 [5] \\
+FLAME & Normalized & 46.3 $\pm$ 2.1 [5] & 56.5 $\pm$ 8.0 [5] & 37.4 $\pm$ 5.7 [5] & 98.9 $\pm$ 0.5 [5] \\
+TAFDRL-style & None & 8.5 $\pm$ 0.8 [5] & 10.8 $\pm$ 2.1 [5] & 6.6 $\pm$ 2.0 [5] & 48.0 $\pm$ 6.9 [5] \\
+TAFDRL-style & Normalized & 31.1 $\pm$ 3.7 [5] & 42.4 $\pm$ 6.6 [5] & 21.4 $\pm$ 6.0 [5] & 88.6 $\pm$ 4.8 [5] \\
+TAFDRL-style tuned & None & 20.4 $\pm$ 2.2 [5] & 32.5 $\pm$ 2.1 [5] & 10.6 $\pm$ 4.3 [5] & 99.1 $\pm$ 0.7 [5] \\
+TAFDRL-style tuned & Normalized & 53.0 $\pm$ 7.7 [5] & 67.6 $\pm$ 9.6 [5] & 40.1 $\pm$ 13.1 [5] & 100.0 $\pm$ 0.0 [5] \\
+FedGrid original & None & 3.2 $\pm$ 0.7 [5] & 2.7 $\pm$ 1.3 [5] & 3.5 $\pm$ 1.4 [5] & 34.5 $\pm$ 12.2 [5] \\
+FedGrid original & Normalized & 4.6 $\pm$ 1.8 [5] & 5.0 $\pm$ 5.2 [5] & 4.4 $\pm$ 3.4 [5] & 29.0 $\pm$ 9.9 [5] \\
+FedGrid final & None & 6.2 $\pm$ 1.3 [5] & 6.0 $\pm$ 0.8 [5] & 6.2 $\pm$ 2.7 [5] & 48.2 $\pm$ 14.9 [5] \\
+FedGrid final & Normalized & 6.5 $\pm$ 3.8 [5] & 9.8 $\pm$ 10.2 [5] & 4.1 $\pm$ 3.2 [5] & 41.7 $\pm$ 30.6 [5] \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+% END SOURCE: tables/heterogeneity.tex
+
+
+\subsection{Full selection-setting evidence}
+Table~\ref{tab:selection_settings} includes the later clipping settings, earlier household-trust settings and four TAFDRL-style configurations. The rejection pools and tuning attack sets differ as described in Section~\ref{sec:selection}. FedGrid's 40\% Normalized validation damage is reported for completeness and did not enter the four-attack ranking. The archived historical flags and choice reports remain unchanged.
+
+% BEGIN SOURCE: tables/selection_settings.tex
+\begin{table}[htbp]
+\centering\small
+\caption{Completed later settings and TAFDRL-style tuning on validation data. Worst damage uses the available update attacks (four for FedGrid; two for tuned TAFDRL-style). Recorded honest rejection pools all available 30\% runs, including no attack; the two families therefore have different pools. TAFDRL-style tuning fixes minimum trust at 0.35. The 40\% column is three-seed Normalized validation damage for FedGrid, excluded from the ranking criterion. Values follow the historical one-decimal reporting and are not annual evaluation damage.}
+\label{tab:selection_settings}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Family & Setting & Worst validation damage (\$) & Honest rejection (\%) & Rejection runs & Attacks & 40\% damage (\$) \\
+\midrule
+Final FedGrid & 3 bands, z 2.5 & 14.5 & 3.4 & 15 & 4 & -5.9 \\
+Final FedGrid & 2 bands & 20.9 & 1.7 & 15 & 4 & -9.1 \\
+Final FedGrid & 4 bands & 23.3 & 2.2 & 15 & 4 & -5.3 \\
+Final FedGrid & z 2.0 & 17.9 & 5.9 & 15 & 4 & 1.2 \\
+Final FedGrid & z 3.0 & 15.8 & 2.6 & 15 & 4 & -9.7 \\
+Earlier home trust & 3 bands, z 2.5 & 6.2 & 30.8 & 15 & 4 & 4.9 \\
+Earlier home trust & 2 bands & 4.9 & 28.9 & 15 & 4 & 8.1 \\
+Earlier home trust & 4 bands & 5.4 & 29.2 & 15 & 4 & 10.5 \\
+Earlier home trust & z 2.0 & 0.5 & 32.4 & 15 & 4 & 7.8 \\
+Earlier home trust & z 3.0 & 1.1 & 29.9 & 15 & 4 & -4.3 \\
+TAFDRL-style & lambda 1, level .99 & 19.2 & 19.4 & 9 & 2 & -- \\
+TAFDRL-style & lambda 1, level .999 & 22.0 & 10.4 & 9 & 2 & -- \\
+TAFDRL-style & lambda 2, level .99 & 10.5 & 28.6 & 9 & 2 & -- \\
+TAFDRL-style & lambda 2, level .999 & 17.8 & 14.7 & 9 & 2 & -- \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+% END SOURCE: tables/selection_settings.tex
 
 
 % END SOURCE: sections/appendix.tex

@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Completed later settings and TAFDRL-style tuning on validation data. Worst damage uses the available update attacks (four for FedGrid; two for tuned TAFDRL-style). Recorded honest rejection pools all available 30\% runs, including no attack; the two families therefore have different pools. TAFDRL-style tuning fixes minimum trust at 0.35. The 40\% column is three-seed Normalized validation damage for FedGrid, excluded from the ranking criterion. Values follow the historical one-decimal reporting and are not annual evaluation damage.}
+\label{tab:selection_settings}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+Family & Setting & Worst validation damage (\$) & Honest rejection (\%) & Rejection runs & Attacks & 40\% damage (\$) \\
+\midrule
+Final FedGrid & 3 bands, z 2.5 & 14.5 & 3.4 & 15 & 4 & -5.9 \\
+Final FedGrid & 2 bands & 20.9 & 1.7 & 15 & 4 & -9.1 \\
+Final FedGrid & 4 bands & 23.3 & 2.2 & 15 & 4 & -5.3 \\
+Final FedGrid & z 2.0 & 17.9 & 5.9 & 15 & 4 & 1.2 \\
+Final FedGrid & z 3.0 & 15.8 & 2.6 & 15 & 4 & -9.7 \\
+Earlier home trust & 3 bands, z 2.5 & 6.2 & 30.8 & 15 & 4 & 4.9 \\
+Earlier home trust & 2 bands & 4.9 & 28.9 & 15 & 4 & 8.1 \\
+Earlier home trust & 4 bands & 5.4 & 29.2 & 15 & 4 & 10.5 \\
+Earlier home trust & z 2.0 & 0.5 & 32.4 & 15 & 4 & 7.8 \\
+Earlier home trust & z 3.0 & 1.1 & 29.9 & 15 & 4 & -4.3 \\
+TAFDRL-style & lambda 1, level .99 & 19.2 & 19.4 & 9 & 2 & -- \\
+TAFDRL-style & lambda 1, level .999 & 22.0 & 10.4 & 9 & 2 & -- \\
+TAFDRL-style & lambda 2, level .99 & 10.5 & 28.6 & 9 & 2 & -- \\
+TAFDRL-style & lambda 2, level .999 & 17.8 & 14.7 & 9 & 2 & -- \\
+\bottomrule
+\end{tabular}}
+\end{table}

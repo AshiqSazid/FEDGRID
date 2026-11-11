@@ -1,0 +1,46 @@
+{
+  "verified": {
+    "ausgrid_damage_observations": 300,
+    "act_damage_observations": 180,
+    "transfer_damage_observations": 156,
+    "electrical_observations": 80,
+    "rejection_observations": 350,
+    "paired_revision_observations": 60,
+    "exact_comparisons": 24,
+    "frozen_training_files": 17,
+    "extended_clean_observations": 30,
+    "deterministic_baseline_rows": 9,
+    "attack_electrical_observations": 480,
+    "household_rejection_observations": 68,
+    "selection_settings": 14
+  },
+  "manifests": {
+    "source_logs.sha256": 706,
+    "expanded_sources.sha256": 984,
+    "act_imputation_raw_sources.sha256": 100
+  },
+  "learning_log_groups": {
+    "clean_learning": 30,
+    "Ausgrid_main": 350,
+    "ACT": 210,
+    "feeder_O": 10,
+    "honest_references": 24,
+    "message_faults": 20,
+    "voltage_stress": 8,
+    "extra_share_attacks": 30,
+    "ablations": 18,
+    "share_references": 6
+  },
+  "learning_logs": 706,
+  "candidate_logs": 266,
+  "findings": [
+    "Voltage percentage formatting concealed nonzero observations.",
+    "Selection rejection statistics use unequal pools and rounded thresholds.",
+    "Earlier residual-controller choices used evaluation-year outcomes.",
+    "Extended clean, baseline and attack-grid outcomes need explicit coverage.",
+    "Median and cosine numerical conventions need specification."
+  ],
+  "training_code_changed": false,
+  "result_logs_changed": false,
+  "scope": "Checks recorded computations and reporting, not external validity or a rerun of every controller."
+}

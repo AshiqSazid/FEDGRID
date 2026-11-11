@@ -33,7 +33,12 @@
     "device",
     "electrical",
     "imputation_audit",
-    "exact_statistics"
+    "exact_statistics",
+    "extended_clean",
+    "all_baselines",
+    "attack_electrical",
+    "heterogeneity",
+    "selection_settings"
   ],
-  "notes": "13 figures and 19 tables. Exact tests and ACT donor audit are retrospective. Scientific blockers remain."
+  "notes": "13 figures and 24 tables. Existing numerical observations preserved; voltage formatting corrected and archived evidence coverage extended."
 }

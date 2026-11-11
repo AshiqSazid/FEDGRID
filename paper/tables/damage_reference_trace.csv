@@ -1,0 +1,637 @@
+setting,method,seed,attack,attacked_source,reference_source,metric,attacked_bill,reference_bill,damage
+ausgrid,fedavg,0,flip,results/fedavg_sac_500_seed0_flip_share30.log,results/fedavg_sac_500_seed0_none_share30.log,bill $/home/yr,1024.75,943.7,81.04999999999995
+ausgrid,fedavg,0,meter,results/fedavg_sac_500_seed0_meter_share30.log,results/fedavg_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,882.62,910.49,-27.870000000000005
+ausgrid,fedavg,0,noise,results/fedavg_sac_500_seed0_noise_share30.log,results/fedavg_sac_500_seed0_none_share30.log,bill $/home/yr,1458.82,943.7,515.1199999999999
+ausgrid,fedavg,0,normalized,results/fedavg_sac_500_seed0_normalized_share30.log,results/fedavg_sac_500_seed0_none_share30.log,bill $/home/yr,1459.78,943.7,516.0799999999999
+ausgrid,fedavg,0,reward,results/fedavg_sac_500_seed0_reward_share30.log,results/fedavg_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,944.72,910.49,34.23000000000002
+ausgrid,fedavg,0,scale,results/fedavg_sac_500_seed0_scale_share30.log,results/fedavg_sac_500_seed0_none_share30.log,bill $/home/yr,999.56,943.7,55.8599999999999
+ausgrid,fedavg,1,flip,results/fedavg_sac_500_seed1_flip_share30.log,results/fedavg_sac_500_seed1_none_share30.log,bill $/home/yr,1155.56,1001.04,154.51999999999998
+ausgrid,fedavg,1,meter,results/fedavg_sac_500_seed1_meter_share30.log,results/fedavg_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,954.72,986.72,-32.0
+ausgrid,fedavg,1,noise,results/fedavg_sac_500_seed1_noise_share30.log,results/fedavg_sac_500_seed1_none_share30.log,bill $/home/yr,1458.73,1001.04,457.69000000000005
+ausgrid,fedavg,1,normalized,results/fedavg_sac_500_seed1_normalized_share30.log,results/fedavg_sac_500_seed1_none_share30.log,bill $/home/yr,1460.31,1001.04,459.27
+ausgrid,fedavg,1,reward,results/fedavg_sac_500_seed1_reward_share30.log,results/fedavg_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,1006.0,986.72,19.279999999999973
+ausgrid,fedavg,1,scale,results/fedavg_sac_500_seed1_scale_share30.log,results/fedavg_sac_500_seed1_none_share30.log,bill $/home/yr,977.64,1001.04,-23.399999999999977
+ausgrid,fedavg,2,flip,results/fedavg_sac_500_seed2_flip_share30.log,results/fedavg_sac_500_seed2_none_share30.log,bill $/home/yr,976.63,948.24,28.389999999999986
+ausgrid,fedavg,2,meter,results/fedavg_sac_500_seed2_meter_share30.log,results/fedavg_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,987.67,981.15,6.519999999999982
+ausgrid,fedavg,2,noise,results/fedavg_sac_500_seed2_noise_share30.log,results/fedavg_sac_500_seed2_none_share30.log,bill $/home/yr,1459.01,948.24,510.77
+ausgrid,fedavg,2,normalized,results/fedavg_sac_500_seed2_normalized_share30.log,results/fedavg_sac_500_seed2_none_share30.log,bill $/home/yr,1459.96,948.24,511.72
+ausgrid,fedavg,2,reward,results/fedavg_sac_500_seed2_reward_share30.log,results/fedavg_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,1002.85,981.15,21.700000000000045
+ausgrid,fedavg,2,scale,results/fedavg_sac_500_seed2_scale_share30.log,results/fedavg_sac_500_seed2_none_share30.log,bill $/home/yr,1000.02,948.24,51.77999999999997
+ausgrid,fedavg,3,flip,results/fedavg_sac_500_seed3_flip_share30.log,results/fedavg_sac_500_seed3_none_share30.log,bill $/home/yr,1016.24,939.56,76.68000000000006
+ausgrid,fedavg,3,meter,results/fedavg_sac_500_seed3_meter_share30.log,results/fedavg_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1074.04,1023.31,50.73000000000002
+ausgrid,fedavg,3,noise,results/fedavg_sac_500_seed3_noise_share30.log,results/fedavg_sac_500_seed3_none_share30.log,bill $/home/yr,1458.76,939.56,519.2
+ausgrid,fedavg,3,normalized,results/fedavg_sac_500_seed3_normalized_share30.log,results/fedavg_sac_500_seed3_none_share30.log,bill $/home/yr,1457.26,939.56,517.7
+ausgrid,fedavg,3,reward,results/fedavg_sac_500_seed3_reward_share30.log,results/fedavg_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1051.21,1023.31,27.90000000000009
+ausgrid,fedavg,3,scale,results/fedavg_sac_500_seed3_scale_share30.log,results/fedavg_sac_500_seed3_none_share30.log,bill $/home/yr,918.22,939.56,-21.339999999999918
+ausgrid,fedavg,4,flip,results/fedavg_sac_500_seed4_flip_share30.log,results/fedavg_sac_500_seed4_none_share30.log,bill $/home/yr,990.28,830.19,160.08999999999992
+ausgrid,fedavg,4,meter,results/fedavg_sac_500_seed4_meter_share30.log,results/fedavg_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,745.16,758.45,-13.290000000000077
+ausgrid,fedavg,4,noise,results/fedavg_sac_500_seed4_noise_share30.log,results/fedavg_sac_500_seed4_none_share30.log,bill $/home/yr,1486.54,830.19,656.3499999999999
+ausgrid,fedavg,4,normalized,results/fedavg_sac_500_seed4_normalized_share30.log,results/fedavg_sac_500_seed4_none_share30.log,bill $/home/yr,1460.39,830.19,630.2
+ausgrid,fedavg,4,reward,results/fedavg_sac_500_seed4_reward_share30.log,results/fedavg_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,866.05,758.45,107.59999999999991
+ausgrid,fedavg,4,scale,results/fedavg_sac_500_seed4_scale_share30.log,results/fedavg_sac_500_seed4_none_share30.log,bill $/home/yr,947.3,830.19,117.1099999999999
+ausgrid,fedgrid,0,flip,results/fedgrid_sac_500_seed0_flip_share30.log,results/fedgrid_sac_500_seed0_none_share30.log,bill $/home/yr,1009.61,944.15,65.46000000000004
+ausgrid,fedgrid final,0,flip,results/fedgrid_sac_500_seed0_flip_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,bill $/home/yr,959.18,927.02,32.15999999999997
+ausgrid,fedgrid,0,meter,results/fedgrid_sac_500_seed0_meter_share30.log,results/fedgrid_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,885.87,909.39,-23.519999999999982
+ausgrid,fedgrid final,0,meter,results/fedgrid_sac_500_seed0_meter_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,bill honest homes $/home/yr,918.21,889.18,29.030000000000086
+ausgrid,fedgrid,0,noise,results/fedgrid_sac_500_seed0_noise_share30.log,results/fedgrid_sac_500_seed0_none_share30.log,bill $/home/yr,979.58,944.15,35.430000000000064
+ausgrid,fedgrid final,0,noise,results/fedgrid_sac_500_seed0_noise_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,bill $/home/yr,943.43,927.02,16.409999999999968
+ausgrid,fedgrid,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30.log,results/fedgrid_sac_500_seed0_none_share30.log,bill $/home/yr,1038.96,944.15,94.81000000000006
+ausgrid,fedgrid final,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,bill $/home/yr,907.63,927.02,-19.389999999999986
+ausgrid,fedgrid,0,reward,results/fedgrid_sac_500_seed0_reward_share30.log,results/fedgrid_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,924.38,909.39,14.990000000000009
+ausgrid,fedgrid final,0,reward,results/fedgrid_sac_500_seed0_reward_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,bill honest homes $/home/yr,945.76,889.18,56.58000000000004
+ausgrid,fedgrid,0,scale,results/fedgrid_sac_500_seed0_scale_share30.log,results/fedgrid_sac_500_seed0_none_share30.log,bill $/home/yr,947.25,944.15,3.1000000000000227
+ausgrid,fedgrid final,0,scale,results/fedgrid_sac_500_seed0_scale_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,bill $/home/yr,925.94,927.02,-1.0799999999999272
+ausgrid,fedgrid,1,flip,results/fedgrid_sac_500_seed1_flip_share30.log,results/fedgrid_sac_500_seed1_none_share30.log,bill $/home/yr,1004.12,951.45,52.66999999999996
+ausgrid,fedgrid final,1,flip,results/fedgrid_sac_500_seed1_flip_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,bill $/home/yr,1017.22,946.91,70.31000000000006
+ausgrid,fedgrid,1,meter,results/fedgrid_sac_500_seed1_meter_share30.log,results/fedgrid_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,926.56,937.48,-10.920000000000073
+ausgrid,fedgrid final,1,meter,results/fedgrid_sac_500_seed1_meter_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,bill honest homes $/home/yr,934.13,933.36,0.7699999999999818
+ausgrid,fedgrid,1,noise,results/fedgrid_sac_500_seed1_noise_share30.log,results/fedgrid_sac_500_seed1_none_share30.log,bill $/home/yr,1019.05,951.45,67.59999999999991
+ausgrid,fedgrid final,1,noise,results/fedgrid_sac_500_seed1_noise_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,bill $/home/yr,968.77,946.91,21.860000000000014
+ausgrid,fedgrid,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30.log,results/fedgrid_sac_500_seed1_none_share30.log,bill $/home/yr,1029.42,951.45,77.97000000000003
+ausgrid,fedgrid final,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,bill $/home/yr,994.35,946.91,47.440000000000055
+ausgrid,fedgrid,1,reward,results/fedgrid_sac_500_seed1_reward_share30.log,results/fedgrid_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,1027.87,937.48,90.38999999999987
+ausgrid,fedgrid final,1,reward,results/fedgrid_sac_500_seed1_reward_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,bill honest homes $/home/yr,1023.1,933.36,89.74000000000001
+ausgrid,fedgrid,1,scale,results/fedgrid_sac_500_seed1_scale_share30.log,results/fedgrid_sac_500_seed1_none_share30.log,bill $/home/yr,935.36,951.45,-16.090000000000032
+ausgrid,fedgrid final,1,scale,results/fedgrid_sac_500_seed1_scale_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,bill $/home/yr,941.52,946.91,-5.389999999999986
+ausgrid,fedgrid,2,flip,results/fedgrid_sac_500_seed2_flip_share30.log,results/fedgrid_sac_500_seed2_none_share30.log,bill $/home/yr,1014.95,934.69,80.25999999999999
+ausgrid,fedgrid final,2,flip,results/fedgrid_sac_500_seed2_flip_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,bill $/home/yr,1000.53,934.02,66.50999999999999
+ausgrid,fedgrid,2,meter,results/fedgrid_sac_500_seed2_meter_share30.log,results/fedgrid_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,1009.35,964.97,44.379999999999995
+ausgrid,fedgrid final,2,meter,results/fedgrid_sac_500_seed2_meter_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,bill honest homes $/home/yr,1030.34,962.9,67.43999999999994
+ausgrid,fedgrid,2,noise,results/fedgrid_sac_500_seed2_noise_share30.log,results/fedgrid_sac_500_seed2_none_share30.log,bill $/home/yr,977.59,934.69,42.89999999999998
+ausgrid,fedgrid final,2,noise,results/fedgrid_sac_500_seed2_noise_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,bill $/home/yr,943.09,934.02,9.07000000000005
+ausgrid,fedgrid,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30.log,results/fedgrid_sac_500_seed2_none_share30.log,bill $/home/yr,1031.51,934.69,96.81999999999994
+ausgrid,fedgrid final,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,bill $/home/yr,878.13,934.02,-55.889999999999986
+ausgrid,fedgrid,2,reward,results/fedgrid_sac_500_seed2_reward_share30.log,results/fedgrid_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,969.67,964.97,4.699999999999932
+ausgrid,fedgrid final,2,reward,results/fedgrid_sac_500_seed2_reward_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,bill honest homes $/home/yr,951.44,962.9,-11.459999999999923
+ausgrid,fedgrid,2,scale,results/fedgrid_sac_500_seed2_scale_share30.log,results/fedgrid_sac_500_seed2_none_share30.log,bill $/home/yr,925.98,934.69,-8.710000000000036
+ausgrid,fedgrid final,2,scale,results/fedgrid_sac_500_seed2_scale_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,bill $/home/yr,901.5,934.02,-32.51999999999998
+ausgrid,fedgrid,3,flip,results/fedgrid_sac_500_seed3_flip_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,bill $/home/yr,979.74,947.05,32.690000000000055
+ausgrid,fedgrid final,3,flip,results/fedgrid_sac_500_seed3_flip_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,bill $/home/yr,968.11,939.42,28.690000000000055
+ausgrid,fedgrid,3,meter,results/fedgrid_sac_500_seed3_meter_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1066.29,1027.35,38.940000000000055
+ausgrid,fedgrid final,3,meter,results/fedgrid_sac_500_seed3_meter_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,bill honest homes $/home/yr,1025.65,1019.84,5.810000000000059
+ausgrid,fedgrid,3,noise,results/fedgrid_sac_500_seed3_noise_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,bill $/home/yr,971.04,947.05,23.99000000000001
+ausgrid,fedgrid final,3,noise,results/fedgrid_sac_500_seed3_noise_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,bill $/home/yr,925.26,939.42,-14.159999999999968
+ausgrid,fedgrid,3,normalized,results/fedgrid_sac_500_seed3_normalized_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,bill $/home/yr,1025.23,947.05,78.18000000000006
+ausgrid,fedgrid final,3,normalized,results/fedgrid_sac_500_seed3_normalized_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,bill $/home/yr,962.4,939.42,22.980000000000018
+ausgrid,fedgrid,3,reward,results/fedgrid_sac_500_seed3_reward_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1061.79,1027.35,34.440000000000055
+ausgrid,fedgrid final,3,reward,results/fedgrid_sac_500_seed3_reward_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,bill honest homes $/home/yr,1095.68,1019.84,75.84000000000003
+ausgrid,fedgrid,3,scale,results/fedgrid_sac_500_seed3_scale_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,bill $/home/yr,939.63,947.05,-7.419999999999959
+ausgrid,fedgrid final,3,scale,results/fedgrid_sac_500_seed3_scale_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,bill $/home/yr,932.8,939.42,-6.6200000000000045
+ausgrid,fedgrid,4,flip,results/fedgrid_sac_500_seed4_flip_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,bill $/home/yr,984.61,843.8,140.81000000000006
+ausgrid,fedgrid final,4,flip,results/fedgrid_sac_500_seed4_flip_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,bill $/home/yr,956.46,834.24,122.22000000000003
+ausgrid,fedgrid,4,meter,results/fedgrid_sac_500_seed4_meter_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,779.63,770.91,8.720000000000027
+ausgrid,fedgrid final,4,meter,results/fedgrid_sac_500_seed4_meter_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,bill honest homes $/home/yr,783.56,761.12,22.43999999999994
+ausgrid,fedgrid,4,noise,results/fedgrid_sac_500_seed4_noise_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,bill $/home/yr,910.88,843.8,67.08000000000004
+ausgrid,fedgrid final,4,noise,results/fedgrid_sac_500_seed4_noise_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,bill $/home/yr,896.08,834.24,61.84000000000003
+ausgrid,fedgrid,4,normalized,results/fedgrid_sac_500_seed4_normalized_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,bill $/home/yr,933.79,843.8,89.99000000000001
+ausgrid,fedgrid final,4,normalized,results/fedgrid_sac_500_seed4_normalized_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,bill $/home/yr,892.72,834.24,58.48000000000002
+ausgrid,fedgrid,4,reward,results/fedgrid_sac_500_seed4_reward_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,866.3,770.91,95.38999999999999
+ausgrid,fedgrid final,4,reward,results/fedgrid_sac_500_seed4_reward_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,bill honest homes $/home/yr,863.54,761.12,102.41999999999996
+ausgrid,fedgrid,4,scale,results/fedgrid_sac_500_seed4_scale_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,bill $/home/yr,854.2,843.8,10.400000000000091
+ausgrid,fedgrid final,4,scale,results/fedgrid_sac_500_seed4_scale_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,bill $/home/yr,834.38,834.24,0.13999999999998636
+ausgrid,flame,0,flip,results/flame_sac_500_seed0_flip_share30.log,results/flame_sac_500_seed0_none_share30.log,bill $/home/yr,946.63,957.2,-10.57000000000005
+ausgrid,flame,0,meter,results/flame_sac_500_seed0_meter_share30.log,results/flame_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,899.25,916.06,-16.809999999999945
+ausgrid,flame,0,noise,results/flame_sac_500_seed0_noise_share30.log,results/flame_sac_500_seed0_none_share30.log,bill $/home/yr,944.08,957.2,-13.120000000000005
+ausgrid,flame,0,normalized,results/flame_sac_500_seed0_normalized_share30.log,results/flame_sac_500_seed0_none_share30.log,bill $/home/yr,931.74,957.2,-25.460000000000036
+ausgrid,flame,0,reward,results/flame_sac_500_seed0_reward_share30.log,results/flame_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,892.71,916.06,-23.34999999999991
+ausgrid,flame,0,scale,results/flame_sac_500_seed0_scale_share30.log,results/flame_sac_500_seed0_none_share30.log,bill $/home/yr,934.93,957.2,-22.270000000000095
+ausgrid,flame,1,flip,results/flame_sac_500_seed1_flip_share30.log,results/flame_sac_500_seed1_none_share30.log,bill $/home/yr,1002.47,927.31,75.16000000000008
+ausgrid,flame,1,meter,results/flame_sac_500_seed1_meter_share30.log,results/flame_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,954.59,917.95,36.639999999999986
+ausgrid,flame,1,noise,results/flame_sac_500_seed1_noise_share30.log,results/flame_sac_500_seed1_none_share30.log,bill $/home/yr,963.5,927.31,36.190000000000055
+ausgrid,flame,1,normalized,results/flame_sac_500_seed1_normalized_share30.log,results/flame_sac_500_seed1_none_share30.log,bill $/home/yr,1017.51,927.31,90.20000000000005
+ausgrid,flame,1,reward,results/flame_sac_500_seed1_reward_share30.log,results/flame_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,967.56,917.95,49.6099999999999
+ausgrid,flame,1,scale,results/flame_sac_500_seed1_scale_share30.log,results/flame_sac_500_seed1_none_share30.log,bill $/home/yr,960.78,927.31,33.47000000000003
+ausgrid,flame,2,flip,results/flame_sac_500_seed2_flip_share30.log,results/flame_sac_500_seed2_none_share30.log,bill $/home/yr,994.67,929.05,65.62
+ausgrid,flame,2,meter,results/flame_sac_500_seed2_meter_share30.log,results/flame_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,961.67,956.95,4.719999999999914
+ausgrid,flame,2,noise,results/flame_sac_500_seed2_noise_share30.log,results/flame_sac_500_seed2_none_share30.log,bill $/home/yr,909.75,929.05,-19.299999999999955
+ausgrid,flame,2,normalized,results/flame_sac_500_seed2_normalized_share30.log,results/flame_sac_500_seed2_none_share30.log,bill $/home/yr,990.23,929.05,61.180000000000064
+ausgrid,flame,2,reward,results/flame_sac_500_seed2_reward_share30.log,results/flame_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,939.34,956.95,-17.610000000000014
+ausgrid,flame,2,scale,results/flame_sac_500_seed2_scale_share30.log,results/flame_sac_500_seed2_none_share30.log,bill $/home/yr,935.95,929.05,6.900000000000091
+ausgrid,flame,3,flip,results/flame_sac_500_seed3_flip_share30.log,results/flame_sac_500_seed3_none_share30.log,bill $/home/yr,946.79,932.09,14.699999999999932
+ausgrid,flame,3,meter,results/flame_sac_500_seed3_meter_share30.log,results/flame_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,981.8,1006.75,-24.950000000000045
+ausgrid,flame,3,noise,results/flame_sac_500_seed3_noise_share30.log,results/flame_sac_500_seed3_none_share30.log,bill $/home/yr,944.95,932.09,12.860000000000014
+ausgrid,flame,3,normalized,results/flame_sac_500_seed3_normalized_share30.log,results/flame_sac_500_seed3_none_share30.log,bill $/home/yr,957.06,932.09,24.969999999999914
+ausgrid,flame,3,reward,results/flame_sac_500_seed3_reward_share30.log,results/flame_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,976.02,1006.75,-30.730000000000018
+ausgrid,flame,3,scale,results/flame_sac_500_seed3_scale_share30.log,results/flame_sac_500_seed3_none_share30.log,bill $/home/yr,914.42,932.09,-17.670000000000073
+ausgrid,flame,4,flip,results/flame_sac_500_seed4_flip_share30.log,results/flame_sac_500_seed4_none_share30.log,bill $/home/yr,962.23,857.12,105.11000000000001
+ausgrid,flame,4,meter,results/flame_sac_500_seed4_meter_share30.log,results/flame_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,837.23,787.8,49.430000000000064
+ausgrid,flame,4,noise,results/flame_sac_500_seed4_noise_share30.log,results/flame_sac_500_seed4_none_share30.log,bill $/home/yr,849.08,857.12,-8.039999999999964
+ausgrid,flame,4,normalized,results/flame_sac_500_seed4_normalized_share30.log,results/flame_sac_500_seed4_none_share30.log,bill $/home/yr,918.83,857.12,61.710000000000036
+ausgrid,flame,4,reward,results/flame_sac_500_seed4_reward_share30.log,results/flame_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,799.61,787.8,11.81000000000006
+ausgrid,flame,4,scale,results/flame_sac_500_seed4_scale_share30.log,results/flame_sac_500_seed4_none_share30.log,bill $/home/yr,908.82,857.12,51.700000000000045
+ausgrid,fltrust,0,flip,results/fltrust_sac_500_seed0_flip_share30.log,results/fltrust_sac_500_seed0_none_share30.log,bill $/home/yr,971.32,957.52,13.800000000000068
+ausgrid,fltrust,0,meter,results/fltrust_sac_500_seed0_meter_share30.log,results/fltrust_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,937.74,923.22,14.519999999999982
+ausgrid,fltrust,0,noise,results/fltrust_sac_500_seed0_noise_share30.log,results/fltrust_sac_500_seed0_none_share30.log,bill $/home/yr,954.98,957.52,-2.5399999999999636
+ausgrid,fltrust,0,normalized,results/fltrust_sac_500_seed0_normalized_share30.log,results/fltrust_sac_500_seed0_none_share30.log,bill $/home/yr,924.59,957.52,-32.92999999999995
+ausgrid,fltrust,0,reward,results/fltrust_sac_500_seed0_reward_share30.log,results/fltrust_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,934.53,923.22,11.309999999999945
+ausgrid,fltrust,0,scale,results/fltrust_sac_500_seed0_scale_share30.log,results/fltrust_sac_500_seed0_none_share30.log,bill $/home/yr,960.07,957.52,2.550000000000068
+ausgrid,fltrust,1,flip,results/fltrust_sac_500_seed1_flip_share30.log,results/fltrust_sac_500_seed1_none_share30.log,bill $/home/yr,971.38,977.94,-6.560000000000059
+ausgrid,fltrust,1,meter,results/fltrust_sac_500_seed1_meter_share30.log,results/fltrust_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,985.54,966.32,19.219999999999914
+ausgrid,fltrust,1,noise,results/fltrust_sac_500_seed1_noise_share30.log,results/fltrust_sac_500_seed1_none_share30.log,bill $/home/yr,999.81,977.94,21.86999999999989
+ausgrid,fltrust,1,normalized,results/fltrust_sac_500_seed1_normalized_share30.log,results/fltrust_sac_500_seed1_none_share30.log,bill $/home/yr,989.93,977.94,11.989999999999895
+ausgrid,fltrust,1,reward,results/fltrust_sac_500_seed1_reward_share30.log,results/fltrust_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,995.93,966.32,29.6099999999999
+ausgrid,fltrust,1,scale,results/fltrust_sac_500_seed1_scale_share30.log,results/fltrust_sac_500_seed1_none_share30.log,bill $/home/yr,985.96,977.94,8.019999999999982
+ausgrid,fltrust,2,flip,results/fltrust_sac_500_seed2_flip_share30.log,results/fltrust_sac_500_seed2_none_share30.log,bill $/home/yr,943.2,968.64,-25.43999999999994
+ausgrid,fltrust,2,meter,results/fltrust_sac_500_seed2_meter_share30.log,results/fltrust_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,1028.92,1006.81,22.110000000000127
+ausgrid,fltrust,2,noise,results/fltrust_sac_500_seed2_noise_share30.log,results/fltrust_sac_500_seed2_none_share30.log,bill $/home/yr,953.81,968.64,-14.830000000000041
+ausgrid,fltrust,2,normalized,results/fltrust_sac_500_seed2_normalized_share30.log,results/fltrust_sac_500_seed2_none_share30.log,bill $/home/yr,945.9,968.64,-22.74000000000001
+ausgrid,fltrust,2,reward,results/fltrust_sac_500_seed2_reward_share30.log,results/fltrust_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,980.66,1006.81,-26.149999999999977
+ausgrid,fltrust,2,scale,results/fltrust_sac_500_seed2_scale_share30.log,results/fltrust_sac_500_seed2_none_share30.log,bill $/home/yr,973.69,968.64,5.050000000000068
+ausgrid,fltrust,3,flip,results/fltrust_sac_500_seed3_flip_share30.log,results/fltrust_sac_500_seed3_none_share30.log,bill $/home/yr,964.27,970.3,-6.029999999999973
+ausgrid,fltrust,3,meter,results/fltrust_sac_500_seed3_meter_share30.log,results/fltrust_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1063.66,1049.19,14.470000000000027
+ausgrid,fltrust,3,noise,results/fltrust_sac_500_seed3_noise_share30.log,results/fltrust_sac_500_seed3_none_share30.log,bill $/home/yr,921.75,970.3,-48.549999999999955
+ausgrid,fltrust,3,normalized,results/fltrust_sac_500_seed3_normalized_share30.log,results/fltrust_sac_500_seed3_none_share30.log,bill $/home/yr,1055.05,970.3,84.75
+ausgrid,fltrust,3,reward,results/fltrust_sac_500_seed3_reward_share30.log,results/fltrust_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1101.21,1049.19,52.01999999999998
+ausgrid,fltrust,3,scale,results/fltrust_sac_500_seed3_scale_share30.log,results/fltrust_sac_500_seed3_none_share30.log,bill $/home/yr,970.24,970.3,-0.05999999999994543
+ausgrid,fltrust,4,flip,results/fltrust_sac_500_seed4_flip_share30.log,results/fltrust_sac_500_seed4_none_share30.log,bill $/home/yr,890.48,886.76,3.7200000000000273
+ausgrid,fltrust,4,meter,results/fltrust_sac_500_seed4_meter_share30.log,results/fltrust_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,834.55,808.64,25.909999999999968
+ausgrid,fltrust,4,noise,results/fltrust_sac_500_seed4_noise_share30.log,results/fltrust_sac_500_seed4_none_share30.log,bill $/home/yr,860.89,886.76,-25.870000000000005
+ausgrid,fltrust,4,normalized,results/fltrust_sac_500_seed4_normalized_share30.log,results/fltrust_sac_500_seed4_none_share30.log,bill $/home/yr,958.49,886.76,71.73000000000002
+ausgrid,fltrust,4,reward,results/fltrust_sac_500_seed4_reward_share30.log,results/fltrust_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,840.8,808.64,32.15999999999997
+ausgrid,fltrust,4,scale,results/fltrust_sac_500_seed4_scale_share30.log,results/fltrust_sac_500_seed4_none_share30.log,bill $/home/yr,890.43,886.76,3.669999999999959
+ausgrid,krum,0,flip,results/krum_sac_500_seed0_flip_share30.log,results/krum_sac_500_seed0_none_share30.log,bill $/home/yr,1012.05,927.46,84.58999999999992
+ausgrid,krum,0,meter,results/krum_sac_500_seed0_meter_share30.log,results/krum_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,959.83,894.33,65.5
+ausgrid,krum,0,noise,results/krum_sac_500_seed0_noise_share30.log,results/krum_sac_500_seed0_none_share30.log,bill $/home/yr,891.38,927.46,-36.08000000000004
+ausgrid,krum,0,normalized,results/krum_sac_500_seed0_normalized_share30.log,results/krum_sac_500_seed0_none_share30.log,bill $/home/yr,889.92,927.46,-37.54000000000008
+ausgrid,krum,0,reward,results/krum_sac_500_seed0_reward_share30.log,results/krum_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,903.95,894.33,9.620000000000005
+ausgrid,krum,0,scale,results/krum_sac_500_seed0_scale_share30.log,results/krum_sac_500_seed0_none_share30.log,bill $/home/yr,966.89,927.46,39.42999999999995
+ausgrid,krum,1,flip,results/krum_sac_500_seed1_flip_share30.log,results/krum_sac_500_seed1_none_share30.log,bill $/home/yr,1061.43,977.91,83.5200000000001
+ausgrid,krum,1,meter,results/krum_sac_500_seed1_meter_share30.log,results/krum_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,1004.88,957.03,47.85000000000002
+ausgrid,krum,1,noise,results/krum_sac_500_seed1_noise_share30.log,results/krum_sac_500_seed1_none_share30.log,bill $/home/yr,977.34,977.91,-0.5699999999999363
+ausgrid,krum,1,normalized,results/krum_sac_500_seed1_normalized_share30.log,results/krum_sac_500_seed1_none_share30.log,bill $/home/yr,1144.84,977.91,166.92999999999995
+ausgrid,krum,1,reward,results/krum_sac_500_seed1_reward_share30.log,results/krum_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,1052.09,957.03,95.05999999999995
+ausgrid,krum,1,scale,results/krum_sac_500_seed1_scale_share30.log,results/krum_sac_500_seed1_none_share30.log,bill $/home/yr,1083.87,977.91,105.95999999999992
+ausgrid,krum,2,flip,results/krum_sac_500_seed2_flip_share30.log,results/krum_sac_500_seed2_none_share30.log,bill $/home/yr,1031.31,967.64,63.66999999999996
+ausgrid,krum,2,meter,results/krum_sac_500_seed2_meter_share30.log,results/krum_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,994.75,991.79,2.9600000000000364
+ausgrid,krum,2,noise,results/krum_sac_500_seed2_noise_share30.log,results/krum_sac_500_seed2_none_share30.log,bill $/home/yr,929.36,967.64,-38.27999999999997
+ausgrid,krum,2,normalized,results/krum_sac_500_seed2_normalized_share30.log,results/krum_sac_500_seed2_none_share30.log,bill $/home/yr,976.01,967.64,8.370000000000005
+ausgrid,krum,2,reward,results/krum_sac_500_seed2_reward_share30.log,results/krum_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,1011.99,991.79,20.200000000000045
+ausgrid,krum,2,scale,results/krum_sac_500_seed2_scale_share30.log,results/krum_sac_500_seed2_none_share30.log,bill $/home/yr,977.28,967.64,9.639999999999986
+ausgrid,krum,3,flip,results/krum_sac_500_seed3_flip_share30.log,results/krum_sac_500_seed3_none_share30.log,bill $/home/yr,913.69,1014.78,-101.08999999999992
+ausgrid,krum,3,meter,results/krum_sac_500_seed3_meter_share30.log,results/krum_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1129.98,1092.18,37.799999999999955
+ausgrid,krum,3,noise,results/krum_sac_500_seed3_noise_share30.log,results/krum_sac_500_seed3_none_share30.log,bill $/home/yr,1054.54,1014.78,39.75999999999999
+ausgrid,krum,3,normalized,results/krum_sac_500_seed3_normalized_share30.log,results/krum_sac_500_seed3_none_share30.log,bill $/home/yr,1093.67,1014.78,78.8900000000001
+ausgrid,krum,3,reward,results/krum_sac_500_seed3_reward_share30.log,results/krum_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1050.75,1092.18,-41.430000000000064
+ausgrid,krum,3,scale,results/krum_sac_500_seed3_scale_share30.log,results/krum_sac_500_seed3_none_share30.log,bill $/home/yr,968.44,1014.78,-46.33999999999992
+ausgrid,krum,4,flip,results/krum_sac_500_seed4_flip_share30.log,results/krum_sac_500_seed4_none_share30.log,bill $/home/yr,1039.57,967.37,72.19999999999993
+ausgrid,krum,4,meter,results/krum_sac_500_seed4_meter_share30.log,results/krum_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,880.11,898.59,-18.480000000000018
+ausgrid,krum,4,noise,results/krum_sac_500_seed4_noise_share30.log,results/krum_sac_500_seed4_none_share30.log,bill $/home/yr,1016.84,967.37,49.47000000000003
+ausgrid,krum,4,normalized,results/krum_sac_500_seed4_normalized_share30.log,results/krum_sac_500_seed4_none_share30.log,bill $/home/yr,986.35,967.37,18.980000000000018
+ausgrid,krum,4,reward,results/krum_sac_500_seed4_reward_share30.log,results/krum_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,1035.55,898.59,136.95999999999992
+ausgrid,krum,4,scale,results/krum_sac_500_seed4_scale_share30.log,results/krum_sac_500_seed4_none_share30.log,bill $/home/yr,1034.59,967.37,67.21999999999991
+ausgrid,median,0,flip,results/median_sac_500_seed0_flip_share30.log,results/median_sac_500_seed0_none_share30.log,bill $/home/yr,1007.87,922.76,85.11000000000001
+ausgrid,median,0,meter,results/median_sac_500_seed0_meter_share30.log,results/median_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,877.74,886.92,-9.17999999999995
+ausgrid,median,0,noise,results/median_sac_500_seed0_noise_share30.log,results/median_sac_500_seed0_none_share30.log,bill $/home/yr,929.23,922.76,6.470000000000027
+ausgrid,median,0,normalized,results/median_sac_500_seed0_normalized_share30.log,results/median_sac_500_seed0_none_share30.log,bill $/home/yr,1190.68,922.76,267.9200000000001
+ausgrid,median,0,reward,results/median_sac_500_seed0_reward_share30.log,results/median_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,979.7,886.92,92.78000000000009
+ausgrid,median,0,scale,results/median_sac_500_seed0_scale_share30.log,results/median_sac_500_seed0_none_share30.log,bill $/home/yr,935.26,922.76,12.5
+ausgrid,median,1,flip,results/median_sac_500_seed1_flip_share30.log,results/median_sac_500_seed1_none_share30.log,bill $/home/yr,1032.62,983.99,48.62999999999988
+ausgrid,median,1,meter,results/median_sac_500_seed1_meter_share30.log,results/median_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,972.81,973.2,-0.39000000000010004
+ausgrid,median,1,noise,results/median_sac_500_seed1_noise_share30.log,results/median_sac_500_seed1_none_share30.log,bill $/home/yr,950.92,983.99,-33.07000000000005
+ausgrid,median,1,normalized,results/median_sac_500_seed1_normalized_share30.log,results/median_sac_500_seed1_none_share30.log,bill $/home/yr,1403.33,983.99,419.3399999999999
+ausgrid,median,1,reward,results/median_sac_500_seed1_reward_share30.log,results/median_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,1044.83,973.2,71.62999999999988
+ausgrid,median,1,scale,results/median_sac_500_seed1_scale_share30.log,results/median_sac_500_seed1_none_share30.log,bill $/home/yr,950.75,983.99,-33.24000000000001
+ausgrid,median,2,flip,results/median_sac_500_seed2_flip_share30.log,results/median_sac_500_seed2_none_share30.log,bill $/home/yr,997.3,949.81,47.49000000000001
+ausgrid,median,2,meter,results/median_sac_500_seed2_meter_share30.log,results/median_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,964.93,985.97,-21.040000000000077
+ausgrid,median,2,noise,results/median_sac_500_seed2_noise_share30.log,results/median_sac_500_seed2_none_share30.log,bill $/home/yr,919.46,949.81,-30.34999999999991
+ausgrid,median,2,normalized,results/median_sac_500_seed2_normalized_share30.log,results/median_sac_500_seed2_none_share30.log,bill $/home/yr,1184.11,949.81,234.29999999999995
+ausgrid,median,2,reward,results/median_sac_500_seed2_reward_share30.log,results/median_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,1011.39,985.97,25.41999999999996
+ausgrid,median,2,scale,results/median_sac_500_seed2_scale_share30.log,results/median_sac_500_seed2_none_share30.log,bill $/home/yr,936.62,949.81,-13.18999999999994
+ausgrid,median,3,flip,results/median_sac_500_seed3_flip_share30.log,results/median_sac_500_seed3_none_share30.log,bill $/home/yr,988.77,952.23,36.539999999999964
+ausgrid,median,3,meter,results/median_sac_500_seed3_meter_share30.log,results/median_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1035.11,1036.28,-1.1700000000000728
+ausgrid,median,3,noise,results/median_sac_500_seed3_noise_share30.log,results/median_sac_500_seed3_none_share30.log,bill $/home/yr,932.09,952.23,-20.139999999999986
+ausgrid,median,3,normalized,results/median_sac_500_seed3_normalized_share30.log,results/median_sac_500_seed3_none_share30.log,bill $/home/yr,1079.45,952.23,127.22000000000003
+ausgrid,median,3,reward,results/median_sac_500_seed3_reward_share30.log,results/median_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1110.93,1036.28,74.65000000000009
+ausgrid,median,3,scale,results/median_sac_500_seed3_scale_share30.log,results/median_sac_500_seed3_none_share30.log,bill $/home/yr,929.66,952.23,-22.57000000000005
+ausgrid,median,4,flip,results/median_sac_500_seed4_flip_share30.log,results/median_sac_500_seed4_none_share30.log,bill $/home/yr,1042.39,867.85,174.54000000000008
+ausgrid,median,4,meter,results/median_sac_500_seed4_meter_share30.log,results/median_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,783.68,800.15,-16.470000000000027
+ausgrid,median,4,noise,results/median_sac_500_seed4_noise_share30.log,results/median_sac_500_seed4_none_share30.log,bill $/home/yr,883.06,867.85,15.209999999999923
+ausgrid,median,4,normalized,results/median_sac_500_seed4_normalized_share30.log,results/median_sac_500_seed4_none_share30.log,bill $/home/yr,1086.98,867.85,219.13
+ausgrid,median,4,reward,results/median_sac_500_seed4_reward_share30.log,results/median_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,933.02,800.15,132.87
+ausgrid,median,4,scale,results/median_sac_500_seed4_scale_share30.log,results/median_sac_500_seed4_none_share30.log,bill $/home/yr,885.88,867.85,18.029999999999973
+ausgrid,tafdrl,0,flip,results/tafdrl_sac_500_seed0_flip_share30.log,results/tafdrl_sac_500_seed0_none_share30.log,bill $/home/yr,1042.04,912.77,129.26999999999998
+ausgrid,tafdrl final,0,flip,results/tafdrl_sac_500_seed0_flip_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,bill $/home/yr,982.57,949.42,33.15000000000009
+ausgrid,tafdrl,0,meter,results/tafdrl_sac_500_seed0_meter_share30.log,results/tafdrl_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,888.86,875.52,13.340000000000032
+ausgrid,tafdrl final,0,meter,results/tafdrl_sac_500_seed0_meter_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,bill honest homes $/home/yr,883.25,904.5,-21.25
+ausgrid,tafdrl,0,noise,results/tafdrl_sac_500_seed0_noise_share30.log,results/tafdrl_sac_500_seed0_none_share30.log,bill $/home/yr,933.1,912.77,20.33000000000004
+ausgrid,tafdrl final,0,noise,results/tafdrl_sac_500_seed0_noise_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,bill $/home/yr,933.88,949.42,-15.539999999999964
+ausgrid,tafdrl,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30.log,results/tafdrl_sac_500_seed0_none_share30.log,bill $/home/yr,925.34,912.77,12.57000000000005
+ausgrid,tafdrl final,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,bill $/home/yr,914.43,949.42,-34.99000000000001
+ausgrid,tafdrl,0,reward,results/tafdrl_sac_500_seed0_reward_share30.log,results/tafdrl_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,884.43,875.52,8.909999999999968
+ausgrid,tafdrl final,0,reward,results/tafdrl_sac_500_seed0_reward_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,bill honest homes $/home/yr,921.85,904.5,17.350000000000023
+ausgrid,tafdrl,0,scale,results/tafdrl_sac_500_seed0_scale_share30.log,results/tafdrl_sac_500_seed0_none_share30.log,bill $/home/yr,938.35,912.77,25.58000000000004
+ausgrid,tafdrl final,0,scale,results/tafdrl_sac_500_seed0_scale_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,bill $/home/yr,939.73,949.42,-9.68999999999994
+ausgrid,tafdrl,1,flip,results/tafdrl_sac_500_seed1_flip_share30.log,results/tafdrl_sac_500_seed1_none_share30.log,bill $/home/yr,1046.66,982.94,63.72000000000003
+ausgrid,tafdrl final,1,flip,results/tafdrl_sac_500_seed1_flip_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,bill $/home/yr,992.63,954.14,38.49000000000001
+ausgrid,tafdrl,1,meter,results/tafdrl_sac_500_seed1_meter_share30.log,results/tafdrl_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,1012.32,974.89,37.430000000000064
+ausgrid,tafdrl final,1,meter,results/tafdrl_sac_500_seed1_meter_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,bill honest homes $/home/yr,961.41,950.51,10.899999999999977
+ausgrid,tafdrl,1,noise,results/tafdrl_sac_500_seed1_noise_share30.log,results/tafdrl_sac_500_seed1_none_share30.log,bill $/home/yr,934.77,982.94,-48.17000000000007
+ausgrid,tafdrl final,1,noise,results/tafdrl_sac_500_seed1_noise_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,bill $/home/yr,937.67,954.14,-16.470000000000027
+ausgrid,tafdrl,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30.log,results/tafdrl_sac_500_seed1_none_share30.log,bill $/home/yr,1042.95,982.94,60.00999999999999
+ausgrid,tafdrl final,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,bill $/home/yr,969.35,954.14,15.210000000000036
+ausgrid,tafdrl,1,reward,results/tafdrl_sac_500_seed1_reward_share30.log,results/tafdrl_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,996.33,974.89,21.440000000000055
+ausgrid,tafdrl final,1,reward,results/tafdrl_sac_500_seed1_reward_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,bill honest homes $/home/yr,999.17,950.51,48.65999999999997
+ausgrid,tafdrl,1,scale,results/tafdrl_sac_500_seed1_scale_share30.log,results/tafdrl_sac_500_seed1_none_share30.log,bill $/home/yr,993.37,982.94,10.42999999999995
+ausgrid,tafdrl final,1,scale,results/tafdrl_sac_500_seed1_scale_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,bill $/home/yr,993.37,954.14,39.23000000000002
+ausgrid,tafdrl,2,flip,results/tafdrl_sac_500_seed2_flip_share30.log,results/tafdrl_sac_500_seed2_none_share30.log,bill $/home/yr,992.99,934.92,58.07000000000005
+ausgrid,tafdrl final,2,flip,results/tafdrl_sac_500_seed2_flip_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,bill $/home/yr,956.59,914.41,42.180000000000064
+ausgrid,tafdrl,2,meter,results/tafdrl_sac_500_seed2_meter_share30.log,results/tafdrl_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,954.24,966.22,-11.980000000000018
+ausgrid,tafdrl final,2,meter,results/tafdrl_sac_500_seed2_meter_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,bill honest homes $/home/yr,941.72,940.96,0.7599999999999909
+ausgrid,tafdrl,2,noise,results/tafdrl_sac_500_seed2_noise_share30.log,results/tafdrl_sac_500_seed2_none_share30.log,bill $/home/yr,916.79,934.92,-18.129999999999995
+ausgrid,tafdrl final,2,noise,results/tafdrl_sac_500_seed2_noise_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,bill $/home/yr,916.11,914.41,1.7000000000000455
+ausgrid,tafdrl,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30.log,results/tafdrl_sac_500_seed2_none_share30.log,bill $/home/yr,974.43,934.92,39.50999999999999
+ausgrid,tafdrl final,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,bill $/home/yr,909.65,914.41,-4.759999999999991
+ausgrid,tafdrl,2,reward,results/tafdrl_sac_500_seed2_reward_share30.log,results/tafdrl_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,952.72,966.22,-13.5
+ausgrid,tafdrl final,2,reward,results/tafdrl_sac_500_seed2_reward_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,bill honest homes $/home/yr,966.91,940.96,25.949999999999932
+ausgrid,tafdrl,2,scale,results/tafdrl_sac_500_seed2_scale_share30.log,results/tafdrl_sac_500_seed2_none_share30.log,bill $/home/yr,937.94,934.92,3.0200000000000955
+ausgrid,tafdrl final,2,scale,results/tafdrl_sac_500_seed2_scale_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,bill $/home/yr,953.54,914.41,39.129999999999995
+ausgrid,tafdrl,3,flip,results/tafdrl_sac_500_seed3_flip_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,bill $/home/yr,1012.52,946.15,66.37
+ausgrid,tafdrl final,3,flip,results/tafdrl_sac_500_seed3_flip_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,bill $/home/yr,992.21,958.91,33.30000000000007
+ausgrid,tafdrl,3,meter,results/tafdrl_sac_500_seed3_meter_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1040.03,1027.84,12.190000000000055
+ausgrid,tafdrl final,3,meter,results/tafdrl_sac_500_seed3_meter_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,bill honest homes $/home/yr,1041.37,1037.34,4.029999999999973
+ausgrid,tafdrl,3,noise,results/tafdrl_sac_500_seed3_noise_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,bill $/home/yr,923.57,946.15,-22.579999999999927
+ausgrid,tafdrl final,3,noise,results/tafdrl_sac_500_seed3_noise_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,bill $/home/yr,931.39,958.91,-27.519999999999982
+ausgrid,tafdrl,3,normalized,results/tafdrl_sac_500_seed3_normalized_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,bill $/home/yr,978.22,946.15,32.07000000000005
+ausgrid,tafdrl final,3,normalized,results/tafdrl_sac_500_seed3_normalized_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,bill $/home/yr,989.67,958.91,30.75999999999999
+ausgrid,tafdrl,3,reward,results/tafdrl_sac_500_seed3_reward_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1003.5,1027.84,-24.339999999999918
+ausgrid,tafdrl final,3,reward,results/tafdrl_sac_500_seed3_reward_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,bill honest homes $/home/yr,1006.42,1037.34,-30.91999999999996
+ausgrid,tafdrl,3,scale,results/tafdrl_sac_500_seed3_scale_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,bill $/home/yr,975.26,946.15,29.110000000000014
+ausgrid,tafdrl final,3,scale,results/tafdrl_sac_500_seed3_scale_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,bill $/home/yr,975.26,958.91,16.350000000000023
+ausgrid,tafdrl,4,flip,results/tafdrl_sac_500_seed4_flip_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,bill $/home/yr,936.29,810.94,125.34999999999991
+ausgrid,tafdrl final,4,flip,results/tafdrl_sac_500_seed4_flip_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,bill $/home/yr,833.19,808.81,24.38000000000011
+ausgrid,tafdrl,4,meter,results/tafdrl_sac_500_seed4_meter_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,768.15,745.01,23.139999999999986
+ausgrid,tafdrl final,4,meter,results/tafdrl_sac_500_seed4_meter_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,bill honest homes $/home/yr,776.55,739.91,36.639999999999986
+ausgrid,tafdrl,4,noise,results/tafdrl_sac_500_seed4_noise_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,bill $/home/yr,848.53,810.94,37.58999999999992
+ausgrid,tafdrl final,4,noise,results/tafdrl_sac_500_seed4_noise_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,bill $/home/yr,848.53,808.81,39.72000000000003
+ausgrid,tafdrl,4,normalized,results/tafdrl_sac_500_seed4_normalized_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,bill $/home/yr,996.71,810.94,185.76999999999998
+ausgrid,tafdrl final,4,normalized,results/tafdrl_sac_500_seed4_normalized_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,bill $/home/yr,994.47,808.81,185.66000000000008
+ausgrid,tafdrl,4,reward,results/tafdrl_sac_500_seed4_reward_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,781.13,745.01,36.120000000000005
+ausgrid,tafdrl final,4,reward,results/tafdrl_sac_500_seed4_reward_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,bill honest homes $/home/yr,779.97,739.91,40.06000000000006
+ausgrid,tafdrl,4,scale,results/tafdrl_sac_500_seed4_scale_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,bill $/home/yr,810.72,810.94,-0.22000000000002728
+ausgrid,tafdrl final,4,scale,results/tafdrl_sac_500_seed4_scale_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,bill $/home/yr,826.53,808.81,17.720000000000027
+ausgrid,trimmed,0,flip,results/trimmed_sac_500_seed0_flip_share30.log,results/trimmed_sac_500_seed0_none_share30.log,bill $/home/yr,992.63,918.54,74.09000000000003
+ausgrid,trimmed,0,meter,results/trimmed_sac_500_seed0_meter_share30.log,results/trimmed_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,888.1,885.29,2.810000000000059
+ausgrid,trimmed,0,noise,results/trimmed_sac_500_seed0_noise_share30.log,results/trimmed_sac_500_seed0_none_share30.log,bill $/home/yr,895.02,918.54,-23.519999999999982
+ausgrid,trimmed,0,normalized,results/trimmed_sac_500_seed0_normalized_share30.log,results/trimmed_sac_500_seed0_none_share30.log,bill $/home/yr,1111.05,918.54,192.51
+ausgrid,trimmed,0,reward,results/trimmed_sac_500_seed0_reward_share30.log,results/trimmed_sac_500_seed0_none_share30_honest.log,bill honest homes $/home/yr,982.82,885.29,97.53000000000009
+ausgrid,trimmed,0,scale,results/trimmed_sac_500_seed0_scale_share30.log,results/trimmed_sac_500_seed0_none_share30.log,bill $/home/yr,906.86,918.54,-11.67999999999995
+ausgrid,trimmed,1,flip,results/trimmed_sac_500_seed1_flip_share30.log,results/trimmed_sac_500_seed1_none_share30.log,bill $/home/yr,1049.18,970.26,78.92000000000007
+ausgrid,trimmed,1,meter,results/trimmed_sac_500_seed1_meter_share30.log,results/trimmed_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,952.16,969.08,-16.920000000000073
+ausgrid,trimmed,1,noise,results/trimmed_sac_500_seed1_noise_share30.log,results/trimmed_sac_500_seed1_none_share30.log,bill $/home/yr,950.1,970.26,-20.159999999999968
+ausgrid,trimmed,1,normalized,results/trimmed_sac_500_seed1_normalized_share30.log,results/trimmed_sac_500_seed1_none_share30.log,bill $/home/yr,1245.95,970.26,275.69000000000005
+ausgrid,trimmed,1,reward,results/trimmed_sac_500_seed1_reward_share30.log,results/trimmed_sac_500_seed1_none_share30_honest.log,bill honest homes $/home/yr,1036.56,969.08,67.4799999999999
+ausgrid,trimmed,1,scale,results/trimmed_sac_500_seed1_scale_share30.log,results/trimmed_sac_500_seed1_none_share30.log,bill $/home/yr,954.85,970.26,-15.409999999999968
+ausgrid,trimmed,2,flip,results/trimmed_sac_500_seed2_flip_share30.log,results/trimmed_sac_500_seed2_none_share30.log,bill $/home/yr,980.7,953.09,27.610000000000014
+ausgrid,trimmed,2,meter,results/trimmed_sac_500_seed2_meter_share30.log,results/trimmed_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,974.45,991.23,-16.779999999999973
+ausgrid,trimmed,2,noise,results/trimmed_sac_500_seed2_noise_share30.log,results/trimmed_sac_500_seed2_none_share30.log,bill $/home/yr,951.68,953.09,-1.4100000000000819
+ausgrid,trimmed,2,normalized,results/trimmed_sac_500_seed2_normalized_share30.log,results/trimmed_sac_500_seed2_none_share30.log,bill $/home/yr,1126.53,953.09,173.43999999999994
+ausgrid,trimmed,2,reward,results/trimmed_sac_500_seed2_reward_share30.log,results/trimmed_sac_500_seed2_none_share30_honest.log,bill honest homes $/home/yr,1054.95,991.23,63.72000000000003
+ausgrid,trimmed,2,scale,results/trimmed_sac_500_seed2_scale_share30.log,results/trimmed_sac_500_seed2_none_share30.log,bill $/home/yr,916.61,953.09,-36.48000000000002
+ausgrid,trimmed,3,flip,results/trimmed_sac_500_seed3_flip_share30.log,results/trimmed_sac_500_seed3_none_share30.log,bill $/home/yr,999.88,939.57,60.309999999999945
+ausgrid,trimmed,3,meter,results/trimmed_sac_500_seed3_meter_share30.log,results/trimmed_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1023.7,1019.64,4.060000000000059
+ausgrid,trimmed,3,noise,results/trimmed_sac_500_seed3_noise_share30.log,results/trimmed_sac_500_seed3_none_share30.log,bill $/home/yr,925.82,939.57,-13.75
+ausgrid,trimmed,3,normalized,results/trimmed_sac_500_seed3_normalized_share30.log,results/trimmed_sac_500_seed3_none_share30.log,bill $/home/yr,1259.54,939.57,319.9699999999999
+ausgrid,trimmed,3,reward,results/trimmed_sac_500_seed3_reward_share30.log,results/trimmed_sac_500_seed3_none_share30.log,bill honest homes $/home/yr,1095.16,1019.64,75.5200000000001
+ausgrid,trimmed,3,scale,results/trimmed_sac_500_seed3_scale_share30.log,results/trimmed_sac_500_seed3_none_share30.log,bill $/home/yr,914.16,939.57,-25.410000000000082
+ausgrid,trimmed,4,flip,results/trimmed_sac_500_seed4_flip_share30.log,results/trimmed_sac_500_seed4_none_share30.log,bill $/home/yr,941.29,861.65,79.63999999999999
+ausgrid,trimmed,4,meter,results/trimmed_sac_500_seed4_meter_share30.log,results/trimmed_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,777.0,790.71,-13.710000000000036
+ausgrid,trimmed,4,noise,results/trimmed_sac_500_seed4_noise_share30.log,results/trimmed_sac_500_seed4_none_share30.log,bill $/home/yr,886.98,861.65,25.33000000000004
+ausgrid,trimmed,4,normalized,results/trimmed_sac_500_seed4_normalized_share30.log,results/trimmed_sac_500_seed4_none_share30.log,bill $/home/yr,1141.22,861.65,279.57000000000005
+ausgrid,trimmed,4,reward,results/trimmed_sac_500_seed4_reward_share30.log,results/trimmed_sac_500_seed4_none_share30.log,bill honest homes $/home/yr,902.14,790.71,111.42999999999995
+ausgrid,trimmed,4,scale,results/trimmed_sac_500_seed4_scale_share30.log,results/trimmed_sac_500_seed4_none_share30.log,bill $/home/yr,859.18,861.65,-2.4700000000000273
+act,fedavg,0,flip,results/fedavg_sac_500_seed0_flip_share30_act.log,results/fedavg_sac_500_seed0_none_share30_act.log,bill $/home/yr,1273.67,1188.78,84.8900000000001
+act,fedavg,0,meter,results/fedavg_sac_500_seed0_meter_share30_act.log,results/fedavg_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1111.6,1165.71,-54.11000000000013
+act,fedavg,0,noise,results/fedavg_sac_500_seed0_noise_share30_act.log,results/fedavg_sac_500_seed0_none_share30_act.log,bill $/home/yr,1946.76,1188.78,757.98
+act,fedavg,0,normalized,results/fedavg_sac_500_seed0_normalized_share30_act.log,results/fedavg_sac_500_seed0_none_share30_act.log,bill $/home/yr,2022.93,1188.78,834.1500000000001
+act,fedavg,0,reward,results/fedavg_sac_500_seed0_reward_share30_act.log,results/fedavg_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1357.75,1165.71,192.03999999999996
+act,fedavg,0,scale,results/fedavg_sac_500_seed0_scale_share30_act.log,results/fedavg_sac_500_seed0_none_share30_act.log,bill $/home/yr,1179.11,1188.78,-9.670000000000073
+act,fedavg,1,flip,results/fedavg_sac_500_seed1_flip_share30_act.log,results/fedavg_sac_500_seed1_none_share30_act.log,bill $/home/yr,1397.37,1240.51,156.8599999999999
+act,fedavg,1,meter,results/fedavg_sac_500_seed1_meter_share30_act.log,results/fedavg_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1229.27,1181.78,47.49000000000001
+act,fedavg,1,noise,results/fedavg_sac_500_seed1_noise_share30_act.log,results/fedavg_sac_500_seed1_none_share30_act.log,bill $/home/yr,1950.28,1240.51,709.77
+act,fedavg,1,normalized,results/fedavg_sac_500_seed1_normalized_share30_act.log,results/fedavg_sac_500_seed1_none_share30_act.log,bill $/home/yr,1819.99,1240.51,579.48
+act,fedavg,1,reward,results/fedavg_sac_500_seed1_reward_share30_act.log,results/fedavg_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1263.66,1181.78,81.88000000000011
+act,fedavg,1,scale,results/fedavg_sac_500_seed1_scale_share30_act.log,results/fedavg_sac_500_seed1_none_share30_act.log,bill $/home/yr,1226.68,1240.51,-13.829999999999927
+act,fedavg,2,flip,results/fedavg_sac_500_seed2_flip_share30_act.log,results/fedavg_sac_500_seed2_none_share30_act.log,bill $/home/yr,1273.17,1145.69,127.48000000000002
+act,fedavg,2,meter,results/fedavg_sac_500_seed2_meter_share30_act.log,results/fedavg_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1148.18,1076.37,71.81000000000017
+act,fedavg,2,noise,results/fedavg_sac_500_seed2_noise_share30_act.log,results/fedavg_sac_500_seed2_none_share30_act.log,bill $/home/yr,1954.58,1145.69,808.8899999999999
+act,fedavg,2,normalized,results/fedavg_sac_500_seed2_normalized_share30_act.log,results/fedavg_sac_500_seed2_none_share30_act.log,bill $/home/yr,2005.27,1145.69,859.5799999999999
+act,fedavg,2,reward,results/fedavg_sac_500_seed2_reward_share30_act.log,results/fedavg_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1196.66,1076.37,120.29000000000019
+act,fedavg,2,scale,results/fedavg_sac_500_seed2_scale_share30_act.log,results/fedavg_sac_500_seed2_none_share30_act.log,bill $/home/yr,1239.6,1145.69,93.90999999999985
+act,fedgrid,0,flip,results/fedgrid_sac_500_seed0_flip_share30_act.log,results/fedgrid_sac_500_seed0_none_share30_act.log,bill $/home/yr,1209.8,1174.58,35.22000000000003
+act,fedgrid final,0,flip,results/fedgrid_sac_500_seed0_flip_share30_act_final.log,results/fedgrid_sac_500_seed0_none_share30_act_final.log,bill $/home/yr,1208.41,1137.7,70.71000000000004
+act,fedgrid,0,meter,results/fedgrid_sac_500_seed0_meter_share30_act.log,results/fedgrid_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1125.98,1152.46,-26.480000000000018
+act,fedgrid final,0,meter,results/fedgrid_sac_500_seed0_meter_share30_act_final.log,results/fedgrid_sac_500_seed0_none_share30_act_final.log,bill honest homes $/home/yr,1109.08,1117.36,-8.279999999999973
+act,fedgrid,0,noise,results/fedgrid_sac_500_seed0_noise_share30_act.log,results/fedgrid_sac_500_seed0_none_share30_act.log,bill $/home/yr,1144.14,1174.58,-30.439999999999827
+act,fedgrid final,0,noise,results/fedgrid_sac_500_seed0_noise_share30_act_final.log,results/fedgrid_sac_500_seed0_none_share30_act_final.log,bill $/home/yr,1125.84,1137.7,-11.860000000000127
+act,fedgrid,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30_act.log,results/fedgrid_sac_500_seed0_none_share30_act.log,bill $/home/yr,1380.35,1174.58,205.76999999999998
+act,fedgrid final,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30_act_final.log,results/fedgrid_sac_500_seed0_none_share30_act_final.log,bill $/home/yr,1138.72,1137.7,1.0199999999999818
+act,fedgrid,0,reward,results/fedgrid_sac_500_seed0_reward_share30_act.log,results/fedgrid_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1249.16,1152.46,96.70000000000005
+act,fedgrid final,0,reward,results/fedgrid_sac_500_seed0_reward_share30_act_final.log,results/fedgrid_sac_500_seed0_none_share30_act_final.log,bill honest homes $/home/yr,1194.89,1117.36,77.5300000000002
+act,fedgrid,0,scale,results/fedgrid_sac_500_seed0_scale_share30_act.log,results/fedgrid_sac_500_seed0_none_share30_act.log,bill $/home/yr,1177.6,1174.58,3.019999999999982
+act,fedgrid final,0,scale,results/fedgrid_sac_500_seed0_scale_share30_act_final.log,results/fedgrid_sac_500_seed0_none_share30_act_final.log,bill $/home/yr,1171.88,1137.7,34.180000000000064
+act,fedgrid,1,flip,results/fedgrid_sac_500_seed1_flip_share30_act.log,results/fedgrid_sac_500_seed1_none_share30_act.log,bill $/home/yr,1332.29,1232.1,100.19000000000005
+act,fedgrid final,1,flip,results/fedgrid_sac_500_seed1_flip_share30_act_final.log,results/fedgrid_sac_500_seed1_none_share30_act_final.log,bill $/home/yr,1315.26,1200.13,115.12999999999988
+act,fedgrid,1,meter,results/fedgrid_sac_500_seed1_meter_share30_act.log,results/fedgrid_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1237.84,1181.43,56.409999999999854
+act,fedgrid final,1,meter,results/fedgrid_sac_500_seed1_meter_share30_act_final.log,results/fedgrid_sac_500_seed1_none_share30_act_final.log,bill honest homes $/home/yr,1217.79,1154.35,63.440000000000055
+act,fedgrid,1,noise,results/fedgrid_sac_500_seed1_noise_share30_act.log,results/fedgrid_sac_500_seed1_none_share30_act.log,bill $/home/yr,1298.62,1232.1,66.51999999999998
+act,fedgrid final,1,noise,results/fedgrid_sac_500_seed1_noise_share30_act_final.log,results/fedgrid_sac_500_seed1_none_share30_act_final.log,bill $/home/yr,1237.4,1200.13,37.26999999999998
+act,fedgrid,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30_act.log,results/fedgrid_sac_500_seed1_none_share30_act.log,bill $/home/yr,1381.05,1232.1,148.95000000000005
+act,fedgrid final,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30_act_final.log,results/fedgrid_sac_500_seed1_none_share30_act_final.log,bill $/home/yr,1201.79,1200.13,1.6599999999998545
+act,fedgrid,1,reward,results/fedgrid_sac_500_seed1_reward_share30_act.log,results/fedgrid_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1297.99,1181.43,116.55999999999995
+act,fedgrid final,1,reward,results/fedgrid_sac_500_seed1_reward_share30_act_final.log,results/fedgrid_sac_500_seed1_none_share30_act_final.log,bill honest homes $/home/yr,1292.34,1154.35,137.99
+act,fedgrid,1,scale,results/fedgrid_sac_500_seed1_scale_share30_act.log,results/fedgrid_sac_500_seed1_none_share30_act.log,bill $/home/yr,1218.64,1232.1,-13.459999999999809
+act,fedgrid final,1,scale,results/fedgrid_sac_500_seed1_scale_share30_act_final.log,results/fedgrid_sac_500_seed1_none_share30_act_final.log,bill $/home/yr,1263.07,1200.13,62.93999999999983
+act,fedgrid,2,flip,results/fedgrid_sac_500_seed2_flip_share30_act.log,results/fedgrid_sac_500_seed2_none_share30_act.log,bill $/home/yr,1214.31,1129.07,85.24000000000001
+act,fedgrid final,2,flip,results/fedgrid_sac_500_seed2_flip_share30_act_final.log,results/fedgrid_sac_500_seed2_none_share30_act_final.log,bill $/home/yr,1230.75,1136.02,94.73000000000002
+act,fedgrid,2,meter,results/fedgrid_sac_500_seed2_meter_share30_act.log,results/fedgrid_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1132.11,1055.75,76.3599999999999
+act,fedgrid final,2,meter,results/fedgrid_sac_500_seed2_meter_share30_act_final.log,results/fedgrid_sac_500_seed2_none_share30_act_final.log,bill honest homes $/home/yr,1123.75,1062.72,61.02999999999997
+act,fedgrid,2,noise,results/fedgrid_sac_500_seed2_noise_share30_act.log,results/fedgrid_sac_500_seed2_none_share30_act.log,bill $/home/yr,1198.54,1129.07,69.47000000000003
+act,fedgrid final,2,noise,results/fedgrid_sac_500_seed2_noise_share30_act_final.log,results/fedgrid_sac_500_seed2_none_share30_act_final.log,bill $/home/yr,1185.96,1136.02,49.940000000000055
+act,fedgrid,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30_act.log,results/fedgrid_sac_500_seed2_none_share30_act.log,bill $/home/yr,1271.26,1129.07,142.19000000000005
+act,fedgrid final,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30_act_final.log,results/fedgrid_sac_500_seed2_none_share30_act_final.log,bill $/home/yr,1148.49,1136.02,12.470000000000027
+act,fedgrid,2,reward,results/fedgrid_sac_500_seed2_reward_share30_act.log,results/fedgrid_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1196.01,1055.75,140.26
+act,fedgrid final,2,reward,results/fedgrid_sac_500_seed2_reward_share30_act_final.log,results/fedgrid_sac_500_seed2_none_share30_act_final.log,bill honest homes $/home/yr,1183.34,1062.72,120.61999999999989
+act,fedgrid,2,scale,results/fedgrid_sac_500_seed2_scale_share30_act.log,results/fedgrid_sac_500_seed2_none_share30_act.log,bill $/home/yr,1151.11,1129.07,22.039999999999964
+act,fedgrid final,2,scale,results/fedgrid_sac_500_seed2_scale_share30_act_final.log,results/fedgrid_sac_500_seed2_none_share30_act_final.log,bill $/home/yr,1171.83,1136.02,35.809999999999945
+act,flame,0,flip,results/flame_sac_500_seed0_flip_share30_act.log,results/flame_sac_500_seed0_none_share30_act.log,bill $/home/yr,1128.51,1126.43,2.0799999999999272
+act,flame,0,meter,results/flame_sac_500_seed0_meter_share30_act.log,results/flame_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1110.17,1097.18,12.990000000000009
+act,flame,0,noise,results/flame_sac_500_seed0_noise_share30_act.log,results/flame_sac_500_seed0_none_share30_act.log,bill $/home/yr,1120.14,1126.43,-6.289999999999964
+act,flame,0,normalized,results/flame_sac_500_seed0_normalized_share30_act.log,results/flame_sac_500_seed0_none_share30_act.log,bill $/home/yr,1135.71,1126.43,9.279999999999973
+act,flame,0,reward,results/flame_sac_500_seed0_reward_share30_act.log,results/flame_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1114.79,1097.18,17.6099999999999
+act,flame,0,scale,results/flame_sac_500_seed0_scale_share30_act.log,results/flame_sac_500_seed0_none_share30_act.log,bill $/home/yr,1155.58,1126.43,29.149999999999864
+act,flame,1,flip,results/flame_sac_500_seed1_flip_share30_act.log,results/flame_sac_500_seed1_none_share30_act.log,bill $/home/yr,1272.08,1143.71,128.3699999999999
+act,flame,1,meter,results/flame_sac_500_seed1_meter_share30_act.log,results/flame_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1186.2,1105.97,80.23000000000002
+act,flame,1,noise,results/flame_sac_500_seed1_noise_share30_act.log,results/flame_sac_500_seed1_none_share30_act.log,bill $/home/yr,1208.01,1143.71,64.29999999999995
+act,flame,1,normalized,results/flame_sac_500_seed1_normalized_share30_act.log,results/flame_sac_500_seed1_none_share30_act.log,bill $/home/yr,1237.51,1143.71,93.79999999999995
+act,flame,1,reward,results/flame_sac_500_seed1_reward_share30_act.log,results/flame_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1184.96,1105.97,78.99000000000001
+act,flame,1,scale,results/flame_sac_500_seed1_scale_share30_act.log,results/flame_sac_500_seed1_none_share30_act.log,bill $/home/yr,1225.48,1143.71,81.76999999999998
+act,flame,2,flip,results/flame_sac_500_seed2_flip_share30_act.log,results/flame_sac_500_seed2_none_share30_act.log,bill $/home/yr,1188.82,1151.7,37.11999999999989
+act,flame,2,meter,results/flame_sac_500_seed2_meter_share30_act.log,results/flame_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1095.87,1074.62,21.25
+act,flame,2,noise,results/flame_sac_500_seed2_noise_share30_act.log,results/flame_sac_500_seed2_none_share30_act.log,bill $/home/yr,1135.03,1151.7,-16.670000000000073
+act,flame,2,normalized,results/flame_sac_500_seed2_normalized_share30_act.log,results/flame_sac_500_seed2_none_share30_act.log,bill $/home/yr,1227.64,1151.7,75.94000000000005
+act,flame,2,reward,results/flame_sac_500_seed2_reward_share30_act.log,results/flame_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1075.9,1074.62,1.2800000000002
+act,flame,2,scale,results/flame_sac_500_seed2_scale_share30_act.log,results/flame_sac_500_seed2_none_share30_act.log,bill $/home/yr,1157.55,1151.7,5.849999999999909
+act,fltrust,0,flip,results/fltrust_sac_500_seed0_flip_share30_act.log,results/fltrust_sac_500_seed0_none_share30_act.log,bill $/home/yr,1215.22,1202.09,13.13000000000011
+act,fltrust,0,meter,results/fltrust_sac_500_seed0_meter_share30_act.log,results/fltrust_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1154.49,1190.72,-36.23000000000002
+act,fltrust,0,noise,results/fltrust_sac_500_seed0_noise_share30_act.log,results/fltrust_sac_500_seed0_none_share30_act.log,bill $/home/yr,1154.79,1202.09,-47.299999999999955
+act,fltrust,0,normalized,results/fltrust_sac_500_seed0_normalized_share30_act.log,results/fltrust_sac_500_seed0_none_share30_act.log,bill $/home/yr,1151.04,1202.09,-51.049999999999955
+act,fltrust,0,reward,results/fltrust_sac_500_seed0_reward_share30_act.log,results/fltrust_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1194.25,1190.72,3.5299999999999727
+act,fltrust,0,scale,results/fltrust_sac_500_seed0_scale_share30_act.log,results/fltrust_sac_500_seed0_none_share30_act.log,bill $/home/yr,1203.67,1202.09,1.5800000000001546
+act,fltrust,1,flip,results/fltrust_sac_500_seed1_flip_share30_act.log,results/fltrust_sac_500_seed1_none_share30_act.log,bill $/home/yr,1309.99,1233.41,76.57999999999993
+act,fltrust,1,meter,results/fltrust_sac_500_seed1_meter_share30_act.log,results/fltrust_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1230.86,1180.61,50.25
+act,fltrust,1,noise,results/fltrust_sac_500_seed1_noise_share30_act.log,results/fltrust_sac_500_seed1_none_share30_act.log,bill $/home/yr,1351.86,1233.41,118.44999999999982
+act,fltrust,1,normalized,results/fltrust_sac_500_seed1_normalized_share30_act.log,results/fltrust_sac_500_seed1_none_share30_act.log,bill $/home/yr,1277.83,1233.41,44.419999999999845
+act,fltrust,1,reward,results/fltrust_sac_500_seed1_reward_share30_act.log,results/fltrust_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1269.06,1180.61,88.45000000000005
+act,fltrust,1,scale,results/fltrust_sac_500_seed1_scale_share30_act.log,results/fltrust_sac_500_seed1_none_share30_act.log,bill $/home/yr,1233.03,1233.41,-0.38000000000010914
+act,fltrust,2,flip,results/fltrust_sac_500_seed2_flip_share30_act.log,results/fltrust_sac_500_seed2_none_share30_act.log,bill $/home/yr,1180.22,1223.46,-43.24000000000001
+act,fltrust,2,meter,results/fltrust_sac_500_seed2_meter_share30_act.log,results/fltrust_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1094.1,1162.34,-68.24000000000001
+act,fltrust,2,noise,results/fltrust_sac_500_seed2_noise_share30_act.log,results/fltrust_sac_500_seed2_none_share30_act.log,bill $/home/yr,1195.95,1223.46,-27.50999999999999
+act,fltrust,2,normalized,results/fltrust_sac_500_seed2_normalized_share30_act.log,results/fltrust_sac_500_seed2_none_share30_act.log,bill $/home/yr,1264.12,1223.46,40.659999999999854
+act,fltrust,2,reward,results/fltrust_sac_500_seed2_reward_share30_act.log,results/fltrust_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1136.11,1162.34,-26.230000000000018
+act,fltrust,2,scale,results/fltrust_sac_500_seed2_scale_share30_act.log,results/fltrust_sac_500_seed2_none_share30_act.log,bill $/home/yr,1221.2,1223.46,-2.259999999999991
+act,krum,0,flip,results/krum_sac_500_seed0_flip_share30_act.log,results/krum_sac_500_seed0_none_share30_act.log,bill $/home/yr,1356.74,1318.0,38.74000000000001
+act,krum,0,meter,results/krum_sac_500_seed0_meter_share30_act.log,results/krum_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1206.85,1286.87,-80.01999999999998
+act,krum,0,noise,results/krum_sac_500_seed0_noise_share30_act.log,results/krum_sac_500_seed0_none_share30_act.log,bill $/home/yr,1182.05,1318.0,-135.95000000000005
+act,krum,0,normalized,results/krum_sac_500_seed0_normalized_share30_act.log,results/krum_sac_500_seed0_none_share30_act.log,bill $/home/yr,1243.8,1318.0,-74.20000000000005
+act,krum,0,reward,results/krum_sac_500_seed0_reward_share30_act.log,results/krum_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1226.92,1286.87,-59.94999999999982
+act,krum,0,scale,results/krum_sac_500_seed0_scale_share30_act.log,results/krum_sac_500_seed0_none_share30_act.log,bill $/home/yr,1176.23,1318.0,-141.76999999999998
+act,krum,1,flip,results/krum_sac_500_seed1_flip_share30_act.log,results/krum_sac_500_seed1_none_share30_act.log,bill $/home/yr,1258.24,1371.57,-113.32999999999993
+act,krum,1,meter,results/krum_sac_500_seed1_meter_share30_act.log,results/krum_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1277.4,1264.35,13.050000000000182
+act,krum,1,noise,results/krum_sac_500_seed1_noise_share30_act.log,results/krum_sac_500_seed1_none_share30_act.log,bill $/home/yr,1348.41,1371.57,-23.159999999999854
+act,krum,1,normalized,results/krum_sac_500_seed1_normalized_share30_act.log,results/krum_sac_500_seed1_none_share30_act.log,bill $/home/yr,1291.91,1371.57,-79.65999999999985
+act,krum,1,reward,results/krum_sac_500_seed1_reward_share30_act.log,results/krum_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1172.37,1264.35,-91.98000000000002
+act,krum,1,scale,results/krum_sac_500_seed1_scale_share30_act.log,results/krum_sac_500_seed1_none_share30_act.log,bill $/home/yr,1275.91,1371.57,-95.65999999999985
+act,krum,2,flip,results/krum_sac_500_seed2_flip_share30_act.log,results/krum_sac_500_seed2_none_share30_act.log,bill $/home/yr,1353.9,1242.85,111.05000000000018
+act,krum,2,meter,results/krum_sac_500_seed2_meter_share30_act.log,results/krum_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1240.98,1178.53,62.450000000000045
+act,krum,2,noise,results/krum_sac_500_seed2_noise_share30_act.log,results/krum_sac_500_seed2_none_share30_act.log,bill $/home/yr,1219.91,1242.85,-22.939999999999827
+act,krum,2,normalized,results/krum_sac_500_seed2_normalized_share30_act.log,results/krum_sac_500_seed2_none_share30_act.log,bill $/home/yr,1171.15,1242.85,-71.69999999999982
+act,krum,2,reward,results/krum_sac_500_seed2_reward_share30_act.log,results/krum_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1188.97,1178.53,10.440000000000055
+act,krum,2,scale,results/krum_sac_500_seed2_scale_share30_act.log,results/krum_sac_500_seed2_none_share30_act.log,bill $/home/yr,1320.93,1242.85,78.08000000000015
+act,median,0,flip,results/median_sac_500_seed0_flip_share30_act.log,results/median_sac_500_seed0_none_share30_act.log,bill $/home/yr,1201.48,1150.98,50.5
+act,median,0,meter,results/median_sac_500_seed0_meter_share30_act.log,results/median_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1106.39,1123.61,-17.2199999999998
+act,median,0,noise,results/median_sac_500_seed0_noise_share30_act.log,results/median_sac_500_seed0_none_share30_act.log,bill $/home/yr,1158.29,1150.98,7.309999999999945
+act,median,0,normalized,results/median_sac_500_seed0_normalized_share30_act.log,results/median_sac_500_seed0_none_share30_act.log,bill $/home/yr,1460.05,1150.98,309.06999999999994
+act,median,0,reward,results/median_sac_500_seed0_reward_share30_act.log,results/median_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1312.96,1123.61,189.35000000000014
+act,median,0,scale,results/median_sac_500_seed0_scale_share30_act.log,results/median_sac_500_seed0_none_share30_act.log,bill $/home/yr,1085.8,1150.98,-65.18000000000006
+act,median,1,flip,results/median_sac_500_seed1_flip_share30_act.log,results/median_sac_500_seed1_none_share30_act.log,bill $/home/yr,1367.25,1200.85,166.4000000000001
+act,median,1,meter,results/median_sac_500_seed1_meter_share30_act.log,results/median_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1170.34,1145.2,25.139999999999873
+act,median,1,noise,results/median_sac_500_seed1_noise_share30_act.log,results/median_sac_500_seed1_none_share30_act.log,bill $/home/yr,1272.13,1200.85,71.2800000000002
+act,median,1,normalized,results/median_sac_500_seed1_normalized_share30_act.log,results/median_sac_500_seed1_none_share30_act.log,bill $/home/yr,1404.25,1200.85,203.4000000000001
+act,median,1,reward,results/median_sac_500_seed1_reward_share30_act.log,results/median_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1325.62,1145.2,180.41999999999985
+act,median,1,scale,results/median_sac_500_seed1_scale_share30_act.log,results/median_sac_500_seed1_none_share30_act.log,bill $/home/yr,1155.8,1200.85,-45.049999999999955
+act,median,2,flip,results/median_sac_500_seed2_flip_share30_act.log,results/median_sac_500_seed2_none_share30_act.log,bill $/home/yr,1249.95,1203.52,46.430000000000064
+act,median,2,meter,results/median_sac_500_seed2_meter_share30_act.log,results/median_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1154.13,1125.44,28.690000000000055
+act,median,2,noise,results/median_sac_500_seed2_noise_share30_act.log,results/median_sac_500_seed2_none_share30_act.log,bill $/home/yr,1131.93,1203.52,-71.58999999999992
+act,median,2,normalized,results/median_sac_500_seed2_normalized_share30_act.log,results/median_sac_500_seed2_none_share30_act.log,bill $/home/yr,1760.19,1203.52,556.6700000000001
+act,median,2,reward,results/median_sac_500_seed2_reward_share30_act.log,results/median_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1316.35,1125.44,190.90999999999985
+act,median,2,scale,results/median_sac_500_seed2_scale_share30_act.log,results/median_sac_500_seed2_none_share30_act.log,bill $/home/yr,1120.02,1203.52,-83.5
+act,tafdrl,0,flip,results/tafdrl_sac_500_seed0_flip_share30_act.log,results/tafdrl_sac_500_seed0_none_share30_act.log,bill $/home/yr,1169.44,1135.86,33.580000000000155
+act,tafdrl final,0,flip,results/tafdrl_sac_500_seed0_flip_share30_act_final.log,results/tafdrl_sac_500_seed0_none_share30_act_final.log,bill $/home/yr,1142.92,1149.94,-7.019999999999982
+act,tafdrl,0,meter,results/tafdrl_sac_500_seed0_meter_share30_act.log,results/tafdrl_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1110.51,1115.91,-5.400000000000091
+act,tafdrl final,0,meter,results/tafdrl_sac_500_seed0_meter_share30_act_final.log,results/tafdrl_sac_500_seed0_none_share30_act_final.log,bill honest homes $/home/yr,1103.03,1123.21,-20.180000000000064
+act,tafdrl,0,noise,results/tafdrl_sac_500_seed0_noise_share30_act.log,results/tafdrl_sac_500_seed0_none_share30_act.log,bill $/home/yr,1128.88,1135.86,-6.979999999999791
+act,tafdrl final,0,noise,results/tafdrl_sac_500_seed0_noise_share30_act_final.log,results/tafdrl_sac_500_seed0_none_share30_act_final.log,bill $/home/yr,1136.85,1149.94,-13.090000000000146
+act,tafdrl,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30_act.log,results/tafdrl_sac_500_seed0_none_share30_act.log,bill $/home/yr,1166.14,1135.86,30.2800000000002
+act,tafdrl final,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30_act_final.log,results/tafdrl_sac_500_seed0_none_share30_act_final.log,bill $/home/yr,1196.28,1149.94,46.33999999999992
+act,tafdrl,0,reward,results/tafdrl_sac_500_seed0_reward_share30_act.log,results/tafdrl_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1130.76,1115.91,14.849999999999909
+act,tafdrl final,0,reward,results/tafdrl_sac_500_seed0_reward_share30_act_final.log,results/tafdrl_sac_500_seed0_none_share30_act_final.log,bill honest homes $/home/yr,1129.98,1123.21,6.769999999999982
+act,tafdrl,0,scale,results/tafdrl_sac_500_seed0_scale_share30_act.log,results/tafdrl_sac_500_seed0_none_share30_act.log,bill $/home/yr,1162.21,1135.86,26.350000000000136
+act,tafdrl final,0,scale,results/tafdrl_sac_500_seed0_scale_share30_act_final.log,results/tafdrl_sac_500_seed0_none_share30_act_final.log,bill $/home/yr,1160.98,1149.94,11.039999999999964
+act,tafdrl,1,flip,results/tafdrl_sac_500_seed1_flip_share30_act.log,results/tafdrl_sac_500_seed1_none_share30_act.log,bill $/home/yr,1293.11,1188.77,104.33999999999992
+act,tafdrl final,1,flip,results/tafdrl_sac_500_seed1_flip_share30_act_final.log,results/tafdrl_sac_500_seed1_none_share30_act_final.log,bill $/home/yr,1237.16,1194.79,42.37000000000012
+act,tafdrl,1,meter,results/tafdrl_sac_500_seed1_meter_share30_act.log,results/tafdrl_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1178.1,1137.62,40.48000000000002
+act,tafdrl final,1,meter,results/tafdrl_sac_500_seed1_meter_share30_act_final.log,results/tafdrl_sac_500_seed1_none_share30_act_final.log,bill honest homes $/home/yr,1203.46,1141.72,61.74000000000001
+act,tafdrl,1,noise,results/tafdrl_sac_500_seed1_noise_share30_act.log,results/tafdrl_sac_500_seed1_none_share30_act.log,bill $/home/yr,1261.15,1188.77,72.38000000000011
+act,tafdrl final,1,noise,results/tafdrl_sac_500_seed1_noise_share30_act_final.log,results/tafdrl_sac_500_seed1_none_share30_act_final.log,bill $/home/yr,1261.25,1194.79,66.46000000000004
+act,tafdrl,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30_act.log,results/tafdrl_sac_500_seed1_none_share30_act.log,bill $/home/yr,1288.13,1188.77,99.36000000000013
+act,tafdrl final,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30_act_final.log,results/tafdrl_sac_500_seed1_none_share30_act_final.log,bill $/home/yr,1358.61,1194.79,163.81999999999994
+act,tafdrl,1,reward,results/tafdrl_sac_500_seed1_reward_share30_act.log,results/tafdrl_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1172.46,1137.62,34.840000000000146
+act,tafdrl final,1,reward,results/tafdrl_sac_500_seed1_reward_share30_act_final.log,results/tafdrl_sac_500_seed1_none_share30_act_final.log,bill honest homes $/home/yr,1200.36,1141.72,58.63999999999987
+act,tafdrl,1,scale,results/tafdrl_sac_500_seed1_scale_share30_act.log,results/tafdrl_sac_500_seed1_none_share30_act.log,bill $/home/yr,1243.71,1188.77,54.940000000000055
+act,tafdrl final,1,scale,results/tafdrl_sac_500_seed1_scale_share30_act_final.log,results/tafdrl_sac_500_seed1_none_share30_act_final.log,bill $/home/yr,1246.81,1194.79,52.01999999999998
+act,tafdrl,2,flip,results/tafdrl_sac_500_seed2_flip_share30_act.log,results/tafdrl_sac_500_seed2_none_share30_act.log,bill $/home/yr,1166.18,1138.49,27.690000000000055
+act,tafdrl final,2,flip,results/tafdrl_sac_500_seed2_flip_share30_act_final.log,results/tafdrl_sac_500_seed2_none_share30_act_final.log,bill $/home/yr,1186.87,1164.13,22.73999999999978
+act,tafdrl,2,meter,results/tafdrl_sac_500_seed2_meter_share30_act.log,results/tafdrl_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1100.93,1065.85,35.080000000000155
+act,tafdrl final,2,meter,results/tafdrl_sac_500_seed2_meter_share30_act_final.log,results/tafdrl_sac_500_seed2_none_share30_act_final.log,bill honest homes $/home/yr,1127.03,1085.22,41.809999999999945
+act,tafdrl,2,noise,results/tafdrl_sac_500_seed2_noise_share30_act.log,results/tafdrl_sac_500_seed2_none_share30_act.log,bill $/home/yr,1155.41,1138.49,16.920000000000073
+act,tafdrl final,2,noise,results/tafdrl_sac_500_seed2_noise_share30_act_final.log,results/tafdrl_sac_500_seed2_none_share30_act_final.log,bill $/home/yr,1155.41,1164.13,-8.720000000000027
+act,tafdrl,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30_act.log,results/tafdrl_sac_500_seed2_none_share30_act.log,bill $/home/yr,1273.66,1138.49,135.17000000000007
+act,tafdrl final,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30_act_final.log,results/tafdrl_sac_500_seed2_none_share30_act_final.log,bill $/home/yr,1374.37,1164.13,210.23999999999978
+act,tafdrl,2,reward,results/tafdrl_sac_500_seed2_reward_share30_act.log,results/tafdrl_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1087.22,1065.85,21.37000000000012
+act,tafdrl final,2,reward,results/tafdrl_sac_500_seed2_reward_share30_act_final.log,results/tafdrl_sac_500_seed2_none_share30_act_final.log,bill honest homes $/home/yr,1078.19,1085.22,-7.029999999999973
+act,tafdrl,2,scale,results/tafdrl_sac_500_seed2_scale_share30_act.log,results/tafdrl_sac_500_seed2_none_share30_act.log,bill $/home/yr,1174.75,1138.49,36.25999999999999
+act,tafdrl final,2,scale,results/tafdrl_sac_500_seed2_scale_share30_act_final.log,results/tafdrl_sac_500_seed2_none_share30_act_final.log,bill $/home/yr,1174.75,1164.13,10.61999999999989
+act,trimmed,0,flip,results/trimmed_sac_500_seed0_flip_share30_act.log,results/trimmed_sac_500_seed0_none_share30_act.log,bill $/home/yr,1170.56,1144.7,25.8599999999999
+act,trimmed,0,meter,results/trimmed_sac_500_seed0_meter_share30_act.log,results/trimmed_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1118.11,1119.35,-1.240000000000009
+act,trimmed,0,noise,results/trimmed_sac_500_seed0_noise_share30_act.log,results/trimmed_sac_500_seed0_none_share30_act.log,bill $/home/yr,1132.28,1144.7,-12.420000000000073
+act,trimmed,0,normalized,results/trimmed_sac_500_seed0_normalized_share30_act.log,results/trimmed_sac_500_seed0_none_share30_act.log,bill $/home/yr,1345.99,1144.7,201.28999999999996
+act,trimmed,0,reward,results/trimmed_sac_500_seed0_reward_share30_act.log,results/trimmed_sac_500_seed0_none_share30_act.log,bill honest homes $/home/yr,1318.69,1119.35,199.34000000000015
+act,trimmed,0,scale,results/trimmed_sac_500_seed0_scale_share30_act.log,results/trimmed_sac_500_seed0_none_share30_act.log,bill $/home/yr,1053.24,1144.7,-91.46000000000004
+act,trimmed,1,flip,results/trimmed_sac_500_seed1_flip_share30_act.log,results/trimmed_sac_500_seed1_none_share30_act.log,bill $/home/yr,1360.12,1204.03,156.08999999999992
+act,trimmed,1,meter,results/trimmed_sac_500_seed1_meter_share30_act.log,results/trimmed_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1208.62,1151.84,56.77999999999997
+act,trimmed,1,noise,results/trimmed_sac_500_seed1_noise_share30_act.log,results/trimmed_sac_500_seed1_none_share30_act.log,bill $/home/yr,1277.86,1204.03,73.82999999999993
+act,trimmed,1,normalized,results/trimmed_sac_500_seed1_normalized_share30_act.log,results/trimmed_sac_500_seed1_none_share30_act.log,bill $/home/yr,1396.04,1204.03,192.01
+act,trimmed,1,reward,results/trimmed_sac_500_seed1_reward_share30_act.log,results/trimmed_sac_500_seed1_none_share30_act.log,bill honest homes $/home/yr,1314.83,1151.84,162.99
+act,trimmed,1,scale,results/trimmed_sac_500_seed1_scale_share30_act.log,results/trimmed_sac_500_seed1_none_share30_act.log,bill $/home/yr,1157.3,1204.03,-46.73000000000002
+act,trimmed,2,flip,results/trimmed_sac_500_seed2_flip_share30_act.log,results/trimmed_sac_500_seed2_none_share30_act.log,bill $/home/yr,1229.05,1213.6,15.450000000000045
+act,trimmed,2,meter,results/trimmed_sac_500_seed2_meter_share30_act.log,results/trimmed_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1108.84,1138.77,-29.930000000000064
+act,trimmed,2,noise,results/trimmed_sac_500_seed2_noise_share30_act.log,results/trimmed_sac_500_seed2_none_share30_act.log,bill $/home/yr,1171.57,1213.6,-42.02999999999997
+act,trimmed,2,normalized,results/trimmed_sac_500_seed2_normalized_share30_act.log,results/trimmed_sac_500_seed2_none_share30_act.log,bill $/home/yr,1363.78,1213.6,150.18000000000006
+act,trimmed,2,reward,results/trimmed_sac_500_seed2_reward_share30_act.log,results/trimmed_sac_500_seed2_none_share30_act.log,bill honest homes $/home/yr,1282.25,1138.77,143.48000000000002
+act,trimmed,2,scale,results/trimmed_sac_500_seed2_scale_share30_act.log,results/trimmed_sac_500_seed2_none_share30_act.log,bill $/home/yr,1103.02,1213.6,-110.57999999999993
+transfer,fedavg,3,flip,results/fedavg_sac_500_seed3_flip_share30.log,results/fedavg_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1374.05,1255.42,118.62999999999988
+transfer,fedavg,3,meter,results/fedavg_sac_500_seed3_meter_share30.log,results/fedavg_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1300.36,1269.55,30.809999999999945
+transfer,fedavg,3,noise,results/fedavg_sac_500_seed3_noise_share30.log,results/fedavg_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1939.32,1255.42,683.8999999999999
+transfer,fedavg,3,normalized,results/fedavg_sac_500_seed3_normalized_share30.log,results/fedavg_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,2008.91,1255.42,753.49
+transfer,fedavg,3,reward,results/fedavg_sac_500_seed3_reward_share30.log,results/fedavg_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1331.68,1269.55,62.13000000000011
+transfer,fedavg,3,scale,results/fedavg_sac_500_seed3_scale_share30.log,results/fedavg_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1259.51,1255.42,4.089999999999918
+transfer,fedavg,4,flip,results/fedavg_sac_500_seed4_flip_share30.log,results/fedavg_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1264.86,1096.25,168.6099999999999
+transfer,fedavg,4,meter,results/fedavg_sac_500_seed4_meter_share30.log,results/fedavg_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1044.52,1057.31,-12.789999999999964
+transfer,fedavg,4,noise,results/fedavg_sac_500_seed4_noise_share30.log,results/fedavg_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1925.01,1096.25,828.76
+transfer,fedavg,4,normalized,results/fedavg_sac_500_seed4_normalized_share30.log,results/fedavg_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,2026.71,1096.25,930.46
+transfer,fedavg,4,reward,results/fedavg_sac_500_seed4_reward_share30.log,results/fedavg_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1208.67,1057.31,151.36000000000013
+transfer,fedavg,4,scale,results/fedavg_sac_500_seed4_scale_share30.log,results/fedavg_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1267.2,1096.25,170.95000000000005
+transfer,fedgrid final,0,flip,results/fedgrid_sac_500_seed0_flip_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,ACT transfer bill $/home/yr,1252.33,1234.85,17.480000000000018
+transfer,fedgrid final,0,meter,results/fedgrid_sac_500_seed0_meter_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1225.78,1197.08,28.700000000000045
+transfer,fedgrid final,0,noise,results/fedgrid_sac_500_seed0_noise_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,ACT transfer bill $/home/yr,1225.41,1234.85,-9.439999999999827
+transfer,fedgrid final,0,normalized,results/fedgrid_sac_500_seed0_normalized_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,ACT transfer bill $/home/yr,1180.11,1234.85,-54.74000000000001
+transfer,fedgrid final,0,reward,results/fedgrid_sac_500_seed0_reward_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1285.08,1197.08,88.0
+transfer,fedgrid final,0,scale,results/fedgrid_sac_500_seed0_scale_share30_final.log,results/fedgrid_sac_500_seed0_none_share30_final.log,ACT transfer bill $/home/yr,1207.29,1234.85,-27.559999999999945
+transfer,fedgrid final,1,flip,results/fedgrid_sac_500_seed1_flip_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,ACT transfer bill $/home/yr,1325.83,1215.51,110.31999999999994
+transfer,fedgrid final,1,meter,results/fedgrid_sac_500_seed1_meter_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1200.26,1167.08,33.180000000000064
+transfer,fedgrid final,1,noise,results/fedgrid_sac_500_seed1_noise_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,ACT transfer bill $/home/yr,1244.89,1215.51,29.38000000000011
+transfer,fedgrid final,1,normalized,results/fedgrid_sac_500_seed1_normalized_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,ACT transfer bill $/home/yr,1228.73,1215.51,13.220000000000027
+transfer,fedgrid final,1,reward,results/fedgrid_sac_500_seed1_reward_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1297.83,1167.08,130.75
+transfer,fedgrid final,1,scale,results/fedgrid_sac_500_seed1_scale_share30_final.log,results/fedgrid_sac_500_seed1_none_share30_final.log,ACT transfer bill $/home/yr,1215.17,1215.51,-0.33999999999991815
+transfer,fedgrid final,2,flip,results/fedgrid_sac_500_seed2_flip_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,ACT transfer bill $/home/yr,1288.21,1219.26,68.95000000000005
+transfer,fedgrid final,2,meter,results/fedgrid_sac_500_seed2_meter_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1185.91,1132.22,53.690000000000055
+transfer,fedgrid final,2,noise,results/fedgrid_sac_500_seed2_noise_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,ACT transfer bill $/home/yr,1225.24,1219.26,5.980000000000018
+transfer,fedgrid final,2,normalized,results/fedgrid_sac_500_seed2_normalized_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,ACT transfer bill $/home/yr,1165.35,1219.26,-53.91000000000008
+transfer,fedgrid final,2,reward,results/fedgrid_sac_500_seed2_reward_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1189.73,1132.22,57.50999999999999
+transfer,fedgrid final,2,scale,results/fedgrid_sac_500_seed2_scale_share30_final.log,results/fedgrid_sac_500_seed2_none_share30_final.log,ACT transfer bill $/home/yr,1189.96,1219.26,-29.299999999999955
+transfer,fedgrid,3,flip,results/fedgrid_sac_500_seed3_flip_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1332.89,1235.69,97.20000000000005
+transfer,fedgrid final,3,flip,results/fedgrid_sac_500_seed3_flip_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,ACT transfer bill $/home/yr,1320.43,1227.97,92.46000000000004
+transfer,fedgrid,3,meter,results/fedgrid_sac_500_seed3_meter_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1295.53,1244.43,51.09999999999991
+transfer,fedgrid final,3,meter,results/fedgrid_sac_500_seed3_meter_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1239.56,1238.55,1.009999999999991
+transfer,fedgrid,3,noise,results/fedgrid_sac_500_seed3_noise_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1311.07,1235.69,75.37999999999988
+transfer,fedgrid final,3,noise,results/fedgrid_sac_500_seed3_noise_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,ACT transfer bill $/home/yr,1258.31,1227.97,30.339999999999918
+transfer,fedgrid,3,normalized,results/fedgrid_sac_500_seed3_normalized_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1352.5,1235.69,116.80999999999995
+transfer,fedgrid final,3,normalized,results/fedgrid_sac_500_seed3_normalized_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,ACT transfer bill $/home/yr,1256.81,1227.97,28.839999999999918
+transfer,fedgrid,3,reward,results/fedgrid_sac_500_seed3_reward_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1308.18,1244.43,63.75
+transfer,fedgrid final,3,reward,results/fedgrid_sac_500_seed3_reward_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1347.94,1238.55,109.3900000000001
+transfer,fedgrid,3,scale,results/fedgrid_sac_500_seed3_scale_share30.log,results/fedgrid_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1231.17,1235.69,-4.519999999999982
+transfer,fedgrid final,3,scale,results/fedgrid_sac_500_seed3_scale_share30_final.log,results/fedgrid_sac_500_seed3_none_share30_final.log,ACT transfer bill $/home/yr,1232.5,1227.97,4.529999999999973
+transfer,fedgrid,4,flip,results/fedgrid_sac_500_seed4_flip_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1259.57,1113.49,146.07999999999993
+transfer,fedgrid final,4,flip,results/fedgrid_sac_500_seed4_flip_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,ACT transfer bill $/home/yr,1220.95,1115.78,105.17000000000007
+transfer,fedgrid,4,meter,results/fedgrid_sac_500_seed4_meter_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1073.68,1066.64,7.039999999999964
+transfer,fedgrid final,4,meter,results/fedgrid_sac_500_seed4_meter_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1094.44,1069.75,24.690000000000055
+transfer,fedgrid,4,noise,results/fedgrid_sac_500_seed4_noise_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1188.58,1113.49,75.08999999999992
+transfer,fedgrid final,4,noise,results/fedgrid_sac_500_seed4_noise_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,ACT transfer bill $/home/yr,1166.61,1115.78,50.82999999999993
+transfer,fedgrid,4,normalized,results/fedgrid_sac_500_seed4_normalized_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1223.65,1113.49,110.16000000000008
+transfer,fedgrid final,4,normalized,results/fedgrid_sac_500_seed4_normalized_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,ACT transfer bill $/home/yr,1165.65,1115.78,49.87000000000012
+transfer,fedgrid,4,reward,results/fedgrid_sac_500_seed4_reward_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1223.01,1066.64,156.3699999999999
+transfer,fedgrid final,4,reward,results/fedgrid_sac_500_seed4_reward_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1203.82,1069.75,134.06999999999994
+transfer,fedgrid,4,scale,results/fedgrid_sac_500_seed4_scale_share30.log,results/fedgrid_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1118.6,1113.49,5.1099999999999
+transfer,fedgrid final,4,scale,results/fedgrid_sac_500_seed4_scale_share30_final.log,results/fedgrid_sac_500_seed4_none_share30_final.log,ACT transfer bill $/home/yr,1108.58,1115.78,-7.2000000000000455
+transfer,flame,3,flip,results/flame_sac_500_seed3_flip_share30.log,results/flame_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1257.74,1212.59,45.15000000000009
+transfer,flame,3,meter,results/flame_sac_500_seed3_meter_share30.log,results/flame_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1200.3,1217.87,-17.569999999999936
+transfer,flame,3,noise,results/flame_sac_500_seed3_noise_share30.log,results/flame_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1249.82,1212.59,37.23000000000002
+transfer,flame,3,normalized,results/flame_sac_500_seed3_normalized_share30.log,results/flame_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1235.39,1212.59,22.800000000000182
+transfer,flame,3,reward,results/flame_sac_500_seed3_reward_share30.log,results/flame_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1205.5,1217.87,-12.36999999999989
+transfer,flame,3,scale,results/flame_sac_500_seed3_scale_share30.log,results/flame_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1206.6,1212.59,-5.990000000000009
+transfer,flame,4,flip,results/flame_sac_500_seed4_flip_share30.log,results/flame_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1238.92,1151.77,87.15000000000009
+transfer,flame,4,meter,results/flame_sac_500_seed4_meter_share30.log,results/flame_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1151.77,1109.63,42.13999999999987
+transfer,flame,4,noise,results/flame_sac_500_seed4_noise_share30.log,results/flame_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1130.49,1151.77,-21.279999999999973
+transfer,flame,4,normalized,results/flame_sac_500_seed4_normalized_share30.log,results/flame_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1182.1,1151.77,30.329999999999927
+transfer,flame,4,reward,results/flame_sac_500_seed4_reward_share30.log,results/flame_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1105.48,1109.63,-4.150000000000091
+transfer,flame,4,scale,results/flame_sac_500_seed4_scale_share30.log,results/flame_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1167.01,1151.77,15.240000000000009
+transfer,fltrust,3,flip,results/fltrust_sac_500_seed3_flip_share30.log,results/fltrust_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1267.08,1277.74,-10.660000000000082
+transfer,fltrust,3,meter,results/fltrust_sac_500_seed3_meter_share30.log,results/fltrust_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1312.06,1280.82,31.24000000000001
+transfer,fltrust,3,noise,results/fltrust_sac_500_seed3_noise_share30.log,results/fltrust_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1239.71,1277.74,-38.02999999999997
+transfer,fltrust,3,normalized,results/fltrust_sac_500_seed3_normalized_share30.log,results/fltrust_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1397.19,1277.74,119.45000000000005
+transfer,fltrust,3,reward,results/fltrust_sac_500_seed3_reward_share30.log,results/fltrust_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1335.38,1280.82,54.56000000000017
+transfer,fltrust,3,scale,results/fltrust_sac_500_seed3_scale_share30.log,results/fltrust_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1276.47,1277.74,-1.2699999999999818
+transfer,fltrust,4,flip,results/fltrust_sac_500_seed4_flip_share30.log,results/fltrust_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1164.83,1162.66,2.1699999999998454
+transfer,fltrust,4,meter,results/fltrust_sac_500_seed4_meter_share30.log,results/fltrust_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1141.25,1112.44,28.809999999999945
+transfer,fltrust,4,noise,results/fltrust_sac_500_seed4_noise_share30.log,results/fltrust_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1129.81,1162.66,-32.850000000000136
+transfer,fltrust,4,normalized,results/fltrust_sac_500_seed4_normalized_share30.log,results/fltrust_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1210.29,1162.66,47.62999999999988
+transfer,fltrust,4,reward,results/fltrust_sac_500_seed4_reward_share30.log,results/fltrust_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1180.38,1112.44,67.94000000000005
+transfer,fltrust,4,scale,results/fltrust_sac_500_seed4_scale_share30.log,results/fltrust_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1172.47,1162.66,9.809999999999945
+transfer,krum,3,flip,results/krum_sac_500_seed3_flip_share30.log,results/krum_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1175.34,1285.03,-109.69000000000005
+transfer,krum,3,meter,results/krum_sac_500_seed3_meter_share30.log,results/krum_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1342.86,1286.17,56.68999999999983
+transfer,krum,3,noise,results/krum_sac_500_seed3_noise_share30.log,results/krum_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1332.58,1285.03,47.549999999999955
+transfer,krum,3,normalized,results/krum_sac_500_seed3_normalized_share30.log,results/krum_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1387.74,1285.03,102.71000000000004
+transfer,krum,3,reward,results/krum_sac_500_seed3_reward_share30.log,results/krum_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1225.98,1286.17,-60.190000000000055
+transfer,krum,3,scale,results/krum_sac_500_seed3_scale_share30.log,results/krum_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1214.38,1285.03,-70.64999999999986
+transfer,krum,4,flip,results/krum_sac_500_seed4_flip_share30.log,results/krum_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1331.64,1267.59,64.05000000000018
+transfer,krum,4,meter,results/krum_sac_500_seed4_meter_share30.log,results/krum_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1136.67,1208.46,-71.78999999999996
+transfer,krum,4,noise,results/krum_sac_500_seed4_noise_share30.log,results/krum_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1318.51,1267.59,50.92000000000007
+transfer,krum,4,normalized,results/krum_sac_500_seed4_normalized_share30.log,results/krum_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1287.66,1267.59,20.070000000000164
+transfer,krum,4,reward,results/krum_sac_500_seed4_reward_share30.log,results/krum_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1309.97,1208.46,101.50999999999999
+transfer,krum,4,scale,results/krum_sac_500_seed4_scale_share30.log,results/krum_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1327.23,1267.59,59.6400000000001
+transfer,median,3,flip,results/median_sac_500_seed3_flip_share30.log,results/median_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1322.2,1266.64,55.559999999999945
+transfer,median,3,meter,results/median_sac_500_seed3_meter_share30.log,results/median_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1255.26,1272.79,-17.529999999999973
+transfer,median,3,noise,results/median_sac_500_seed3_noise_share30.log,results/median_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1243.09,1266.64,-23.550000000000182
+transfer,median,3,normalized,results/median_sac_500_seed3_normalized_share30.log,results/median_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1385.3,1266.64,118.65999999999985
+transfer,median,3,reward,results/median_sac_500_seed3_reward_share30.log,results/median_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1387.56,1272.79,114.76999999999998
+transfer,median,3,scale,results/median_sac_500_seed3_scale_share30.log,results/median_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1222.81,1266.64,-43.830000000000155
+transfer,median,4,flip,results/median_sac_500_seed4_flip_share30.log,results/median_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1307.19,1142.56,164.6300000000001
+transfer,median,4,meter,results/median_sac_500_seed4_meter_share30.log,results/median_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1099.83,1105.62,-5.789999999999964
+transfer,median,4,noise,results/median_sac_500_seed4_noise_share30.log,results/median_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1159.17,1142.56,16.610000000000127
+transfer,median,4,normalized,results/median_sac_500_seed4_normalized_share30.log,results/median_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1405.19,1142.56,262.6300000000001
+transfer,median,4,reward,results/median_sac_500_seed4_reward_share30.log,results/median_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1254.59,1105.62,148.97000000000003
+transfer,median,4,scale,results/median_sac_500_seed4_scale_share30.log,results/median_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1158.19,1142.56,15.63000000000011
+transfer,tafdrl final,0,flip,results/tafdrl_sac_500_seed0_flip_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,ACT transfer bill $/home/yr,1291.23,1229.1,62.13000000000011
+transfer,tafdrl final,0,meter,results/tafdrl_sac_500_seed0_meter_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1173.64,1183.43,-9.789999999999964
+transfer,tafdrl final,0,noise,results/tafdrl_sac_500_seed0_noise_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,ACT transfer bill $/home/yr,1221.21,1229.1,-7.889999999999873
+transfer,tafdrl final,0,normalized,results/tafdrl_sac_500_seed0_normalized_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,ACT transfer bill $/home/yr,1191.15,1229.1,-37.94999999999982
+transfer,tafdrl final,0,reward,results/tafdrl_sac_500_seed0_reward_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1187.62,1183.43,4.189999999999827
+transfer,tafdrl final,0,scale,results/tafdrl_sac_500_seed0_scale_share30_final.log,results/tafdrl_sac_500_seed0_none_share30_final.log,ACT transfer bill $/home/yr,1219.77,1229.1,-9.329999999999927
+transfer,tafdrl final,1,flip,results/tafdrl_sac_500_seed1_flip_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,ACT transfer bill $/home/yr,1280.41,1219.87,60.54000000000019
+transfer,tafdrl final,1,meter,results/tafdrl_sac_500_seed1_meter_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1204.09,1176.5,27.589999999999918
+transfer,tafdrl final,1,noise,results/tafdrl_sac_500_seed1_noise_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,ACT transfer bill $/home/yr,1231.28,1219.87,11.410000000000082
+transfer,tafdrl final,1,normalized,results/tafdrl_sac_500_seed1_normalized_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,ACT transfer bill $/home/yr,1231.69,1219.87,11.820000000000164
+transfer,tafdrl final,1,reward,results/tafdrl_sac_500_seed1_reward_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1259.62,1176.5,83.11999999999989
+transfer,tafdrl final,1,scale,results/tafdrl_sac_500_seed1_scale_share30_final.log,results/tafdrl_sac_500_seed1_none_share30_final.log,ACT transfer bill $/home/yr,1280.38,1219.87,60.51000000000022
+transfer,tafdrl final,2,flip,results/tafdrl_sac_500_seed2_flip_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,ACT transfer bill $/home/yr,1223.71,1193.7,30.00999999999999
+transfer,tafdrl final,2,meter,results/tafdrl_sac_500_seed2_meter_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1123.57,1106.92,16.649999999999864
+transfer,tafdrl final,2,noise,results/tafdrl_sac_500_seed2_noise_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,ACT transfer bill $/home/yr,1194.03,1193.7,0.32999999999992724
+transfer,tafdrl final,2,normalized,results/tafdrl_sac_500_seed2_normalized_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,ACT transfer bill $/home/yr,1192.11,1193.7,-1.5900000000001455
+transfer,tafdrl final,2,reward,results/tafdrl_sac_500_seed2_reward_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1137.48,1106.92,30.559999999999945
+transfer,tafdrl final,2,scale,results/tafdrl_sac_500_seed2_scale_share30_final.log,results/tafdrl_sac_500_seed2_none_share30_final.log,ACT transfer bill $/home/yr,1232.63,1193.7,38.930000000000064
+transfer,tafdrl,3,flip,results/tafdrl_sac_500_seed3_flip_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1350.45,1243.1,107.35000000000014
+transfer,tafdrl final,3,flip,results/tafdrl_sac_500_seed3_flip_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,ACT transfer bill $/home/yr,1304.67,1227.82,76.85000000000014
+transfer,tafdrl,3,meter,results/tafdrl_sac_500_seed3_meter_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1270.92,1251.82,19.100000000000136
+transfer,tafdrl final,3,meter,results/tafdrl_sac_500_seed3_meter_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1247.54,1231.46,16.079999999999927
+transfer,tafdrl,3,noise,results/tafdrl_sac_500_seed3_noise_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1215.1,1243.1,-28.0
+transfer,tafdrl final,3,noise,results/tafdrl_sac_500_seed3_noise_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,ACT transfer bill $/home/yr,1221.77,1227.82,-6.0499999999999545
+transfer,tafdrl,3,normalized,results/tafdrl_sac_500_seed3_normalized_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1309.64,1243.1,66.54000000000019
+transfer,tafdrl final,3,normalized,results/tafdrl_sac_500_seed3_normalized_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,ACT transfer bill $/home/yr,1265.93,1227.82,38.11000000000013
+transfer,tafdrl,3,reward,results/tafdrl_sac_500_seed3_reward_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1240.1,1251.82,-11.720000000000027
+transfer,tafdrl final,3,reward,results/tafdrl_sac_500_seed3_reward_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1220.42,1231.46,-11.039999999999964
+transfer,tafdrl,3,scale,results/tafdrl_sac_500_seed3_scale_share30.log,results/tafdrl_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1265.2,1243.1,22.100000000000136
+transfer,tafdrl final,3,scale,results/tafdrl_sac_500_seed3_scale_share30_final.log,results/tafdrl_sac_500_seed3_none_share30_final.log,ACT transfer bill $/home/yr,1265.2,1227.82,37.38000000000011
+transfer,tafdrl,4,flip,results/tafdrl_sac_500_seed4_flip_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1209.41,1099.29,110.12000000000012
+transfer,tafdrl final,4,flip,results/tafdrl_sac_500_seed4_flip_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,ACT transfer bill $/home/yr,1115.58,1095.43,20.149999999999864
+transfer,tafdrl,4,meter,results/tafdrl_sac_500_seed4_meter_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1080.67,1067.14,13.529999999999973
+transfer,tafdrl final,4,meter,results/tafdrl_sac_500_seed4_meter_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1094.65,1058.97,35.680000000000064
+transfer,tafdrl,4,noise,results/tafdrl_sac_500_seed4_noise_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1117.54,1099.29,18.25
+transfer,tafdrl final,4,noise,results/tafdrl_sac_500_seed4_noise_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,ACT transfer bill $/home/yr,1117.54,1095.43,22.1099999999999
+transfer,tafdrl,4,normalized,results/tafdrl_sac_500_seed4_normalized_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1244.52,1099.29,145.23000000000002
+transfer,tafdrl final,4,normalized,results/tafdrl_sac_500_seed4_normalized_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,ACT transfer bill $/home/yr,1264.28,1095.43,168.8499999999999
+transfer,tafdrl,4,reward,results/tafdrl_sac_500_seed4_reward_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1092.92,1067.14,25.779999999999973
+transfer,tafdrl final,4,reward,results/tafdrl_sac_500_seed4_reward_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,ACT transfer bill honest homes $/home/yr,1073.93,1058.97,14.960000000000036
+transfer,tafdrl,4,scale,results/tafdrl_sac_500_seed4_scale_share30.log,results/tafdrl_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1088.73,1099.29,-10.559999999999945
+transfer,tafdrl final,4,scale,results/tafdrl_sac_500_seed4_scale_share30_final.log,results/tafdrl_sac_500_seed4_none_share30_final.log,ACT transfer bill $/home/yr,1111.85,1095.43,16.419999999999845
+transfer,trimmed,3,flip,results/trimmed_sac_500_seed3_flip_share30.log,results/trimmed_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1330.88,1240.81,90.07000000000016
+transfer,trimmed,3,meter,results/trimmed_sac_500_seed3_meter_share30.log,results/trimmed_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1270.22,1249.19,21.029999999999973
+transfer,trimmed,3,noise,results/trimmed_sac_500_seed3_noise_share30.log,results/trimmed_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1221.54,1240.81,-19.269999999999982
+transfer,trimmed,3,normalized,results/trimmed_sac_500_seed3_normalized_share30.log,results/trimmed_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1620.75,1240.81,379.94000000000005
+transfer,trimmed,3,reward,results/trimmed_sac_500_seed3_reward_share30.log,results/trimmed_sac_500_seed3_none_share30.log,ACT transfer bill honest homes $/home/yr,1374.19,1249.19,125.0
+transfer,trimmed,3,scale,results/trimmed_sac_500_seed3_scale_share30.log,results/trimmed_sac_500_seed3_none_share30.log,ACT transfer bill $/home/yr,1199.02,1240.81,-41.789999999999964
+transfer,trimmed,4,flip,results/trimmed_sac_500_seed4_flip_share30.log,results/trimmed_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1201.25,1118.58,82.67000000000007
+transfer,trimmed,4,meter,results/trimmed_sac_500_seed4_meter_share30.log,results/trimmed_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1088.72,1076.48,12.240000000000009
+transfer,trimmed,4,noise,results/trimmed_sac_500_seed4_noise_share30.log,results/trimmed_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1137.52,1118.58,18.940000000000055
+transfer,trimmed,4,normalized,results/trimmed_sac_500_seed4_normalized_share30.log,results/trimmed_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1476.99,1118.58,358.4100000000001
+transfer,trimmed,4,reward,results/trimmed_sac_500_seed4_reward_share30.log,results/trimmed_sac_500_seed4_none_share30.log,ACT transfer bill honest homes $/home/yr,1235.2,1076.48,158.72000000000003
+transfer,trimmed,4,scale,results/trimmed_sac_500_seed4_scale_share30.log,results/trimmed_sac_500_seed4_none_share30.log,ACT transfer bill $/home/yr,1119.21,1118.58,0.6300000000001091

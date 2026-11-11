@@ -1,0 +1,10 @@
+scenario,method,source,bill $/home/yr,curtailed kWh/home/yr,battery cycles/yr,half hours over 253 V %,max V,export in MSL half hours kWh,battery charging in MSL half hours kWh,midday export limit kW (median),bill honest homes $/home/yr,transformer peak loading %
+Ausgrid 1.00 pu,Idle,results/baselines.log,1457.78,537.74,0.0,0.0,252.92,0.0,0.0,5.92,,
+Ausgrid 1.00 pu,Rule,results/baselines.log,952.96,473.18,77.45,0.0,252.92,0.0,1971.09,5.92,,
+Ausgrid 1.00 pu,Perfect-foresight MPC,results/baselines.log,590.95,62.87,213.36,0.0,252.93,0.0,14942.07,5.92,,
+ACT 1.00 pu,Idle,results/baselines_act.log,1864.79,329.74,0.0,0.0,251.85,0.0,0.0,6.28,1864.79,87.95
+ACT 1.00 pu,Rule,results/baselines_act.log,1198.77,231.71,93.06,0.0,251.85,0.0,3529.04,6.28,1198.77,84.77
+ACT 1.00 pu,Perfect-foresight MPC,results/baselines_act.log,875.94,19.04,217.18,0.0,252.65,0.0,11584.51,6.28,875.94,109.57
+Ausgrid 1.02 pu,Idle,results/baselines_pu102.log,1500.18,1027.39,0.0,6.88,254.49,0.0,0.0,3.81,1500.18,73.76
+Ausgrid 1.02 pu,Rule,results/baselines_pu102.log,988.73,886.22,77.45,4.45,255.52,0.0,1971.09,3.81,988.73,73.4
+Ausgrid 1.02 pu,Perfect-foresight MPC,results/baselines_pu102.log,590.65,64.72,219.05,3.03,254.38,0.0,14923.47,3.81,590.65,111.5

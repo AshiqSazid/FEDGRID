@@ -1,5 +1,7 @@
 # Academic writing review and revision
 
+**Historical checkpoint.** This record describes the earlier academic edit and its 30-page, 19-table output. The subsequent independent audit in `CODE_RESULTS_AUDIT.md` intentionally corrects voltage-table precision, adds five tables and extends the implementation and development-history descriptions. Preservation statements below refer to the earlier checkpoint, not to a claim that the current manuscript is unchanged from that backup.
+
 This record follows the manuscript order. It separates improvements in writing from unresolved scientific issues; the edits do not certify journal acceptance or repair the experiment design.
 
 The original main manuscript, section sources, tables, references and scripts were backed up before editing. See `tables/editorial_backup.json` for the backup directory and source count. The original manuscript is also retained there as `main_before_edit.tex`.

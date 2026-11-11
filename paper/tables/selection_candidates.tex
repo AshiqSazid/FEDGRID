@@ -1,11 +1,11 @@
 \begin{table}[htbp]
 \centering\small
-\caption{Development-set selection of FedGrid variants. Damage is in dollars over the validation weeks and uses a bill-plus-curtailment score. The 4.0\% numerical rejection bound was imposed after candidate results were observed.}
+\caption{Development-set selection of FedGrid variants. Damage is in dollars over the validation weeks and uses a bill-plus-curtailment score. The post-hoc 4.0\% bound uses the rounded original rejection rate. Rejection pools differ: 21 original runs versus 15 per complete candidate. The last column is the mean of per-run maximum honest-household rejection, not the maximum across runs.}
 \label{tab:selection_candidates}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{llll}
 \toprule
-Variant & Worst validation damage & Honest rejection (\%) & Worst home (\%) \\
+Variant & Worst validation damage & Honest rejection (\%) & Mean run maximum (\%) \\
 \midrule
 original & 26.0 & 2.0 & 18.0 \\
 filter\_first & 19.0 & 3.8 & 28.2 \\

@@ -5,7 +5,7 @@ In the clean 500-day experiments with validation-selected policies, FedAvg curta
 
 Bill differences from the rule are smaller. The rule costs approximately \$953 per household annually; FedAvg, FedProx and local SAC average \$954, \$947 and \$964, respectively, with wide three-seed intervals. Central SAC averages \$879 and perfect-foresight MPC \$591. These references use additional information: central SAC pools household data, and MPC receives exact daily future profiles. The clean results therefore show lower curtailment more clearly than a bill advantage of federation over the rule.
 
-The reduction in curtailment is accompanied by greater battery throughput. FedAvg produces approximately 256 fleet-equivalent cycles annually, compared with 77 for the rule. Because the objective does not monetise this cycling, electricity bills alone do not establish net economic value after degradation and capital costs. These clean outcomes provide the operational context for the attack comparisons.
+The reduction in curtailment is accompanied by greater battery throughput. FedAvg produces approximately 256 fleet-equivalent cycles annually, compared with 77 for the rule. Because the objective does not monetise this cycling, electricity bills alone do not establish net economic value after degradation and capital costs. These clean outcomes provide the operational context for the attack comparisons. Table~\ref{tab:extended_clean} reports all 1000-day and FedProx-coefficient runs. Mean bills at 1000 days are approximately \$902 for FedAvg, \$890 for FedProx, \$927 for local SAC and \$810 for central SAC; these duration comparisons use validation-selected actors and do not alter the 500-day attack protocol.
 
 \begin{figure}[htbp]
 \centering\includegraphics[width=\linewidth]{figures/clean_energy.pdf}
@@ -61,7 +61,11 @@ Table~\ref{tab:rejection} and Figure~\ref{fig:rejection} retain attack-specific 
 \label{fig:rejection}
 \end{figure}
 
-\subsection{Electrical outcomes in the no-attack references}
+\subsection{Electrical outcomes and observed violations}
 Table~\ref{tab:electrical} reports voltage and transformer outcomes for the no-attack last-policy references, and Figure~\ref{fig:electrical} compares transformer peaks. Each run contributes its peak over the evaluated intervals; the displayed mean and interval summarise those run-level peaks. They do not bound loading in other conditions. These electrical outcomes complement bill damage because simultaneous charging can alter feeder loading even when household costs remain low.
 
 
+
+Small voltage-exceedance rates are present in the no-attack logs and are retained at three-decimal precision in Table~\ref{tab:electrical}. Final FedGrid's five-seed mean is $0.010\pm0.028\%$, calculated from the logged rounded rates; its seed-4 run records 0.05\% exceedance and a maximum of 253.60\,V. Averaging run maxima does not make that individual violation disappear.
+
+Attack-time physical outcomes also matter. Table~\ref{tab:attack_electrical} reports maxima over every principal attack run. Under Normalized poisoning, FedAvg reaches transformer peaks of 108.89\% and 113.84\% in seeds 1 and 4. In the single-seed 1.02\,pu final FedGrid no-attack case, the recorded voltage-exceedance rate is 0.27\% and maximum voltage is 254.09\,V. These observations demonstrate why enforced export allowances must be distinguished from voltage and transformer guarantees.

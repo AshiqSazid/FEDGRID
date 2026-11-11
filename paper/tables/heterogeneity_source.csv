@@ -1,0 +1,69 @@
+method,attack,seed,source,overall,unusual,usual,maximum
+krum,none,1,results/krum_sac_500_seed1_none_share30.log,97.2,99.25,95.60000000000001,100.0
+krum,none,2,results/krum_sac_500_seed2_none_share30.log,97.2,99.9375,95.04999999999998,100.0
+krum,none,3,results/krum_sac_500_seed3_none_share30.log,97.2,99.6875,95.3,100.0
+krum,none,4,results/krum_sac_500_seed4_none_share30.log,97.2,99.875,95.1,100.0
+krum,normalized,1,results/krum_sac_500_seed1_normalized_share30.log,96.4,100.0,93.64285714285714,100.0
+krum,normalized,2,results/krum_sac_500_seed2_normalized_share30.log,96.3,100.0,92.92307692307692,100.0
+krum,normalized,3,results/krum_sac_500_seed3_normalized_share30.log,96.4,100.0,92.66666666666666,100.0
+krum,normalized,4,results/krum_sac_500_seed4_normalized_share30.log,96.3,100.0,93.86666666666666,100.0
+fltrust,none,0,results/fltrust_sac_500_seed0_none_share30.log,33.7,44.3125,25.1,67.5
+fltrust,none,1,results/fltrust_sac_500_seed1_none_share30.log,31.9,43.375,22.600000000000005,68.7
+fltrust,none,2,results/fltrust_sac_500_seed2_none_share30.log,27.1,34.56249999999999,21.25,61.6
+fltrust,none,3,results/fltrust_sac_500_seed3_none_share30.log,36.8,48.625,27.400000000000002,79.6
+fltrust,none,4,results/fltrust_sac_500_seed4_none_share30.log,28.6,38.8125,20.400000000000002,76.8
+fltrust,normalized,0,results/fltrust_sac_500_seed0_normalized_share30.log,15.8,18.545454545454543,13.5,30.7
+fltrust,normalized,1,results/fltrust_sac_500_seed1_normalized_share30.log,14.4,17.363636363636363,11.857142857142856,43.2
+fltrust,normalized,2,results/fltrust_sac_500_seed2_normalized_share30.log,13.4,15.250000000000002,11.53846153846154,26.5
+fltrust,normalized,3,results/fltrust_sac_500_seed3_normalized_share30.log,21.7,27.69230769230769,15.0,51.7
+fltrust,normalized,4,results/fltrust_sac_500_seed4_normalized_share30.log,15.5,23.300000000000004,10.400000000000002,34.5
+flame,none,0,results/flame_sac_500_seed0_none_share30.log,47.1,59.56249999999999,37.150000000000006,99.4
+flame,none,1,results/flame_sac_500_seed1_none_share30.log,46.9,54.75,40.55000000000001,99.4
+flame,none,2,results/flame_sac_500_seed2_none_share30.log,47.1,58.18749999999999,38.15,100.0
+flame,none,3,results/flame_sac_500_seed3_none_share30.log,46.8,56.8125,38.85,100.0
+flame,none,4,results/flame_sac_500_seed4_none_share30.log,47.0,56.375,39.45,99.8
+flame,normalized,0,results/flame_sac_500_seed0_normalized_share30.log,43.7,51.45454545454545,37.714285714285715,99.4
+flame,normalized,1,results/flame_sac_500_seed1_normalized_share30.log,46.2,48.0909090909091,44.64285714285715,98.4
+flame,normalized,2,results/flame_sac_500_seed2_normalized_share30.log,48.4,62.83333333333333,35.230769230769226,99.0
+flame,normalized,3,results/flame_sac_500_seed3_normalized_share30.log,46.4,59.23076923076923,32.33333333333334,99.0
+flame,normalized,4,results/flame_sac_500_seed4_normalized_share30.log,46.8,61.1,37.266666666666666,98.8
+tafdrl,none,0,results/tafdrl_sac_500_seed0_none_share30.log,8.9,11.125,7.1000000000000005,51.5
+tafdrl,none,1,results/tafdrl_sac_500_seed1_none_share30.log,8.8,8.8125,8.799999999999999,48.1
+tafdrl,none,2,results/tafdrl_sac_500_seed2_none_share30.log,7.4,9.437499999999998,5.800000000000001,39.8
+tafdrl,none,3,results/tafdrl_sac_500_seed3_none_share30.log,8.9,11.375,6.9,46.1
+tafdrl,none,4,results/tafdrl_sac_500_seed4_none_share30.log,8.4,13.187500000000002,4.45,54.3
+tafdrl,normalized,0,results/tafdrl_sac_500_seed0_normalized_share30.log,33.3,45.81818181818182,23.642857142857142,91.1
+tafdrl,normalized,1,results/tafdrl_sac_500_seed1_normalized_share30.log,27.9,33.18181818181818,23.85714285714286,85.7
+tafdrl,normalized,2,results/tafdrl_sac_500_seed2_normalized_share30.log,34.8,46.33333333333333,24.15384615384615,88.1
+tafdrl,normalized,3,results/tafdrl_sac_500_seed3_normalized_share30.log,28.6,43.07692307692307,12.916666666666668,93.7
+tafdrl,normalized,4,results/tafdrl_sac_500_seed4_normalized_share30.log,31.0,43.49999999999999,22.53333333333333,84.2
+tafdrl final,none,0,results/tafdrl_sac_500_seed0_none_share30_final.log,18.5,32.0,7.699999999999998,98.2
+tafdrl final,none,1,results/tafdrl_sac_500_seed1_none_share30_final.log,22.6,31.5,15.599999999999998,99.6
+tafdrl final,none,2,results/tafdrl_sac_500_seed2_none_share30_final.log,21.8,32.6875,12.899999999999997,99.0
+tafdrl final,none,3,results/tafdrl_sac_500_seed3_none_share30_final.log,20.1,35.3125,7.85,99.4
+tafdrl final,none,4,results/tafdrl_sac_500_seed4_none_share30_final.log,18.8,31.125000000000004,9.049999999999999,99.2
+tafdrl final,normalized,0,results/tafdrl_sac_500_seed0_normalized_share30_final.log,54.2,73.36363636363636,39.14285714285714,100.0
+tafdrl final,normalized,1,results/tafdrl_sac_500_seed1_normalized_share30_final.log,50.0,56.63636363636364,44.85714285714287,100.0
+tafdrl final,normalized,2,results/tafdrl_sac_500_seed2_normalized_share30_final.log,55.0,73.75,37.769230769230774,100.0
+tafdrl final,normalized,3,results/tafdrl_sac_500_seed3_normalized_share30_final.log,44.4,62.30769230769231,24.999999999999996,100.0
+tafdrl final,normalized,4,results/tafdrl_sac_500_seed4_normalized_share30_final.log,61.2,71.89999999999999,53.86666666666666,100.0
+fedgrid,none,0,results/fedgrid_sac_500_seed0_none_share30.log,3.3,3.4375000000000004,3.2000000000000006,29.1
+fedgrid,none,1,results/fedgrid_sac_500_seed1_none_share30.log,2.9,3.2499999999999996,2.5500000000000003,36.0
+fedgrid,none,2,results/fedgrid_sac_500_seed2_none_share30.log,3.8,3.6250000000000004,3.9,34.5
+fedgrid,none,3,results/fedgrid_sac_500_seed3_none_share30.log,3.6,1.25,5.2,49.5
+fedgrid,none,4,results/fedgrid_sac_500_seed4_none_share30.log,2.3,1.875,2.6,23.2
+fedgrid,normalized,0,results/fedgrid_sac_500_seed0_normalized_share30.log,5.6,1.9090909090909092,8.42857142857143,30.9
+fedgrid,normalized,1,results/fedgrid_sac_500_seed1_normalized_share30.log,5.5,11.272727272727273,0.9285714285714286,30.9
+fedgrid,normalized,2,results/fedgrid_sac_500_seed2_normalized_share30.log,3.5,2.666666666666667,4.000000000000001,19.4
+fedgrid,normalized,3,results/fedgrid_sac_500_seed3_normalized_share30.log,2.6,1.9230769230769231,3.3333333333333335,23.8
+fedgrid,normalized,4,results/fedgrid_sac_500_seed4_normalized_share30.log,5.9,7.3,5.066666666666667,40.2
+fedgrid final,none,0,results/fedgrid_sac_500_seed0_none_share30_final.log,6.8,6.6875,6.75,42.6
+fedgrid final,none,1,results/fedgrid_sac_500_seed1_none_share30_final.log,5.7,5.5625,5.700000000000001,38.2
+fedgrid final,none,2,results/fedgrid_sac_500_seed2_none_share30_final.log,7.1,5.812500000000001,8.05,68.9
+fedgrid final,none,3,results/fedgrid_sac_500_seed3_none_share30_final.log,6.8,5.250000000000001,7.9,46.1
+fedgrid final,none,4,results/fedgrid_sac_500_seed4_none_share30_final.log,4.6,6.625,2.8000000000000003,45.3
+fedgrid final,normalized,0,results/fedgrid_sac_500_seed0_normalized_share30_final.log,7.8,13.636363636363635,3.2857142857142865,48.9
+fedgrid final,normalized,1,results/fedgrid_sac_500_seed1_normalized_share30_final.log,7.2,5.636363636363637,8.5,55.6
+fedgrid final,normalized,2,results/fedgrid_sac_500_seed2_normalized_share30_final.log,3.9,3.7500000000000004,3.8461538461538463,13.7
+fedgrid final,normalized,3,results/fedgrid_sac_500_seed3_normalized_share30_final.log,3.0,3.6153846153846154,2.2500000000000004,19.0
+fedgrid final,normalized,4,results/fedgrid_sac_500_seed4_normalized_share30_final.log,10.5,22.5,2.600000000000001,71.5
