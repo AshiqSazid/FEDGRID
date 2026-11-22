@@ -1,9 +1,7 @@
 # Independent code and results audit — 11 November 2026
 
 The principal reported attack-damage values agree with the archived implementation outputs. The previous manuscript nevertheless had one misleading precision choice and several omissions in methods, selection history and experimental coverage. Those reporting issues have been corrected. This audit establishes fidelity to the available code and logs; it does not validate the physical model against a field system or resolve the study's scientific limitations.
-
 ## Evidence checked
-
 The independent parser in `scripts/audit_evidence.py` does not import the manuscript's summariser or plotting helpers. It checks bill arithmetic against raw logs, distinguishes all-home update attacks from matched honest-home data attacks, and uses the explicit honest-reference reruns where available. `tables/damage_reference_trace.csv` records both source files and bill operands for every principal observation.
 
 | Check | Verified observations |
